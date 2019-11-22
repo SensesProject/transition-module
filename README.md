@@ -1,4 +1,6 @@
-# transition-v2
+# transition-module
+This is the Transition Module part I dedicated to Electrification and Energy Shift.
+Assigned portal: policy
 
 ## Project setup
 ```
