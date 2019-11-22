@@ -1,0 +1,263 @@
+<template>
+  <div class="visualization" id="emissions__chart">
+    <svg class="emissions" width="100%" height="100%">
+      <g :transform="'translate(' + margin.left + ',' + margin.top + ')'">
+        <g
+          class="axis"
+          v-axis:x="scales"
+          :transfrom="'translate(' + 0 + ',' + this.innerHeight + ')'"
+        />
+        <g class="axis" v-axis:y="scales" />
+        <g id="first_step" v-if="step <= 2">
+          <path id="emissions" :d="linePath" />
+        </g>
+        <g class="applicationsData" v-if="step >= 3">
+          <path
+            v-for="(chunk, i) in applicationsData"
+            v-bind:key="i"
+            :d="chunk.d"
+            :fill="chunk.color"
+            :id="chunk.id"
+            class="emission__chunks"
+            :class="{ inactive: step >= 3.1 }"
+          />
+        </g>
+        <g class="subsectorsData" v-if="step >= 3.1">
+          <path
+            v-for="(chunk, i) in subsectorsData"
+            v-bind:key="i"
+            :d="chunk.d"
+            :fill="chunk.color"
+            :id="chunk.id"
+            class="emission__chunks"
+            :class="{ inactive: chunk.active != step }"
+          />
+        </g>
+        <dragline
+          v-if="step > 3"
+          :width="this.innerWidth"
+          :margin="margin"
+          :height="this.innerHeight"
+          :scales="scales"
+          :data="subsectorsDataActive"
+        />
+      </g>
+    </svg>
+  </div>
+</template>
+
+<script>
+// Libraries
+import * as d3 from 'd3'
+
+import { group, groups, rollup, rollups } from 'd3-array'
+
+// components
+import Dragline from './subcomponents/Dragline.vue'
+
+// Data
+import EmissionData from '../assets/data/emissions-merged.json'
+import HistoricalEmissions from '../assets/data/emissions_historical.json'
+
+// merge data into one file
+// function merge (){
+//   const merged = emissionsData.map(e => {
+//     console.log(e.Year)
+
+//     return {
+//       ...emissionsData.find(d => d.Year === e.Year),
+//       ...subEmissionsData.find(d => d.Year === e.Year),
+//       ...ApplicationsShare.find(d => d.Year === e.Year)
+//     }
+//   })
+//   console.log(JSON.stringify(merged))
+// }
+// merge()
+
+export default {
+  name: 'EmissionsChart',
+  components: {
+    Dragline
+  },
+  props: {
+    width: {
+      type: Number,
+      required: true
+    },
+    height: {
+      type: Number,
+      required: true
+    },
+    step: {
+      type: Number,
+      default: 0
+    }
+  },
+  data () {
+    return {
+      margin: {
+        left: 70,
+        top: 30,
+        bottom: 30,
+        right: 30
+      }
+    }
+  },
+  watch: {
+    step: function (step) {
+      console.log(step, this.width, this.height)
+    }
+  },
+  computed: {
+    innerWidth () {
+      return this.width - this.margin.left - this.margin.right
+    },
+    innerHeight () {
+      return this.height - this.margin.top - this.margin.bottom
+    },
+    maxYear: function () {
+      return this.step >= 2 ? 2015 : 2080
+    },
+    lineData: function () {
+      // other way of doing it:
+      // const data = HistoricalEmissions.filter(d => d.Year <= this.maxYear)
+      // const reduced = rollups(data, v => d3.sum(v, d => d.Value), d => d.Year)
+      // console.log('lineData', data, reduced)
+      return EmissionData.filter(d => d.Year <= this.maxYear).map(d => [
+        d.Year,
+        d.Emissions
+      ])
+    },
+    linePath () {
+      return d3
+        .line()
+        .x(d => {
+          return this.scales.x(d[0])
+        })
+        .y(d => {
+          return this.scales.y(d[1])
+        })
+        .curve(d3.curveLinear)(this.lineData)
+    },
+    scales () {
+      return {
+        x: d3
+          .scaleLinear()
+          .domain([1990, this.maxYear])
+          .rangeRound([0, this.innerWidth]),
+        y: d3
+          .scaleLinear()
+          .domain([0, 40000000])
+          .rangeRound([this.innerHeight, 0])
+      }
+    },
+    subsectors: function () {
+      return [
+        { key: 'Public', color: '#33121c', active: 3.1 },
+        { key: 'Autoproduced', color: '#33121c', active: 3.1 },
+        { key: 'OtherEn', color: '#611731', active: 3.2 },
+        { key: 'Combustion', color: '#931547', active: 3.3 },
+        { key: 'Production', color: '#931547', active: 3.3 },
+        { key: 'Solvents', color: '#931547', active: 3.3 },
+        { key: 'OtherProc', color: '#931547', active: 3.3 },
+        { key: 'IndWaste', color: '#931547', active: 3.3 },
+        { key: 'Aviation', color: '#dd5f84', active: 3.4 },
+        { key: 'Road', color: '#dd5f84', active: 3.4 },
+        { key: 'Other', color: '#dd5f84', active: 3.4 },
+        { key: 'Shipping', color: '#dd5f84', active: 3.4 },
+        { key: 'CommRes', color: '#ed96ab', active: 3.5 },
+        { key: 'Agriculture', color: '#ed96ab', active: 3.5 }
+      ]
+    },
+    applications: function () {
+      return [
+        { key: 'Electricity', color: '#33121c', active: 3.1 },
+        { key: 'OtherEnergy', color: '#611731', active: 3.1 },
+        { key: 'Industry', color: '#931547', active: 3.1 },
+        { key: 'Transports', color: '#dd5f84', active: 3.1 },
+        { key: 'Building', color: '#ed96ab', active: 3.1 }
+      ]
+    },
+
+    applicationsData: function () {
+      const stacked = d3.stack().keys(this.applications.map(d => d.key))(
+        EmissionData
+      )
+
+      return stacked.map((d, i) => ({
+        d: this.areaGenerator(d),
+        color: this.applications[i].color,
+        id: this.applications[i].key
+      }))
+    },
+    subsectorsData: function () {
+      const stacked = d3.stack().keys(this.subsectors.map(d => d.key))(
+        EmissionData
+      )
+
+      return stacked.map((d, i) => ({
+        d: this.areaGenerator(d),
+        color: this.subsectors[i].color,
+        id: this.subsectors[i].key,
+        active: this.subsectors[i].active,
+        data: d
+      }))
+    },
+    subsectorsDataActive: function () {
+      return this.subsectorsData.filter(d => d.active === this.step)
+    },
+    areaGenerator: function () {
+      const { x, y } = this.scales
+      return d3
+        .area()
+        .x(d => x(d.data.Year))
+        .curve(d3.curveLinear)
+        .y0(d => y(d[0]))
+        .y1(d => y(d[1]))
+    }
+  },
+  directives: {
+    axis (el, binding) {
+      const axis = binding.arg
+      // console.log("axis", axis);
+      const axisMethod = { x: 'axisBottom', y: 'axisLeft' }[axis]
+      const tickFormat = { x: d3.format('d'), y: d3.format('.2s') }[axis]
+      const methodArg = binding.value[axis]
+
+      d3.select(el)
+        .transition()
+        .duration(1000)
+        .call(d3[axisMethod](methodArg).tickFormat(tickFormat))
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+@import "library/src/style/variables.scss";
+.visualization {
+  width: inherit;
+  height: inherit;
+}
+
+#emissions {
+  stroke: $color-red;
+  fill: none;
+}
+
+.emission__chunks {
+  stroke: $color-red;
+}
+
+.subsectorsData {
+  .inactive {
+    display: none;
+  }
+}
+
+.applicationsData {
+  .inactive {
+    fill: none;
+  }
+}
+</style>

@@ -1,0 +1,324 @@
+[
+  {
+    "Application": "1A4a_Commercial-institutional",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 850780.745,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A4b_Residential",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 1984965.0480000002,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A4c_Agriculture-forestry-fishing",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 454170.206,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A1a_Electricity-autoproducer",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 505629.7279999999
+  },
+  {
+    "Application": "1A1a_Electricity-public",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 10152960.38
+  },
+  {
+    "Application": "2A1_Cement-production",
+    "Industry": 1978908.215,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2A2_Lime-production",
+    "Industry": 218152.5432,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2A6_Other-minerals",
+    "Industry": 68625.27699,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2B_Chemical-industry",
+    "Industry": 413826.9187,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2C_Metal-production",
+    "Industry": 297870.4931,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2D_Degreasing-Cleaning",
+    "Industry": 3022.243164,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2D_Paint-application",
+    "Industry": 25004.10171,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2D3_Chemical-products-manufacture-processing",
+    "Industry": 4814.165428,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2D3_Other-product-use",
+    "Industry": 17728.65906,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2H_Pulp-and-paper-food-beverage-wood",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "2L_Other-process-emissions",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "3B_Manure-management",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "5C_Waste-incineration",
+    "Industry": 130427.9501,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "6A_Other-in-total",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A5_Other-unspecified",
+    "Industry": 178362.8056,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2a_Ind-Comb-Iron-steel",
+    "Industry": 1236872.841,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2b_Ind-Comb-Non-ferrous-metals",
+    "Industry": 132217.6759,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2c_Ind-Comb-Chemicals",
+    "Industry": 747241.5565,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2d_Ind-Comb-Pulp-paper",
+    "Industry": 163595.55,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2e_Ind-Comb-Food-tobacco",
+    "Industry": 256214.7383,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2f_Ind-Comb-Non-metalic-minerals",
+    "Industry": 1317631.0159999998,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2g_Ind-Comb-Construction",
+    "Industry": 134814.7563,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2g_Ind-Comb-machinery",
+    "Industry": 157955.4565,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2g_Ind-Comb-mining-quarying",
+    "Industry": 131956.451,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2g_Ind-Comb-other",
+    "Industry": 1332627.014,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2g_Ind-Comb-textile-leather",
+    "Industry": 78763.13053,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2g_Ind-Comb-transpequip",
+    "Industry": 59920.82494,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A2g_Ind-Comb-wood-products",
+    "Industry": 24163.44389,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A1a_Heat-production",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A1bc_Other-transformation",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1B1_Fugitive-solid-fuels",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1B2_Fugitive-petr-and-gas",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1B2d_Fugitive-other-energy",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "7A_Fossil-fuel-fires",
+    "Industry": 0,
+    "Transport": 0,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A3ai_International-aviation",
+    "Industry": 0,
+    "Transport": 480541.1644,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A3aii_Domestic-aviation",
+    "Industry": 0,
+    "Transport": 284001.0208,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A3b_Road",
+    "Industry": 0,
+    "Transport": 5758562.252,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A3c_Rail",
+    "Industry": 0,
+    "Transport": 111552.6337,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A3di_International-shipping",
+    "Industry": 0,
+    "Transport": 1006846.09,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A3dii_Domestic-navigation",
+    "Industry": 0,
+    "Transport": 163585.7792,
+    "Building": 0,
+    "Electricity": 0
+  },
+  {
+    "Application": "1A3eii_Other-transp",
+    "Industry": 0,
+    "Transport": 58367.35583,
+    "Building": 0,
+    "Electricity": 0
+  }
+]

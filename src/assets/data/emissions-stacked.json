@@ -1,0 +1,210 @@
+[
+  {
+    "Year": 1990,
+    "Electricity": 5175080.142,
+    "OtherEnergy": 3660792.615,
+    "Industry": 5977391.216,
+    "Building": 3121213.982,
+    "Transports": 4736761.255
+  },
+  {
+    "Year": 1991,
+    "Electricity": 5250247.257,
+    "OtherEnergy": 3670110.664,
+    "Industry": 5812625.987,
+    "Building": 3163392.765,
+    "Transports": 4787026.489
+  },
+  {
+    "Year": 1992,
+    "Electricity": 5403652.428,
+    "OtherEnergy": 3570325.499,
+    "Industry": 5595436.428,
+    "Building": 3062688.491,
+    "Transports": 4889265.176
+  },
+  {
+    "Year": 1993,
+    "Electricity": 5566614.903,
+    "OtherEnergy": 3608088.264,
+    "Industry": 5515334.797,
+    "Building": 3039311.517,
+    "Transports": 4966013.2
+  },
+  {
+    "Year": 1994,
+    "Electricity": 5703511.361,
+    "OtherEnergy": 3647865.992,
+    "Industry": 5509827.378,
+    "Building": 2926370.945,
+    "Transports": 5078817.489
+  },
+  {
+    "Year": 1995,
+    "Electricity": 5885601.447,
+    "OtherEnergy": 3666490.885,
+    "Industry": 5624464.467,
+    "Building": 2982563.994,
+    "Transports": 5210469.368
+  },
+  {
+    "Year": 1996,
+    "Electricity": 6150502.024,
+    "OtherEnergy": 3795090.914,
+    "Industry": 5478017.035,
+    "Building": 3012957.75,
+    "Transports": 5424031.949
+  },
+  {
+    "Year": 1997,
+    "Electricity": 6318131.797,
+    "OtherEnergy": 3742407.964,
+    "Industry": 5494573.859,
+    "Building": 3000402.32,
+    "Transports": 5536656.95
+  },
+  {
+    "Year": 1998,
+    "Electricity": 6553811.166,
+    "OtherEnergy": 3654724.666,
+    "Industry": 5453789.657,
+    "Building": 2851179.182,
+    "Transports": 5636881.582
+  },
+  {
+    "Year": 1999,
+    "Electricity": 6583018.15,
+    "OtherEnergy": 3760655.023,
+    "Industry": 5374251.023,
+    "Building": 2895555.391,
+    "Transports": 5796602.981
+  },
+  {
+    "Year": 2000,
+    "Electricity": 6948382.221,
+    "OtherEnergy": 3754412.361,
+    "Industry": 5633453.658,
+    "Building": 2912932.391,
+    "Transports": 6010460.752
+  },
+  {
+    "Year": 2001,
+    "Electricity": 7084783.194,
+    "OtherEnergy": 3725034.884,
+    "Industry": 5635761.739,
+    "Building": 2958538.482,
+    "Transports": 6089753.118
+  },
+  {
+    "Year": 2002,
+    "Electricity": 7370231.31,
+    "OtherEnergy": 3765323.861,
+    "Industry": 5715042.861,
+    "Building": 2951480.078,
+    "Transports": 6207968.555
+  },
+  {
+    "Year": 2003,
+    "Electricity": 7759044.29,
+    "OtherEnergy": 4024496.809,
+    "Industry": 6025147.834,
+    "Building": 3037505.671,
+    "Transports": 6361177.101
+  },
+  {
+    "Year": 2004,
+    "Electricity": 8175423.346,
+    "OtherEnergy": 4122743.442,
+    "Industry": 6538848.962,
+    "Building": 3117048.786,
+    "Transports": 6674950.98
+  },
+  {
+    "Year": 2005,
+    "Electricity": 8546771.669,
+    "OtherEnergy": 4225818.586,
+    "Industry": 6824965.898,
+    "Building": 3144221.095,
+    "Transports": 6916387.015
+  },
+  {
+    "Year": 2006,
+    "Electricity": 8904125.279,
+    "OtherEnergy": 4261357.254,
+    "Industry": 7222528.268,
+    "Building": 3120192.417,
+    "Transports": 7119731.45
+  },
+  {
+    "Year": 2007,
+    "Electricity": 9431971.434,
+    "OtherEnergy": 4351367.189,
+    "Industry": 7534488.258,
+    "Building": 3119753.022,
+    "Transports": 7374021.04
+  },
+  {
+    "Year": 2008,
+    "Electricity": 9414516.018,
+    "OtherEnergy": 4332881.78,
+    "Industry": 7638313.827,
+    "Building": 3172836.742,
+    "Transports": 7443573.439
+  },
+  {
+    "Year": 2009,
+    "Electricity": 9377180.163,
+    "OtherEnergy": 4192979.544,
+    "Industry": 7581445.533,
+    "Building": 3143501.47,
+    "Transports": 7164128.478
+  },
+  {
+    "Year": 2010,
+    "Electricity": 9846923.472,
+    "OtherEnergy": 4423475.784,
+    "Industry": 8054112.658,
+    "Building": 3222178.655,
+    "Transports": 7343707.228
+  },
+  {
+    "Year": 2011,
+    "Electricity": 10270428.21,
+    "OtherEnergy": 4508095.472,
+    "Industry": 8395846.946,
+    "Building": 3185978.039,
+    "Transports": 7557642.601
+  },
+  {
+    "Year": 2012,
+    "Electricity": 10421284.34,
+    "OtherEnergy": 4630495.768,
+    "Industry": 8608661.792,
+    "Building": 3171768.848,
+    "Transports": 7564663.128
+  },
+  {
+    "Year": 2013,
+    "Electricity": 10713176.13,
+    "OtherEnergy": 4788244.943,
+    "Industry": 8977705.672,
+    "Building": 3259394.288,
+    "Transports": 7657818.664
+  },
+  {
+    "Year": 2014,
+    "Electricity": 10808433.97,
+    "OtherEnergy": 4745555.548,
+    "Industry": 9101954.934,
+    "Building": 3244394.693,
+    "Transports": 7715237.58
+  },
+  {
+    "Year": 2015,
+    "Electricity": 10658590.11,
+    "OtherEnergy": 4712606.07,
+    "Industry": 9110717.827,
+    "Building": 3289915.999,
+    "Transports": 7863456.296
+  }
+]

@@ -1,0 +1,7178 @@
+[
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 228510,
+    "Year": 1990
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 4946570,
+    "Year": 1990
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1842050,
+    "Year": 1990
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1387162,
+    "Year": 1990
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 74479,
+    "Year": 1990
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 309583,
+    "Year": 1990
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1990
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 503241,
+    "Year": 1990
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 140598,
+    "Year": 1990
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 79597,
+    "Year": 1990
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 247778,
+    "Year": 1990
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 279007,
+    "Year": 1990
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 4262,
+    "Year": 1990
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 17599,
+    "Year": 1990
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3638,
+    "Year": 1990
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 23495,
+    "Year": 1990
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1990
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1990
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1990
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 29019,
+    "Year": 1990
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1990
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1990
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 793098,
+    "Year": 1990
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1867738,
+    "Year": 1990
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 460378,
+    "Year": 1990
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 165643,
+    "Year": 1990
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 833584,
+    "Year": 1990
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 124384,
+    "Year": 1990
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 603716,
+    "Year": 1990
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 155426,
+    "Year": 1990
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 269961,
+    "Year": 1990
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 541630,
+    "Year": 1990
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 176032,
+    "Year": 1990
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 208309,
+    "Year": 1990
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 78712,
+    "Year": 1990
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1335345,
+    "Year": 1990
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 109894,
+    "Year": 1990
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 18640,
+    "Year": 1990
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 27881,
+    "Year": 1990
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 244416,
+    "Year": 1990
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 267995,
+    "Year": 1990
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 3310398,
+    "Year": 1990
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 150432,
+    "Year": 1990
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 555564,
+    "Year": 1990
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 122129,
+    "Year": 1990
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 85826,
+    "Year": 1990
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 243998,
+    "Year": 1991
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 5006249,
+    "Year": 1991
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1932620,
+    "Year": 1991
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1288640,
+    "Year": 1991
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 71534,
+    "Year": 1991
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 302998,
+    "Year": 1991
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1991
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 519350,
+    "Year": 1991
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 142548,
+    "Year": 1991
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 68990,
+    "Year": 1991
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 246499,
+    "Year": 1991
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 258490,
+    "Year": 1991
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 4149,
+    "Year": 1991
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 17438,
+    "Year": 1991
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3645,
+    "Year": 1991
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 22559,
+    "Year": 1991
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1991
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1991
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1991
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 32261,
+    "Year": 1991
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1991
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 74319,
+    "Year": 1991
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 800504,
+    "Year": 1991
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1909573,
+    "Year": 1991
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 453316,
+    "Year": 1991
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 185178,
+    "Year": 1991
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 756576,
+    "Year": 1991
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 119159,
+    "Year": 1991
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 613175,
+    "Year": 1991
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 154812,
+    "Year": 1991
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 263322,
+    "Year": 1991
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 545579,
+    "Year": 1991
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 137748,
+    "Year": 1991
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 200174,
+    "Year": 1991
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 70157,
+    "Year": 1991
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1299684,
+    "Year": 1991
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 107924,
+    "Year": 1991
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 17578,
+    "Year": 1991
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 25629,
+    "Year": 1991
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 237490,
+    "Year": 1991
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 258494,
+    "Year": 1991
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 3360482,
+    "Year": 1991
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 141702,
+    "Year": 1991
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 592391,
+    "Year": 1991
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 112290,
+    "Year": 1991
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 84177,
+    "Year": 1991
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 251816,
+    "Year": 1992
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 5151837,
+    "Year": 1992
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1934630,
+    "Year": 1992
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1209387,
+    "Year": 1992
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 66320,
+    "Year": 1992
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 312469,
+    "Year": 1992
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1992
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 549960,
+    "Year": 1992
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 150967,
+    "Year": 1992
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 69223,
+    "Year": 1992
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 249033,
+    "Year": 1992
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 252441,
+    "Year": 1992
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 4178,
+    "Year": 1992
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 17601,
+    "Year": 1992
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3937,
+    "Year": 1992
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 27637,
+    "Year": 1992
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1992
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1992
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1992
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 36975,
+    "Year": 1992
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1992
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1992
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 737749,
+    "Year": 1992
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1882562,
+    "Year": 1992
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 442377,
+    "Year": 1992
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 157545,
+    "Year": 1992
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 702190,
+    "Year": 1992
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 111474,
+    "Year": 1992
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 561523,
+    "Year": 1992
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 141492,
+    "Year": 1992
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 243559,
+    "Year": 1992
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 551754,
+    "Year": 1992
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 121915,
+    "Year": 1992
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 195274,
+    "Year": 1992
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 69590,
+    "Year": 1992
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1226328,
+    "Year": 1992
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 109078,
+    "Year": 1992
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 17168,
+    "Year": 1992
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 24593,
+    "Year": 1992
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 247937,
+    "Year": 1992
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 254059,
+    "Year": 1992
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 3451628,
+    "Year": 1992
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 134209,
+    "Year": 1992
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 614843,
+    "Year": 1992
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 116782,
+    "Year": 1992
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 69807,
+    "Year": 1992
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 255026,
+    "Year": 1993
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 5311589,
+    "Year": 1993
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1926897,
+    "Year": 1993
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1273102,
+    "Year": 1993
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 49315,
+    "Year": 1993
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 311255,
+    "Year": 1993
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1993
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 582959,
+    "Year": 1993
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 158345,
+    "Year": 1993
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 58244,
+    "Year": 1993
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 248031,
+    "Year": 1993
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 239318,
+    "Year": 1993
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 4125,
+    "Year": 1993
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 17722,
+    "Year": 1993
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3894,
+    "Year": 1993
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 25641,
+    "Year": 1993
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1993
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1993
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1993
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 40876,
+    "Year": 1993
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1993
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1993
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 704452,
+    "Year": 1993
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1915404,
+    "Year": 1993
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 419455,
+    "Year": 1993
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 195929,
+    "Year": 1993
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 656027,
+    "Year": 1993
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 106121,
+    "Year": 1993
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 545444,
+    "Year": 1993
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 144495,
+    "Year": 1993
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 230797,
+    "Year": 1993
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 567074,
+    "Year": 1993
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 119137,
+    "Year": 1993
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 165647,
+    "Year": 1993
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 68321,
+    "Year": 1993
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1174605,
+    "Year": 1993
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 106166,
+    "Year": 1993
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 32786,
+    "Year": 1993
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 23628,
+    "Year": 1993
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 254166,
+    "Year": 1993
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 253219,
+    "Year": 1993
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 3534699,
+    "Year": 1993
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 120429,
+    "Year": 1993
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 639449,
+    "Year": 1993
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 117002,
+    "Year": 1993
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 47049,
+    "Year": 1993
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 256359,
+    "Year": 1994
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 5447152,
+    "Year": 1994
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1937136,
+    "Year": 1994
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1288669,
+    "Year": 1994
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 73530,
+    "Year": 1994
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 301012,
+    "Year": 1994
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1994
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 624323,
+    "Year": 1994
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 160479,
+    "Year": 1994
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 54119,
+    "Year": 1994
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 258528,
+    "Year": 1994
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 237806,
+    "Year": 1994
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3967,
+    "Year": 1994
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 17742,
+    "Year": 1994
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3894,
+    "Year": 1994
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 25095,
+    "Year": 1994
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1994
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1994
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1994
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 45877,
+    "Year": 1994
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1994
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1994
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 697253,
+    "Year": 1994
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1811315,
+    "Year": 1994
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 417803,
+    "Year": 1994
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 194202,
+    "Year": 1994
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 641311,
+    "Year": 1994
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 98673,
+    "Year": 1994
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 562707,
+    "Year": 1994
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 147474,
+    "Year": 1994
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 218216,
+    "Year": 1994
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 598445,
+    "Year": 1994
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 106139,
+    "Year": 1994
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 157737,
+    "Year": 1994
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 68745,
+    "Year": 1994
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1126574,
+    "Year": 1994
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 107755,
+    "Year": 1994
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 32246,
+    "Year": 1994
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 17774,
+    "Year": 1994
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 268988,
+    "Year": 1994
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 262080,
+    "Year": 1994
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 3626089,
+    "Year": 1994
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 106164,
+    "Year": 1994
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 667127,
+    "Year": 1994
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 107638,
+    "Year": 1994
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 40732,
+    "Year": 1994
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 268436,
+    "Year": 1995
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 5617165,
+    "Year": 1995
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1904807,
+    "Year": 1995
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1339675,
+    "Year": 1995
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 63295,
+    "Year": 1995
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 311195,
+    "Year": 1995
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1995
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 665843,
+    "Year": 1995
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 161472,
+    "Year": 1995
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 61021,
+    "Year": 1995
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 273771,
+    "Year": 1995
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 283409,
+    "Year": 1995
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3901,
+    "Year": 1995
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 17663,
+    "Year": 1995
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3646,
+    "Year": 1995
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 17842,
+    "Year": 1995
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1995
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1995
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1995
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 50706,
+    "Year": 1995
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1995
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1995
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 715482,
+    "Year": 1995
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1842127,
+    "Year": 1995
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 424955,
+    "Year": 1995
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 149890,
+    "Year": 1995
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 670559,
+    "Year": 1995
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 115794,
+    "Year": 1995
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 628943,
+    "Year": 1995
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 204963,
+    "Year": 1995
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 264510,
+    "Year": 1995
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 673785,
+    "Year": 1995
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 101660,
+    "Year": 1995
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 178976,
+    "Year": 1995
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 73479,
+    "Year": 1995
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 819761,
+    "Year": 1995
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 128624,
+    "Year": 1995
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 44872,
+    "Year": 1995
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 29376,
+    "Year": 1995
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 279982,
+    "Year": 1995
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 264684,
+    "Year": 1995
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 3741222,
+    "Year": 1995
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 100767,
+    "Year": 1995
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 686259,
+    "Year": 1995
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 111140,
+    "Year": 1995
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 26415,
+    "Year": 1995
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 274459,
+    "Year": 1996
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 5876043,
+    "Year": 1996
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1999209,
+    "Year": 1996
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1356660,
+    "Year": 1996
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 60263,
+    "Year": 1996
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 331439,
+    "Year": 1996
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1996
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 687487,
+    "Year": 1996
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 160987,
+    "Year": 1996
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 57617,
+    "Year": 1996
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 281304,
+    "Year": 1996
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 205460,
+    "Year": 1996
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3429,
+    "Year": 1996
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 18042,
+    "Year": 1996
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3746,
+    "Year": 1996
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 18446,
+    "Year": 1996
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1996
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1996
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1996
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 55850,
+    "Year": 1996
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1996
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1996
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 764073,
+    "Year": 1996
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1852031,
+    "Year": 1996
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 396854,
+    "Year": 1996
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 125694,
+    "Year": 1996
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 620031,
+    "Year": 1996
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 114479,
+    "Year": 1996
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 631088,
+    "Year": 1996
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 200516,
+    "Year": 1996
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 250940,
+    "Year": 1996
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 659733,
+    "Year": 1996
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 98495,
+    "Year": 1996
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 177083,
+    "Year": 1996
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 73260,
+    "Year": 1996
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 848832,
+    "Year": 1996
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 113196,
+    "Year": 1996
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 44426,
+    "Year": 1996
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 27876,
+    "Year": 1996
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 290451,
+    "Year": 1996
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 279631,
+    "Year": 1996
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 3922281,
+    "Year": 1996
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 102848,
+    "Year": 1996
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 674141,
+    "Year": 1996
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 140259,
+    "Year": 1996
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 14420,
+    "Year": 1996
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 322837,
+    "Year": 1997
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 5995294,
+    "Year": 1997
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1912909,
+    "Year": 1997
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1371281,
+    "Year": 1997
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 82804,
+    "Year": 1997
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 327895,
+    "Year": 1997
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1997
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 705415,
+    "Year": 1997
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 162357,
+    "Year": 1997
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 57041,
+    "Year": 1997
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 285512,
+    "Year": 1997
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 217506,
+    "Year": 1997
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3464,
+    "Year": 1997
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 18818,
+    "Year": 1997
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3727,
+    "Year": 1997
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 16697,
+    "Year": 1997
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1997
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1997
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1997
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 60485,
+    "Year": 1997
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1997
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1997
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 721974,
+    "Year": 1997
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1861386,
+    "Year": 1997
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 417042,
+    "Year": 1997
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 119859,
+    "Year": 1997
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 634823,
+    "Year": 1997
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 111638,
+    "Year": 1997
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 590226,
+    "Year": 1997
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 195079,
+    "Year": 1997
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 249610,
+    "Year": 1997
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 661697,
+    "Year": 1997
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 92948,
+    "Year": 1997
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 162436,
+    "Year": 1997
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 72436,
+    "Year": 1997
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 886801,
+    "Year": 1997
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 111572,
+    "Year": 1997
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 45406,
+    "Year": 1997
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 29023,
+    "Year": 1997
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 307488,
+    "Year": 1997
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 284955,
+    "Year": 1997
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 3972417,
+    "Year": 1997
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 95868,
+    "Year": 1997
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 736269,
+    "Year": 1997
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 127454,
+    "Year": 1997
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 12206,
+    "Year": 1997
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 340646,
+    "Year": 1998
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 6213165,
+    "Year": 1998
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1866820,
+    "Year": 1998
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1363608,
+    "Year": 1998
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 59797,
+    "Year": 1998
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 316980,
+    "Year": 1998
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1998
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 703006,
+    "Year": 1998
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 162190,
+    "Year": 1998
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 56254,
+    "Year": 1998
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 286937,
+    "Year": 1998
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 213923,
+    "Year": 1998
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3027,
+    "Year": 1998
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 19461,
+    "Year": 1998
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3674,
+    "Year": 1998
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 15867,
+    "Year": 1998
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1998
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1998
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1998
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 64409,
+    "Year": 1998
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1998
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1998
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 696729,
+    "Year": 1998
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1753740,
+    "Year": 1998
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 400711,
+    "Year": 1998
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 108680,
+    "Year": 1998
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 624147,
+    "Year": 1998
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 115711,
+    "Year": 1998
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 576202,
+    "Year": 1998
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 185920,
+    "Year": 1998
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 250837,
+    "Year": 1998
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 667242,
+    "Year": 1998
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 85601,
+    "Year": 1998
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 151733,
+    "Year": 1998
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 74143,
+    "Year": 1998
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 896051,
+    "Year": 1998
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 113041,
+    "Year": 1998
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 46828,
+    "Year": 1998
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 28904,
+    "Year": 1998
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 319040,
+    "Year": 1998
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 286960,
+    "Year": 1998
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4070775,
+    "Year": 1998
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 91763,
+    "Year": 1998
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 733085,
+    "Year": 1998
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 119848,
+    "Year": 1998
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 15411,
+    "Year": 1998
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 338845,
+    "Year": 1999
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 6244173,
+    "Year": 1999
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1899036,
+    "Year": 1999
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1446491,
+    "Year": 1999
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 61952,
+    "Year": 1999
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 305656,
+    "Year": 1999
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 1999
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 733906,
+    "Year": 1999
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 161378,
+    "Year": 1999
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 57659,
+    "Year": 1999
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 300175,
+    "Year": 1999
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 212253,
+    "Year": 1999
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3253,
+    "Year": 1999
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 19905,
+    "Year": 1999
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3682,
+    "Year": 1999
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 15366,
+    "Year": 1999
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1999
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1999
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1999
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 69651,
+    "Year": 1999
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 1999
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 1999
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 717022,
+    "Year": 1999
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1790518,
+    "Year": 1999
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 388016,
+    "Year": 1999
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 122351,
+    "Year": 1999
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 584776,
+    "Year": 1999
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 128373,
+    "Year": 1999
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 553019,
+    "Year": 1999
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 172940,
+    "Year": 1999
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 234030,
+    "Year": 1999
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 635138,
+    "Year": 1999
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 83756,
+    "Year": 1999
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 139138,
+    "Year": 1999
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 67747,
+    "Year": 1999
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 895771,
+    "Year": 1999
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 103504,
+    "Year": 1999
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 48339,
+    "Year": 1999
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 28141,
+    "Year": 1999
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 332904,
+    "Year": 1999
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 295287,
+    "Year": 1999
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4184652,
+    "Year": 1999
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 89907,
+    "Year": 1999
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 741637,
+    "Year": 1999
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 135397,
+    "Year": 1999
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 16820,
+    "Year": 1999
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 311804,
+    "Year": 2000
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 6636579,
+    "Year": 2000
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1906691,
+    "Year": 2000
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1409562,
+    "Year": 2000
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 59107,
+    "Year": 2000
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 331532,
+    "Year": 2000
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2000
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 764350,
+    "Year": 2000
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 162739,
+    "Year": 2000
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 57647,
+    "Year": 2000
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 311323,
+    "Year": 2000
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 219004,
+    "Year": 2000
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3156,
+    "Year": 2000
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 20268,
+    "Year": 2000
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3881,
+    "Year": 2000
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 15498,
+    "Year": 2000
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2000
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2000
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2000
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 75235,
+    "Year": 2000
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2000
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2000
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 725014,
+    "Year": 2000
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1822060,
+    "Year": 2000
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 365859,
+    "Year": 2000
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 133147,
+    "Year": 2000
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 618503,
+    "Year": 2000
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 128400,
+    "Year": 2000
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 623156,
+    "Year": 2000
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 198726,
+    "Year": 2000
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 239589,
+    "Year": 2000
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 719649,
+    "Year": 2000
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 84379,
+    "Year": 2000
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 141774,
+    "Year": 2000
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 72460,
+    "Year": 2000
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 847505,
+    "Year": 2000
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 110767,
+    "Year": 2000
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 56281,
+    "Year": 2000
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 26015,
+    "Year": 2000
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 347376,
+    "Year": 2000
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 308323,
+    "Year": 2000
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4289698,
+    "Year": 2000
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 98436,
+    "Year": 2000
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 812932,
+    "Year": 2000
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 137137,
+    "Year": 2000
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 16558,
+    "Year": 2000
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 317030,
+    "Year": 2001
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 6767753,
+    "Year": 2001
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1905216,
+    "Year": 2001
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1390803,
+    "Year": 2001
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 59084,
+    "Year": 2001
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 322413,
+    "Year": 2001
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2001
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 808041,
+    "Year": 2001
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 163229,
+    "Year": 2001
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 57201,
+    "Year": 2001
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 306281,
+    "Year": 2001
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 209166,
+    "Year": 2001
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3144,
+    "Year": 2001
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 20807,
+    "Year": 2001
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3915,
+    "Year": 2001
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 15646,
+    "Year": 2001
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2001
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2001
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2001
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 78328,
+    "Year": 2001
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2001
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2001
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 743899,
+    "Year": 2001
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1852138,
+    "Year": 2001
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 362501,
+    "Year": 2001
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 150207,
+    "Year": 2001
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 602012,
+    "Year": 2001
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 117857,
+    "Year": 2001
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 603375,
+    "Year": 2001
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 191896,
+    "Year": 2001
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 240610,
+    "Year": 2001
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 716688,
+    "Year": 2001
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 85387,
+    "Year": 2001
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 142089,
+    "Year": 2001
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 73496,
+    "Year": 2001
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 858236,
+    "Year": 2001
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 107761,
+    "Year": 2001
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 54321,
+    "Year": 2001
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 26068,
+    "Year": 2001
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 340795,
+    "Year": 2001
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 299754,
+    "Year": 2001
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4369689,
+    "Year": 2001
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 94283,
+    "Year": 2001
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 829811,
+    "Year": 2001
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 135694,
+    "Year": 2001
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 19728,
+    "Year": 2001
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 284966,
+    "Year": 2002
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 7085265,
+    "Year": 2002
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 1960628,
+    "Year": 2002
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1375407,
+    "Year": 2002
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 69605,
+    "Year": 2002
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 312165,
+    "Year": 2002
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2002
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 860889,
+    "Year": 2002
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 164723,
+    "Year": 2002
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 56795,
+    "Year": 2002
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 322216,
+    "Year": 2002
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 216667,
+    "Year": 2002
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2918,
+    "Year": 2002
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 20779,
+    "Year": 2002
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 3970,
+    "Year": 2002
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 15724,
+    "Year": 2002
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2002
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2002
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2002
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 81771,
+    "Year": 2002
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2002
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2002
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 747786,
+    "Year": 2002
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1841626,
+    "Year": 2002
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 362068,
+    "Year": 2002
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 147658,
+    "Year": 2002
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 603767,
+    "Year": 2002
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 113564,
+    "Year": 2002
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 563724,
+    "Year": 2002
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 193678,
+    "Year": 2002
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 245192,
+    "Year": 2002
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 688434,
+    "Year": 2002
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 100031,
+    "Year": 2002
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 142002,
+    "Year": 2002
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 81522,
+    "Year": 2002
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 905847,
+    "Year": 2002
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 104193,
+    "Year": 2002
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 54917,
+    "Year": 2002
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 24059,
+    "Year": 2002
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 360466,
+    "Year": 2002
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 285717,
+    "Year": 2002
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4483416,
+    "Year": 2002
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 95157,
+    "Year": 2002
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 836659,
+    "Year": 2002
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 130510,
+    "Year": 2002
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 16044,
+    "Year": 2002
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 299247,
+    "Year": 2003
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 7459797,
+    "Year": 2003
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2124073,
+    "Year": 2003
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1423075,
+    "Year": 2003
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 87507,
+    "Year": 2003
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 342322,
+    "Year": 2003
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2003
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 946817,
+    "Year": 2003
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 167250,
+    "Year": 2003
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 60323,
+    "Year": 2003
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 331785,
+    "Year": 2003
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 236774,
+    "Year": 2003
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2899,
+    "Year": 2003
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 21344,
+    "Year": 2003
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4036,
+    "Year": 2003
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 15859,
+    "Year": 2003
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2003
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2003
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2003
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 85367,
+    "Year": 2003
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2003
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2003
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 771671,
+    "Year": 2003
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1898349,
+    "Year": 2003
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 367487,
+    "Year": 2003
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 150559,
+    "Year": 2003
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 675046,
+    "Year": 2003
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 117309,
+    "Year": 2003
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 571825,
+    "Year": 2003
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 197427,
+    "Year": 2003
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 243017,
+    "Year": 2003
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 755931,
+    "Year": 2003
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 99923,
+    "Year": 2003
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 138467,
+    "Year": 2003
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 85753,
+    "Year": 2003
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 937975,
+    "Year": 2003
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 103987,
+    "Year": 2003
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 50734,
+    "Year": 2003
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 24740,
+    "Year": 2003
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 359718,
+    "Year": 2003
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 284255,
+    "Year": 2003
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4585402,
+    "Year": 2003
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 101506,
+    "Year": 2003
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 872218,
+    "Year": 2003
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 144448,
+    "Year": 2003
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 13630,
+    "Year": 2003
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 325813,
+    "Year": 2004
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 7849610,
+    "Year": 2004
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2127496,
+    "Year": 2004
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1534052,
+    "Year": 2004
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 86632,
+    "Year": 2004
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 327044,
+    "Year": 2004
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2004
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1022843,
+    "Year": 2004
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 176877,
+    "Year": 2004
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 63091,
+    "Year": 2004
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 353237,
+    "Year": 2004
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 259303,
+    "Year": 2004
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2890,
+    "Year": 2004
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 21956,
+    "Year": 2004
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4105,
+    "Year": 2004
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 16008,
+    "Year": 2004
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2004
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2004
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2004
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 88979,
+    "Year": 2004
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2004
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2004
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 789631,
+    "Year": 2004
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1924882,
+    "Year": 2004
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 402536,
+    "Year": 2004
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 158562,
+    "Year": 2004
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 754393,
+    "Year": 2004
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 126968,
+    "Year": 2004
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 594244,
+    "Year": 2004
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 208715,
+    "Year": 2004
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 255435,
+    "Year": 2004
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 923924,
+    "Year": 2004
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 107054,
+    "Year": 2004
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 142918,
+    "Year": 2004
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 87019,
+    "Year": 2004
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 977207,
+    "Year": 2004
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 113424,
+    "Year": 2004
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 51629,
+    "Year": 2004
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 28068,
+    "Year": 2004
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 387768,
+    "Year": 2004
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 296432,
+    "Year": 2004
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4773050,
+    "Year": 2004
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 105834,
+    "Year": 2004
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 942792,
+    "Year": 2004
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 144846,
+    "Year": 2004
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 24229,
+    "Year": 2004
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 323994,
+    "Year": 2005
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 8222778,
+    "Year": 2005
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2206593,
+    "Year": 2005
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1557334,
+    "Year": 2005
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 70546,
+    "Year": 2005
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 343826,
+    "Year": 2005
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2005
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1103509,
+    "Year": 2005
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 185259,
+    "Year": 2005
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 65760,
+    "Year": 2005
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 363319,
+    "Year": 2005
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 262606,
+    "Year": 2005
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2882,
+    "Year": 2005
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 22459,
+    "Year": 2005
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4110,
+    "Year": 2005
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 16132,
+    "Year": 2005
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2005
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2005
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2005
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 92820,
+    "Year": 2005
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2005
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2005
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 795258,
+    "Year": 2005
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1928016,
+    "Year": 2005
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 420947,
+    "Year": 2005
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 161151,
+    "Year": 2005
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 818113,
+    "Year": 2005
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 118532,
+    "Year": 2005
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 617338,
+    "Year": 2005
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 207190,
+    "Year": 2005
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 253021,
+    "Year": 2005
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 969393,
+    "Year": 2005
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 111979,
+    "Year": 2005
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 144719,
+    "Year": 2005
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 96439,
+    "Year": 2005
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1018562,
+    "Year": 2005
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 108053,
+    "Year": 2005
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 53373,
+    "Year": 2005
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 28246,
+    "Year": 2005
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 412276,
+    "Year": 2005
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 296575,
+    "Year": 2005
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4863662,
+    "Year": 2005
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 113239,
+    "Year": 2005
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1008994,
+    "Year": 2005
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 151575,
+    "Year": 2005
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 70065,
+    "Year": 2005
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 337965,
+    "Year": 2006
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 8566161,
+    "Year": 2006
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2281240,
+    "Year": 2006
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1521602,
+    "Year": 2006
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 84282,
+    "Year": 2006
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 326714,
+    "Year": 2006
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2006
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1224317,
+    "Year": 2006
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 193032,
+    "Year": 2006
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 68494,
+    "Year": 2006
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 374291,
+    "Year": 2006
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 282288,
+    "Year": 2006
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2884,
+    "Year": 2006
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 22913,
+    "Year": 2006
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4148,
+    "Year": 2006
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 16277,
+    "Year": 2006
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2006
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2006
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2006
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 96541,
+    "Year": 2006
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2006
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2006
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 788445,
+    "Year": 2006
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1911268,
+    "Year": 2006
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 420480,
+    "Year": 2006
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 171759,
+    "Year": 2006
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 865604,
+    "Year": 2006
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 121062,
+    "Year": 2006
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 634784,
+    "Year": 2006
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 204736,
+    "Year": 2006
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 256729,
+    "Year": 2006
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1021039,
+    "Year": 2006
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 133559,
+    "Year": 2006
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 153091,
+    "Year": 2006
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 107649,
+    "Year": 2006
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1071225,
+    "Year": 2006
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 108329,
+    "Year": 2006
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 57390,
+    "Year": 2006
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 30387,
+    "Year": 2006
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 425880,
+    "Year": 2006
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 288896,
+    "Year": 2006
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 4964730,
+    "Year": 2006
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 116954,
+    "Year": 2006
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1096957,
+    "Year": 2006
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 158931,
+    "Year": 2006
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 67384,
+    "Year": 2006
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 361787,
+    "Year": 2007
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 9070185,
+    "Year": 2007
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2271176,
+    "Year": 2007
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1629764,
+    "Year": 2007
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 87541,
+    "Year": 2007
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 315367,
+    "Year": 2007
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2007
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1316720,
+    "Year": 2007
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 204073,
+    "Year": 2007
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 69774,
+    "Year": 2007
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 389838,
+    "Year": 2007
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 306027,
+    "Year": 2007
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2879,
+    "Year": 2007
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 23335,
+    "Year": 2007
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4155,
+    "Year": 2007
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 16416,
+    "Year": 2007
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2007
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2007
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2007
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 100551,
+    "Year": 2007
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2007
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2007
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 797734,
+    "Year": 2007
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1904642,
+    "Year": 2007
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 417377,
+    "Year": 2007
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 174082,
+    "Year": 2007
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 931895,
+    "Year": 2007
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 123429,
+    "Year": 2007
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 666788,
+    "Year": 2007
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 196341,
+    "Year": 2007
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 256127,
+    "Year": 2007
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1058764,
+    "Year": 2007
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 131662,
+    "Year": 2007
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 157690,
+    "Year": 2007
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 113410,
+    "Year": 2007
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1096566,
+    "Year": 2007
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 107416,
+    "Year": 2007
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 56573,
+    "Year": 2007
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 29979,
+    "Year": 2007
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 438270,
+    "Year": 2007
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 292961,
+    "Year": 2007
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5124714,
+    "Year": 2007
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 115462,
+    "Year": 2007
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1164439,
+    "Year": 2007
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 169561,
+    "Year": 2007
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 68614,
+    "Year": 2007
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 360979,
+    "Year": 2008
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 9053537,
+    "Year": 2008
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2253493,
+    "Year": 2008
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1630977,
+    "Year": 2008
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 98839,
+    "Year": 2008
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 302054,
+    "Year": 2008
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2008
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1342674,
+    "Year": 2008
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 210609,
+    "Year": 2008
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 68371,
+    "Year": 2008
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 391324,
+    "Year": 2008
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 303678,
+    "Year": 2008
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2876,
+    "Year": 2008
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 23917,
+    "Year": 2008
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4252,
+    "Year": 2008
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 16555,
+    "Year": 2008
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2008
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2008
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2008
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 103835,
+    "Year": 2008
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2008
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47519,
+    "Year": 2008
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 820735,
+    "Year": 2008
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1936007,
+    "Year": 2008
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 416095,
+    "Year": 2008
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 172242,
+    "Year": 2008
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 956767,
+    "Year": 2008
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 121851,
+    "Year": 2008
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 664290,
+    "Year": 2008
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 189637,
+    "Year": 2008
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 254848,
+    "Year": 2008
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1113459,
+    "Year": 2008
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 131867,
+    "Year": 2008
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 156788,
+    "Year": 2008
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 113505,
+    "Year": 2008
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1110818,
+    "Year": 2008
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 96238,
+    "Year": 2008
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 54429,
+    "Year": 2008
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 33485,
+    "Year": 2008
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 441175,
+    "Year": 2008
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 278480,
+    "Year": 2008
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5172469,
+    "Year": 2008
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 105352,
+    "Year": 2008
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1235070,
+    "Year": 2008
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 142258,
+    "Year": 2008
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 68770,
+    "Year": 2008
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 383420,
+    "Year": 2009
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 8993760,
+    "Year": 2009
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2175788,
+    "Year": 2009
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1583144,
+    "Year": 2009
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 99569,
+    "Year": 2009
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 286558,
+    "Year": 2009
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2009
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1440539,
+    "Year": 2009
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 209502,
+    "Year": 2009
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 66370,
+    "Year": 2009
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 386157,
+    "Year": 2009
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 277380,
+    "Year": 2009
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2898,
+    "Year": 2009
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 24087,
+    "Year": 2009
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4309,
+    "Year": 2009
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 16729,
+    "Year": 2009
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2009
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2009
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2009
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 107568,
+    "Year": 2009
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2009
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 47921,
+    "Year": 2009
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 812447,
+    "Year": 2009
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1920670,
+    "Year": 2009
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 410385,
+    "Year": 2009
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 193011,
+    "Year": 2009
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 945571,
+    "Year": 2009
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 121191,
+    "Year": 2009
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 621947,
+    "Year": 2009
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 178639,
+    "Year": 2009
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 246128,
+    "Year": 2009
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1092836,
+    "Year": 2009
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 118776,
+    "Year": 2009
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 151894,
+    "Year": 2009
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 104779,
+    "Year": 2009
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1099004,
+    "Year": 2009
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 88692,
+    "Year": 2009
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 51675,
+    "Year": 2009
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 31764,
+    "Year": 2009
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 420016,
+    "Year": 2009
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 258063,
+    "Year": 2009
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5132232,
+    "Year": 2009
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 93474,
+    "Year": 2009
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1039930,
+    "Year": 2009
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 148356,
+    "Year": 2009
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 72057,
+    "Year": 2009
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 395115,
+    "Year": 2010
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 9451809,
+    "Year": 2010
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2297222,
+    "Year": 2010
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1668736,
+    "Year": 2010
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 100508,
+    "Year": 2010
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 308692,
+    "Year": 2010
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2010
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1561734,
+    "Year": 2010
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 210921,
+    "Year": 2010
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 66968,
+    "Year": 2010
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 394730,
+    "Year": 2010
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 300187,
+    "Year": 2010
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2920,
+    "Year": 2010
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 24252,
+    "Year": 2010
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4482,
+    "Year": 2010
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 16901,
+    "Year": 2010
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2010
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2010
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2010
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 111733,
+    "Year": 2010
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2010
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 48318,
+    "Year": 2010
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 824570,
+    "Year": 2010
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1973017,
+    "Year": 2010
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 424592,
+    "Year": 2010
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 192388,
+    "Year": 2010
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 1068947,
+    "Year": 2010
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 127221,
+    "Year": 2010
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 668468,
+    "Year": 2010
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 184602,
+    "Year": 2010
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 258225,
+    "Year": 2010
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1102135,
+    "Year": 2010
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 110543,
+    "Year": 2010
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 158737,
+    "Year": 2010
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 109055,
+    "Year": 2010
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1201159,
+    "Year": 2010
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 90791,
+    "Year": 2010
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 53540,
+    "Year": 2010
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 33473,
+    "Year": 2010
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 440156,
+    "Year": 2010
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 268732,
+    "Year": 2010
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5341135,
+    "Year": 2010
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 96728,
+    "Year": 2010
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 988633,
+    "Year": 2010
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 146862,
+    "Year": 2010
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 61462,
+    "Year": 2010
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 417687,
+    "Year": 2011
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 9852741,
+    "Year": 2011
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2369732,
+    "Year": 2011
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1675737,
+    "Year": 2011
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 101634,
+    "Year": 2011
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 312283,
+    "Year": 2011
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2011
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1731229,
+    "Year": 2011
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 212693,
+    "Year": 2011
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 67857,
+    "Year": 2011
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 401931,
+    "Year": 2011
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 297363,
+    "Year": 2011
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2941,
+    "Year": 2011
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 24411,
+    "Year": 2011
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4565,
+    "Year": 2011
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 17070,
+    "Year": 2011
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2011
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2011
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2011
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 115758,
+    "Year": 2011
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2011
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 48710,
+    "Year": 2011
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 817894,
+    "Year": 2011
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1937096,
+    "Year": 2011
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 430988,
+    "Year": 2011
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 161849,
+    "Year": 2011
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 1163477,
+    "Year": 2011
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 126636,
+    "Year": 2011
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 697273,
+    "Year": 2011
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 175919,
+    "Year": 2011
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 259728,
+    "Year": 2011
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1184246,
+    "Year": 2011
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 112018,
+    "Year": 2011
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 160544,
+    "Year": 2011
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 112725,
+    "Year": 2011
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1193127,
+    "Year": 2011
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 84369,
+    "Year": 2011
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 56135,
+    "Year": 2011
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 31981,
+    "Year": 2011
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 456131,
+    "Year": 2011
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 272986,
+    "Year": 2011
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5414964,
+    "Year": 2011
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 107775,
+    "Year": 2011
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1092503,
+    "Year": 2011
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 147025,
+    "Year": 2011
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 66259,
+    "Year": 2011
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 455241,
+    "Year": 2012
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 9966043,
+    "Year": 2012
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2454170,
+    "Year": 2012
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1709666,
+    "Year": 2012
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 102318,
+    "Year": 2012
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 315245,
+    "Year": 2012
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2012
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1844369,
+    "Year": 2012
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 214541,
+    "Year": 2012
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 67959,
+    "Year": 2012
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 404462,
+    "Year": 2012
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 292561,
+    "Year": 2012
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2962,
+    "Year": 2012
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 24566,
+    "Year": 2012
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4588,
+    "Year": 2012
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 17238,
+    "Year": 2012
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2012
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2012
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2012
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 120218,
+    "Year": 2012
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2012
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 49096,
+    "Year": 2012
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 816092,
+    "Year": 2012
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1924930,
+    "Year": 2012
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 430746,
+    "Year": 2012
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 182842,
+    "Year": 2012
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 1180101,
+    "Year": 2012
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 124902,
+    "Year": 2012
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 709287,
+    "Year": 2012
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 162744,
+    "Year": 2012
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 250457,
+    "Year": 2012
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1220793,
+    "Year": 2012
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 134702,
+    "Year": 2012
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 152086,
+    "Year": 2012
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 131046,
+    "Year": 2012
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1208482,
+    "Year": 2012
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 77375,
+    "Year": 2012
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 57141,
+    "Year": 2012
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 23239,
+    "Year": 2012
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 460246,
+    "Year": 2012
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 277243,
+    "Year": 2012
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5510176,
+    "Year": 2012
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 106829,
+    "Year": 2012
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 970579,
+    "Year": 2012
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 177749,
+    "Year": 2012
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 61841,
+    "Year": 2012
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 470663,
+    "Year": 2013
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 10242513,
+    "Year": 2013
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2434459,
+    "Year": 2013
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1878706,
+    "Year": 2013
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 103109,
+    "Year": 2013
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 322493,
+    "Year": 2013
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2013
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1969027,
+    "Year": 2013
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 215783,
+    "Year": 2013
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 68191,
+    "Year": 2013
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 407694,
+    "Year": 2013
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 294408,
+    "Year": 2013
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 2982,
+    "Year": 2013
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 24716,
+    "Year": 2013
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4664,
+    "Year": 2013
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 17403,
+    "Year": 2013
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2013
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2013
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2013
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 124004,
+    "Year": 2013
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2013
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 49477,
+    "Year": 2013
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 845280,
+    "Year": 2013
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1968566,
+    "Year": 2013
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 445549,
+    "Year": 2013
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 174603,
+    "Year": 2013
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 1223876,
+    "Year": 2013
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 132572,
+    "Year": 2013
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 748640,
+    "Year": 2013
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 165750,
+    "Year": 2013
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 259525,
+    "Year": 2013
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1296757,
+    "Year": 2013
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 134497,
+    "Year": 2013
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 158287,
+    "Year": 2013
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 130989,
+    "Year": 2013
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1262555,
+    "Year": 2013
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 76715,
+    "Year": 2013
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 59790,
+    "Year": 2013
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 24279,
+    "Year": 2013
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 468297,
+    "Year": 2013
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 277590,
+    "Year": 2013
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5614455,
+    "Year": 2013
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 108722,
+    "Year": 2013
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 971642,
+    "Year": 2013
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 157609,
+    "Year": 2013
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 59504,
+    "Year": 2013
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 488321,
+    "Year": 2014
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 10320113,
+    "Year": 2014
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2380540,
+    "Year": 2014
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1888793,
+    "Year": 2014
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 103878,
+    "Year": 2014
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 322493,
+    "Year": 2014
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2014
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 2020052,
+    "Year": 2014
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 216991,
+    "Year": 2014
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 68413,
+    "Year": 2014
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 410818,
+    "Year": 2014
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 296191,
+    "Year": 2014
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3002,
+    "Year": 2014
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 24862,
+    "Year": 2014
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4739,
+    "Year": 2014
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 17567,
+    "Year": 2014
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2014
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2014
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2014
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 128869,
+    "Year": 2014
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2014
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 49852,
+    "Year": 2014
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 841257,
+    "Year": 2014
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1955808,
+    "Year": 2014
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 447330,
+    "Year": 2014
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 176952,
+    "Year": 2014
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 1234857,
+    "Year": 2014
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 132344,
+    "Year": 2014
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 746066,
+    "Year": 2014
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 163738,
+    "Year": 2014
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 255730,
+    "Year": 2014
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1315605,
+    "Year": 2014
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 133876,
+    "Year": 2014
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 156778,
+    "Year": 2014
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 131412,
+    "Year": 2014
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1301944,
+    "Year": 2014
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 77671,
+    "Year": 2014
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 59260,
+    "Year": 2014
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 24219,
+    "Year": 2014
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 469559,
+    "Year": 2014
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 279888,
+    "Year": 2014
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5656646,
+    "Year": 2014
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 109830,
+    "Year": 2014
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 980650,
+    "Year": 2014
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 159302,
+    "Year": 2014
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 59363,
+    "Year": 2014
+  },
+  {
+    "Application": "Autoproducer",
+    "Sector": "Electricity",
+    "Value": 505630,
+    "Year": 2015
+  },
+  {
+    "Application": "Public",
+    "Sector": "Electricity",
+    "Value": 10152960,
+    "Year": 2015
+  },
+  {
+    "Application": "Heat Production",
+    "Sector": "other energy",
+    "Value": 2329894,
+    "Year": 2015
+  },
+  {
+    "Application": "Other Transformations",
+    "Sector": "other energy",
+    "Value": 1905387,
+    "Year": 2015
+  },
+  {
+    "Application": "Fugitive Solid Fuels",
+    "Sector": "other energy",
+    "Value": 104612,
+    "Year": 2015
+  },
+  {
+    "Application": "Fugitive Petrol and Oil",
+    "Sector": "other energy",
+    "Value": 322493,
+    "Year": 2015
+  },
+  {
+    "Application": "Fugitive Other Energy",
+    "Sector": "other energy",
+    "Value": 0,
+    "Year": 2015
+  },
+  {
+    "Application": "Cement Production",
+    "Sector": "Industry",
+    "Value": 1978908,
+    "Year": 2015
+  },
+  {
+    "Application": "Lime Production",
+    "Sector": "Industry",
+    "Value": 218153,
+    "Year": 2015
+  },
+  {
+    "Application": "Other Minerals",
+    "Sector": "Industry",
+    "Value": 68625,
+    "Year": 2015
+  },
+  {
+    "Application": "Chemical Industry",
+    "Sector": "Industry",
+    "Value": 413827,
+    "Year": 2015
+  },
+  {
+    "Application": "Metal Production",
+    "Sector": "Industry",
+    "Value": 297870,
+    "Year": 2015
+  },
+  {
+    "Application": "Degreasing Cleaning",
+    "Sector": "Industry",
+    "Value": 3022,
+    "Year": 2015
+  },
+  {
+    "Application": "Paint application",
+    "Sector": "Industry",
+    "Value": 25004,
+    "Year": 2015
+  },
+  {
+    "Application": "Chemical products manufacture processing",
+    "Sector": "Industry",
+    "Value": 4814,
+    "Year": 2015
+  },
+  {
+    "Application": "Other Product Use",
+    "Sector": "Industry",
+    "Value": 17729,
+    "Year": 2015
+  },
+  {
+    "Application": "Pulp, Paper, Beverages and Food",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2015
+  },
+  {
+    "Application": "Other Processes",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2015
+  },
+  {
+    "Application": "Manure Management",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2015
+  },
+  {
+    "Application": "Waste Incineration",
+    "Sector": "Industry",
+    "Value": 130428,
+    "Year": 2015
+  },
+  {
+    "Application": "Other",
+    "Sector": "Industry",
+    "Value": 0,
+    "Year": 2015
+  },
+  {
+    "Application": "Fossil Fuel Fires",
+    "Sector": "other energy",
+    "Value": 50219,
+    "Year": 2015
+  },
+  {
+    "Application": "Commercial and Institutional",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 850781,
+    "Year": 2015
+  },
+  {
+    "Application": "Residential",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 1984965,
+    "Year": 2015
+  },
+  {
+    "Application": "Agriculture",
+    "Sector": "Building (Residential and Commercial)",
+    "Value": 454170,
+    "Year": 2015
+  },
+  {
+    "Application": "Other (unspecified)",
+    "Sector": "Industry",
+    "Value": 178363,
+    "Year": 2015
+  },
+  {
+    "Application": "Iron and Steel Combustion",
+    "Sector": "Industry",
+    "Value": 1236873,
+    "Year": 2015
+  },
+  {
+    "Application": "Non Ferrous Metals Combustions",
+    "Sector": "Industry",
+    "Value": 132218,
+    "Year": 2015
+  },
+  {
+    "Application": "Chemicals Combustion",
+    "Sector": "Industry",
+    "Value": 747242,
+    "Year": 2015
+  },
+  {
+    "Application": "Pulp and Paper Combustion",
+    "Sector": "Industry",
+    "Value": 163596,
+    "Year": 2015
+  },
+  {
+    "Application": "Food and Tobacco Combustion",
+    "Sector": "Industry",
+    "Value": 256215,
+    "Year": 2015
+  },
+  {
+    "Application": "Non Metallic Minerals Combustion",
+    "Sector": "Industry",
+    "Value": 1317631,
+    "Year": 2015
+  },
+  {
+    "Application": "Construction Combustion",
+    "Sector": "Industry",
+    "Value": 134815,
+    "Year": 2015
+  },
+  {
+    "Application": "Machinery Combustion",
+    "Sector": "Industry",
+    "Value": 157955,
+    "Year": 2015
+  },
+  {
+    "Application": "Mining/quarying Combustion",
+    "Sector": "Industry",
+    "Value": 131956,
+    "Year": 2015
+  },
+  {
+    "Application": "Other Combustion",
+    "Sector": "Industry",
+    "Value": 1332627,
+    "Year": 2015
+  },
+  {
+    "Application": "Textile/Leather Combustion",
+    "Sector": "Industry",
+    "Value": 78763,
+    "Year": 2015
+  },
+  {
+    "Application": "Transequip Combustion",
+    "Sector": "Industry",
+    "Value": 59921,
+    "Year": 2015
+  },
+  {
+    "Application": "Wood Products Combustion",
+    "Sector": "Industry",
+    "Value": 24163,
+    "Year": 2015
+  },
+  {
+    "Application": "International Aviation",
+    "Sector": "Transport",
+    "Value": 480541,
+    "Year": 2015
+  },
+  {
+    "Application": "Domestic Aviation",
+    "Sector": "Transport",
+    "Value": 284001,
+    "Year": 2015
+  },
+  {
+    "Application": "Road",
+    "Sector": "Transport",
+    "Value": 5758562,
+    "Year": 2015
+  },
+  {
+    "Application": "Rail",
+    "Sector": "Transport",
+    "Value": 111553,
+    "Year": 2015
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1006846,
+    "Year": 2015
+  },
+  {
+    "Application": "Domestic Navigation",
+    "Sector": "Transport",
+    "Value": 163586,
+    "Year": 2015
+  },
+  {
+    "Application": "Other Transports",
+    "Sector": "Transport",
+    "Value": 58367,
+    "Year": 2015
+  }
+]
