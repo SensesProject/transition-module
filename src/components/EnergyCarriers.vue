@@ -1,13 +1,20 @@
 <template>
   <div class="visualization" id="carriers" width="90%">
-    <CountrySelector class="selector" />
-    <svg width="80%" height="100%" :transform="'translate('+ margin.left * 2 + ',0)'">
-      <g :transform="'translate('+ margin.left + ',' + margin.top + ')'">
+      <div v-if="step >= 5" class="regionselect">
+     <SensesSelect
+       class="selector"
+       :options="regionsArray"
+       v-model="selected"
+     />
+     <p id="select-label">Use the selector above to see energy carriers distribution across regions.</p>
+    </div>
+    <svg width="90%" height="100%" :transform="'translate('+ width / 10 + ',0)'">
+      <g :transform="'translate('+ margin.left + ',0)'">
         <g
           v-for="(sector,i) in createRect"
           v-bind:key="i"
           :id="sector.sector"
-          :transform="'translate('+ margin.left * 2 + ',' + sector.sectorHeight +')'"
+          :transform="'translate(5,' + sector.sectorHeight +')'"
         >
           <rect
             class="fuel_rect"
@@ -31,7 +38,7 @@
       </g>
       <text
       v-for="(energy, i) in createEnLabels"
-      :transform="'translate('+ margin.left * 2 + ',650)'"
+      :transform="'translate('+ margin.left + ',650)'"
       class="fuel-labels"
       v-bind:key="i"
       :x="energy.posX"
@@ -50,7 +57,7 @@ import _ from 'lodash'
 import CarriersReport from '../assets/data/world_regional_report.json'
 
 // Components
-import CountrySelector from './subcomponents/CountrySelector.vue'
+import SensesSelect from 'library/src/components/SensesSelect.vue'
 
 export default {
   name: 'EnergyCarriers',
@@ -69,11 +76,12 @@ export default {
     }
   },
   components: {
-    CountrySelector
+    SensesSelect
   },
   data () {
     return {
       CarriersReport,
+      selected: 'World',
       margin: {
         left: 70,
         top: 30,
@@ -134,9 +142,20 @@ export default {
       })
       return groupsbyregion
     },
+    regionsArray () {
+      const groupsbyregion = this.nestVariables.groupsbyregion
+      const allRegions = []
+
+      _.forEach(groupsbyregion, (arr, key) => {
+        allRegions.push(key)
+        return allRegions
+      })
+      return allRegions
+    },
     dataFilter () {
       const groupsbyregion = this.dataNest
-      return groupsbyregion['World']
+      const selected = this.selected
+      return groupsbyregion[selected]
     },
     // Scales
     scaleY () {
@@ -147,17 +166,15 @@ export default {
         let maxValue = d3.max(fuels)
         maxEnergy.push(maxValue)
       })
-
       const y = d3.scaleLinear()
         .domain([0, maxEnergy.reduce((sum, val) => sum + val, 0)])
         .range([0, 300])
-
       return y
     },
     scaleX () {
       const selectedRegion = this.dataFilter
       const { width, height } = this
-      const barWidth = (width + this.margin.left) / 2
+      const barWidth = (this.innerWidth + this.margin.left) / 2
       const ele = d3.values(selectedRegion.electricity)
       const ind = d3.values(selectedRegion.industry)
       const tran = d3.values(selectedRegion.transport)
@@ -198,7 +215,7 @@ export default {
         let yValue = y(ValueSum)
 
         let initialHeight = sectorHeight
-        sectorHeight = sectorHeight + yValue + 20
+        sectorHeight = sectorHeight + yValue + 30
 
         let totalDist = 0
         const rects = _.map(selectedRegion[key], (item, i) => {
@@ -222,12 +239,10 @@ export default {
     },
     createEnLabels () {
       const energies = this.energyLabels
-      let distance = this.margin.left
-      const barWidth = (this.width + this.margin.left) / 2
-
+      const barWidth = (this.innerWidth + this.margin.left) / 2
+      let distance = 10
       const position = _.map(energies, (energy, i) => {
         const name = energies[i]
-        console.log(name)
         let initialPos = distance
         distance = distance + (barWidth / 10.5)
 
@@ -236,7 +251,6 @@ export default {
           posX: initialPos
         }
       })
-      console.log(position)
       return position
     }
   }
@@ -248,8 +262,8 @@ export default {
 @import "library/src/style/variables.scss";
 
 .visualization {
-  width: inherit;
   height: inherit;
+  padding: 2% 12%;
 }
 
 .fuel_rect {
@@ -263,7 +277,14 @@ export default {
   cursor: pointer;
 }
 
-.selector {
-  width: inherit;
+.regionselect {
+  top: $spacing * 2;
+  position: absolute;
+  width: 150px;
+}
+
+#select-label {
+  font-size: 10px;
+  margin-top: 15px;
 }
 </style>
