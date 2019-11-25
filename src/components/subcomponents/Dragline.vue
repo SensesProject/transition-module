@@ -1,6 +1,6 @@
 <template>
   <g class="dragline">
-    <line :x1="x" y1="0" :x2="x" :y2="height" stroke="#000" />
+    <line :x1="x" y1="0" :x2="x" :y2="height" stroke="#c8005f" />
     <rect
       x="0"
       y="0"
@@ -55,18 +55,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "library/src/style/variables.scss";
+
 .draglineRect {
   fill: none;
   pointer-events: all;
 }
 
 circle {
-  fill: #ffffff;
-  stroke: #000;
+  fill: $color-red;
+  stroke: $color-gray;
 }
 
 text {
   font-size: 11px;
+  fill: #c8005f;
 }
 
 rect {

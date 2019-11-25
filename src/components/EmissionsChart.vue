@@ -156,26 +156,26 @@ export default {
         { key: 'Public', color: '#33121c', active: 3.1 },
         { key: 'Autoproduced', color: '#33121c', active: 3.1 },
         { key: 'OtherEn', color: '#611731', active: 3.2 },
-        { key: 'Combustion', color: '#931547', active: 3.3 },
-        { key: 'Production', color: '#931547', active: 3.3 },
-        { key: 'Solvents', color: '#931547', active: 3.3 },
-        { key: 'OtherProc', color: '#931547', active: 3.3 },
-        { key: 'IndWaste', color: '#931547', active: 3.3 },
-        { key: 'Aviation', color: '#dd5f84', active: 3.4 },
-        { key: 'Road', color: '#dd5f84', active: 3.4 },
-        { key: 'Other', color: '#dd5f84', active: 3.4 },
-        { key: 'Shipping', color: '#dd5f84', active: 3.4 },
-        { key: 'CommRes', color: '#ed96ab', active: 3.5 },
-        { key: 'Agriculture', color: '#ed96ab', active: 3.5 }
+        { key: 'Combustion', color: '#dd5f84', active: 3.3 },
+        { key: 'Production', color: '#dd5f84', active: 3.3 },
+        { key: 'Solvents', color: '#dd5f84', active: 3.3 },
+        { key: 'OtherProc', color: '#dd5f84', active: 3.3 },
+        { key: 'IndWaste', color: '#dd5f84', active: 3.3 },
+        { key: 'Aviation', color: '#ed96ab', active: 3.4 },
+        { key: 'Road', color: '#ed96ab', active: 3.4 },
+        { key: 'Other', color: '#ed96ab', active: 3.4 },
+        { key: 'Shipping', color: '#ed96ab', active: 3.4 },
+        { key: 'CommRes', color: '#f8cbd4', active: 3.5 },
+        { key: 'Agriculture', color: '#f8cbd4', active: 3.5 }
       ]
     },
     applications: function () {
       return [
         { key: 'Electricity', color: '#33121c', active: 3.1 },
         { key: 'OtherEnergy', color: '#611731', active: 3.1 },
-        { key: 'Industry', color: '#931547', active: 3.1 },
-        { key: 'Transports', color: '#dd5f84', active: 3.1 },
-        { key: 'Building', color: '#ed96ab', active: 3.1 }
+        { key: 'Industry', color: '#dd5f84', active: 3.1 },
+        { key: 'Transports', color: '#ed96ab', active: 3.1 },
+        { key: 'Building', color: '#f8cbd4', active: 3.1 }
       ]
     },
 
@@ -246,7 +246,7 @@ export default {
 }
 
 .emission__chunks {
-  stroke: $color-red;
+  stroke: $color-gray;
 }
 
 .subsectorsData {
@@ -257,7 +257,7 @@ export default {
 
 .applicationsData {
   .inactive {
-    fill: none;
+    fill-opacity: 0.1;
   }
 }
 </style>

@@ -6,7 +6,9 @@
        :options="regionsArray"
        v-model="selected"
      />
-     <p id="select-label">Use the selector above to see energy carriers distribution across regions.</p>
+     <p id="select-label">
+       Use the selector above to see energy carriers distribution across regions.
+     </p>
     </div>
     <svg width="90%" height="100%" :transform="'translate('+ width / 10 + ',0)'">
       <g :transform="'translate('+ margin.left + ',0)'">

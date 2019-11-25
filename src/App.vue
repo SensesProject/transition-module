@@ -120,8 +120,9 @@
           <h2 class="title" id="sector__closeup">What are the main energy carriers for sectors?</h2>
           <p>
             Each sector uses a different mix of energy carriers such as coal,
-            gas, oil, nuclear or renewables. All sectors currently use fossil
-            fuels like coal, gas and oil to a large extent. To decarbonize the
+            gas, oil, nuclear or renewables. All sectors currently use <span class="highlight" id="ff">fossil
+            fuels</span> like <span class="highlight" id="coal">coal</span>, <span class="highlight" id="gas">gas</span>
+            and <span class="highlight" id="oil">oil</span> to a large extent. To decarbonize the
             energy system, they have to be replaced by low-carbon alternatives
             like nuclear or renewables.
           </p>
@@ -254,7 +255,6 @@ import SensesMenu from 'library/src/components/SensesMenu.vue'
 // Template Components
 import LayoutScrollytelling from 'library/src/components/LayoutScrollytelling.vue'
 import IntersectionObserver from 'library/src/components/IntersectionObserver.vue'
-// import { ResizeObserver } from 'vue-resize'
 
 // Visualization Components
 import EmissionsChart from './components/EmissionsChart.vue'
@@ -265,27 +265,9 @@ export default {
   components: {
     LayoutScrollytelling,
     IntersectionObserver,
-    // ResizeObserver,
     EmissionsChart,
     EnergyCarriers,
     SensesMenu
-  },
-  // data () {
-  //   return {
-  //     width: 1000,
-  //     height: 1000
-  //   }
-  // },
-  mounted () {
-    // this.setDimensions()
-  },
-  methods: {
-    setDimensions () {
-      // const { width, height } = this.$refs.vis.getBoundingClientRect()
-      // this.width = screen.width
-      // this.height = screen.height
-      // console.log(this.height)
-    }
   }
 }
 </script>
@@ -294,13 +276,16 @@ export default {
 @import "library/src/style/base.scss";
 @import "library/src/style/variables.scss";
 
+.default.center {
+  border: 1px solid black;
+}
+
 .title {
-  margin: $spacing 0;
+  margin-bottom: $spacing / 2;
 }
 
 #app {
   width: 100vw;
-  // height: 100vh;
 }
 
 .observer {
@@ -315,9 +300,29 @@ p {
 }
 
 .vis-inner {
-  // padding-top: $spacing * 2;
   margin-top: -$spacing * 2;
   color: getColor(gray, 10) !important;
   font-family: $font-mono !important;
+}
+
+.senses-tooltip-select {
+  overflow-x: hidden;
+  max-height: 400px;
+  max-width: 300px;
+}
+
+#oil {
+  background: getColor(orange, 100);
+  color: $color-orange;
+}
+
+#coal {
+  background: $color-pale-gray;
+  color: $color-gray;
+}
+
+#gas {
+  background: getColor(red, 80);
+  color: getColor(red, 40);
 }
 </style>
