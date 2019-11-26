@@ -9,6 +9,12 @@
      <p id="select-label">
        Use the selector above to see energy carriers distribution across regions.
      </p>
+     <p id="emissions-label">
+       <span class="highlight">
+         {{ selected }}
+       </span>
+       is producing the {{ findPerc }}% of the total global energy.
+     </p>
     </div>
     <svg width="90%" height="100%" :transform="'translate('+ width / 10 + ',0)'">
       <g :transform="'translate('+ margin.left + ',0)'">
@@ -165,13 +171,20 @@ export default {
       let maxEnergy = []
       const totalEnergy = _.map(selectedRegion, (value, fuel) => {
         let fuels = d3.values(selectedRegion[fuel])
-        let maxValue = d3.max(fuels)
+        let maxValue = d3.sum(fuels)
         maxEnergy.push(maxValue)
       })
+      console.log(maxEnergy)
+
       const y = d3.scaleLinear()
         .domain([0, maxEnergy.reduce((sum, val) => sum + val, 0)])
-        .range([0, 300])
-      return y
+        .range([0, 500])
+
+      let maxRegValue = maxEnergy.reduce((sum, val) => sum + val, 0)
+      return {
+        y,
+        maxRegValue
+      }
     },
     scaleX () {
       const selectedRegion = this.dataFilter
@@ -208,14 +221,17 @@ export default {
     createRect () {
       const selectedRegion = this.dataFilter
       const scale = this.scaleX
-      const y = this.scaleY
-      const percScale = this.scalePerc
+      const { y } = this.scaleY
       let sectorHeight = 0
 
       const sectors = _.map(selectedRegion, (sector, key) => {
         let ValueSum = d3.sum(d3.values(selectedRegion[key]))
         let yValue = y(ValueSum)
-
+        if (ValueSum === 0) {
+          yValue = 0
+        }
+        console.log('sum', ValueSum)
+        console.log('scale', y(ValueSum))
         let initialHeight = sectorHeight
         sectorHeight = sectorHeight + yValue + 30
 
@@ -254,6 +270,20 @@ export default {
         }
       })
       return position
+    },
+    findPerc (){
+      const { maxRegValue } = this.scaleY
+      const groupsbyregion = this.dataNest
+      const world = groupsbyregion['World']
+      const maxEnergy = []
+      const totalEnergy = _.map(world, (value, fuel) => {
+        let fuels = d3.values(world[fuel])
+        let maxValue = d3.sum(fuels)
+        maxEnergy.push(maxValue)
+      })
+      const total = maxEnergy.reduce((sum, val) => sum + val, 0)
+
+      return Math.ceil((maxRegValue / total) * 100)
     }
   }
 }
@@ -287,6 +317,10 @@ export default {
 
 #select-label {
   font-size: 10px;
+  margin-top: 15px;
+}
+
+#emissions-label {
   margin-top: 15px;
 }
 </style>
