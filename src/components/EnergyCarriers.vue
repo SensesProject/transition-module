@@ -46,7 +46,7 @@
       </g>
       <text
       v-for="(energy, i) in createEnLabels"
-      :transform="'translate('+ margin.left + ',650)'"
+      :transform="'translate('+ margin.left + ',770)'"
       class="fuel-labels"
       v-bind:key="i"
       :x="energy.posX"
@@ -168,6 +168,7 @@ export default {
     // Scales
     scaleY () {
       const selectedRegion = this.dataFilter
+      const { height } = this
       let maxEnergy = []
       const totalEnergy = _.map(selectedRegion, (value, fuel) => {
         let fuels = d3.values(selectedRegion[fuel])
@@ -178,7 +179,7 @@ export default {
 
       const y = d3.scaleLinear()
         .domain([0, maxEnergy.reduce((sum, val) => sum + val, 0)])
-        .range([0, 500])
+        .range([0, height / 2])
 
       let maxRegValue = maxEnergy.reduce((sum, val) => sum + val, 0)
       return {
@@ -323,4 +324,9 @@ export default {
 #emissions-label {
   margin-top: 15px;
 }
+
+#coal:hover {
+  fill: $color-gray;
+}
+
 </style>
