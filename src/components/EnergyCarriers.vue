@@ -26,7 +26,7 @@
         >
           <rect
             class="fuel_rect"
-            :class="sector.sector"
+            :class="[sector.sector, rect.labels]"
             v-for="(rect, i) in sector.rects"
             v-bind:key="i"
             :id="rect.labels"
@@ -39,7 +39,10 @@
         class="sector-labels"
         v-for="(sector) in createRect"
         v-bind:key="sector.sector"
-        :transform="'translate('+ ((width + margin.left) / 2) + ',' + (sector.sectorHeight + 10) +')'"
+        :transform="'translate('+
+          ((width + margin.left) / 2)
+          + ',' + (sector.sectorHeight
+          + 10) +')'"
         >
         {{sector.sector}}
       </text>
@@ -49,7 +52,9 @@
       :transform="'translate('+ margin.left + ',770)'"
       class="fuel-labels"
       v-bind:key="i"
+      :id='energy.name'
       :x="energy.posX"
+      v-on:click='selectCarrier'
       >
       {{ energy.name }}
     </text>
@@ -105,10 +110,21 @@ export default {
         'nuclear',
         'oil',
         'other',
-        'other gas',
-        'other liquids',
-        'other solids'
+        'other-gas',
+        'other-liquids',
+        'other-solids'
       ]
+    }
+  },
+  methods: {
+    selectCarrier (event) {
+      let currentElement = event.originalTarget.id
+      const allElements = d3.selectAll('rect_fuel')
+      const elements = d3.selectAll('.' + currentElement)
+      elements.attr('class', 'is-active')
+      allElements.addClass('inactive')
+      console.log(currentElement)
+      return { currentElement }
     }
   },
   computed: {
@@ -175,7 +191,6 @@ export default {
         let maxValue = d3.sum(fuels)
         maxEnergy.push(maxValue)
       })
-      console.log(maxEnergy)
 
       const y = d3.scaleLinear()
         .domain([0, maxEnergy.reduce((sum, val) => sum + val, 0)])
@@ -224,15 +239,14 @@ export default {
       const scale = this.scaleX
       const { y } = this.scaleY
       let sectorHeight = 0
-
+      const { currentElement } = this
+      console.log('outside event', currentElement)
       const sectors = _.map(selectedRegion, (sector, key) => {
         let ValueSum = d3.sum(d3.values(selectedRegion[key]))
         let yValue = y(ValueSum)
         if (ValueSum === 0) {
           yValue = 0
         }
-        console.log('sum', ValueSum)
-        console.log('scale', y(ValueSum))
         let initialHeight = sectorHeight
         sectorHeight = sectorHeight + yValue + 30
 
@@ -325,8 +339,8 @@ export default {
   margin-top: 15px;
 }
 
-#coal:hover {
-  fill: $color-gray;
+.is-active {
+  stroke: $color-neon;
+  fill: getColor(neon, 80);
 }
-
 </style>
