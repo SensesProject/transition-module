@@ -120,11 +120,14 @@
           <h2 class="title" id="sector__closeup">What are the main energy carriers for sectors?</h2>
           <p>
             Each sector uses a different mix of energy carriers such as coal,
-            gas, oil, nuclear or renewables. All sectors currently use <span class="highlight" id="ff">fossil
-            fuels</span> like <span class="highlight" id="coal">coal</span>, <span class="highlight" id="gas">gas</span>
-            and <span class="highlight" id="oil">oil</span> to a large extent. To decarbonize the
-            energy system, they have to be replaced by low-carbon alternatives
-            like nuclear or renewables.
+            gas, oil, nuclear or renewables.
+            All sectors currently use <span class="highlight" id="ff">fossil
+            fuels</span> like
+            <span class="highlight" id="coal">coal</span>,
+            <span class="highlight" id="gas">gas</span>
+            and <span class="highlight" id="oil" >oil</span> to a large extent.
+            To decarbonize the energy system, they have to be replaced by low-carbon
+            alternatives like nuclear or renewables.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="5">
@@ -268,6 +271,11 @@ export default {
     EmissionsChart,
     EnergyCarriers,
     SensesMenu
+  },
+  methods: {
+    importantCarrier (item) {
+      this.$emit('current-selection', item)
+    }
   }
 }
 </script>

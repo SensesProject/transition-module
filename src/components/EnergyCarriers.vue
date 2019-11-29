@@ -23,8 +23,27 @@
        </span>.
      </p>
     </div>
-    <svg ref="bars" width="90%" height="100%" :transform="'translate('+ width / 10 + ',10)'">
-      <g :transform="'translate('+ margin.left + ',0)'">
+    <svg ref="bars" width="100%" height="100%" :transform="'translate('+ width / 12 + ',15)'">
+      <Arrows :step="step" :transform="'translate('+ margin.left + ',40)'" v-if="step >= 8"/>
+      <g :transform="'translate('+ (margin.left + 65) + ',0)'">
+        <text
+        v-for="(energy, i) in createRect[3].rects"
+        class="fuel-labels"
+        v-bind:key="energy.labels + i"
+        :id='energy.labels'
+        :x="energy.posX"
+        :y= 'height - (height / 3)'
+        v-on:click="isActive = energy.labels"
+        >
+        {{ energy.labels }}
+        <tspan
+        :x="energy.posX"
+        :y= 'height - (height / 3) + 20'
+        :class='isActive === energy.labels ? "is-active" : "is-inactive"'
+        >
+        {{ energy.carrierValue }}
+        </tspan>
+      </text>
         <g
           v-for="(sector,i) in createRect"
           v-bind:key="i"
@@ -33,7 +52,7 @@
         >
           <rect
             class="fuel_rect"
-            :class="[sector.sector, rect.labels]"
+            :class='isActive === rect.labels ? [sector.sector, rect.labels, "is-fill"] : [sector.sector, rect.labels, "is-empty"]'
             v-for="(rect, i) in sector.rects"
             v-bind:key="i"
             :id="rect.labels"
@@ -51,23 +70,6 @@
         >
         {{sector.sector}}
       </text>
-      <text
-      v-for="(energy, i) in createRect[3].rects"
-      class="fuel-labels"
-      v-bind:key="energy.labels + i"
-      :id='energy.labels'
-      :x="energy.posX"
-      :y= 'height - (height / 3)'
-      v-on:click='active = true'
-      >
-      {{ energy.labels }}
-      <tspan
-      :x="energy.posX"
-      :y= 'height - (height / 3) + 20'
-      >
-      {{ energy.carrierValue }}
-      </tspan>
-    </text>
       </g>
     </svg>
   </div>
@@ -83,6 +85,7 @@ import ElectrificationSteps from '../assets/data/electrification-steps.json'
 
 // Components
 import SensesSelect from 'library/src/components/SensesSelect.vue'
+import Arrows from './subcomponents/Arrows.vue'
 
 export default {
   name: 'EnergyCarriers',
@@ -101,29 +104,21 @@ export default {
     }
   },
   components: {
-    SensesSelect
+    SensesSelect,
+    Arrows
   },
   data () {
     return {
       CarriersReport,
       ElectrificationSteps,
       selected: 'World',
-      active: false,
+      isActive: '',
       margin: {
-        left: 70,
+        left: 40,
         top: 30,
         bottom: 30,
         right: 40
       }
-    }
-  },
-  methods: {
-    selectCarrier (event) {
-      let currentElement = event.originalTarget.id
-      const allElements = d3.selectAll('.fuel_rect')
-      const elements = d3.selectAll('.' + currentElement)
-      elements.classed('is-active', true)
-      return { currentElement }
     }
   },
   computed: {
@@ -188,7 +183,6 @@ export default {
     dataFilter () {
       const groupsbyregion = this.dataNest
       const selected = this.stepSelection
-      console.log(groupsbyregion)
       return groupsbyregion[selected]
     },
     // Scales
@@ -249,7 +243,7 @@ export default {
       const scale = this.scaleX
       const { y } = this.scaleY
       const barWidth = (this.innerWidth + this.margin.left) / 2
-      let sectorHeight = 0
+      let sectorHeight = 10
       const { currentElement } = this
       const sectors = _.map(selectedRegion, (sector, key) => {
         let distance = 10
@@ -289,6 +283,7 @@ export default {
       return sectors
     },
     findPerc (){
+      const carriers = this.carrierSum
       const { maxRegValue } = this.scaleY
       const groupsbyregion = this.dataNest
       const world = groupsbyregion['World']
@@ -299,9 +294,9 @@ export default {
         maxEnergy.push(maxValue)
       })
       const total = maxEnergy.reduce((sum, val) => sum + val, 0)
-
+      const perc = (maxRegValue / total) * 100
       return {
-        perc: Math.ceil((maxRegValue / total) * 100),
+        perc: Math.round(perc * 100) / 100,
         absValue: Math.round(maxRegValue * 100) / 100
       }
     }
@@ -319,8 +314,8 @@ export default {
 }
 
 .fuel_rect {
-  stroke: $color-yellow;
-  fill: getColor(yellow, 80)
+  stroke: $color-gray;
+  fill: getColor(gray, 80)
 }
 
 .fuel-labels {
@@ -345,7 +340,14 @@ export default {
 }
 
 .is-active {
-  stroke: getColor(orange, 40);
-  fill: getColor(orange, 60);
+  visibility: visible;
+}
+
+.is-inactive {
+  visibility: hidden;
+}
+
+.is-empty {
+  fill-opacity: 0.2;
 }
 </style>
