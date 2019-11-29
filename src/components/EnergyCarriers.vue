@@ -1,6 +1,6 @@
 <template>
   <div class="visualization" id="carriers" width="90%">
-      <div v-if="step >= 5" class="regionselect">
+      <div v-if="step === 5" class="regionselect">
      <SensesSelect
        class="selector"
        :options="regionsArray"
@@ -13,10 +13,17 @@
        <span class="highlight">
          {{ selected }}
        </span>
-       is producing the {{ findPerc }}% of the total global energy.
+       is producing the
+       <span class="dotted">{{ findPerc.perc }}%</span>
+       of the total global energy.
+      <br/>
+       Equals to
+       <span class="dotted">
+         {{ findPerc.absValue }} EJ/yr
+       </span>.
      </p>
     </div>
-    <svg width="90%" height="100%" :transform="'translate('+ width / 10 + ',0)'">
+    <svg ref="bars" width="90%" height="100%" :transform="'translate('+ width / 10 + ',10)'">
       <g :transform="'translate('+ margin.left + ',0)'">
         <g
           v-for="(sector,i) in createRect"
@@ -39,25 +46,29 @@
         class="sector-labels"
         v-for="(sector) in createRect"
         v-bind:key="sector.sector"
-        :transform="'translate('+
-          ((width + margin.left) / 2)
-          + ',' + (sector.sectorHeight
-          + 10) +')'"
+        :x='(width + margin.left) / 2'
+        :y='sector.sectorHeight + 30'
         >
         {{sector.sector}}
       </text>
-      </g>
       <text
-      v-for="(energy, i) in createEnLabels"
-      :transform="'translate('+ margin.left + ',770)'"
+      v-for="(energy, i) in createRect[3].rects"
       class="fuel-labels"
-      v-bind:key="i"
-      :id='energy.name'
+      v-bind:key="energy.labels + i"
+      :id='energy.labels'
       :x="energy.posX"
-      v-on:click='selectCarrier'
+      :y= 'height - (height / 3)'
+      v-on:click='active = true'
       >
-      {{ energy.name }}
+      {{ energy.labels }}
+      <tspan
+      :x="energy.posX"
+      :y= 'height - (height / 3) + 20'
+      >
+      {{ energy.carrierValue }}
+      </tspan>
     </text>
+      </g>
     </svg>
   </div>
 </template>
@@ -68,6 +79,7 @@ import _ from 'lodash'
 
 // data
 import CarriersReport from '../assets/data/world_regional_report.json'
+import ElectrificationSteps from '../assets/data/electrification-steps.json'
 
 // Components
 import SensesSelect from 'library/src/components/SensesSelect.vue'
@@ -94,36 +106,23 @@ export default {
   data () {
     return {
       CarriersReport,
+      ElectrificationSteps,
       selected: 'World',
+      active: false,
       margin: {
         left: 70,
         top: 30,
         bottom: 30,
         right: 40
-      },
-      energyLabels: [
-        'coal',
-        'electricity',
-        'gas',
-        'mtbio',
-        'non-bioren',
-        'nuclear',
-        'oil',
-        'other',
-        'other-gas',
-        'other-liquids',
-        'other-solids'
-      ]
+      }
     }
   },
   methods: {
     selectCarrier (event) {
       let currentElement = event.originalTarget.id
-      const allElements = d3.selectAll('rect_fuel')
+      const allElements = d3.selectAll('.fuel_rect')
       const elements = d3.selectAll('.' + currentElement)
-      elements.attr('class', 'is-active')
-      allElements.addClass('inactive')
-      console.log(currentElement)
+      elements.classed('is-active', true)
       return { currentElement }
     }
   },
@@ -136,7 +135,8 @@ export default {
     },
     // data new structure and selection
     nestVariables () {
-      const carriers = this.CarriersReport
+      let carriers = this.CarriersReport
+      if (this.step >= 7) { carriers = this.ElectrificationSteps }
       return {
         carriers,
         groupsbyregion: _.groupBy(carriers, 'region'),
@@ -176,9 +176,19 @@ export default {
       })
       return allRegions
     },
+    stepSelection () {
+      let selected = this.selected
+      if (this.step !== 5) { selected = 'World' }
+      if (this.step === 7) { selected = 'World-step1' }
+      if (this.step === 8) { selected = 'World-step2' }
+      if (this.step === 9) { selected = 'World-step3' }
+      if (this.step === 10) { selected = 'World-step4' }
+      return selected
+    },
     dataFilter () {
       const groupsbyregion = this.dataNest
-      const selected = this.selected
+      const selected = this.stepSelection
+      console.log(groupsbyregion)
       return groupsbyregion[selected]
     },
     // Scales
@@ -238,12 +248,15 @@ export default {
       const selectedRegion = this.dataFilter
       const scale = this.scaleX
       const { y } = this.scaleY
+      const barWidth = (this.innerWidth + this.margin.left) / 2
       let sectorHeight = 0
       const { currentElement } = this
-      console.log('outside event', currentElement)
       const sectors = _.map(selectedRegion, (sector, key) => {
+        let distance = 10
+        // for bars height
         let ValueSum = d3.sum(d3.values(selectedRegion[key]))
         let yValue = y(ValueSum)
+        // conditions to check data
         if (ValueSum === 0) {
           yValue = 0
         }
@@ -252,13 +265,18 @@ export default {
 
         let totalDist = 0
         const rects = _.map(selectedRegion[key], (item, i) => {
+          // for rects
           let initialDist = totalDist
           totalDist = totalDist + scale[key](item)
-
+          // for labels horizontal position
+          let initialPos = distance
+          distance = distance + (barWidth / 10.5)
           return {
             labels: i,
             dist: initialDist,
-            rectWidth: scale[key](item)
+            rectWidth: scale[key](item),
+            carrierValue: item,
+            posX: initialPos
           }
         })
         return {
@@ -269,22 +287,6 @@ export default {
         }
       })
       return sectors
-    },
-    createEnLabels () {
-      const energies = this.energyLabels
-      const barWidth = (this.innerWidth + this.margin.left) / 2
-      let distance = 10
-      const position = _.map(energies, (energy, i) => {
-        const name = energies[i]
-        let initialPos = distance
-        distance = distance + (barWidth / 10.5)
-
-        return {
-          name: name,
-          posX: initialPos
-        }
-      })
-      return position
     },
     findPerc (){
       const { maxRegValue } = this.scaleY
@@ -298,7 +300,10 @@ export default {
       })
       const total = maxEnergy.reduce((sum, val) => sum + val, 0)
 
-      return Math.ceil((maxRegValue / total) * 100)
+      return {
+        perc: Math.ceil((maxRegValue / total) * 100),
+        absValue: Math.round(maxRegValue * 100) / 100
+      }
     }
   }
 }
@@ -340,7 +345,7 @@ export default {
 }
 
 .is-active {
-  stroke: $color-neon;
-  fill: getColor(neon, 80);
+  stroke: getColor(orange, 40);
+  fill: getColor(orange, 60);
 }
 </style>
