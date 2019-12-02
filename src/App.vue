@@ -12,7 +12,8 @@
           }"
         >
           <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" />
-          <EnergyCarriers v-if="step >= 4" :step="step" :width="width" :height="height" />
+          <EnergyCarriers v-if="step >= 4 && step <=11" :step="step" :width="width" :height="height" />
+          <ElecTrends v-if="step >= 12" :step="step" :width="width" :height="height" />
         </div>
       </template>
       <div slot="text" class="observer">
@@ -116,7 +117,7 @@
             space heating.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="4">
+        <IntersectionObserver :step="4" align="left">
           <h2 class="title" id="sector__closeup">What are the main energy carriers for sectors?</h2>
           <p>
             Each sector uses a different mix of energy carriers such as coal,
@@ -130,7 +131,7 @@
             alternatives like nuclear or renewables.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="5">
+        <IntersectionObserver :step="5" align="right">
           <h2 class="title" id="country__perspectives">Country Perspectives</h2>
           <p>
             Depending on their energy resources and needs, different countries
@@ -141,14 +142,14 @@
             country-level.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="6">
+        <IntersectionObserver :step="6" align="left">
           <h2 class="title" id="decarbonize__sectors">How do we decarbonize the sectors?</h2>
           <p>
             Across all sectors, fossil fuels need to be replaced by low-carbon
             energy. In the electricity sector, this can be done by increasing
-            the share of renewable energy, in particular wind and solar. There
-            are two main strategies to decarbonize the industry, transport and
-            residential sectors: electrification using low-carbon electricity or
+            the share of <span class="highlight" id="renewables">renewable energy</span>,
+            in particular wind and solar. There are two main strategies to decarbonize the industry,
+            transport and residential sectors: electrification using <span class="highlight" id="elect">low-carbon electricity</span> or
             a switch to low-carbon alternatives like biofuels or renewable
             hydrogen.
           </p>
@@ -262,6 +263,7 @@ import IntersectionObserver from 'library/src/components/IntersectionObserver.vu
 // Visualization Components
 import EmissionsChart from './components/EmissionsChart.vue'
 import EnergyCarriers from './components/EnergyCarriers.vue'
+import ElecTrends from './components/ElecTrends.vue'
 
 export default {
   name: 'app',
@@ -270,6 +272,7 @@ export default {
     IntersectionObserver,
     EmissionsChart,
     EnergyCarriers,
+    ElecTrends,
     SensesMenu
   },
   methods: {
@@ -284,7 +287,9 @@ export default {
 @import "library/src/style/base.scss";
 @import "library/src/style/variables.scss";
 
-.default.center {
+.default.center,
+.default.right,
+.default.left  {
   border: 1px solid black;
 }
 
@@ -332,5 +337,15 @@ p {
 #gas {
   background: getColor(red, 80);
   color: getColor(red, 40);
+}
+
+#renewables {
+  background: getColor(green, 80);
+  color: getColor(green, 40);
+}
+
+#elect {
+  background: getColor(yellow, 80);
+  color: getColor(yellow, 40);
 }
 </style>

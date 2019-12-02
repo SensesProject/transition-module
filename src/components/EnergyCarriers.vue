@@ -23,25 +23,28 @@
        </span>.
      </p>
     </div>
-    <svg ref="bars" width="100%" height="100%" :transform="'translate('+ width / 12 + ',15)'">
+    <svg width="100%" height="100%" :transform="'translate('+ width / 12 + ',15)'">
       <Arrows :step="step" :transform="'translate('+ margin.left + ',40)'" v-if="step >= 8"/>
       <g :transform="'translate('+ (margin.left + 65) + ',0)'">
         <text
-        v-for="(energy, i) in createRect[3].rects"
+        v-for="(energy, i) in createRect[0].rects"
         class="fuel-labels"
         v-bind:key="energy.labels + i"
         :id='energy.labels'
         :x="energy.posX"
-        :y= 'height - (height / 3)'
+        :y= 'height - (height / 4)'
         v-on:click="isActive = energy.labels"
         >
         {{ energy.labels }}
         <tspan
+        :data="sumCarriers"
+        :id='energy.labels'
         :x="energy.posX"
-        :y= 'height - (height / 3) + 20'
+        :y= 'height - (height / 4) + 20'
+        class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
-        {{ energy.carrierValue }}
+        {{ sumCarriers[i] }} EJ/yr
         </tspan>
       </text>
         <g
@@ -114,7 +117,7 @@ export default {
       selected: 'World',
       isActive: '',
       margin: {
-        left: 40,
+        left: 5,
         top: 30,
         bottom: 30,
         right: 40
@@ -177,12 +180,13 @@ export default {
       if (this.step === 7) { selected = 'World-step1' }
       if (this.step === 8) { selected = 'World-step2' }
       if (this.step === 9) { selected = 'World-step3' }
-      if (this.step === 10) { selected = 'World-step4' }
+      if (this.step >= 10) { selected = 'World-step4' }
       return selected
     },
     dataFilter () {
       const groupsbyregion = this.dataNest
       const selected = this.stepSelection
+      console.log(groupsbyregion[selected])
       return groupsbyregion[selected]
     },
     // Scales
@@ -299,6 +303,21 @@ export default {
         perc: Math.round(perc * 100) / 100,
         absValue: Math.round(maxRegValue * 100) / 100
       }
+    },
+    sumCarriers () {
+      const sectors = this.createRect
+      const sumValue = {}
+
+      const dataArray = _.map(sectors, (sector, key) => {
+        const fuels = sector.rects
+        const data = _.map(fuels, (carrier, ckey) => {
+          return fuels[ckey].carrierValue
+        })
+        return data
+      })
+      const result = dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
+      console.log(result)
+      return result
     }
   }
 }
@@ -326,6 +345,7 @@ export default {
 
 .regionselect {
   top: $spacing * 2;
+  left: 4.5em;
   position: absolute;
   width: 150px;
 }
@@ -339,15 +359,22 @@ export default {
   margin-top: 15px;
 }
 
+.is-empty {
+  fill-opacity: 0.2;
+}
+
 .is-active {
   visibility: visible;
+}
+.electrification {
+  fill: $color-yellow;
 }
 
 .is-inactive {
   visibility: hidden;
 }
 
-.is-empty {
-  fill-opacity: 0.2;
+.energy_sum {
+  fill: $color-neon;
 }
 </style>
