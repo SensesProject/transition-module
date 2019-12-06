@@ -1,11 +1,11 @@
 <template>
   <g class="dragline">
-    <line :x1="x" y1="0" :x2="x" :y2="height" stroke="#c8005f" />
+    <line :x1="x" y1="0" :x2="x" :y2="height - margin.bottom" stroke="#c8005f" />
     <rect
       x="0"
       y="0"
-      :width="width"
-      :height="height"
+      :width="width - 200"
+      :height="height - margin.bottom"
       class="draglineRect"
       @mousemove="clickDragline"
     />

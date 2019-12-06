@@ -1,8 +1,33 @@
 <template>
   <div id="app" ref="vis">
     <SensesMenu />
+    <div class="introduction">
+      <h1 class="title" id="cover">Energy Transition Pathways</h1>
+        <p class="author__section">
+          <span class="tiny uppercase mono">Content:</span> <span class="tiny author mono">Ipsum L.</span>
+          <span class="tiny uppercase mono">Design:</span> <span class="tiny author mono">Ipsum L.</span>
+          <span class="tiny uppercase mono">Code:</span> <span class="tiny author mono">Ipsum L.</span>
+        </p>
+        <h4 class="title" id="cover">What will you learn?</h4>
+          <p class="title">
+            In this module you will be able to break down historical emissions
+            according to the sector that generate them. You will be introduced
+            to the concept of Electrification and to the broad strategy to go
+            Carbon Neutral by reducing emissions. In the last section you will
+            be able to explore the compatibility of different scenarios with
+            this decarbonization strategy.
+          </p>
+          <h4 class="title" id="cover">Relevant Concepts</h4>
+          <p class="title mono">
+            Net Zero,
+            Electrification,
+            Decarbonization Pathways,
+            Policy,
+            Mitigation Strategies,
+            Fossil Fuels
+          </p>
+        </div>
     <LayoutScrollytelling>
-      <!--  <ResizeObserver @notify="setDimensions" /> -->
       <template v-slot:vis="{ width, height, step }">
         <div
           class="vis-inner"
@@ -17,17 +42,6 @@
         </div>
       </template>
       <div slot="text" class="observer">
-        <IntersectionObserver :step="0">
-          <h2 class="title" id="cover">What will you learn?</h2>
-          <p>
-            In this module you will be able to break down historical emissions
-            according to the sector that generate them. You will be introduced
-            to the concept of Electrification and to the broad strategy to go
-            Carbon Neutral by reducing emissions. In the last section you will
-            be able to explore the compatibility of different scenarios with
-            this decarbonization strategy.
-          </p>
-        </IntersectionObserver>
         <IntersectionObserver :step="1">
           <h2 class="title" id="net__zero">What is Net-Zero?</h2>
           <p>
@@ -42,8 +56,7 @@
         <IntersectionObserver :step="1.1">
           <p>
             However, limiting global warming to 2°C above pre-industrial levels
-            will require net-zero emissions by 2075. A limit of 1.5°C will
-            require carbon neutrality even by 2050.
+            will require net-zero emissions by 2075.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.2">
@@ -291,6 +304,24 @@ export default {
 .default.right,
 .default.left  {
   border: 1px solid black;
+}
+
+.introduction {
+  padding-top: $spacing;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+  height: 75vh;
+}
+.author__section {
+  margin-bottom: $spacing;
+}
+
+.author {
+  font-style: 12px;
+  font-weight: bold;
+  margin-right: 1em;
+  color: $color-neon;
 }
 
 .title {

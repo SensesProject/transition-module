@@ -7,6 +7,13 @@
           v-axis:x="scales"
           :transfrom="'translate(' + 0 + ',' + this.innerHeight + ')'"
         />
+        <EmissionsDots
+        :step = "step"
+        :width="this.innerWidth"
+        :margin="margin"
+        :height="this.innerHeight"
+        :scales="scales"
+        />
         <g class="axis" v-axis:y="scales" />
         <g id="first_step" v-if="step <= 2">
           <path id="emissions" :d="linePath" />
@@ -53,6 +60,7 @@ import * as d3 from 'd3'
 import { group, groups, rollup, rollups } from 'd3-array'
 
 // components
+import EmissionsDots from './subcomponents/EmissionsDots.vue'
 import Dragline from './subcomponents/Dragline.vue'
 
 // Data
@@ -77,6 +85,7 @@ import HistoricalEmissions from '../assets/data/emissions_historical.json'
 export default {
   name: 'EmissionsChart',
   components: {
+    EmissionsDots,
     Dragline
   },
   props: {
@@ -96,7 +105,7 @@ export default {
   data () {
     return {
       margin: {
-        left: 70,
+        left: 250,
         top: 30,
         bottom: 30,
         right: 30
@@ -144,11 +153,11 @@ export default {
         x: d3
           .scaleLinear()
           .domain([1990, this.maxYear])
-          .rangeRound([0, this.innerWidth]),
+          .rangeRound([0, this.innerWidth - 200]),
         y: d3
           .scaleLinear()
           .domain([0, 40000000])
-          .rangeRound([this.innerHeight, 0])
+          .rangeRound([this.innerHeight - this.margin.bottom, 0])
       }
     },
     subsectors: function () {
@@ -214,20 +223,33 @@ export default {
         .curve(d3.curveLinear)
         .y0(d => y(d[0]))
         .y1(d => y(d[1]))
+    },
+    dotsPosition () {
+      const { x, y } = this.scales
+      const netOne = [2050, 0]
+      const NetTwo = [2075, 0]
+
+      return {
+        cx: x(netOne[0]),
+        cy: y(netOne[1])
+      }
     }
   },
   directives: {
     axis (el, binding) {
       const axis = binding.arg
       // console.log("axis", axis);
-      const axisMethod = { x: 'axisBottom', y: 'axisLeft' }[axis]
+      const axisMethod = { x: 'axisTop', y: 'axisLeft' }[axis]
       const tickFormat = { x: d3.format('d'), y: d3.format('.2s') }[axis]
       const methodArg = binding.value[axis]
 
       d3.select(el)
         .transition()
         .duration(1000)
-        .call(d3[axisMethod](methodArg).tickFormat(tickFormat))
+        .call(d3[axisMethod](methodArg)
+          .tickSize(0)
+          .tickPadding(10)
+          .tickFormat(tickFormat))
     }
   }
 }

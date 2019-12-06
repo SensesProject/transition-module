@@ -24,7 +24,12 @@
      </p>
     </div>
     <svg width="100%" height="100%" :transform="'translate('+ width / 12 + ',15)'">
-      <Arrows :step="step" :transform="'translate('+ margin.left + ',40)'" v-if="step >= 8"/>
+      <Arrows
+      :height="height"
+      :step="step"
+      :transform="'translate('+ margin.left + ',40)'"
+      v-if="step >= 8"
+      />
       <g :transform="'translate('+ (margin.left + 65) + ',0)'">
         <text
         v-for="(energy, i) in createRect[0].rects"
@@ -55,7 +60,9 @@
         >
           <rect
             class="fuel_rect"
-            :class='isActive === rect.labels ? [sector.sector, rect.labels, "is-fill"] : [sector.sector, rect.labels, "is-empty"]'
+            :class='isActive === rect.labels ?
+            [sector.sector, rect.labels, "is-fill"] :
+            [sector.sector, rect.labels, "is-empty"]'
             v-for="(rect, i) in sector.rects"
             v-bind:key="i"
             :id="rect.labels"
