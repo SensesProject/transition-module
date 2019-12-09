@@ -193,7 +193,6 @@ export default {
     dataFilter () {
       const groupsbyregion = this.dataNest
       const selected = this.stepSelection
-      console.log(groupsbyregion[selected])
       return groupsbyregion[selected]
     },
     // Scales
@@ -323,7 +322,6 @@ export default {
         return data
       })
       const result = dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
-      console.log(result)
       return result
     }
   }
