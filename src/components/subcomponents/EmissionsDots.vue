@@ -22,6 +22,8 @@
     </circle>
   </g>
   <g v-if="step === 1.2">
+    <line :x1="scales.x(2020)" :y1="scales.y(35600000)" :x2="scales.x(2050)" :y2="scales.y(0)"/>
+    <line :x1="scales.x(2015)" :y1="scales.y(35600000)" :x2="scales.x(2020)" :y2="scales.y(35600000)"/>
     <circle class="net_one" :cx="scales.x(2050)" :cy="scales.y(0)" r="5" />
     <circle class="net_one" :cx="scales.x(2050)" :cy="scales.y(0)" r="5">
         <animate
@@ -43,6 +45,8 @@
     </circle>
   </g>
   <g v-if="step === 1.1">
+    <line :x1="scales.x(2015)" :y1="scales.y(35600000)" :x2="scales.x(2020)" :y2="scales.y(35600000)"/>
+    <line :x1="scales.x(2020)" :y1="scales.y(35600000)" :x2="scales.x(2075)" :y2="scales.y(0)"/>
     <circle class="net_two" :cx="scales.x(2075)" :cy="scales.y(0)" r="5" />
     <circle class="net_two" :cx="scales.x(2075)" :cy="scales.y(0)" r="5">
         <animate
@@ -83,5 +87,10 @@ export default {
 .net_two,
 .net_one {
   fill: $color-neon;
+}
+
+line {
+  stroke-dasharray: 5;
+  stroke: gray;
 }
 </style>
