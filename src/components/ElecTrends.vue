@@ -8,12 +8,18 @@
       <g
         v-for="(group, i) in createGraphs"
         v-bind:key="i"
-        :transfrom="'translate(' + 1110 + ',' + 1120 + ')'"
+        :class="group.name"
+        :transform="'translate('+ (margin.left * 7.5) + ',' + group.verticalPos + ')'"
       >
-        <path :d="group" fill="black" />
+        <path
+        :d="group.d"
+        :fill='group.fill'
+        />
         <g class="axis" v-axis:y="scales" />
-        <g class="axis" v-axis:x="scales" :transfrom="'translate(' + 1110 + ',' + 1120 + ')'" />
       </g>
+      <g class="axis"
+      v-axis:x="scales"
+      :transform="'translate('+ (margin.left * 7.5) + ',' + (this.innerHeight - 30) + ')'" />
     </svg>
   </div>
 </template>
@@ -44,24 +50,13 @@ export default {
   data () {
     return {
       ElectrificationTrends,
-      electrificationYears: [
-        2005,
-        2010,
-        2015,
-        2020,
-        2030,
-        2040,
-        2050,
-        2055,
-        2060,
-        2065,
-        2070,
-        2080,
-        2085,
-        2090,
-        2095,
-        2100
-      ],
+      colors: {
+        'electricity|RE': '#ffd89a',
+        'electricity|VRE': '#795315',
+        industry: '#ffac00',
+        residential: '#ba7e12',
+        transport: '#ffecce'
+      },
       margin: {
         left: 40,
         top: 30,
@@ -83,7 +78,6 @@ export default {
     },
     dataNest () {
       const newModels = this.dataStructure
-      const timeParse = d3.timeParse('%Y')
       _.forEach(newModels, (model, m) => {
         const obj = {}
         let singleModel = _.groupBy(model, 'scenario')
@@ -105,6 +99,7 @@ export default {
     },
     modelSelection () {
       const models = this.dataNest
+      console.log(models['REMIND']['2020_400'])
       return models['REMIND']['2020_400']
     },
     sectorKeys () {
@@ -118,28 +113,39 @@ export default {
         x: d3
           .scaleLinear()
           .domain([2005, 2100])
-          .rangeRound([0, 500]),
+          .rangeRound([0, this.innerWidth / 2 + 100]),
         y: d3
           .scaleLinear()
-          .domain([0, 400])
-          .rangeRound([0, 300])
+          .domain([0, 100])
+          .rangeRound([80, 0])
       }
     },
     createGraphs () {
       const selectData = this.modelSelection
       const { x, y } = this.scales
       const groups = this.sectorKeys
+      let distance = this.margin.top + 10
       const paths = d3
         .area()
         .x(d => {
           return x(d['date'])
         })
-        .y(d => {
+        .y0(y(0))
+        .y1(d => {
           return y(d['value'])
         })
       return _.map(selectData, (group, g) => {
         console.log(g, group, paths(group))
-        return paths(group)
+        let initialPos = distance
+        if (g !== 'electricity|RE') {
+          distance = distance + (this.innerHeight / 4)
+        } else { initialPos = distance }
+        return {
+          d: paths(group),
+          name: g,
+          fill: this.colors[g],
+          verticalPos: initialPos
+        }
       })
     }
   },
@@ -147,13 +153,11 @@ export default {
     axis (el, binding) {
       const axis = binding.arg
       // console.log("axis", axis);
-      const axisMethod = { x: 'axisTop', y: 'axisLeft' }[axis]
+      const axisMethod = { x: 'axisBottom', y: 'axisLeft' }[axis]
       const tickFormat = { x: d3.format('d'), y: d3.format('.2s') }[axis]
       const methodArg = binding.value[axis]
 
       d3.select(el)
-        .transition()
-        .duration(1000)
         .call(
           d3[axisMethod](methodArg)
             .tickSize(0)
@@ -167,16 +171,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "library/src/style/variables.scss";
 .electrification_trend {
-  background-color: lightblue;
   width: 100%;
   height: 100%;
 }
 
 svg {
   background-color: white;
+  border: 1px solid black;
 }
 path {
-  stroke: aliceblue;
+  stroke: getColor(yellow, 40);
+  fill-opacity: 0.5;
 }
 </style>
