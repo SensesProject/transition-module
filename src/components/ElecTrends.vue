@@ -1,23 +1,19 @@
 <template>
   <div class="electrification_trend">
     <svg
-    :width="innerWidth"
-    :height="innerHeight"
-    :transform="'translate('+ margin.left + ',' + margin.top + ')'"
+      :width="innerWidth"
+      :height="innerHeight"
+      :transform="'translate('+ margin.left + ',' + margin.top + ')'"
     >
-    <g
-    v-for="(group, i) in createGraphs"
-    v-bind:key="i"
-    :transfrom="'translate(' + 1110 + ',' + 1120 + ')'"
-    >
-      <path :d="group" fill='black'/>
-      <g class="axis" v-axis:y="scales" />
       <g
-        class="axis"
-        v-axis:x="scales"
+        v-for="(group, i) in createGraphs"
+        v-bind:key="i"
         :transfrom="'translate(' + 1110 + ',' + 1120 + ')'"
-      />
-    </g>
+      >
+        <path :d="group" fill="black" />
+        <g class="axis" v-axis:y="scales" />
+        <g class="axis" v-axis:x="scales" :transfrom="'translate(' + 1110 + ',' + 1120 + ')'" />
+      </g>
     </svg>
   </div>
 </template>
@@ -64,7 +60,8 @@ export default {
         2085,
         2090,
         2095,
-        2100],
+        2100
+      ],
       margin: {
         left: 40,
         top: 30,
@@ -95,7 +92,7 @@ export default {
           let variableArr = _.groupBy(scenario, 'variable')
           _.forEach(variableArr, (variable, v) => {
             const singleElement = _.map(variable[0], (datum, d) => {
-              return { date: timeParse(d), value: datum }
+              return { date: d, value: datum }
             })
             singleElement.splice(20)
             scenarioObj[v] = singleElement
@@ -117,7 +114,6 @@ export default {
       })
     },
     scales () {
-      const parseYears = d3.timeParse('%Y')
       return {
         x: d3
           .scaleLinear()
@@ -133,12 +129,16 @@ export default {
       const selectData = this.modelSelection
       const { x, y } = this.scales
       const groups = this.sectorKeys
+      const paths = d3
+        .area()
+        .x(d => {
+          return x(d['date'])
+        })
+        .y(d => {
+          return y(d['value'])
+        })
       return _.map(selectData, (group, g) => {
-        const paths = d3
-          .area()
-          .x(d => { return x(d['date']) })
-          .y(d => { return y(d['value']) })
-        console.log(g, paths(group))
+        console.log(g, group, paths(group))
         return paths(group)
       })
     }
@@ -154,10 +154,12 @@ export default {
       d3.select(el)
         .transition()
         .duration(1000)
-        .call(d3[axisMethod](methodArg)
-          .tickSize(0)
-          .tickPadding(10)
-          .tickFormat(tickFormat))
+        .call(
+          d3[axisMethod](methodArg)
+            .tickSize(0)
+            .tickPadding(10)
+            .tickFormat(tickFormat)
+        )
     }
   }
 }
@@ -173,5 +175,8 @@ export default {
 
 svg {
   background-color: white;
+}
+path {
+  stroke: aliceblue;
 }
 </style>
