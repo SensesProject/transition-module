@@ -4,9 +4,20 @@
     :width="innerWidth"
     :height="innerHeight"
     :transform="'translate('+ margin.left + ',' + margin.top + ')'"
-    :data="modelSelection"
     >
-
+    <g
+    v-for="(group, i) in createGraphs"
+    v-bind:key="i"
+    :transfrom="'translate(' + 1110 + ',' + 1120 + ')'"
+    >
+      <path :d="group" fill='black'/>
+      <g class="axis" v-axis:y="scales" />
+      <g
+        class="axis"
+        v-axis:x="scales"
+        :transfrom="'translate(' + 1110 + ',' + 1120 + ')'"
+      />
+    </g>
     </svg>
   </div>
 </template>
@@ -37,6 +48,23 @@ export default {
   data () {
     return {
       ElectrificationTrends,
+      electrificationYears: [
+        2005,
+        2010,
+        2015,
+        2020,
+        2030,
+        2040,
+        2050,
+        2055,
+        2060,
+        2065,
+        2070,
+        2080,
+        2085,
+        2090,
+        2095,
+        2100],
       margin: {
         left: 40,
         top: 30,
@@ -54,31 +82,82 @@ export default {
     },
     dataStructure () {
       let trends = this.ElectrificationTrends
-      return {
-        models: _.groupBy(trends, 'model')
-      }
+      return _.groupBy(trends, 'model')
     },
     dataNest () {
-      const { models } = this.dataStructure
-
-      _.forEach(models, (model, m) => {
+      const newModels = this.dataStructure
+      const timeParse = d3.timeParse('%Y')
+      _.forEach(newModels, (model, m) => {
         const obj = {}
         let singleModel = _.groupBy(model, 'scenario')
         _.forEach(singleModel, (scenario, s) => {
           const scenarioObj = {}
           let variableArr = _.groupBy(scenario, 'variable')
           _.forEach(variableArr, (variable, v) => {
-            scenarioObj[v] = variable[0]
+            const singleElement = _.map(variable[0], (datum, d) => {
+              return { date: timeParse(d), value: datum }
+            })
+            singleElement.splice(20)
+            scenarioObj[v] = singleElement
           })
           obj[s] = scenarioObj
         })
-        models[m] = obj
+        newModels[m] = obj
       })
-      return models
+      return newModels
     },
     modelSelection () {
       const models = this.dataNest
       return models['REMIND']['2020_400']
+    },
+    sectorKeys () {
+      const selectedModel = this.modelSelection
+      return _.map(selectedModel, (label, l) => {
+        return l
+      })
+    },
+    scales () {
+      const parseYears = d3.timeParse('%Y')
+      return {
+        x: d3
+          .scaleLinear()
+          .domain([2005, 2100])
+          .rangeRound([0, 500]),
+        y: d3
+          .scaleLinear()
+          .domain([0, 400])
+          .rangeRound([0, 300])
+      }
+    },
+    createGraphs () {
+      const selectData = this.modelSelection
+      const { x, y } = this.scales
+      const groups = this.sectorKeys
+      return _.map(selectData, (group, g) => {
+        const paths = d3
+          .area()
+          .x(d => { return x(d['date']) })
+          .y(d => { return y(d['value']) })
+        console.log(g, paths(group))
+        return paths(group)
+      })
+    }
+  },
+  directives: {
+    axis (el, binding) {
+      const axis = binding.arg
+      // console.log("axis", axis);
+      const axisMethod = { x: 'axisTop', y: 'axisLeft' }[axis]
+      const tickFormat = { x: d3.format('d'), y: d3.format('.2s') }[axis]
+      const methodArg = binding.value[axis]
+
+      d3.select(el)
+        .transition()
+        .duration(1000)
+        .call(d3[axisMethod](methodArg)
+          .tickSize(0)
+          .tickPadding(10)
+          .tickFormat(tickFormat))
     }
   }
 }
