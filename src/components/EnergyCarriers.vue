@@ -1,5 +1,5 @@
 <template>
-  <div class="visualization" id="carriers" width="90%">
+  <div class="visualization" id="carriers">
       <div v-if="step === 5" class="regionselect">
      <SensesSelect
        class="selector"
@@ -23,21 +23,26 @@
        </span>.
      </p>
     </div>
-    <svg width="100%" height="100%" :transform="'translate('+ width / 12 + ',15)'">
+    <svg
+    :width="innerWidth"
+    :height="innerHeight"
+    :transform="'translate('+ margin.left + ',' + (margin.top - 10) + ')'"
+    >
       <Arrows
-      :height="height"
+      :height="innerHeight"
       :step="step"
-      :transform="'translate('+ margin.left + ',40)'"
+      :transform="'translate('+ (innerWidth / 5.5) + ',' + (innerHeight / 12) + ')'"
       v-if="step >= 8"
       />
-      <g :transform="'translate('+ (margin.left + 65) + ',0)'">
+      <g
+      :transform="'translate('+ (innerWidth / 4) + ',0)'">
         <text
         v-for="(energy, i) in createRect[0].rects"
         class="fuel-labels"
         v-bind:key="energy.labels + i"
         :id='energy.labels'
         :x="energy.posX"
-        :y= 'height - (height / 4)'
+        :y= '(innerHeight - 30)'
         v-on:click="isActive = energy.labels"
         >
         {{ energy.labels }}
@@ -45,7 +50,7 @@
         :data="sumCarriers"
         :id='energy.labels'
         :x="energy.posX"
-        :y= 'height - (height / 4) + 20'
+        :y= '(innerHeight - 45)'
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
@@ -56,7 +61,7 @@
           v-for="(sector,i) in createRect"
           v-bind:key="i"
           :id="sector.sector"
-          :transform="'translate(5,' + sector.sectorHeight +')'"
+          :transform="'translate(0,' + sector.sectorHeight +')'"
         >
           <rect
             class="fuel_rect"
@@ -124,7 +129,7 @@ export default {
       selected: 'World',
       isActive: '',
       margin: {
-        left: 5,
+        left: 40,
         top: 30,
         bottom: 30,
         right: 40
@@ -253,7 +258,7 @@ export default {
       const scale = this.scaleX
       const { y } = this.scaleY
       const barWidth = (this.innerWidth + this.margin.left) / 2
-      let sectorHeight = 10
+      let sectorHeight = this.margin.top
       const { currentElement } = this
       const sectors = _.map(selectedRegion, (sector, key) => {
         let distance = 10
@@ -265,7 +270,7 @@ export default {
           yValue = 0
         }
         let initialHeight = sectorHeight
-        sectorHeight = sectorHeight + yValue + 30
+        sectorHeight = (this.innerHeight / 12) + (sectorHeight + yValue)
 
         let totalDist = 0
         const rects = _.map(selectedRegion[key], (item, i) => {
@@ -333,8 +338,8 @@ export default {
 @import "library/src/style/variables.scss";
 
 .visualization {
-  height: inherit;
-  padding: 2% 12%;
+  width: 100%;
+  height: 100%;
 }
 
 .fuel_rect {

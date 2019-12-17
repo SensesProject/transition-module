@@ -1,6 +1,6 @@
 <template>
-  <g class="arrows" width="90%">
-    <g id="arrows" :transform="'scale(' + height / 1000 + ')'">
+  <g class="arrows" width="100%">
+    <g id="arrows" :transform="'scale(' + (height / 1000) * 1.3 + ')'">
         <g id="industry" v-if="step >= 8">
             <path d="M76,511 L67,511 C29.9969218,511 4.53157013e-15,481.003078
             0,444 L0,80 C-4.53157013e-15,42.9969218 29.9969218,13 67,13 L76,13
