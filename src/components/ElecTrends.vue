@@ -1,25 +1,62 @@
 <template>
   <div class="electrification_trend">
+    <div v-if="step >= 13" class="regionselect">
+   <SensesSelect
+     class="selector"
+     :options="regionsArray"
+     v-model="regSelected"
+   />
+   <SensesSelect
+     class="scenario selector"
+     :options="scenariosArray"
+     v-model="scenariosSelected"
+   />
+   <p id="select-label">
+     The selectors above allows you to filter electrification trends according
+     to region and scenario.
+   </p>
+   <p id="emissions-label">
+     According to the
+     <span class="highlight" id="scenario">
+       {{ scenariosSelected }}
+     </span> scenario, the
+     <span class="highlight">
+       {{ regSelected }}
+     </span> region will a comprehensive ...% electrification trend across all
+     four sectors.
+   </p>
+  </div>
     <svg
       :width="innerWidth"
       :height="innerHeight"
-      :transform="'translate('+ margin.left + ',' + margin.top + ')'"
+      :transform="'translate('+ margin.left + ',' + (margin.top - 10) + ')'"
     >
       <g
         v-for="(group, i) in createGraphs"
         v-bind:key="i"
         :class="group.name"
-        :transform="'translate('+ (margin.left * 7.5) + ',' + group.verticalPos + ')'"
+        :transform="'translate('+ (innerWidth / 4) + ',' + group.verticalPos + ')'"
       >
+          <text
+          class="sector-labels"
+          :x='(width + margin.left) / 2'
+          y='30'
+          >
+          {{group.name !== 'electricity-RE' ? group.name : 'electricity'}}
+        </text>
         <path
         :d="group.d"
         :fill='group.fill'
         />
-        <g class="axis" v-axis:y="scales" />
+        <g
+        v-if= "group.name !== 'electricity-RE'"
+        class="axis"
+        v-axis:y="scales"
+        />
       </g>
       <g class="axis"
       v-axis:x="scales"
-      :transform="'translate('+ (margin.left * 7.5) + ',' + (this.innerHeight - 30) + ')'" />
+      :transform="'translate('+ (innerWidth / 4) + ',' + (this.innerHeight - 30) + ')'" />
     </svg>
   </div>
 </template>
@@ -30,6 +67,9 @@ import _ from 'lodash'
 
 // Data
 import ElectrificationTrends from '../assets/data/electrification-trends.json'
+
+// Components
+import SensesSelect from 'library/src/components/SensesSelect.vue'
 
 export default {
   name: 'ElecTrends',
@@ -47,15 +87,20 @@ export default {
       default: 0
     }
   },
+  components: {
+    SensesSelect
+  },
   data () {
     return {
       ElectrificationTrends,
+      regSelected: 'EUR',
+      scenariosSelected: 'B1300',
       colors: {
-        'electricity|RE': '#ffd89a',
-        'electricity|VRE': '#795315',
+        'electricity-RE': '#ffac00',
+        'electricity-VRE': '#ffac00',
         industry: '#ffac00',
-        residential: '#ba7e12',
-        transport: '#ffecce'
+        residential: '#ffac00',
+        transport: '#ffac00'
       },
       margin: {
         left: 40,
@@ -74,13 +119,13 @@ export default {
     },
     dataStructure () {
       let trends = this.ElectrificationTrends
-      return _.groupBy(trends, 'model')
+      return _.groupBy(trends, 'region')
     },
     dataNest () {
       const newModels = this.dataStructure
-      _.forEach(newModels, (model, m) => {
+      _.forEach(newModels, (region, r) => {
         const obj = {}
-        let singleModel = _.groupBy(model, 'scenario')
+        let singleModel = _.groupBy(region, 'scenario')
         _.forEach(singleModel, (scenario, s) => {
           const scenarioObj = {}
           let variableArr = _.groupBy(scenario, 'variable')
@@ -88,19 +133,41 @@ export default {
             const singleElement = _.map(variable[0], (datum, d) => {
               return { date: d, value: datum }
             })
-            singleElement.splice(20)
+            singleElement.splice(16)
             scenarioObj[v] = singleElement
           })
           obj[s] = scenarioObj
         })
-        newModels[m] = obj
+        newModels[r] = obj
       })
       return newModels
     },
     modelSelection () {
       const models = this.dataNest
-      console.log(models['REMIND']['2020_400'])
-      return models['REMIND']['2020_400']
+      const regSelected = this.regSelected
+      const scenarioSelected = this.scenariosSelected
+      return models[regSelected][scenarioSelected]
+    },
+    regionsArray () {
+      const models = this.dataNest
+      const allRegions = []
+
+      _.forEach(models, (arr, key) => {
+        allRegions.push(key)
+        return allRegions
+      })
+      return allRegions
+    },
+    scenariosArray () {
+      const regSelected = this.regSelected
+      const scenarios = this.dataNest[regSelected]
+      const allScenarios = []
+
+      _.forEach(scenarios, (arr, key) => {
+        allScenarios.push(key)
+        return allScenarios
+      })
+      return allScenarios
     },
     sectorKeys () {
       const selectedModel = this.modelSelection
@@ -109,22 +176,23 @@ export default {
       })
     },
     scales () {
+      const graphWidth = (this.innerWidth + this.margin.left) / 2
       return {
         x: d3
           .scaleLinear()
           .domain([2005, 2100])
-          .rangeRound([0, this.innerWidth / 2 + 100]),
+          .rangeRound([0, graphWidth]),
         y: d3
           .scaleLinear()
           .domain([0, 100])
-          .rangeRound([80, 0])
+          .rangeRound([100, 0])
       }
     },
     createGraphs () {
       const selectData = this.modelSelection
       const { x, y } = this.scales
       const groups = this.sectorKeys
-      let distance = this.margin.top + 10
+      let distance = this.margin.top
       const paths = d3
         .area()
         .x(d => {
@@ -135,14 +203,13 @@ export default {
           return y(d['value'])
         })
       return _.map(selectData, (group, g) => {
-        console.log(g, group, paths(group))
         let initialPos = distance
-        if (g !== 'electricity|RE') {
+        if (g !== 'electricity-RE') {
           distance = distance + (this.innerHeight / 4)
         } else { initialPos = distance }
         return {
           d: paths(group),
-          name: g,
+          name: g !== 'electricity-VRE' ? g : null,
           fill: this.colors[g],
           verticalPos: initialPos
         }
@@ -154,7 +221,7 @@ export default {
       const axis = binding.arg
       // console.log("axis", axis);
       const axisMethod = { x: 'axisBottom', y: 'axisLeft' }[axis]
-      const tickFormat = { x: d3.format('d'), y: d3.format('.2s') }[axis]
+      const tickFormat = { x: d3.format('d'), y: d3.format('.0s') }[axis]
       const methodArg = binding.value[axis]
 
       d3.select(el)
@@ -179,10 +246,36 @@ export default {
 
 svg {
   background-color: white;
-  border: 1px solid black;
 }
+
 path {
   stroke: getColor(yellow, 40);
-  fill-opacity: 0.5;
+  fill-opacity: 0.4;
+}
+
+.regionselect {
+  top: $spacing * 2;
+  left: 4.5em;
+  position: absolute;
+  width: 150px;
+  z-index: 1;
+}
+
+.scenario {
+  margin-left: 5px;
+}
+
+#scenario {
+  background: getColor(green, 100);
+  color: getColor(green, 40);
+}
+
+#select-label {
+  font-size: 10px;
+  margin-top: 15px;
+}
+
+#emissions-label {
+  margin-top: 15px;
 }
 </style>

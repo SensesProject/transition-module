@@ -37,8 +37,8 @@
           }"
         >
           <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" />
-          <EnergyCarriers v-if="step >= 4 && step <=11" :step="step" :width="width" :height="height" />
-          <ElecTrends v-if="step >= 12" :step="step" :width="width" :height="height" />
+          <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" />
+          <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" />
         </div>
       </template>
       <div slot="text" class="observer">
@@ -70,7 +70,8 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3">
-          <h2 class="title" id="sector__emissions">Where do the current emissions come from?</h2>
+          <h2 class="title" id="sector__emissions">
+            Where do the current emissions come from?</h2>
           <p>
             The current energy-related CO2 emissions come from four different
             sectors: electricity, transport, industry and buildings and other
@@ -162,7 +163,8 @@
             energy. In the electricity sector, this can be done by increasing
             the share of <span class="highlight" id="renewables">renewable energy</span>,
             in particular wind and solar. There are two main strategies to decarbonize the industry,
-            transport and residential sectors: electrification using <span class="highlight" id="elect">low-carbon electricity</span> or
+            transport and residential sectors: electrification using
+            <span class="highlight" id="elect">low-carbon electricity</span> or
             a switch to low-carbon alternatives like biofuels or renewable
             hydrogen.
           </p>
@@ -220,7 +222,7 @@
             energy carriers and their emissions.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="13">
+        <IntersectionObserver :step="13" align="right">
           <h2
             class="title"
             id="electrification__scenarios"
