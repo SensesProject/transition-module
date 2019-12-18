@@ -3,20 +3,20 @@
     <line
     class='axis'
     x1='0'
-    x2='0'
+    :x2='width'
     y1='0'
-    :y2='height'
+    y2='0'
     />
     <g class="labels">
       <text
       v-for="(label, i) in labels"
       v-bind:key="i"
-      text-anchor="end"
+      text-anchor="middle"
       :class="label"
-      x='-10'
-      :y='label.y'
+      :x='label.x'
+      y='15'
       >
-      {{ label.perc }}%
+      {{ label.year }}
     </text>
     </g>
   </g>
@@ -31,16 +31,23 @@ export default {
   computed: {
     labels: function () {
       const labels = [
-        [0],
-        [50],
-        [100]
+        [2010],
+        [2020],
+        [2030],
+        [2040],
+        [2050],
+        [2060],
+        [2070],
+        [2080],
+        [2090],
+        [2100]
       ]
 
       return map(labels, pair => {
-        const [perc] = pair
+        const [year] = pair
         return {
-          y: this.scale(perc),
-          perc
+          x: this.scale(year),
+          year
         }
       })
     }

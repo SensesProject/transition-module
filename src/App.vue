@@ -1,7 +1,7 @@
 <template>
   <div id="app" ref="vis">
     <SensesMenu />
-    <div class="introduction">
+    <div class="noscroll">
       <h1 class="title" id="cover">Energy Transition Pathways</h1>
         <p class="author__section">
           <span class="tiny uppercase mono">Content:</span> <span class="tiny author mono">Ipsum L.</span>
@@ -266,6 +266,17 @@
         </IntersectionObserver>
       </div>
     </LayoutScrollytelling>
+    <div class="noscroll">
+      <p class="title">
+        This is the conclusion of the module. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur.
+      </p>
+      <h4 class="title" id="cover">READ NEXT: </h4>
+   </div>
   </div>
 </template>
 
@@ -308,7 +319,7 @@ export default {
   border: 1px solid black;
 }
 
-.introduction {
+.noscroll {
   padding-top: $spacing;
   margin: 0 auto;
   max-width: 500px;

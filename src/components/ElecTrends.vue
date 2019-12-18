@@ -3,9 +3,11 @@
     <div class='legend'>
       How to read:
       <svg class='lines-legend'>
-        <line x1='0' x2='50' y1='20' y2='20' stroke='#c8005f' stroke-width='2'/>
-        <text width='100px' x='60' y='20'>% Emissions Trend</text>
-        <line x1='0' x2='50' y1='50' y2='50' stroke='#ba7e12' stroke-width='2'/>
+        <rect width='50' height='10' x='0' y='12' fill='#ed96ab'/>
+        <line x1='0' x2='50' y1='12' y2='12' stroke='#c8005f' stroke-width='2'/>
+        <text x='60' y='20'>% Emissions Trend</text>
+        <rect width='50' height='10' x='0' y='42' fill='#ffd89a'/>
+        <line x1='0' x2='50' y1='42' y2='42' stroke='#ba7e12' stroke-width='2'/>
         <text x='60' y='50'>% Electrification Trend</text>
       </svg>
     </div>
@@ -28,11 +30,12 @@
      According to the
      <span class="highlight" id="scenario">
        {{ scenariosSelected }}
-     </span> scenario, the
+     </span> scenario , the
      <span class="highlight">
        {{ regSelected }}
      </span> region will a comprehensive ...% electrification trend across all
      four sectors.
+     <br />(REMIND Model)
    </p>
   </div>
     <svg
@@ -69,9 +72,12 @@
         :height= 'innerHeight / 8'
         />
       </g>
-      <g class="axis"
-      v-axis:x="scales"
+      <XAxis
+      :scale='scales.x'
+      :width='(this.innerWidth + this.margin.left) / 2'
+      :height= 'innerHeight'
       :transform="'translate('+ (innerWidth / 4) + ',' + (this.innerHeight - 30) + ')'" />
+      />
     </svg>
   </div>
 </template>
@@ -86,6 +92,7 @@ import ElectrificationTrends from '../assets/data/toyemissions-trends.json'
 // Components
 import SensesSelect from 'library/src/components/SensesSelect.vue'
 import YAxis from './subcomponents/YAxis.vue'
+import XAxis from './subcomponents/XAxis.vue'
 
 export default {
   name: 'ElecTrends',
@@ -105,7 +112,8 @@ export default {
   },
   components: {
     SensesSelect,
-    YAxis
+    YAxis,
+    XAxis
   },
   data () {
     return {
@@ -147,6 +155,7 @@ export default {
           const scenarioObj = {}
           let variableArr = _.groupBy(scenario, 'variable')
           _.forEach(variableArr, (variable, v) => {
+            console.log(variable)
             const emissions = _.map(variable[0], (datum, d) => {
               return { date: d, value: datum }
             })
@@ -161,6 +170,7 @@ export default {
         })
         newModels[r] = obj
       })
+      console.log(newModels)
       return newModels
     },
     modelSelection () {
@@ -298,7 +308,7 @@ path {
 }
 
 .legend {
-  top: $spacing;
+  bottom: 0;
   left: 4.5em;
   position: absolute;
   width: 150px;
@@ -311,7 +321,7 @@ path {
 }
 
 .regionselect {
-  top: $spacing * 4.5;
+  top: $spacing * 2;
   left: 4.5em;
   position: absolute;
   width: 150px;
