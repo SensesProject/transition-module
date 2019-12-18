@@ -11,6 +11,7 @@
       <text
       v-for="(label, i) in labels"
       v-bind:key="i"
+      text-anchor="left"
       :class="label"
       x='-30'
       :y='label.y'
@@ -33,6 +34,7 @@ export default {
       const { scale } = this
 
       return map(scale.ticks(), (tick, i) => {
+        console.log(i)
         return {
           key: i,
           label: d3.format('.0s')(tick),

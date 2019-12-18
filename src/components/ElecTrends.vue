@@ -1,5 +1,14 @@
 <template>
   <div class="electrification_trend">
+    <div class='legend'>
+      How to read:
+      <svg class='lines-legend'>
+        <line x1='0' x2='50' y1='20' y2='20' stroke='#c8005f' stroke-width='2'/>
+        <text width='100px' x='60' y='20'>% Emissions Trend</text>
+        <line x1='0' x2='50' y1='50' y2='50' stroke='#ba7e12' stroke-width='2'/>
+        <text x='60' y='50'>% Electrification Trend</text>
+      </svg>
+    </div>
     <div v-if="step >= 13" class="regionselect">
    <SensesSelect
      class="selector"
@@ -15,7 +24,7 @@
      The selectors above allows you to filter electrification trends according
      to region and scenario.
    </p>
-   <p id="emissions-label">
+   <p class="left-text">
      According to the
      <span class="highlight" id="scenario">
        {{ scenariosSelected }}
@@ -42,13 +51,15 @@
           :x='(width + margin.left) / 2'
           y='30'
           >
-          {{group.name !== 'electricity-RE' ? group.name : 'electricity'}}
+          {{group.name !== 'electricity-RE' ? group.name : 'electricity (VRE and RE)'}}
         </text>
         <path
+        class='emissions-trend'
         :d="group.dEm"
         fill='#ed96ab'
         />
         <path
+        class='elect-trend'
         :d="group.dEle"
         :fill='group.fill'
         />
@@ -275,12 +286,32 @@ svg {
 }
 
 path {
-  stroke: getColor(yellow, 40);
   fill-opacity: 0.4;
 }
 
+.elect-trend {
+  stroke: getColor(yellow, 40);
+}
+
+.emissions-trend {
+  stroke: getColor(red, 40);
+}
+
+.legend {
+  top: $spacing;
+  left: 4.5em;
+  position: absolute;
+  width: 150px;
+  z-index: 1;
+}
+
+.lines-legend {
+  background-color: transparent;
+  width: 250px;
+}
+
 .regionselect {
-  top: $spacing * 2;
+  top: $spacing * 4.5;
   left: 4.5em;
   position: absolute;
   width: 150px;
@@ -301,7 +332,7 @@ path {
   margin-top: 15px;
 }
 
-#emissions-label {
+.left-text {
   margin-top: 15px;
 }
 </style>
