@@ -45,13 +45,17 @@
           {{group.name !== 'electricity-RE' ? group.name : 'electricity'}}
         </text>
         <path
-        :d="group.d"
+        :d="group.dEm"
+        fill='#ed96ab'
+        />
+        <path
+        :d="group.dEle"
         :fill='group.fill'
         />
-        <g
+        <YAxis
         v-if= "group.name !== 'electricity-RE'"
-        class="axis"
-        v-axis:y="scales"
+        :scale='scales.y'
+        :height= 'innerHeight / 8'
         />
       </g>
       <g class="axis"
@@ -66,10 +70,11 @@ import * as d3 from 'd3'
 import _ from 'lodash'
 
 // Data
-import ElectrificationTrends from '../assets/data/electrification-trends.json'
+import ElectrificationTrends from '../assets/data/toyemissions-trends.json'
 
 // Components
 import SensesSelect from 'library/src/components/SensesSelect.vue'
+import YAxis from './subcomponents/YAxis.vue'
 
 export default {
   name: 'ElecTrends',
@@ -88,7 +93,8 @@ export default {
     }
   },
   components: {
-    SensesSelect
+    SensesSelect,
+    YAxis
   },
   data () {
     return {
@@ -130,11 +136,15 @@ export default {
           const scenarioObj = {}
           let variableArr = _.groupBy(scenario, 'variable')
           _.forEach(variableArr, (variable, v) => {
-            const singleElement = _.map(variable[0], (datum, d) => {
+            const emissions = _.map(variable[0], (datum, d) => {
               return { date: d, value: datum }
             })
-            singleElement.splice(16)
-            scenarioObj[v] = singleElement
+            const electrification = _.map(variable[1], (datum, d) => {
+              return { date: d, value: datum }
+            })
+            emissions.splice(16)
+            electrification.splice(16)
+            scenarioObj[v] = { emissions, electrification }
           })
           obj[s] = scenarioObj
         })
@@ -185,12 +195,16 @@ export default {
         y: d3
           .scaleLinear()
           .domain([0, 100])
-          .rangeRound([100, 0])
+          .rangeRound([this.innerHeight / 8, 0]),
+        yEm: d3
+          .scaleLinear()
+          .domain([0, 100])
+          .rangeRound([0, this.innerHeight / 8])
       }
     },
     createGraphs () {
       const selectData = this.modelSelection
-      const { x, y } = this.scales
+      const { x, y, yEm } = this.scales
       const groups = this.sectorKeys
       let distance = this.margin.top
       const paths = d3
@@ -202,13 +216,25 @@ export default {
         .y1(d => {
           return y(d['value'])
         })
+
+      const Empaths = d3
+        .area()
+        .x(d => {
+          return x(d['date'])
+        })
+        .y0(y(0))
+        .y1(d => {
+          return yEm(d['value'])
+        })
+
       return _.map(selectData, (group, g) => {
         let initialPos = distance
         if (g !== 'electricity-RE') {
           distance = distance + (this.innerHeight / 4)
         } else { initialPos = distance }
         return {
-          d: paths(group),
+          dEle: paths(group['electrification']),
+          dEm: Empaths(group['emissions']),
           name: g !== 'electricity-VRE' ? g : null,
           fill: this.colors[g],
           verticalPos: initialPos

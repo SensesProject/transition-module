@@ -358,6 +358,7 @@ export default {
   left: 4.5em;
   position: absolute;
   width: 150px;
+  z-index: 1;
 }
 
 #select-label {
@@ -375,6 +376,7 @@ export default {
 
 .is-active {
   visibility: visible;
+  fill: $color-gray;
 }
 .electrification {
   fill: $color-yellow;
