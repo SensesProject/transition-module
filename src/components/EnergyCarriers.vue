@@ -43,7 +43,10 @@
         :id='energy.labels'
         :x="energy.posX"
         :y= '(innerHeight - 30)'
-        v-on:click="isActive = energy.labels"
+        v-on:click=";[
+        isActive = isActive === energy.labels ? 'initial' : energy.labels,
+        clicked = isActive !== 'initial'
+        ]"
         >
         {{ energy.labels }}
         <tspan
@@ -65,6 +68,7 @@
         >
           <rect
             class="fuel_rect"
+            :fill='rect.fill'
             :class='isActive === rect.labels ?
             [sector.sector, rect.labels, "is-fill"] :
             [sector.sector, rect.labels, "is-empty"]'
@@ -128,6 +132,7 @@ export default {
       ElectrificationSteps,
       selected: 'World',
       isActive: '',
+      clicked: false,
       margin: {
         left: 40,
         top: 30,
@@ -271,7 +276,7 @@ export default {
         }
         let initialHeight = sectorHeight
         sectorHeight = (this.innerHeight / 12) + (sectorHeight + yValue)
-
+        console.log(key)
         let totalDist = 0
         const rects = _.map(selectedRegion[key], (item, i) => {
           // for rects
@@ -285,7 +290,11 @@ export default {
             dist: initialDist,
             rectWidth: scale[key](item),
             carrierValue: item,
-            posX: initialPos
+            posX: initialPos,
+            fill: this.step >= 7 && key === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
+              this.step >= 8 && key === 'industry' && i === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
+              this.step >= 9 && key === 'transport' && i === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
+              this.step >= 10 && key === 'residential' && i === 'electricity' ? '#ffd89a' : '#d8d8e4'
           }
         })
         return {
@@ -326,8 +335,7 @@ export default {
         })
         return data
       })
-      const result = dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
-      return result
+      return dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
     }
   }
 }
@@ -344,7 +352,6 @@ export default {
 
 .fuel_rect {
   stroke: $color-gray;
-  fill: getColor(gray, 80)
 }
 
 .fuel-labels {
@@ -370,16 +377,9 @@ export default {
   margin-top: 15px;
 }
 
-.is-empty {
-  fill-opacity: 0.2;
-}
-
-.is-active {
-  visibility: visible;
-  fill: $color-gray;
-}
-.electrification {
-  fill: $color-yellow;
+.is-fill {
+  stroke: $color-neon;
+  fill: #ddd6ff;
 }
 
 .is-inactive {

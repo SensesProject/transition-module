@@ -60,7 +60,12 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.2">
-          <p>A limit of 1.5°C will require carbon neutrality even by 2050.</p>
+          <p>A limit of 1.5°C will require carbon neutrality even by 2050.
+          <br/>
+          <br/>
+          To learn more about global and regional decarbonization plans, see the
+          <a href='https://dev.climatescenarios.org/stocktake/'>Global Stocktake module</a>.
+          </p>
         </IntersectionObserver>
         <IntersectionObserver :step="2">
           <h2 class="title" id="increasing__emissions">Emission have been steadily increasing</h2>

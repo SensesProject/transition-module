@@ -12,15 +12,16 @@
     <g
       v-for="sector of sectors"
       :key="sector.key"
-      :transform="'translate(' + x + ',' + scales.y(sector.data[1]) + ')'"
+      :transform="'translate(' + x + ',' + scales.y(sector.data) + ')'"
     >
       <text>{{ sector.value }},{{ sector.key }}</text>
-      <circle r="3" />
+      <rect transform="rotate(45)" width="8" height="8" />
     </g>
   </g>
 </template>
 
 <script>
+import * as d3 from 'd3'
 export default {
   name: 'Dragline',
   props: ['width', 'height', 'scales', 'data', 'margin'],
@@ -39,7 +40,7 @@ export default {
         const { key } = d.data
         return {
           key,
-          data,
+          data: d3.median(data),
           value: data.data[key]
         }
       })
@@ -62,8 +63,8 @@ export default {
   pointer-events: all;
 }
 
-circle {
-  fill: $color-red;
+rect {
+  fill: getColor(neon, 40);
   stroke: $color-gray;
 }
 
