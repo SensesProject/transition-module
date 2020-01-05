@@ -48,7 +48,8 @@
             To stabilize global temperatures and stop global warming, net
             greenhouse gas emissions to the atmosphere have to be reduced to
             zero.
-            <br />CO2 emissions from the energy sector represent the lion share
+            <br /><span class="highlight" id="emissions">CO2 emissions</span> from the
+              energy sector represent the lion share
             of global greenhouse gas emissions and have steadily increased over
             the past 30 years.
           </p>
@@ -179,6 +180,8 @@
           <p>
             The first step is thus to replace coal and gas in the electricity
             sector by renewable sources like wind, solar and bioenergy.
+            <br />
+            However we also need to double the clean electricity production for this sector.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="8">
@@ -281,6 +284,17 @@
         dolore eu fugiat nulla pariatur.
       </p>
       <h4 class="title" id="cover">READ NEXT: </h4>
+      <p class="title">
+        <a href='#'>Sector Transition 2: Where is our electricity coming from?</a>
+        <br />
+        <a href='#'>Global Stocktake</a>
+        <br />
+        <a href='#'>Primary Energy</a>
+      </p>
+      <h4 class="title" id="cover">EXPLORE THE DATA: </h4>
+      <div class='back'>
+        <a class='button back' href='#'>Return to the Policy Portal</a>
+      </div>
    </div>
   </div>
 </template>
@@ -373,6 +387,11 @@ p {
   max-width: 300px;
 }
 
+#emissions {
+  background: getColor(red, 100);
+  color: $color-red;
+}
+
 #oil {
   background: getColor(orange, 100);
   color: $color-orange;
@@ -396,5 +415,9 @@ p {
 #elect {
   background: getColor(yellow, 80);
   color: getColor(yellow, 40);
+}
+
+.back {
+  margin: 0 auto;
 }
 </style>

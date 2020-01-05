@@ -258,54 +258,6 @@ export default {
         transport
       }
     },
-    createRect () {
-      const selectedRegion = this.dataFilter
-      const scale = this.scaleX
-      const { y } = this.scaleY
-      const barWidth = (this.innerWidth + this.margin.left) / 2
-      let sectorHeight = this.margin.top
-      const { currentElement } = this
-      const sectors = _.map(selectedRegion, (sector, key) => {
-        let distance = 10
-        // for bars height
-        let ValueSum = d3.sum(d3.values(selectedRegion[key]))
-        let yValue = y(ValueSum)
-        // conditions to check data
-        if (ValueSum === 0) {
-          yValue = 0
-        }
-        let initialHeight = sectorHeight
-        sectorHeight = (this.innerHeight / 12) + (sectorHeight + yValue)
-        console.log(key)
-        let totalDist = 0
-        const rects = _.map(selectedRegion[key], (item, i) => {
-          // for rects
-          let initialDist = totalDist
-          totalDist = totalDist + scale[key](item)
-          // for labels horizontal position
-          let initialPos = distance
-          distance = distance + (barWidth / 10.5)
-          return {
-            labels: i,
-            dist: initialDist,
-            rectWidth: scale[key](item),
-            carrierValue: item,
-            posX: initialPos,
-            fill: this.step >= 7 && key === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
-              this.step >= 8 && key === 'industry' && i === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
-              this.step >= 9 && key === 'transport' && i === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
-              this.step >= 10 && key === 'residential' && i === 'electricity' ? '#ffd89a' : '#d8d8e4'
-          }
-        })
-        return {
-          rects,
-          sector: key,
-          sectorHeight: initialHeight,
-          rectHeight: yValue
-        }
-      })
-      return sectors
-    },
     findPerc (){
       const carriers = this.carrierSum
       const { maxRegValue } = this.scaleY
@@ -336,6 +288,56 @@ export default {
         return data
       })
       return dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
+    },
+    createRect () {
+      const selectedRegion = this.dataFilter
+      const scale = this.scaleX
+      const { y } = this.scaleY
+      const barWidth = (this.innerWidth + this.margin.left) / 2
+      let sectorHeight = this.margin.top
+      const { currentElement } = this
+      const sectors = _.map(selectedRegion, (sector, key) => {
+        let distance = 10
+        // for bars height
+        let ValueSum = d3.sum(d3.values(selectedRegion[key]))
+        let yValue = y(ValueSum)
+        // conditions to check data
+        if (ValueSum === 0) {
+          yValue = 0
+        }
+        let initialHeight = sectorHeight
+        sectorHeight = (this.innerHeight / 12) + (sectorHeight + yValue)
+        let totalDist = 0
+        const rects = _.map(selectedRegion[key], (item, i) => {
+          // for rects
+          let initialDist = totalDist
+          totalDist = totalDist + scale[key](item)
+          // for labels horizontal position
+          let initialPos = distance
+          distance = distance + (barWidth / 10.5)
+          return {
+            labels: i,
+            dist: initialDist,
+            rectWidth: scale[key](item),
+            carrierValue: item,
+            posX: initialPos,
+            fill:
+              this.step === 6 && i === 'non-bioren' ? '#a2e7c0' : '#d8d8e4' &&
+              this.step === 6 && i === 'm&tbio' ? '#a2e7c0' : '#d8d8e4' &&
+              this.step >= 7 && key === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
+              this.step >= 8 && key === 'industry' && i === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
+              this.step >= 9 && key === 'transport' && i === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
+              this.step >= 10 && key === 'residential' && i === 'electricity' ? '#ffd89a' : '#d8d8e4'
+          }
+        })
+        return {
+          rects,
+          sector: key,
+          sectorHeight: initialHeight,
+          rectHeight: yValue
+        }
+      })
+      return sectors
     }
   }
 }

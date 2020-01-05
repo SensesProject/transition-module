@@ -12,10 +12,10 @@
     <g
       v-for="sector of sectors"
       :key="sector.key"
-      :transform="'translate(' + x + ',' + scales.y(sector.data) + ')'"
+      :transform="'translate(' + x + ',' + scales.y(sector.data[1]) + ')'"
     >
-      <text>{{ sector.value }},{{ sector.key }}</text>
-      <rect transform="rotate(45)" width="8" height="8" />
+      <text x='10' y='10'>{{ sector.value }},{{ sector.key }}</text>
+      <rect class='labels' transform="rotate(45)" width="8" height="8" />
     </g>
   </g>
 </template>
@@ -40,7 +40,7 @@ export default {
         const { key } = d.data
         return {
           key,
-          data: d3.median(data),
+          data,
           value: data.data[key]
         }
       })
@@ -63,7 +63,7 @@ export default {
   pointer-events: all;
 }
 
-rect {
+.labels {
   fill: getColor(neon, 40);
   stroke: $color-gray;
 }
@@ -75,6 +75,5 @@ text {
 
 rect {
   fill: white;
-  opacity: 0.5;
 }
 </style>
