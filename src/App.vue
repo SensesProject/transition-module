@@ -39,6 +39,7 @@
           <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" />
           <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" />
           <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" />
+          <GlobalStrategy v-if="step >= 13" :step="step" :width="width" :height="height" />
         </div>
       </template>
       <div slot="text" class="observer">
@@ -309,6 +310,7 @@ import IntersectionObserver from 'library/src/components/IntersectionObserver.vu
 import EmissionsChart from './components/EmissionsChart.vue'
 import EnergyCarriers from './components/EnergyCarriers.vue'
 import ElecTrends from './components/ElecTrends.vue'
+import GlobalStrategy from './components/GlobalStrategy.vue'
 
 export default {
   name: 'app',
@@ -318,6 +320,7 @@ export default {
     EmissionsChart,
     EnergyCarriers,
     ElecTrends,
+    GlobalStrategy,
     SensesMenu
   },
   methods: {
