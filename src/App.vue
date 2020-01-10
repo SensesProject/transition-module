@@ -2,13 +2,22 @@
   <div id="app" ref="vis">
     <SensesMenu />
     <div class="noscroll">
-      <h1 class="title" id="cover">Energy Transition Pathways</h1>
+      <h1 class="title" id="cover">Towards an Electric Future</h1>
         <p class="author__section">
           <span class="tiny uppercase mono">Content:</span> <span class="tiny author mono">Ipsum L.</span>
           <span class="tiny uppercase mono">Design:</span> <span class="tiny author mono">Ipsum L.</span>
           <span class="tiny uppercase mono">Code:</span> <span class="tiny author mono">Ipsum L.</span>
         </p>
-        <h4 class="title" id="cover">What will you learn?</h4>
+        <h4 class="title">Relevant Concepts</h4>
+        <p class="title mono">
+          Net Zero,
+          Electrification,
+          Decarbonization Pathways,
+          Policy,
+          Mitigation Strategies,
+          Fossil Fuels
+        </p>
+        <h4 class="title">What will you learn?</h4>
           <p class="title">
             In this module you will be able to break down historical emissions
             according to the sector that generate them. You will be introduced
@@ -16,15 +25,6 @@
             Carbon Neutral by reducing emissions. In the last section you will
             be able to explore the compatibility of different scenarios with
             this decarbonization strategy.
-          </p>
-          <h4 class="title" id="cover">Relevant Concepts</h4>
-          <p class="title mono">
-            Net Zero,
-            Electrification,
-            Decarbonization Pathways,
-            Policy,
-            Mitigation Strategies,
-            Fossil Fuels
           </p>
         </div>
     <LayoutScrollytelling>
@@ -37,7 +37,7 @@
           }"
         >
           <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" />
-          <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" />
+          <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" :hover="hover"/>
           <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" />
           <GlobalStrategy v-if="step >= 13" :step="step" :width="width" :height="height" />
         </div>
@@ -143,16 +143,25 @@
           <p>
             Each sector uses a different mix of energy carriers such as coal,
             gas, oil, nuclear or renewables.
-            All sectors currently use <span class="highlight" id="ff">fossil
-            fuels</span> like
-            <span class="highlight" id="coal">coal</span>,
-            <span class="highlight" id="gas">gas</span>
-            and <span class="highlight" id="oil" >oil</span> to a large extent.
+            All sectors currently use fossil fuels like
+            <span class="highlight"
+            id="coal"
+            @mouseover="hover = ['coal', '#8a8a93']"
+            @mouseleave="hover = 'empty'"
+            >coal</span>,
+            <span class="highlight" id="gas"
+            @mouseover="hover = ['gas', '#ed96ab']"
+            @mouseleave="hover = 'empty'"
+            >gas</span>
+            and <span class="highlight" id="oil"
+            @mouseover="hover = ['oil', '#fcb69f']"
+            @mouseleave="hover = 'empty'"
+            >oil</span> to a large extent.
             To decarbonize the energy system, they have to be replaced by low-carbon
             alternatives like nuclear or renewables.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="5" align="right">
+        <IntersectionObserver :step="5" align="right" class="height__change">
           <h2 class="title" id="country__perspectives">Country Perspectives</h2>
           <p>
             Depending on their energy resources and needs, different countries
@@ -168,7 +177,9 @@
           <p>
             Across all sectors, fossil fuels need to be replaced by low-carbon
             energy. In the electricity sector, this can be done by increasing
-            the share of <span class="highlight" id="renewables">renewable energy</span>,
+            the share of
+            <span class="highlight"
+            id="renewables">renewable energy</span>,
             in particular wind and solar. There are two main strategies to decarbonize the industry,
             transport and residential sectors: electrification using
             <span class="highlight" id="elect">low-carbon electricity</span> or
@@ -273,6 +284,20 @@
           </h2>
           <p>testo.</p>
         </IntersectionObserver>
+        <IntersectionObserver :step="18">
+          <h2 class="title" id="explore__scenarios">
+            The faster the strategy steps are implemented, the closer we’ll get
+            to Net-Zero.
+          </h2>
+          <p>testo.</p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="19">
+          <h2 class="title" id="explore__scenarios">
+            The faster the strategy steps are implemented, the closer we’ll get
+            to Net-Zero.
+          </h2>
+          <p>testo.</p>
+        </IntersectionObserver>
       </div>
     </LayoutScrollytelling>
     <div class="noscroll">
@@ -284,7 +309,7 @@
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
         dolore eu fugiat nulla pariatur.
       </p>
-      <h4 class="title" id="cover">READ NEXT: </h4>
+      <h4 class="title">READ NEXT: </h4>
       <p class="title">
         <a href='#'>Sector Transition 2: Where is our electricity coming from?</a>
         <br />
@@ -292,7 +317,7 @@
         <br />
         <a href='#'>Primary Energy</a>
       </p>
-      <h4 class="title" id="cover">EXPLORE THE DATA: </h4>
+      <h4 class="title">EXPLORE THE DATA: </h4>
       <div class='back'>
         <a class='button back' href='#'>Return to the Policy Portal</a>
       </div>
@@ -323,9 +348,9 @@ export default {
     GlobalStrategy,
     SensesMenu
   },
-  methods: {
-    importantCarrier (item) {
-      this.$emit('current-selection', item)
+  data () {
+    return {
+      hover: 'empty'
     }
   }
 }
@@ -346,10 +371,14 @@ export default {
   margin: 0 auto;
   max-width: 500px;
   width: 100%;
-  height: 75vh;
+  height: 90vh;
 }
 .author__section {
   margin-bottom: $spacing;
+}
+
+.height__change {
+  padding: 30vh 0 2000px !important;
 }
 
 .author {
@@ -401,8 +430,8 @@ p {
 }
 
 #coal {
-  background: $color-pale-gray;
-  color: $color-gray;
+  background: $color-light-gray;
+  color: $color-black;
 }
 
 #gas {
@@ -420,7 +449,16 @@ p {
   color: getColor(yellow, 40);
 }
 
+#ff {
+  background: lighten(#1A1100, 35);
+  color: #1A1100;
+}
+
 .back {
   margin: 0 auto;
+}
+
+#cover {
+  font-family: $font-serif;
 }
 </style>

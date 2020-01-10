@@ -1,6 +1,12 @@
 <template>
 <g>
   <g v-if="step <= 1">
+    <text class="twofifteen_emissions" :x="scales.x(2017)" :y="scales.y(35600000)">
+      35.600.000
+    </text>
+    <text class="twofifteen_emissions" id="subtext" :x="scales.x(2017)" :y="scales.y(34500000)">
+      tons of C02 released in the athmosphere in 2015
+    </text>
     <circle id="curr_emissions" :cx="scales.x(2015)" :cy="scales.y(35600000)" r="5" />
     <circle id="curr_emissions" :cx="scales.x(2015)" :cy="scales.y(35600000)" r="5">
         <animate
@@ -92,5 +98,14 @@ export default {
 line {
   stroke-dasharray: 5;
   stroke: gray;
+}
+
+.twofifteen_emissions {
+  font-family: $font-sans;
+  font-size: 1em;
+}
+
+#subtext {
+  font-size: 0.75em;
 }
 </style>

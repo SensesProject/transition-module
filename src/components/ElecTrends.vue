@@ -51,8 +51,8 @@
       >
           <text
           class="sector-labels"
-          :x='(width + margin.left) / 2'
-          y='30'
+          :x='width / 2.08'
+          y='-20'
           >
           {{group.name !== 'electricity-RE' ? group.name : 'electricity (VRE and RE)'}}
         </text>
@@ -70,6 +70,13 @@
         v-if= "group.name !== 'electricity-RE'"
         :scale='scales.y'
         :height= 'innerHeight / 8'
+        />
+        <line
+        :x1='scales.x(2005)'
+        :y1='scales.y(100)'
+        :x2='scales.x(2100)'
+        :y2='scales.y(100)'
+        class='top__line'
         />
       </g>
       <XAxis
@@ -155,7 +162,6 @@ export default {
           const scenarioObj = {}
           let variableArr = _.groupBy(scenario, 'variable')
           _.forEach(variableArr, (variable, v) => {
-            console.log(variable)
             const emissions = _.map(variable[0], (datum, d) => {
               return { date: d, value: datum }
             })
@@ -170,7 +176,6 @@ export default {
         })
         newModels[r] = obj
       })
-      console.log(newModels)
       return newModels
     },
     modelSelection () {
@@ -309,7 +314,7 @@ path {
 
 .legend {
   bottom: 0;
-  left: 4.5em;
+  left: 3.5em;
   position: absolute;
   width: 150px;
   z-index: 1;
@@ -321,10 +326,10 @@ path {
 }
 
 .regionselect {
-  top: $spacing * 2;
-  left: 4.5em;
+  top: $spacing  + 1;
+  left: 3.5em;
   position: absolute;
-  width: 150px;
+  width: 245px;
   z-index: 1;
 }
 
@@ -338,11 +343,20 @@ path {
 }
 
 #select-label {
-  font-size: 10px;
   margin-top: 15px;
 }
 
 .left-text {
   margin-top: 15px;
+}
+
+.sector-labels {
+  text-anchor: end;
+}
+
+.top__line {
+  stroke: grey;
+  stroke-width: 0.5;
+  stroke-dasharray: 2 2;
 }
 </style>

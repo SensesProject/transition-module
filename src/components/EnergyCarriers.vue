@@ -16,7 +16,6 @@
        is producing the
        <span class="dotted">{{ findPerc.perc }}%</span>
        of the total global energy.
-      <br/>
        Equals to
        <span class="dotted">
          {{ findPerc.absValue }} EJ/yr
@@ -57,7 +56,7 @@
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
-        {{ sumCarriers[i] }} EJ/yr
+        {{ Math.round(sumCarriers[i] * 100) / 100 }} EJ/yr
         </tspan>
       </text>
         <g
@@ -69,7 +68,8 @@
           <rect
             class="fuel_rect"
             :fill='rect.fill'
-            :class='isActive === rect.labels ?
+            :class='
+            isActive === rect.labels ?
             [sector.sector, rect.labels, "is-fill"] :
             [sector.sector, rect.labels, "is-empty"]'
             v-for="(rect, i) in sector.rects"
@@ -84,8 +84,8 @@
         class="sector-labels"
         v-for="(sector) in createRect"
         v-bind:key="sector.sector"
-        :x='(width + margin.left) / 2'
-        :y='sector.sectorHeight + 30'
+        :x='width / 2.08'
+        :y='sector.sectorHeight - 20'
         >
         {{sector.sector}}
       </text>
@@ -120,6 +120,10 @@ export default {
     step: {
       type: Number,
       default: 0
+    },
+    hover: {
+      type: String,
+      default: null
     }
   },
   components: {
@@ -142,6 +146,9 @@ export default {
     }
   },
   computed: {
+    hoverValue () {
+      return this.hover
+    },
     innerWidth () {
       return this.width - this.margin.left - this.margin.right
     },
@@ -322,12 +329,14 @@ export default {
             carrierValue: item,
             posX: initialPos,
             fill:
-              this.step === 6 && i === 'non-bioren' ? '#a2e7c0' : '#d8d8e4' &&
-              this.step === 6 && i === 'm&tbio' ? '#a2e7c0' : '#d8d8e4' &&
-              this.step >= 7 && key === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
-              this.step >= 8 && key === 'industry' && i === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
-              this.step >= 9 && key === 'transport' && i === 'electricity' ? '#ffd89a' : '#d8d8e4' &&
-              this.step >= 10 && key === 'residential' && i === 'electricity' ? '#ffd89a' : '#d8d8e4'
+              this.hover[0] === i ? this.hover[1] : 'white' &&
+              this.step === 6 && i === 'non-bioren' ? '#a2e7c0' : 'white' &&
+              this.step === 6 && i === 'm&tbio' ? '#a2e7c0' : 'white' &&
+              this.step >= 7 && key === 'electricity' ? '#ffd89a' : 'white' &&
+              this.step >= 8 && key === 'industry' && i === 'electricity' ? '#ffd89a' : 'white' &&
+              this.step >= 9 && key === 'transport' && i === 'electricity' ? '#ffd89a' : 'white' &&
+              this.step >= 10 && key === 'residential' && i === 'electricity' ? '#ffd89a' : 'white' &&
+              this.step >= 11 && i === 'm&tbio' | i === 'non-bioren' ? '#a2e7c0' : 'white'
           }
         })
         return {
@@ -363,15 +372,14 @@ export default {
 }
 
 .regionselect {
-  top: $spacing * 2;
-  left: 4.5em;
+  top: $spacing + 1;
+  left: 3.5em;
   position: absolute;
-  width: 150px;
+  width: 245px;
   z-index: 1;
 }
 
 #select-label {
-  font-size: 10px;
   margin-top: 15px;
 }
 
@@ -390,5 +398,9 @@ export default {
 
 .energy_sum {
   fill: $color-neon;
+}
+
+.sector-labels {
+  text-anchor: end;
 }
 </style>

@@ -2,11 +2,6 @@
   <div class="visualization" id="emissions__chart">
     <svg class="emissions" width="100%" height="100%">
       <g :transform="'translate(' + margin.left + ',' + margin.top + ')'">
-        <g
-          class="axis"
-          v-axis:x="scales"
-          :transfrom="'translate(' + 0 + ',' + this.innerHeight + ')'"
-        />
         <EmissionsDots
         :step = "step"
         :width="this.innerWidth"
@@ -14,7 +9,6 @@
         :height="this.innerHeight"
         :scales="scales"
         />
-        <g class="axis" v-axis:y="scales" />
         <g id="first_step" v-if="step <= 2">
           <path id="emissions" :d="linePath" />
         </g>
@@ -47,6 +41,12 @@
           :height="this.innerHeight"
           :scales="scales"
           :data="subsectorsDataActive"
+        />
+        <g class="axis" v-axis:y="scales" />
+        <g
+          class="axis"
+          v-axis:x="scales"
+          :transfrom="'translate(' + 0 + ',' + this.innerHeight + ')'"
         />
       </g>
     </svg>
@@ -153,7 +153,7 @@ export default {
         x: d3
           .scaleLinear()
           .domain([1990, this.maxYear])
-          .rangeRound([0, this.innerWidth - 200]),
+          .rangeRound([0, this.innerWidth - 300]),
         y: d3
           .scaleLinear()
           .domain([0, 40000000])
@@ -192,7 +192,6 @@ export default {
       const stacked = d3.stack().keys(this.applications.map(d => d.key))(
         EmissionData
       )
-
       return stacked.map((d, i) => ({
         d: this.areaGenerator(d),
         color: this.applications[i].color,
@@ -223,16 +222,6 @@ export default {
         .curve(d3.curveLinear)
         .y0(d => y(d[0]))
         .y1(d => y(d[1]))
-    },
-    dotsPosition () {
-      const { x, y } = this.scales
-      const netOne = [2050, 0]
-      const NetTwo = [2075, 0]
-
-      return {
-        cx: x(netOne[0]),
-        cy: y(netOne[1])
-      }
     }
   },
   directives: {
@@ -268,7 +257,8 @@ export default {
 }
 
 .emission__chunks {
-  stroke: $color-gray;
+  stroke: white;
+  stroke-width: 1;
 }
 
 .subsectorsData {

@@ -1,0 +1,290 @@
+[
+  {
+    "Region": "World",
+    "Variable": "Emi|CO2|Policy",
+    "Year": 2015,
+    "Value": 40423.60286
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Energy Demand Reduction",
+    "Year": 2015,
+    "Value": 0
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electricity Decarbonization",
+    "Year": 2015,
+    "Value": 0
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electrification",
+    "Year": 2015,
+    "Value": 0
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Fuel Decarbonization",
+    "Year": 2015,
+    "Value": 0
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|CDR",
+    "Year": 2015,
+    "Value": 0
+  },
+  {
+    "Region": "World",
+    "Variable": "Emi|CO2|Policy",
+    "Year": 2020,
+    "Value": 38837.18333
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Energy Demand Reduction",
+    "Year": 2020,
+    "Value": 500
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electricity Decarbonization",
+    "Year": 2020,
+    "Value": 2600
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electrification",
+    "Year": 2020,
+    "Value": 600
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Fuel Decarbonization",
+    "Year": 2020,
+    "Value": 204
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|CDR",
+    "Year": 2020,
+    "Value": 0
+  },
+  {
+    "Region": "World",
+    "Variable": "Emi|CO2|Policy",
+    "Year": 2025,
+    "Value": 37475.87365
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Energy Demand Reduction",
+    "Year": 2025,
+    "Value": 700
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electricity Decarbonization",
+    "Year": 2025,
+    "Value": 5200
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electrification",
+    "Year": 2025,
+    "Value": 2000
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Fuel Decarbonization",
+    "Year": 2025,
+    "Value": 583
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|CDR",
+    "Year": 2025,
+    "Value": 0
+  },
+  {
+    "Region": "World",
+    "Variable": "Emi|CO2|Policy",
+    "Year": 2030,
+    "Value": 34465.47453
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Energy Demand Reduction",
+    "Year": 2030,
+    "Value": 900
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electricity Decarbonization",
+    "Year": 2030,
+    "Value": 9500
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electrification",
+    "Year": 2030,
+    "Value": 4100
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Fuel Decarbonization",
+    "Year": 2030,
+    "Value": 1270
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|CDR",
+    "Year": 2030,
+    "Value": 500
+  },
+  {
+    "Region": "World",
+    "Variable": "Emi|CO2|Policy",
+    "Year": 2035,
+    "Value": 27746.37574
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Energy Demand Reduction",
+    "Year": 2035,
+    "Value": 1500
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electricity Decarbonization",
+    "Year": 2035,
+    "Value": 14800
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electrification",
+    "Year": 2035,
+    "Value": 6500
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Fuel Decarbonization",
+    "Year": 2035,
+    "Value": 3100
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|CDR",
+    "Year": 2035,
+    "Value": 1316
+  },
+  {
+    "Region": "World",
+    "Variable": "Emi|CO2|Policy",
+    "Year": 2040,
+    "Value": 21007.7578
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Energy Demand Reduction",
+    "Year": 2040,
+    "Value": 2100
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electricity Decarbonization",
+    "Year": 2040,
+    "Value": 16800
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electrification",
+    "Year": 2040,
+    "Value": 7700
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Fuel Decarbonization",
+    "Year": 2040,
+    "Value": 4500
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|CDR",
+    "Year": 2040,
+    "Value": 5669
+  },
+  {
+    "Region": "World",
+    "Variable": "Emi|CO2|Policy",
+    "Year": 2045,
+    "Value": 15129.17155
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Energy Demand Reduction",
+    "Year": 2045,
+    "Value": 2500
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electricity Decarbonization",
+    "Year": 2045,
+    "Value": 15500
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electrification",
+    "Year": 2045,
+    "Value": 8900
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Fuel Decarbonization",
+    "Year": 2045,
+    "Value": 7100
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|CDR",
+    "Year": 2045,
+    "Value": 11199
+  },
+  {
+    "Region": "World",
+    "Variable": "Emi|CO2|Policy",
+    "Year": 2050,
+    "Value": 12299.12978
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Energy Demand Reduction",
+    "Year": 2050,
+    "Value": 3300
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electricity Decarbonization",
+    "Year": 2050,
+    "Value": 14300
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Electrification",
+    "Year": 2050,
+    "Value": 13100
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|Fuel Decarbonization",
+    "Year": 2050,
+    "Value": 11200
+  },
+  {
+    "Region": "World",
+    "Variable": "Abatement|CDR",
+    "Year": 2050,
+    "Value": 8524
+  }
+]

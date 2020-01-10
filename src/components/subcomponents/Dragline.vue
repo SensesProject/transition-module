@@ -15,7 +15,7 @@
       :transform="'translate(' + x + ',' + scales.y(sector.data[1]) + ')'"
     >
       <text x='10' y='10'>{{ sector.value }},{{ sector.key }}</text>
-      <rect class='labels' transform="rotate(45)" width="8" height="8" />
+      <circle class='labels' transform="rotate(45)" r="2.5"/>
     </g>
   </g>
 </template>
@@ -65,7 +65,7 @@ export default {
 
 .labels {
   fill: getColor(neon, 40);
-  stroke: $color-gray;
+  stroke: white;
 }
 
 text {
