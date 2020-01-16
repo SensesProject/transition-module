@@ -21,6 +21,7 @@
          {{ findPerc.absValue }} EJ/yr
        </span>.
      </p>
+     <EnergyProportion :data="findPerc.perc"/>
     </div>
     <svg
     :width="innerWidth"
@@ -36,12 +37,13 @@
       <g
       :transform="'translate('+ (innerWidth / 4) + ',0)'">
         <text
+        :transform="'rotate(45,' + energy.posX + ',' + (innerHeight - 70) + ')'"
         v-for="(energy, i) in createRect[0].rects"
         class="fuel-labels"
         v-bind:key="energy.labels + i"
         :id='energy.labels'
         :x="energy.posX"
-        :y= '(innerHeight - 30)'
+        :y= '(innerHeight - 70)'
         v-on:click=";[
         isActive = isActive === energy.labels ? 'initial' : energy.labels,
         clicked = isActive !== 'initial'
@@ -52,7 +54,7 @@
         :data="sumCarriers"
         :id='energy.labels'
         :x="energy.posX"
-        :y= '(innerHeight - 45)'
+        :y= '(innerHeight - 55)'
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
@@ -105,6 +107,7 @@ import ElectrificationSteps from '../assets/data/electrification-steps.json'
 // Components
 import SensesSelect from 'library/src/components/SensesSelect.vue'
 import Arrows from './subcomponents/Arrows.vue'
+import EnergyProportion from './subcomponents/EnergyProportion.vue'
 
 export default {
   name: 'EnergyCarriers',
@@ -128,7 +131,8 @@ export default {
   },
   components: {
     SensesSelect,
-    Arrows
+    Arrows,
+    EnergyProportion
   },
   data () {
     return {
@@ -367,7 +371,7 @@ export default {
 
 .fuel-labels {
   font-size: 10px;
-  text-anchor: middle;
+  text-anchor: left;
   cursor: pointer;
 }
 
@@ -376,6 +380,7 @@ export default {
   left: 3.5em;
   position: absolute;
   width: 245px;
+  height: 700px;
   z-index: 1;
 }
 
