@@ -1,17 +1,35 @@
 <template>
   <div class="global-strategy" id="emissions__chart">
     <svg class="glob_strat" width="100%" height="100%">
-      <g :transform="'translate(' + margin.left + ',' + margin.top * 2 + ')'">
+      <pattern
+      id="abatementCDR"
+      width="5"
+      height="10"
+      patternTransform="rotate(45 0 0)"
+      patternUnits="userSpaceOnUse">
+        <line x1="0" y1="0" x2="0" y2="10" style="stroke:#dd5f84; stroke-width:1" />
+      </pattern>
+      <g :transform="'translate(' + margin.left + ',' + margin.top + ')'">
         <path
           v-for="(chunk, i) in stackData"
           v-bind:key="i"
           :d="chunk.d"
-          fill="#611731"
+          :fill="chunk.active <= step && step != 14 ? 'url(#abatementCDR)' : '#611731'"
           :id="chunk.id"
           class="emission__chunks"
-          :class="{ inactive: chunk.active != step && step != 14}"
         />
       </g>
+      <XAxisGl
+      :scale='scales.x'
+      :width='this.innerWidth / 2 - this.margin.left'
+      :transform="'translate(' + margin.left + ',' + margin.top + ')'"
+      />
+      />
+      <YAxisGl
+      :scale='scales.y'
+      :height= 'innerHeight / 1.5'
+      :transform="'translate(' + margin.left + ',' + margin.top + ')'"
+      />
     </svg>
   </div>
 </template>
@@ -24,6 +42,9 @@ import _ from 'lodash'
 
 // Data
 import DecarbonStrategy from '../assets/data/waterfall-toydata-new.json'
+
+import YAxisGl from './subcomponents/YAxisGl.vue'
+import XAxisGl from './subcomponents/XAxisGl.vue'
 
 export default {
   name: 'GlobalStrategy',
@@ -41,11 +62,15 @@ export default {
       default: 0
     }
   },
+  components: {
+    XAxisGl,
+    YAxisGl
+  },
   data () {
     return {
       DecarbonStrategy,
       margin: {
-        left: 250,
+        left: 30,
         top: 30,
         bottom: 30,
         right: 30
@@ -86,11 +111,11 @@ export default {
     },
     strategies: function () {
       return [
-        { key: 'Emi|CO2|Policy', color: '#611731', active: 14 },
-        { key: 'Abatement|CDR', color: '#33121c', active: 15 },
-        { key: 'Abatement|Electricity Decarbonization', color: '#dd5f84', active: 16 },
-        { key: 'Abatement|Fuel Decarbonization', color: '#ed96ab', active: 17 },
-        { key: 'Abatement|Energy Demand Reduction', color: '#f8cbd4', active: 18 }
+        { key: 'Emi|CO2|Policy', color: '#611731', active: 20 },
+        { key: 'Abatement|CDR', color: 'url(#abatementCDR)', active: 18 },
+        { key: 'Abatement|Electricity Decarbonization', color: 'url(#eleDec)', active: 17 },
+        { key: 'Abatement|Fuel Decarbonization', color: 'url(#fuelDec)', active: 16 },
+        { key: 'Abatement|Energy Demand Reduction', color: 'url(#demRed)', active: 15 }
       ]
     },
     scales () {
@@ -98,11 +123,11 @@ export default {
         x: d3
           .scaleLinear()
           .domain([2015, 2050])
-          .rangeRound([0, this.innerWidth - 300]),
+          .rangeRound([0, this.innerWidth / 2 - this.margin.left]),
         y: d3
           .scaleLinear()
-          .domain([0, 50000])
-          .rangeRound([this.innerHeight - this.margin.bottom, 0])
+          .domain([0, 55000])
+          .rangeRound([this.innerHeight / 1.5, 0])
       }
     },
     areaGenerator: function () {
@@ -134,10 +159,28 @@ export default {
 .global-strategy {
   width: 100%;
   height: 100%;
+  margin: 0 auto;
+}
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 1000px)  {
+    .global-strategy {
+      width: 50%;
+      height: 90%;
+      margin: 0 auto;
+    }
+
+    svg {
+      margin-top: 20%;
+    }
 }
 
 path {
-  stroke: #44061c;
+  stroke:#dd5f84;
+  stroke-width: 0.5;
 }
 
 .inactive {
