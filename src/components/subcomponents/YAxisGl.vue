@@ -32,8 +32,11 @@ export default {
     labels: function () {
       const labels = [
         [0],
-        [25000],
-        [55000]
+        [10000],
+        [20000],
+        [30000],
+        [40000],
+        [50000]
       ]
 
       return map(labels, pair => {

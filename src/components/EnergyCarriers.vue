@@ -204,7 +204,10 @@ export default {
     },
     stepSelection () {
       let selected = this.selected
-      if (this.step !== 5) { selected = 'World' }
+      if (this.step === 4.1) { selected = 'China (mainland)' }
+      if (this.step === 4.2) { selected = 'USA' }
+      if (this.step === 4.3) { selected = 'Deutschland' }
+      if (this.step === 5 || this.step === 4) { selected = 'World' }
       if (this.step === 7) { selected = 'World-step1' }
       if (this.step === 8) { selected = 'World-step2' }
       if (this.step === 9) { selected = 'World-step3' }

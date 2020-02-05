@@ -161,6 +161,24 @@
             alternatives like nuclear or renewables.
           </p>
         </IntersectionObserver>
+        <IntersectionObserver :step="4.1" align="left">
+          <h2 class="title" id="china">China Energy Production</h2>
+          <p>
+            text.
+          </p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="4.2" align="left">
+          <h2 class="title" id="china">USA Energy Production</h2>
+          <p>
+            text.
+          </p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="4.3" align="left">
+          <h2 class="title" id="china">Germany Energy Production</h2>
+          <p>
+            text.
+          </p>
+        </IntersectionObserver>
         <IntersectionObserver :step="5" align="right" class="height__change">
           <h2 class="title" id="country__perspectives">Country Perspectives</h2>
           <p>
@@ -291,7 +309,7 @@
           </h2>
           <p>testo.</p>
         </IntersectionObserver>
-        <IntersectionObserver :step="19">
+        <IntersectionObserver :step="19" class="height__change">
           <h2 class="title" id="explore__scenarios">
             The faster the strategy steps are implemented, the closer we’ll get
             to Net-Zero.

@@ -9,7 +9,7 @@
       patternUnits="userSpaceOnUse">
         <line x1="0" y1="0" x2="0" y2="10" style="stroke:#dd5f84; stroke-width:1" />
       </pattern>
-      <g :transform="'translate(' + margin.left + ',' + margin.top + ')'">
+      <g :transform="'translate(' + margin.left * 2 + ',' + margin.top + ')'">
         <path
           v-for="(chunk, i) in stackData"
           v-bind:key="i"
@@ -18,18 +18,24 @@
           :id="chunk.id"
           class="emission__chunks"
         />
+        <line
+        :x1="scales.x(2050)"
+        :y1="scales.y(linePosition)"
+        :x2="scales.x(2020)"
+        :y2="scales.y(linePosition)"
+        stroke="white"
+        stroke-width="2"
+        />
+        <XAxisGl
+        :scale='scales.x'
+        :width='this.innerWidth / 2 - this.margin.left'
+        />
+        />
+        <YAxisGl
+        :scale='scales.y'
+        :height= 'innerHeight / 1.5'
+        />
       </g>
-      <XAxisGl
-      :scale='scales.x'
-      :width='this.innerWidth / 2 - this.margin.left'
-      :transform="'translate(' + margin.left + ',' + margin.top + ')'"
-      />
-      />
-      <YAxisGl
-      :scale='scales.y'
-      :height= 'innerHeight / 1.5'
-      :transform="'translate(' + margin.left + ',' + margin.top + ')'"
-      />
     </svg>
   </div>
 </template>
@@ -148,6 +154,11 @@ export default {
         active: this.strategies[i].active
       }))
       return paths
+    },
+    linePosition () {
+      const newData = this.DecarbonStrategy
+      const stacked = d3.stack().keys(this.strategies.map(d => d.key))(newData)
+      return stacked[0][7][1]
     }
   }
 }
@@ -157,18 +168,21 @@ export default {
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
 .global-strategy {
-  width: 100%;
+  width: 55%;
   height: 100%;
   margin: 0 auto;
 }
 svg {
   width: 100%;
   height: 100%;
+  margin: 0 auto;
+
+  margin-top: 10%;
 }
 
-@media screen and (min-width: 1000px)  {
+@media screen and (min-width: 1600px)  {
     .global-strategy {
-      width: 50%;
+      width: 55%;
       height: 90%;
       margin: 0 auto;
     }
