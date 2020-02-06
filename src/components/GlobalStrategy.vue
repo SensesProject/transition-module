@@ -1,25 +1,13 @@
 <template>
   <div class="global-strategy" id="emissions__chart">
-    <div v-if="step === 19" class="scenarioselect">
+    <div v-if="step >= 19" class="scenarioselect">
    <SensesSelect
-     class="selector"
-     :options="regionsArray"
-     v-model="selected"
+     class="scenario selector"
+     :options="scenariosArray"
+     v-model="scenariosSelected"
    />
    <p id="select-label">
-     Use the selector above to select different decarbonization pathways.
-   </p>
-   <p id="emissions-label">
-     <span class="highlight">
-       {{ selected }}
-     </span>
-     is producing the
-     <span class="dotted">%</span>
-     of the total global energy.
-     Equals to
-     <span class="dotted">
-        EJ/yr
-     </span>.
+     The selectors above allows you to select one future decarbonization pathway.
    </p>
   </div>
     <svg class="glob_strat" width="100%" height="100%">
@@ -72,8 +60,10 @@ import _ from 'lodash'
 // Data
 import DecarbonStrategy from '../assets/data/waterfall-toydata.json'
 
+// Components
 import YAxisGl from './subcomponents/YAxisGl.vue'
 import XAxisGl from './subcomponents/XAxisGl.vue'
+import SensesSelect from 'library/src/components/SensesSelect.vue'
 
 export default {
   name: 'GlobalStrategy',
@@ -93,11 +83,14 @@ export default {
   },
   components: {
     XAxisGl,
-    YAxisGl
+    YAxisGl,
+    SensesSelect
   },
   data () {
     return {
       DecarbonStrategy,
+      modelSelected: 'REMIND',
+      scenariosSelected: 'B1300',
       margin: {
         left: 30,
         top: 30,
@@ -143,9 +136,18 @@ export default {
         .y0(d => y(d[0]))
         .y1(d => y(d[1]))
     },
+    scenariosArray () {
+      const data = this.DecarbonStrategy
+      let scenarios = []
+      _.map(data, (l) => {
+        scenarios.push(l.Scenario)
+      })
+      return _.uniq(scenarios)
+    },
     filterData () {
       const newData = this.DecarbonStrategy
-      const selectData = _.filter(newData, { 'Scenario': 'IC_80_noCDR' })
+      const scenario = this.scenariosSelected
+      const selectData = _.filter(newData, { 'Scenario': scenario })
       return selectData
     },
     stackData () {
@@ -184,12 +186,17 @@ export default {
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
 .scenarioselect {
-  top: $spacing + 1;
+  margin-top: 50px;
   left: 3.5em;
   position: absolute;
   width: 245px;
   height: 700px;
   z-index: 1;
+}
+
+#scenario {
+  background: getColor(green, 100);
+  color: getColor(green, 40);
 }
 
 .global-strategy {
@@ -205,6 +212,19 @@ svg {
   margin-top: 50px;
 }
 
+path {
+  stroke:#dd5f84;
+  stroke-width: 1;
+  fill-opacity: 0.4;
+}
+
+.inactive {
+  stroke: none;
+  fill-opacity: 0.5;
+}
+
+/*Media queries*/
+
 @media screen and (min-width: 1600px)  {
     .global-strategy {
       width: 55%;
@@ -215,16 +235,9 @@ svg {
     svg {
       margin-top: 150px;
     }
-}
 
-path {
-  stroke:#dd5f84;
-  stroke-width: 1;
-  fill-opacity: 0.4;
-}
-
-.inactive {
-  stroke: none;
-  fill-opacity: 0.5;
+    .scenarioselect {
+      margin-top: 150px;
+    }
 }
 </style>
