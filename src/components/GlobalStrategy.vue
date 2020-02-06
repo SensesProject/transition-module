@@ -1,5 +1,27 @@
 <template>
   <div class="global-strategy" id="emissions__chart">
+    <div v-if="step === 19" class="scenarioselect">
+   <SensesSelect
+     class="selector"
+     :options="regionsArray"
+     v-model="selected"
+   />
+   <p id="select-label">
+     Use the selector above to select different decarbonization pathways.
+   </p>
+   <p id="emissions-label">
+     <span class="highlight">
+       {{ selected }}
+     </span>
+     is producing the
+     <span class="dotted">%</span>
+     of the total global energy.
+     Equals to
+     <span class="dotted">
+        EJ/yr
+     </span>.
+   </p>
+  </div>
     <svg class="glob_strat" width="100%" height="100%">
       <pattern
       id="abatementCDR"
@@ -7,14 +29,14 @@
       height="10"
       patternTransform="rotate(45 0 0)"
       patternUnits="userSpaceOnUse">
-        <line x1="0" y1="0" x2="0" y2="10" style="stroke:#dd5f84; stroke-width:1" />
+        <line x1="0" y1="0" x2="0" y2="10" style="stroke:#ed96ab; stroke-width:1" />
       </pattern>
       <g :transform="'translate(' + margin.left * 2 + ',' + margin.top + ')'">
         <path
           v-for="(chunk, i) in stackData"
           v-bind:key="i"
           :d="chunk.d"
-          :fill="chunk.active <= step && step != 14 ? 'url(#abatementCDR)' : '#611731'"
+          :fill="chunk.active <= step && step != 14 ? 'url(#abatementCDR)' : '#ed96ab'"
           :id="chunk.id"
           class="emission__chunks"
         />
@@ -23,9 +45,10 @@
         :y1="scales.y(linePosition)"
         :x2="scales.x(2020)"
         :y2="scales.y(linePosition)"
-        stroke="white"
+        stroke="#611731"
         stroke-width="2"
         />
+        <text :x="scales.x(2020)" :y="scales.y(linePosition) - 10">{{ textLabel }}</text>
         <XAxisGl
         :scale='scales.x'
         :width='this.innerWidth / 2 - this.margin.left'
@@ -47,7 +70,7 @@ import { group, groups, rollup, rollups } from 'd3-array'
 import _ from 'lodash'
 
 // Data
-import DecarbonStrategy from '../assets/data/waterfall-toydata-new.json'
+import DecarbonStrategy from '../assets/data/waterfall-toydata.json'
 
 import YAxisGl from './subcomponents/YAxisGl.vue'
 import XAxisGl from './subcomponents/XAxisGl.vue'
@@ -84,31 +107,6 @@ export default {
     }
   },
   computed: {
-    // This is the processing with different data, still to be understood how to implement
-    // real data on this graph
-    // editData () {
-    //   const strategyData = this.DecarbonStrategy
-    //   let newData = {}
-    //   let obj = {}
-    //   const newGroups = _.groupBy(strategyData, 'Model')
-    //   _.forEach(newGroups, (strategy, s) => {
-    //     let singleVariable = _.groupBy(strategy, 'Variable')
-    //     _.forEach(singleVariable, (variable, v) => {
-    //       const singleArray = _.map(variable, (year, y) => {
-    //         const singleValue = _.map(year, (data, d) => {
-    //           return { date: Number(d), value: data, key: v }
-    //         })
-    //         singleValue.splice(8)
-    //         return singleValue
-    //       })
-    //       obj = singleArray
-    //     })
-    //     newData[s] = obj
-    //   })
-    //   console.log('newData', newData)
-    //   return newData
-    // },
-
     innerWidth () {
       return this.width - this.margin.left - this.margin.right
     },
@@ -119,9 +117,9 @@ export default {
       return [
         { key: 'Emi|CO2|Policy', color: '#611731', active: 20 },
         { key: 'Abatement|CDR', color: 'url(#abatementCDR)', active: 18 },
-        { key: 'Abatement|Electricity Decarbonization', color: 'url(#eleDec)', active: 17 },
+        { key: 'Abatement|Energy Demand Reduction', color: 'url(#demRed)', active: 17 },
         { key: 'Abatement|Fuel Decarbonization', color: 'url(#fuelDec)', active: 16 },
-        { key: 'Abatement|Energy Demand Reduction', color: 'url(#demRed)', active: 15 }
+        { key: 'Abatement|Electricity Decarbonization', color: 'url(#eleDec)', active: 15 }
       ]
     },
     scales () {
@@ -145,8 +143,13 @@ export default {
         .y0(d => y(d[0]))
         .y1(d => y(d[1]))
     },
-    stackData () {
+    filterData () {
       const newData = this.DecarbonStrategy
+      const selectData = _.filter(newData, { 'Scenario': 'IC_80_noCDR' })
+      return selectData
+    },
+    stackData () {
+      const newData = this.filterData
       const stacked = d3.stack().keys(this.strategies.map(d => d.key))(newData)
       const paths = stacked.map((d, i) => ({
         d: this.areaGenerator(d),
@@ -156,9 +159,22 @@ export default {
       return paths
     },
     linePosition () {
-      const newData = this.DecarbonStrategy
+      const newData = this.filterData
       const stacked = d3.stack().keys(this.strategies.map(d => d.key))(newData)
-      return stacked[0][7][1]
+      let linePosition = stacked[0][7][1]
+      if (this.step === 14) { return stacked[4][7][1] }
+      if (this.step === 15) { return stacked[3][7][1] }
+      if (this.step === 16) { return stacked[2][7][1] }
+      if (this.step === 17) { return stacked[1][7][1] }
+      return linePosition
+    },
+    textLabel () {
+      const data = this.stackData
+      const lArray = _.filter(data, { 'active': this.step })
+      let label = 'Total Emissions'
+      if (this.step !== 14 && this.step < 19) { label = lArray[0].id }
+      if (this.step === 19) { label = 'Residual Emissions' }
+      return label
     }
   }
 }
@@ -167,6 +183,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
+.scenarioselect {
+  top: $spacing + 1;
+  left: 3.5em;
+  position: absolute;
+  width: 245px;
+  height: 700px;
+  z-index: 1;
+}
+
 .global-strategy {
   width: 55%;
   height: 100%;
@@ -177,7 +202,7 @@ svg {
   height: 100%;
   margin: 0 auto;
 
-  margin-top: 10%;
+  margin-top: 50px;
 }
 
 @media screen and (min-width: 1600px)  {
@@ -188,13 +213,14 @@ svg {
     }
 
     svg {
-      margin-top: 20%;
+      margin-top: 150px;
     }
 }
 
 path {
   stroke:#dd5f84;
-  stroke-width: 0.5;
+  stroke-width: 1;
+  fill-opacity: 0.4;
 }
 
 .inactive {
