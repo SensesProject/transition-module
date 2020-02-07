@@ -19,6 +19,10 @@
       patternUnits="userSpaceOnUse">
         <line x1="0" y1="0" x2="0" y2="10" style="stroke:#ed96ab; stroke-width:1" />
       </pattern>
+      <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="#ed96ab"/>
+        <stop offset="30%" stop-color="#ed96ab" stop-opacity="0"/>
+      </linearGradient>
       <g :transform="'translate(' + margin.left * 2 + ',' + margin.top + ')'">
         <path
           v-for="(chunk, i) in stackData"
@@ -28,15 +32,23 @@
           :id="chunk.id"
           class="emission__chunks"
         />
+        <rect
+        v-if="step === 19"
+        x="0"
+        :y="scales.y(linePosition)"
+        :width="scales.x(2050)"
+        :height="scales.y(linePosition)"
+        fill="url(#Gradient2)"
+        />
         <line
         :x1="scales.x(2050)"
         :y1="scales.y(linePosition)"
-        :x2="scales.x(2020)"
+        :x2="scales.x(2015)"
         :y2="scales.y(linePosition)"
         stroke="#611731"
-        stroke-width="2"
+        stroke-width="1"
         />
-        <text :x="scales.x(2020)" :y="scales.y(linePosition) - 10">{{ textLabel }}</text>
+        <text :x="scales.x(2016)" :y="scales.y(linePosition) - 10">{{ textLabel }}</text>
         <XAxisGl
         :scale='scales.x'
         :width='this.innerWidth / 2 - this.margin.left'

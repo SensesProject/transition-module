@@ -21,7 +21,7 @@
          {{ findPerc.absValue }} EJ/yr
        </span>.
      </p>
-     <EnergyProportion :data="findPerc.perc"/>
+     <EnergyProportion :data="{allData: dataNest, selection: dataFilter, select: selected}"/>
     </div>
     <svg
     :width="innerWidth"
@@ -198,8 +198,9 @@ export default {
 
       _.forEach(groupsbyregion, (arr, key) => {
         allRegions.push(key)
-        return allRegions
+        return _.orderBy(allRegions, [key], ['desc'])
       })
+      console.log(allRegions)
       return allRegions
     },
     stepSelection () {
@@ -207,7 +208,7 @@ export default {
       if (this.step === 4.1) { selected = 'China (mainland)' }
       if (this.step === 4.2) { selected = 'USA' }
       if (this.step === 4.3) { selected = 'Deutschland' }
-      if (this.step === 5 || this.step === 4) { selected = 'World' }
+      if (this.step === 5 || this.step === 4) { selected = this.selected }
       if (this.step === 7) { selected = 'World-step1' }
       if (this.step === 8) { selected = 'World-step2' }
       if (this.step === 9) { selected = 'World-step3' }
