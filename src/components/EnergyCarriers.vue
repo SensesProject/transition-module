@@ -9,6 +9,10 @@
      <p id="select-label">
        Use the selector above to see energy carriers distribution across regions.
      </p>
+     <EnergyProportion
+     v-if="selected != 'World'"
+     :data="{allData: dataNest, selection: dataFilter, select: selected}"
+     />
      <p id="emissions-label">
        <span class="highlight">
          {{ selected }}
@@ -21,10 +25,6 @@
          {{ findPerc.absValue }} EJ/yr
        </span>.
      </p>
-     <EnergyProportion
-     v-if="selected != 'World'"
-     :data="{allData: dataNest, selection: dataFilter, select: selected}"
-     />
     </div>
     <svg
     :width="innerWidth"

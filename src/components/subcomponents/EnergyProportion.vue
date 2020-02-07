@@ -1,9 +1,9 @@
 <template>
   <svg class="proportion">
-    <g transform="translate(0,20)" v-show="currentContinent != 'Antartica'">
+    <g transform="translate(20,20)" v-show="currentContinent != 'Antartica'">
     <text
     class="continent_label"
-    :class="continent.continent === 'Asia' ? 'asia' : ''"
+    :class="continent.continent.trim()"
     :id="continent.continent === currentContinent ? 'active_label' : ''"
     v-for="(continent, i) in continentSum"
     v-show="continent.continent != 'World'"
@@ -70,7 +70,7 @@ export default {
         x: d3
           .scaleLinear()
           .domain([0, 558])
-          .rangeRound([0, 210])
+          .rangeRound([0, 180])
       }
     },
     continentTotal () {
@@ -138,7 +138,7 @@ export default {
       const scale = d3
         .scaleLinear()
         .domain([0, this.singleContinent])
-        .rangeRound([0, 210])
+        .rangeRound([0, 180])
 
       return {
         country: scale(this.singleCountry),
@@ -154,8 +154,9 @@ export default {
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
 svg {
-  height: 100%;
+  height: 51%;
   width: 100%;
+  margin: 0 auto;
 }
 .proportion {
   margin-top: $spacing;
@@ -173,12 +174,12 @@ svg {
 }
 
 .continent_label {
+  text-anchor: middle;
   font-size: 9px;
   opacity: 0;
 }
 
 #active_label {
-  text-anchor: middle;
   font-size: 12px;
   opacity: 1;
 }
@@ -187,8 +188,12 @@ svg {
   text-anchor: right;
 }
 
-.asia {
-  text-anchor: left;
+.Asia {
+  text-anchor: start;
+}
+
+.South {
+  text-anchor: end;
 }
 
 .connector {
