@@ -1,16 +1,52 @@
 <template>
   <svg class="proportion">
+    <g transform="translate(0,20)" v-show="currentContinent != 'Antartica'">
+    <text
+    class="continent_label"
+    :class="continent.continent === 'Asia' ? 'asia' : ''"
+    :id="continent.continent === currentContinent ? 'active_label' : ''"
+    v-for="(continent, i) in continentSum"
+    v-show="continent.continent != 'World'"
+    v-bind:key='i + 1'
+    :x="continent.x + 2"
+    y="-5"
+    > {{continent.continent}} </text>
     <rect
     v-for="(continent, i) in continentSum"
     v-bind:key='i'
+    v-show="continent.continent != 'Antartica'"
     :class="continent.continent === 'World' ? 'world' : 'continents'"
     :id="continent.continent === currentContinent ? 'active' : ''"
-    :x="continent.x"
+    :x="continent.x + 2"
     :width="continent.value"
     height="120"
     />
-    <rect class="continents" id="active" :width="energyDetails.country" :height="energyDetails.country" y="130"/>
-    <rect class="world" :width="energyDetails.continent" :height="energyDetails.continent" y="130"/>
+    <rect
+    class="continents"
+    id="active"
+    :width="energyDetails.country"
+    :height="energyDetails.country"
+    x="2"
+    y="140"
+    />
+    <rect
+    class="world"
+    :width="energyDetails.continent"
+    :height="energyDetails.continent"
+    x="2"
+    y="140"
+    />
+    <line
+    v-for="continent in continentSum"
+    class="connector"
+    v-show="continent.continent === currentContinent"
+    v-bind:key='continent.x'
+    :x1="continent.x + 2"
+    y1="120"
+    x2="2"
+    y2="140"
+    />
+  </g>
   </svg>
 </template>
 
@@ -34,7 +70,7 @@ export default {
         x: d3
           .scaleLinear()
           .domain([0, 558])
-          .rangeRound([0, 240])
+          .rangeRound([0, 210])
       }
     },
     continentTotal () {
@@ -68,6 +104,7 @@ export default {
         let initialyPos = yDistance
         yDistance = yDistance + scaledValue
         return {
+          realnumber: _.sum(continentSum),
           value: scaledValue,
           x: co === 'World' ? 0 : initialyPos,
           continent: co
@@ -92,15 +129,21 @@ export default {
       const countries = this.continentTotal
       return countries[selected]['continent']
     },
+    realNumber () {
+      const selected = this.data.select
+      const countries = this.continentTotal
+      return countries[selected]['realbumber']
+    },
     energyDetails () {
       const scale = d3
         .scaleLinear()
         .domain([0, this.singleContinent])
-        .rangeRound([0, 240])
+        .rangeRound([0, 210])
 
       return {
         country: scale(this.singleCountry),
-        continent: scale(this.singleContinent)
+        continent: scale(this.singleContinent),
+        value: this.realNumber
       }
     }
 
@@ -127,6 +170,30 @@ svg {
 .continents {
   fill-opacity: 0;
   stroke: $color-neon;
+}
+
+.continent_label {
+  font-size: 9px;
+  opacity: 0;
+}
+
+#active_label {
+  text-anchor: middle;
+  font-size: 12px;
+  opacity: 1;
+}
+
+.south_america {
+  text-anchor: right;
+}
+
+.asia {
+  text-anchor: left;
+}
+
+.connector {
+  stroke: gray;
+  stroke-dasharray: 4 2;
 }
 
 #active {

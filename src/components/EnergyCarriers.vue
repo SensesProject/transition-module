@@ -21,7 +21,10 @@
          {{ findPerc.absValue }} EJ/yr
        </span>.
      </p>
-     <EnergyProportion :data="{allData: dataNest, selection: dataFilter, select: selected}"/>
+     <EnergyProportion
+     v-if="selected != 'World'"
+     :data="{allData: dataNest, selection: dataFilter, select: selected}"
+     />
     </div>
     <svg
     :width="innerWidth"
