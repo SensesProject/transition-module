@@ -94,6 +94,7 @@
         >
         {{sector.sector}}
       </text>
+      <path :d="selectedRectsPath" v-if="isActive" class="selectedRectsPath" />
       </g>
     </svg>
   </div>
@@ -296,6 +297,9 @@ export default {
     },
     sumCarriers () {
       const sectors = this.createRect
+      console.log(sectors)
+      console.log('selectedRects', this.selectedRects)
+      console.log('selectedRectsPath', this.selectedRectsPath)
       const sumValue = {}
 
       const dataArray = _.map(sectors, (sector, key) => {
@@ -306,6 +310,41 @@ export default {
         return data
       })
       return dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
+    },
+    selectedRects () {
+      if(this.isActive === '') return false
+
+      const selectedRects = this.createRect.map(sector => {
+        const selectedRect = sector.rects.find(s => s.labels === this.isActive)
+
+        return {
+          y1: sector.sectorHeight,
+          y2: sector.sectorHeight + sector.rectHeight,
+          x1: selectedRect.carrierValue ? selectedRect.dist : 0,
+          x2: selectedRect.carrierValue ? selectedRect.dist + selectedRect.rectWidth : 0
+        }
+      })
+      console.log(selectedRects)
+      return selectedRects
+    },
+    selectedRectsPath () {
+      if(!this.selectedRects) return ''
+      const data = this.selectedRects
+
+      var path = d3.path()
+      path.moveTo(data[0].x2, data[0].y1)
+      path.lineTo(data[0].x2, data[0].y2)
+      path.lineTo(data[1].x2, data[1].y1)
+      path.lineTo(data[1].x2, data[1].y2)
+      path.lineTo(data[2].x2, data[2].y1)
+      path.lineTo(data[2].x2, data[2].y2)
+      path.lineTo(data[3].x2, data[3].y1)
+      path.lineTo(data[3].x2, data[3].y2)
+      // path.closePath();
+      const pathString = path.toString()
+      console.log(pathString)
+
+      return pathString
     },
     createRect () {
       const selectedRegion = this.dataFilter
@@ -374,6 +413,13 @@ export default {
 
 .fuel_rect {
   stroke: $color-gray;
+}
+
+.selectedRectsPath {
+  fill: none;
+  stroke: red;
+  stroke-width: 3px;
+  z-index: 1000;
 }
 
 .fuel-labels {
