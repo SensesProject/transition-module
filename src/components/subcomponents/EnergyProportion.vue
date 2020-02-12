@@ -1,6 +1,6 @@
 <template>
   <svg class="proportion">
-    <g transform="translate(20,20)" v-show="currentContinent != 'Antartica'">
+    <g transform="translate(0,20)" v-show="currentContinent != 'Antartica'">
     <text
     class="continent_label"
     :class="continent.continent.trim()"
@@ -21,6 +21,7 @@
     :width="continent.value"
     height="120"
     />
+    <text :x="2" :y="135" fill="black">{{ data.select }}</text>
     <rect
     class="continents"
     id="active"
@@ -29,6 +30,12 @@
     x="2"
     y="140"
     />
+    <text text-anchor="middle" :x="220 / 2" :y="240" fill="black">
+      {{ data.perc }}%
+    </text>
+    <text text-anchor="middle" :x="220 / 2" :y="260" fill="black">
+      {{ data.abs }} EJ/yr
+    </text>
     <rect
     class="world"
     :width="energyDetails.continent"
@@ -70,7 +77,7 @@ export default {
         x: d3
           .scaleLinear()
           .domain([0, 558])
-          .rangeRound([0, 180])
+          .rangeRound([0, 230])
       }
     },
     continentTotal () {
@@ -132,13 +139,14 @@ export default {
     realNumber () {
       const selected = this.data.select
       const countries = this.continentTotal
-      return countries[selected]['realbumber']
+      console.log(countries[selected])
+      return countries[selected]['sum']
     },
     energyDetails () {
       const scale = d3
         .scaleLinear()
         .domain([0, this.singleContinent])
-        .rangeRound([0, 180])
+        .rangeRound([0, 230])
 
       return {
         country: scale(this.singleCountry),
@@ -154,7 +162,7 @@ export default {
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
 svg {
-  height: 51%;
+  height: 58%;
   width: 100%;
   margin: 0 auto;
 }
@@ -203,6 +211,6 @@ svg {
 
 #active {
   fill-opacity: 1;
-  fill: $color-neon;
+  fill: getColor(neon, 100);
 }
 </style>

@@ -235,6 +235,10 @@ path {
   fill-opacity: 0.5;
 }
 
+text {
+  transition: y 1s;
+}
+
 /*Media queries*/
 
 @media screen and (min-width: 1600px)  {
@@ -251,5 +255,7 @@ path {
     .scenarioselect {
       margin-top: 150px;
     }
+
 }
+
 </style>

@@ -86,7 +86,7 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.1">
-          <h6 class="p mono" id="electricity">Electricity Sector</h6>
+          <h2 class="p mono" id="electricity">Electricity Sector</h2>
           <p>
             The emission from electricity generation represent about one third
             and have been steadily increasing over the past decades. The main
@@ -97,7 +97,7 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.2">
-          <h6 class="p mono" id="transport">Other Energy</h6>
+          <h2 class="p mono" id="transport">Other Energy</h2>
           <p>
             There are a number of energy-related processes that also cause
             emissions but are not part of the four main sectors. These are, for
@@ -107,7 +107,7 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.3">
-          <h6 class="p mono" id="residential">Industry Sector</h6>
+          <h2 class="p mono" id="residential">Industry Sector</h2>
           <p>
             Industry is a complex sector that causes emissions either by
             combusting fossil fuels for heating or using them as feedstocks for
@@ -118,7 +118,7 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.4">
-          <h6 class="p mono" id="industry">Transport Sector</h6>
+          <h2 class="p mono" id="industry">Transport Sector</h2>
           <p>
             Increasing road transport, aviation and shipping all contribute to
             the globally rising transport emissions. Road transport includes
@@ -128,7 +128,7 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.5">
-          <h6 class="p mono" id="other">Residential Sector</h6>
+          <h2 class="p mono" id="other">Residential Sector</h2>
           <p>
             The residential sector mainly contributed emissions from space
             heating with coal, gas or oil-based products. The emissions have
@@ -422,7 +422,6 @@ p {
   text-align: left;
   font-family: $font-serif;
   font-weight: lighter;
-  font-size: 12px;
 }
 
 .vis-inner {

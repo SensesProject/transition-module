@@ -11,20 +11,14 @@
      </p>
      <EnergyProportion
      v-if="selected != 'World'"
-     :data="{allData: dataNest, selection: dataFilter, select: selected}"
+     :data="{
+       allData: dataNest,
+       selection: dataFilter,
+       select: selected,
+       perc: findPerc.perc,
+       abs: findPerc.absValue
+       }"
      />
-     <p id="emissions-label">
-       <span class="highlight">
-         {{ selected }}
-       </span>
-       is producing the
-       <span class="dotted">{{ findPerc.perc }}%</span>
-       of the total global energy.
-       Equals to
-       <span class="dotted">
-         {{ findPerc.absValue }} EJ/yr
-       </span>.
-     </p>
     </div>
     <svg
     :width="innerWidth"
@@ -210,7 +204,7 @@ export default {
       let selected = this.selected
       if (this.step === 4.1) { selected = 'China (mainland)' }
       if (this.step === 4.2) { selected = 'USA' }
-      if (this.step === 4.3) { selected = 'Deutschland' }
+      if (this.step === 4.3) { selected = 'Germany' }
       if (this.step === 5 || this.step === 4) { selected = this.selected }
       if (this.step === 7) { selected = 'World-step1' }
       if (this.step === 8) { selected = 'World-step2' }
@@ -377,7 +371,6 @@ export default {
 }
 
 .fuel-labels {
-  font-size: 10px;
   text-anchor: left;
   cursor: pointer;
 }
@@ -414,5 +407,15 @@ export default {
 
 .sector-labels {
   text-anchor: end;
+}
+
+g {
+  #sector {
+  transition: transform 1s;
+  }
+}
+
+rect {
+  transition: width 1s 1s, x 1s 1s, y 1s, height 1s, fill 0.5s;
 }
 </style>
