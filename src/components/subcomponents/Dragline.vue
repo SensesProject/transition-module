@@ -4,7 +4,7 @@
     <rect
       x="0"
       y="0"
-      :width="width - 200"
+      :width="(width - margin.left) - 100"
       :height="height - margin.bottom"
       class="draglineRect"
       @mousemove="clickDragline"
@@ -12,11 +12,18 @@
     <g
       v-for="sector of sectors"
       :key="sector.key"
-      :transform="'translate(' + x + ',' + scales.y(sector.data[1]) + ')'"
+      :transform="'translate(' + x + ',' + scales.y((sector.data[0] + sector.data[1]) / 2) + ')'"
     >
-      <text x='10' y='10'>{{ sector.value }},{{ sector.key }}</text>
-      <circle class='labels' transform="rotate(45)" r="2.5"/>
+      <circle class='labels' r="3"/>
     </g>
+    <text
+    v-for="sector of sectors"
+    v-bind:key="sector.value"
+    :x='width - margin.left  + 10'
+    :y='scales.y(sector.y)'
+    >
+    {{ sector.key }}: {{ millions(sector.value) }}
+  </text>
   </g>
 </template>
 
@@ -38,10 +45,12 @@ export default {
       return this.data.map(d => {
         const data = d.data.find(e => e.data.Year === this.year)
         const { key } = d.data
+        const value = data.data[key]
         return {
           key,
           data,
-          value: data.data[key]
+          y: (d.data[25][0] + d.data[25][1]) / 2,
+          value: Math.round(value)
         }
       })
     }
@@ -50,6 +59,21 @@ export default {
     clickDragline: function (e) {
       this.x = e.layerX - this.margin.left
       // console.log(this.margin.left, e.layerX)
+    },
+    millions (value) {
+      return Math.abs(Number(value)) >= 1.0e+9
+
+        ? Math.abs(Number(value)) / 1.0e+9 + 'B'
+      // Six Zeroes for Millions
+        : Math.abs(Number(value)) >= 1.0e+6
+
+          ? Math.abs(Number(value)) / 1.0e+6 + 'M'
+        // Three Zeroes for Thousands
+          : Math.abs(Number(value)) >= 1.0e+3
+
+            ? Math.abs(Number(value)) / 1.0e+3 + 'K'
+
+            : Math.abs(Number(value))
     }
   }
 }
@@ -64,12 +88,11 @@ export default {
 }
 
 .labels {
-  fill: getColor(neon, 40);
+  fill: white;
   stroke: white;
 }
 
 text {
-  font-size: 11px;
   fill: #c8005f;
 }
 

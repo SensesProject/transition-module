@@ -14,7 +14,7 @@
       text-anchor="middle"
       :class="label"
       :x='label.x'
-      y='15'
+      y='-10'
       >
       {{ label.year }}
     </text>
@@ -27,21 +27,10 @@ import map from 'lodash/map'
 
 export default {
   name: 'YAxis',
-  props: ['width', 'height', 'scale'],
+  props: ['width', 'height', 'scale', 'thicks'],
   computed: {
     labels: function () {
-      const labels = [
-        [2010],
-        [2020],
-        [2030],
-        [2040],
-        [2050],
-        [2060],
-        [2070],
-        [2080],
-        [2090],
-        [2100]
-      ]
+      const labels = this.thicks
 
       return map(labels, pair => {
         const [year] = pair

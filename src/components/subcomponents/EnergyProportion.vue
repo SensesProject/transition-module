@@ -13,7 +13,7 @@
     > {{continent.continent}} </text>
     <rect
     v-for="(continent, i) in continentSum"
-    v-bind:key='i'
+    v-bind:key='i + continent.value + 10'
     v-show="continent.continent != 'Antartica'"
     :class="continent.continent === 'World' ? 'world' : 'continents'"
     :id="continent.continent === currentContinent ? 'active' : ''"
@@ -44,10 +44,10 @@
     y="140"
     />
     <line
-    v-for="continent in continentSum"
+    v-for="(continent,i) in continentSum"
     class="connector"
     v-show="continent.continent === currentContinent"
-    v-bind:key='continent.x'
+    v-bind:key='i + continent.x'
     :x1="continent.x + 2"
     y1="120"
     x2="2"

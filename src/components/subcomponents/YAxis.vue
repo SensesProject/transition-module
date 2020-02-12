@@ -14,9 +14,9 @@
       text-anchor="end"
       :class="label"
       x='-10'
-      :y='label.y'
+      :y='label.y + 5'
       >
-      {{ label.perc }}%
+      {{ label.perc }} {{ indicator }}
     </text>
     </g>
   </g>
@@ -27,14 +27,10 @@ import map from 'lodash/map'
 
 export default {
   name: 'YAxis',
-  props: ['width', 'height', 'scale'],
+  props: ['width', 'height', 'scale', 'thicks', 'indicator'],
   computed: {
     labels: function () {
-      const labels = [
-        [0],
-        [50],
-        [100]
-      ]
+      const labels = this.thicks
 
       return map(labels, pair => {
         const [perc] = pair

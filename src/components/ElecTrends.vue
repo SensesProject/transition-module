@@ -70,6 +70,8 @@
         v-if= "group.name !== 'electricity-RE'"
         :scale='scales.y'
         :height= 'innerHeight / 8'
+        :thicks='[[0],[50],[100]]'
+        :indicator="'%'"
         />
         <line
         :x1='scales.x(2005)'
@@ -83,6 +85,18 @@
       :scale='scales.x'
       :width='(this.innerWidth + this.margin.left) / 2'
       :height= 'innerHeight'
+      :thicks="[
+        [2010],
+        [2020],
+        [2030],
+        [2040],
+        [2050],
+        [2060],
+        [2070],
+        [2080],
+        [2090],
+        [2100]
+      ]"
       :transform="'translate('+ (innerWidth / 4) + ',' + (this.innerHeight - 30) + ')'" />
       />
     </svg>

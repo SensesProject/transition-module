@@ -42,12 +42,24 @@
           :scales="scales"
           :data="subsectorsDataActive"
         />
-        <g class="axis" v-axis:y="scales" />
-        <g
+        <XAxis
+        :scale='scales.x'
+        :width='this.innerWidth - margin.left'
+        :height= 'innerHeight'
+        :thicks="step >= 2 ? thicksShort : thicksLong"
+        :transform="'translate('+ innerWidth - (innerWidth / 2)  + ',0)'" />
+        <YAxis
+        :scale='scales.y'
+        :height= 'innerHeight - margin.bottom'
+        :thicks="[[0],[50000000],[10000000],[20000000],[30000000],[40000000]]"
+        :indicator="'M/tons'"
+        />
+        <!-- <g class="axis" v-axis:y="scales" />
+         <g
           class="axis"
           v-axis:x="scales"
           :transfrom="'translate(' + 0 + ',' + this.innerHeight + ')'"
-        />
+        />-->
       </g>
     </svg>
   </div>
@@ -62,6 +74,8 @@ import { group, groups, rollup, rollups } from 'd3-array'
 // components
 import EmissionsDots from './subcomponents/EmissionsDots.vue'
 import Dragline from './subcomponents/Dragline.vue'
+import YAxis from './subcomponents/YAxis.vue'
+import XAxis from './subcomponents/XAxis.vue'
 
 // Data
 import EmissionData from '../assets/data/emissions-merged.json'
@@ -86,7 +100,9 @@ export default {
   name: 'EmissionsChart',
   components: {
     EmissionsDots,
-    Dragline
+    Dragline,
+    YAxis,
+    XAxis
   },
   props: {
     width: {
@@ -109,20 +125,33 @@ export default {
         top: 30,
         bottom: 30,
         right: 30
-      }
-    }
-  },
-  watch: {
-    step: function (step) {
-      console.log(step, this.width, this.height)
+      },
+      thicksLong: [
+        [2000],
+        [2010],
+        [2020],
+        [2030],
+        [2040],
+        [2050],
+        [2060],
+        [2070],
+        [2080]
+      ],
+      thicksShort: [
+        [1995],
+        [2000],
+        [2005],
+        [2010],
+        [2015]
+      ]
     }
   },
   computed: {
     innerWidth () {
-      return this.width - this.margin.left - this.margin.right
+      return (this.width - this.margin.left - this.margin.right) / 1.2
     },
     innerHeight () {
-      return this.height - this.margin.top - this.margin.bottom
+      return (this.height - this.margin.top - this.margin.bottom) / 1.2
     },
     maxYear: function () {
       return this.step >= 2 ? 2015 : 2080
@@ -153,7 +182,7 @@ export default {
         x: d3
           .scaleLinear()
           .domain([1990, this.maxYear])
-          .rangeRound([0, this.innerWidth - 300]),
+          .rangeRound([0, this.innerWidth - this.margin.left]),
         y: d3
           .scaleLinear()
           .domain([0, 40000000])
@@ -168,13 +197,13 @@ export default {
         { key: 'Combustion', color: '#dd5f84', active: 3.3 },
         { key: 'Production', color: '#dd5f84', active: 3.3 },
         { key: 'Solvents', color: '#dd5f84', active: 3.3 },
-        { key: 'OtherProc', color: '#dd5f84', active: 3.3 },
-        { key: 'IndWaste', color: '#dd5f84', active: 3.3 },
+        { key: 'Other Processes', color: '#dd5f84', active: 3.3 },
+        { key: 'Industrial Waste', color: '#dd5f84', active: 3.3 },
         { key: 'Aviation', color: '#ed96ab', active: 3.4 },
         { key: 'Road', color: '#ed96ab', active: 3.4 },
         { key: 'Other', color: '#ed96ab', active: 3.4 },
         { key: 'Shipping', color: '#ed96ab', active: 3.4 },
-        { key: 'CommRes', color: '#f8cbd4', active: 3.5 },
+        { key: 'Commercial / Residential', color: '#f8cbd4', active: 3.5 },
         { key: 'Agriculture', color: '#f8cbd4', active: 3.5 }
       ]
     },
@@ -223,24 +252,24 @@ export default {
         .y0(d => y(d[0]))
         .y1(d => y(d[1]))
     }
-  },
-  directives: {
-    axis (el, binding) {
-      const axis = binding.arg
-      // console.log("axis", axis);
-      const axisMethod = { x: 'axisTop', y: 'axisLeft' }[axis]
-      const tickFormat = { x: d3.format('d'), y: d3.format('.2s') }[axis]
-      const methodArg = binding.value[axis]
-
-      d3.select(el)
-        .transition()
-        .duration(1000)
-        .call(d3[axisMethod](methodArg)
-          .tickSize(0)
-          .tickPadding(10)
-          .tickFormat(tickFormat))
-    }
   }
+  // directives: {
+  //   axis (el, binding) {
+  //     const axis = binding.arg
+  //     // console.log("axis", axis);
+  //     const axisMethod = { x: 'axisTop', y: 'axisLeft' }[axis]
+  //     const tickFormat = { x: d3.format('d'), y: d3.format('.2s') }[axis]
+  //     const methodArg = binding.value[axis]
+  //
+  //     d3.select(el)
+  //       .transition()
+  //       .duration(1000)
+  //       .call(d3[axisMethod](methodArg)
+  //         .tickSize(0)
+  //         .tickPadding(10)
+  //         .tickFormat(tickFormat))
+  //   }
+  // }
 }
 </script>
 
@@ -249,6 +278,13 @@ export default {
 .visualization {
   width: inherit;
   height: inherit;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+svg {
+  margin-top: 50px;
 }
 
 #emissions {
@@ -257,7 +293,7 @@ export default {
 }
 
 .emission__chunks {
-  stroke: white;
+  stroke: grey;
   stroke-width: 1;
 }
 

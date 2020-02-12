@@ -33,14 +33,15 @@
       />
       <g
       :transform="'translate('+ (innerWidth / 4) + ',0)'">
+      <g>
         <text
-        :transform="'rotate(45,' + energy.posX + ',' + (innerHeight - 70) + ')'"
+        :transform="'rotate(45,' + energy.posX + ',' + (innerHeight - (margin.bottom * 2)) + ')'"
         v-for="(energy, i) in createRect[0].rects"
         class="fuel-labels"
         v-bind:key="energy.labels + i"
         :id='energy.labels'
         :x="energy.posX"
-        :y= '(innerHeight - 70)'
+        :y= '(innerHeight - (margin.bottom * 2))'
         v-on:click=";[
         isActive = isActive === energy.labels ? 'initial' : energy.labels,
         clicked = isActive !== 'initial'
@@ -48,19 +49,21 @@
         >
         {{ energy.labels }}
         <tspan
+        font-size="10px"
         :data="sumCarriers"
         :id='energy.labels'
         :x="energy.posX"
-        :y= '(innerHeight - 55)'
+        :y= '(innerHeight - (margin.bottom * 2 - 15))'
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
         {{ Math.round(sumCarriers[i] * 100) / 100 }} EJ/yr
         </tspan>
       </text>
+      </g>
         <g
           v-for="(sector,i) in createRect"
-          v-bind:key="i"
+          v-bind:key="i + 3"
           :id="sector.sector"
           :transform="'translate(0,' + sector.sectorHeight +')'"
         >
@@ -182,6 +185,7 @@ export default {
           const fuelObj = {}
           _.forEach(allFuels, (fuel, i) => {
             const data = _.map(arr, sector)
+            const sum = d3.sum(data)
             fuelObj[fuel] = data[i]
           })
           obj[sector] = fuelObj
@@ -198,7 +202,6 @@ export default {
         allRegions.push(key)
         return _.orderBy(allRegions, [key], ['desc'])
       })
-      console.log(allRegions)
       return allRegions
     },
     stepSelection () {
@@ -291,9 +294,6 @@ export default {
     },
     sumCarriers () {
       const sectors = this.createRect
-      console.log(sectors)
-      console.log('selectedRects', this.selectedRects)
-      console.log('selectedRectsPath', this.selectedRectsPath)
       const sumValue = {}
 
       const dataArray = _.map(sectors, (sector, key) => {
@@ -306,7 +306,7 @@ export default {
       return dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
     },
     selectedRects () {
-      if(this.isActive === '') return false
+      if(this.isActive === 'initial') return false
 
       const selectedRects = this.createRect.map(sector => {
         const selectedRect = sector.rects.find(s => s.labels === this.isActive)
@@ -318,7 +318,6 @@ export default {
           x2: selectedRect.carrierValue ? selectedRect.dist + selectedRect.rectWidth : 0
         }
       })
-      console.log(selectedRects)
       return selectedRects
     },
     selectedRectsPath () {
@@ -334,10 +333,16 @@ export default {
       path.lineTo(data[2].x2, data[2].y2)
       path.lineTo(data[3].x2, data[3].y1)
       path.lineTo(data[3].x2, data[3].y2)
+      path.lineTo(data[3].x1, data[3].y2)
+      path.lineTo(data[3].x1, data[3].y1)
+      path.lineTo(data[2].x1, data[2].y2)
+      path.lineTo(data[2].x1, data[2].y1)
+      path.lineTo(data[1].x1, data[1].y2)
+      path.lineTo(data[1].x1, data[1].y1)
+      path.lineTo(data[0].x1, data[0].y2)
+      path.lineTo(data[0].x1, data[0].y1)
       // path.closePath();
       const pathString = path.toString()
-      console.log(pathString)
-
       return pathString
     },
     createRect () {
@@ -411,8 +416,9 @@ export default {
 
 .selectedRectsPath {
   fill: none;
-  stroke: red;
-  stroke-width: 3px;
+  stroke: $color-neon;
+  stroke-width: 1px;
+  stroke-dasharray: 3 2;
   z-index: 1000;
 }
 
@@ -462,6 +468,6 @@ g {
 }
 
 rect {
-  transition: width 1s 1s, x 1s 1s, y 1s, height 1s, fill 0.5s;
+  transition: width 0.5s 0.8s, x 0.5s 0.8s, y 0.2s, height 0.5s, fill 0.5s;
 }
 </style>

@@ -39,7 +39,7 @@
           <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" />
           <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" :hover="hover"/>
           <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" />
-          <GlobalStrategy v-if="step >= 13" :step="step" :width="width" :height="height" />
+          <GlobalStrategy v-if="step >= 14" :step="step" :width="width" :height="height" />
         </div>
       </template>
       <div slot="text" class="observer">
@@ -389,7 +389,7 @@ export default {
   margin: 0 auto;
   max-width: 500px;
   width: 100%;
-  height: 90vh;
+  height: 70vh;
 }
 .author__section {
   margin-bottom: $spacing;
