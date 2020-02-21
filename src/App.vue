@@ -3,11 +3,6 @@
     <SensesMenu />
     <div class="noscroll">
       <h1 class="title" id="cover">Towards an Electric Future</h1>
-        <p class="author__section">
-          <span class="tiny uppercase mono">Content:</span> <span class="tiny author mono">Ipsum L.</span>
-          <span class="tiny uppercase mono">Design:</span> <span class="tiny author mono">Ipsum L.</span>
-          <span class="tiny uppercase mono">Code:</span> <span class="tiny author mono">Ipsum L.</span>
-        </p>
         <h4 class="title">Relevant Concepts</h4>
         <p class="title mono">
           Net Zero,
@@ -39,7 +34,6 @@
           <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" />
           <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" :hover="hover"/>
           <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" />
-          <GlobalStrategy v-if="step >= 14" :step="step" :width="width" :height="height" />
         </div>
       </template>
       <div slot="text" class="observer">
@@ -274,51 +268,9 @@
             residual emissions can be erased by low-carbon alternatives.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="14">
-          <h2
-            class="title"
-            id="future__emissions"
-          >How will emissions look like without any strategy implemented?</h2>
-          <p>testo.</p>
-        </IntersectionObserver>
-        <IntersectionObserver :step="15">
-          <h2
-            class="title"
-            id="global__strategies"
-          >Implementing a global strategy for a smooth transition.</h2>
-          <p>testo.</p>
-        </IntersectionObserver>
-        <IntersectionObserver :step="16">
-          <h2
-            class="title"
-            id="gradual_decarbonization"
-          >Decarbonisation should happen gradually in time.</h2>
-          <p>testo.</p>
-        </IntersectionObserver>
-        <IntersectionObserver :step="17">
-          <h2 class="title" id="explore__scenarios">
-            The faster the strategy steps are implemented, the closer we’ll get
-            to Net-Zero.
-          </h2>
-          <p>testo.</p>
-        </IntersectionObserver>
-        <IntersectionObserver :step="18">
-          <h2 class="title" id="explore__scenarios">
-            The faster the strategy steps are implemented, the closer we’ll get
-            to Net-Zero.
-          </h2>
-          <p>testo.</p>
-        </IntersectionObserver>
-        <IntersectionObserver :step="19" class="height__change">
-          <h2 class="title" id="explore__scenarios">
-            The faster the strategy steps are implemented, the closer we’ll get
-            to Net-Zero.
-          </h2>
-          <p>testo.</p>
-        </IntersectionObserver>
       </div>
     </LayoutScrollytelling>
-    <div class="noscroll">
+    <div class="noscroll" id="end">
       <p class="title">
         This is the conclusion of the module. Lorem ipsum dolor sit amet,
         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -326,6 +278,11 @@
         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
         dolore eu fugiat nulla pariatur.
+      </p>
+      <p class="author__section">
+        <span class="tiny uppercase mono">Content:</span> <span class="tiny author mono">Dr. Falko Ueckerdt, Felix Schreyer</span>
+        <br /><span class="tiny uppercase mono">Design:</span> <span class="tiny author mono">Francesca Morini</span>
+        <br /><span class="tiny uppercase mono">Code:</span> <span class="tiny author mono">Francesca Morini, Christopher Pietsch</span>
       </p>
       <h4 class="title">READ NEXT: </h4>
       <p class="title">
@@ -336,6 +293,11 @@
         <a href='#'>Primary Energy</a>
       </p>
       <h4 class="title">EXPLORE THE DATA: </h4>
+      <SensesDownload
+      :selected="currentDownloadID"
+      :ids="currentDownloadIDs"
+      :title="currentDownloadTitle"
+      :close="close" />
       <div class='back'>
         <a class='button back' href='#'>Return to the Policy Portal</a>
       </div>
@@ -345,6 +307,8 @@
 
 <script>
 import SensesMenu from 'library/src/components/SensesMenu.vue'
+import SensesDownload from 'library/src/components/SensesDownload.vue'
+
 // Template Components
 import LayoutScrollytelling from 'library/src/components/LayoutScrollytelling.vue'
 import IntersectionObserver from 'library/src/components/IntersectionObserver.vue'
@@ -353,7 +317,6 @@ import IntersectionObserver from 'library/src/components/IntersectionObserver.vu
 import EmissionsChart from './components/EmissionsChart.vue'
 import EnergyCarriers from './components/EnergyCarriers.vue'
 import ElecTrends from './components/ElecTrends.vue'
-import GlobalStrategy from './components/GlobalStrategy.vue'
 
 export default {
   name: 'app',
@@ -363,8 +326,8 @@ export default {
     EmissionsChart,
     EnergyCarriers,
     ElecTrends,
-    GlobalStrategy,
-    SensesMenu
+    SensesMenu,
+    SensesDownload
   },
   data () {
     return {
@@ -389,7 +352,7 @@ export default {
   margin: 0 auto;
   max-width: 500px;
   width: 100%;
-  height: 70vh;
+  height: 550px;
 }
 .author__section {
   margin-bottom: $spacing;
@@ -477,5 +440,10 @@ p {
 
 #cover {
   font-family: $font-serif;
+}
+
+#end {
+  height: 100vh;
+  padding-top: 4em;
 }
 </style>

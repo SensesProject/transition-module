@@ -142,8 +142,8 @@ export default {
       regSelected: 'EUR',
       scenariosSelected: 'B1300',
       colors: {
-        'electricity-RE': '#ffac00',
-        'electricity-VRE': '#ffac00',
+        'electricity-RE': '#a2e7c0',
+        'electricity-VRE': '#a2e7c0',
         industry: '#ffac00',
         residential: '#ffac00',
         transport: '#ffac00'

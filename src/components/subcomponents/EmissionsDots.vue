@@ -7,8 +7,8 @@
     <text class="twofifteen_emissions" id="subtext" :x="scales.x(2017)" :y="scales.y(34500000)">
       tons of C02 released in the athmosphere in 2015
     </text>
-    <circle id="curr_emissions" :cx="scales.x(2015)" :cy="scales.y(35600000)" r="5" />
-    <circle id="curr_emissions" :cx="scales.x(2015)" :cy="scales.y(35600000)" r="5">
+    <circle id="curr_emissions" :cx="scales.x(2015)" :cy="scales.y(35600000 / 1000)" r="5" />
+    <circle id="curr_emissions" :cx="scales.x(2015)" :cy="scales.y(35600000 / 1000)" r="5">
         <animate
           attributeName="r"
           from="1"
@@ -28,8 +28,8 @@
     </circle>
   </g>
   <g v-if="step === 1.2">
-    <line :x1="scales.x(2020)" :y1="scales.y(35600000)" :x2="scales.x(2050)" :y2="scales.y(0)"/>
-    <line :x1="scales.x(2015)" :y1="scales.y(35600000)" :x2="scales.x(2020)" :y2="scales.y(35600000)"/>
+    <line :x1="scales.x(2020)" :y1="scales.y(35600000 / 1000)" :x2="scales.x(2050)" :y2="scales.y(0)"/>
+    <line :x1="scales.x(2015)" :y1="scales.y(35600000 / 1000)" :x2="scales.x(2020)" :y2="scales.y(35600000 / 1000)"/>
     <circle class="net_one" :cx="scales.x(2050)" :cy="scales.y(0)" r="5" />
     <circle class="net_one" :cx="scales.x(2050)" :cy="scales.y(0)" r="5">
         <animate
@@ -51,8 +51,8 @@
     </circle>
   </g>
   <g v-if="step === 1.1">
-    <line :x1="scales.x(2015)" :y1="scales.y(35600000)" :x2="scales.x(2020)" :y2="scales.y(35600000)"/>
-    <line :x1="scales.x(2020)" :y1="scales.y(35600000)" :x2="scales.x(2075)" :y2="scales.y(0)"/>
+    <line :x1="scales.x(2015)" :y1="scales.y(35600000 / 1000)" :x2="scales.x(2020)" :y2="scales.y(35600000 / 1000)"/>
+    <line :x1="scales.x(2020)" :y1="scales.y(35600000 / 1000)" :x2="scales.x(2075)" :y2="scales.y(0)"/>
     <circle class="net_two" :cx="scales.x(2075)" :cy="scales.y(0)" r="5" />
     <circle class="net_two" :cx="scales.x(2075)" :cy="scales.y(0)" r="5">
         <animate

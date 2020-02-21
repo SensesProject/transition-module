@@ -38,7 +38,7 @@ export default {
 @import "library/src/style/variables.scss";
 
 #arrows {
-  stroke: #979797;
+  stroke: $color-yellow;
   stroke-width: 1;
   fill: none;
 }

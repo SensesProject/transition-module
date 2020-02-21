@@ -42,6 +42,18 @@
           :scales="scales"
           :data="subsectorsDataActive"
         />
+        <g  v-if="step >= 3">
+          <text
+          class="sectorlabels"
+          :class="{ inactive: chunk.active != step }"
+          :id="chunk.id"
+          v-for="(chunk, i) in applicationsData"
+          v-bind:key="i + 'text'"
+          :x='scales.x(1991)'
+          :y='scales.y(chunk.labels / 1000)'
+          > {{ chunk.id }}
+          </text>
+        </g>
         <XAxis
         :scale='scales.x'
         :width='this.innerWidth - margin.left'
@@ -51,15 +63,18 @@
         <YAxis
         :scale='scales.y'
         :height= 'innerHeight - margin.bottom'
-        :thicks="[[0],[50000000],[10000000],[20000000],[30000000],[40000000]]"
-        :indicator="'M/tons'"
+        :thicks="[[0],[10000],[20000],[30000],[40000]]"
+        :indicator="'Gt CO2'"
         />
-        <!-- <g class="axis" v-axis:y="scales" />
-         <g
-          class="axis"
-          v-axis:x="scales"
-          :transfrom="'translate(' + 0 + ',' + this.innerHeight + ')'"
-        />-->
+        <line v-for="(year, i) in thicksShort"
+        v-show="step >= 2"
+        class="yearsep"
+        v-bind:key="i + 'lines'"
+        :x1="scales.x(year)"
+        :x2="scales.x(year)"
+        :y1="scales.y(0)"
+        :y2="scales.y(40000)"
+        />
       </g>
     </svg>
   </div>
@@ -121,7 +136,7 @@ export default {
   data () {
     return {
       margin: {
-        left: 250,
+        left: 190,
         top: 30,
         bottom: 30,
         right: 30
@@ -173,7 +188,7 @@ export default {
           return this.scales.x(d[0])
         })
         .y(d => {
-          return this.scales.y(d[1])
+          return this.scales.y(d[1] / 1000)
         })
         .curve(d3.curveLinear)(this.lineData)
     },
@@ -185,15 +200,15 @@ export default {
           .rangeRound([0, this.innerWidth - this.margin.left]),
         y: d3
           .scaleLinear()
-          .domain([0, 40000000])
+          .domain([0, 40000])
           .rangeRound([this.innerHeight - this.margin.bottom, 0])
       }
     },
     subsectors: function () {
       return [
-        { key: 'Public', color: '#33121c', active: 3.1 },
-        { key: 'Autoproduced', color: '#33121c', active: 3.1 },
-        { key: 'OtherEn', color: '#611731', active: 3.2 },
+        { key: 'Public', color: '#611731', active: 3.1 },
+        { key: 'Autoproduced', color: '#611731', active: 3.1 },
+        { key: 'OtherEn', color: '#73283f', active: 3.2 },
         { key: 'Combustion', color: '#dd5f84', active: 3.3 },
         { key: 'Production', color: '#dd5f84', active: 3.3 },
         { key: 'Solvents', color: '#dd5f84', active: 3.3 },
@@ -209,11 +224,11 @@ export default {
     },
     applications: function () {
       return [
-        { key: 'Electricity', color: '#33121c', active: 3.1 },
-        { key: 'OtherEnergy', color: '#611731', active: 3.1 },
-        { key: 'Industry', color: '#dd5f84', active: 3.1 },
-        { key: 'Transports', color: '#ed96ab', active: 3.1 },
-        { key: 'Building', color: '#f8cbd4', active: 3.1 }
+        { key: 'Electricity', color: '#611731', active: 3.1 },
+        { key: 'OtherEnergy', color: '#73283f', active: 3.2 },
+        { key: 'Industry', color: '#dd5f84', active: 3.3 },
+        { key: 'Transports', color: '#ed96ab', active: 3.4 },
+        { key: 'Building', color: '#f8cbd4', active: 3.5 }
       ]
     },
 
@@ -224,14 +239,15 @@ export default {
       return stacked.map((d, i) => ({
         d: this.areaGenerator(d),
         color: this.applications[i].color,
-        id: this.applications[i].key
+        labels: d[0][1] - 1500000,
+        id: this.applications[i].key,
+        active: this.applications[i].active
       }))
     },
     subsectorsData: function () {
       const stacked = d3.stack().keys(this.subsectors.map(d => d.key))(
         EmissionData
       )
-
       return stacked.map((d, i) => ({
         d: this.areaGenerator(d),
         color: this.subsectors[i].color,
@@ -249,27 +265,10 @@ export default {
         .area()
         .x(d => x(d.data.Year))
         .curve(d3.curveLinear)
-        .y0(d => y(d[0]))
-        .y1(d => y(d[1]))
+        .y0(d => y(d[0] / 1000))
+        .y1(d => y(d[1] / 1000))
     }
   }
-  // directives: {
-  //   axis (el, binding) {
-  //     const axis = binding.arg
-  //     // console.log("axis", axis);
-  //     const axisMethod = { x: 'axisTop', y: 'axisLeft' }[axis]
-  //     const tickFormat = { x: d3.format('d'), y: d3.format('.2s') }[axis]
-  //     const methodArg = binding.value[axis]
-  //
-  //     d3.select(el)
-  //       .transition()
-  //       .duration(1000)
-  //       .call(d3[axisMethod](methodArg)
-  //         .tickSize(0)
-  //         .tickPadding(10)
-  //         .tickFormat(tickFormat))
-  //   }
-  // }
 }
 </script>
 
@@ -307,5 +306,18 @@ svg {
   .inactive {
     fill-opacity: 0.1;
   }
+
+.sectorlabels {
+  color: white !important;
+
+  .inactive {
+    color: black !important;
+  }
+}
+}
+
+.yearsep {
+  stroke-dasharray: 2 2;
+  stroke: gray;
 }
 </style>

@@ -4,7 +4,7 @@
     <rect
       x="0"
       y="0"
-      :width="(width - margin.left) - 100"
+      :width="width - margin.left + 30"
       :height="height - margin.bottom"
       class="draglineRect"
       @mousemove="clickDragline"
@@ -12,7 +12,7 @@
     <g
       v-for="sector of sectors"
       :key="sector.key"
-      :transform="'translate(' + x + ',' + scales.y((sector.data[0] + sector.data[1]) / 2) + ')'"
+      :transform="'translate(' + x + ',' + scales.y((sector.data[0] / 1000 + sector.data[1] / 1000) / 2) + ')'"
     >
       <circle class='labels' r="3"/>
     </g>
@@ -20,9 +20,9 @@
     v-for="sector of sectors"
     v-bind:key="sector.value"
     :x='width - margin.left  + 10'
-    :y='scales.y(sector.y)'
+    :y='scales.y(sector.y / 1000)'
     >
-    {{ sector.key }}: {{ millions(sector.value) }}
+    {{ sector.key }}: {{ sector.value / 1000 }}
   </text>
   </g>
 </template>
@@ -46,10 +46,14 @@ export default {
         const data = d.data.find(e => e.data.Year === this.year)
         const { key } = d.data
         const value = data.data[key]
+        let labelPos = (d.data[25][0] + d.data[25][1]) / 2
+        if (d.data[25][0] === 31005018.44227) { labelPos = labelPos - 250000 }
+        if (d.id === 'Industrial Waste') { labelPos = labelPos + 1750000 }
+        if (d.id === 'Other Processes') { labelPos = labelPos + 900000 }
         return {
           key,
           data,
-          y: (d.data[25][0] + d.data[25][1]) / 2,
+          y: labelPos,
           value: Math.round(value)
         }
       })
@@ -57,23 +61,8 @@ export default {
   },
   methods: {
     clickDragline: function (e) {
-      this.x = e.layerX - this.margin.left
+      this.x = e.layerX - this.margin.left - 100
       // console.log(this.margin.left, e.layerX)
-    },
-    millions (value) {
-      return Math.abs(Number(value)) >= 1.0e+9
-
-        ? Math.abs(Number(value)) / 1.0e+9 + 'B'
-      // Six Zeroes for Millions
-        : Math.abs(Number(value)) >= 1.0e+6
-
-          ? Math.abs(Number(value)) / 1.0e+6 + 'M'
-        // Three Zeroes for Thousands
-          : Math.abs(Number(value)) >= 1.0e+3
-
-            ? Math.abs(Number(value)) / 1.0e+3 + 'K'
-
-            : Math.abs(Number(value))
     }
   }
 }

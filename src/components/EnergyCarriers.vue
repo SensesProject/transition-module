@@ -6,6 +6,11 @@
        :options="regionsArray"
        v-model="selected"
      />
+     <div
+     id="reset"
+     v-on:click="
+     selected = selected != 'World' ? 'World' : selected"
+     >Reset</div>
      <p id="select-label">
        Use the selector above to see energy carriers distribution across regions.
      </p>
@@ -35,13 +40,19 @@
       :transform="'translate('+ (innerWidth / 4) + ',0)'">
       <g>
         <text
-        :transform="'rotate(45,' + energy.posX + ',' + (innerHeight - (margin.bottom * 2)) + ')'"
+        fill="#4e40b2"
+        :x="(innerWidth + (margin.left * 4)) / 2"
+        :y="height - (margin.top * 5)"
+        >← Select a carrier!</text>
+        <text
+        :transform="'rotate(45,' + energy.posX + ',' + height / 1.3 + ')'"
         v-for="(energy, i) in createRect[0].rects"
         class="fuel-labels"
-        v-bind:key="energy.labels + i"
+        :class="[isActive === '' ? 'on' : '', isActive === energy.labels ? 'on' : 'off']"
+        v-bind:key="'labels' + i"
         :id='energy.labels'
         :x="energy.posX"
-        :y= '(innerHeight - (margin.bottom * 2))'
+        :y= 'height / 1.3'
         v-on:click=";[
         isActive = isActive === energy.labels ? 'initial' : energy.labels,
         clicked = isActive !== 'initial'
@@ -53,7 +64,7 @@
         :data="sumCarriers"
         :id='energy.labels'
         :x="energy.posX"
-        :y= '(innerHeight - (margin.bottom * 2 - 15))'
+        :y= 'height / 1.3  + 15'
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
@@ -234,7 +245,7 @@ export default {
 
       const y = d3.scaleLinear()
         .domain([0, maxEnergy.reduce((sum, val) => sum + val, 0)])
-        .range([0, height / 2])
+        .range([0, height / 2.3])
 
       let maxRegValue = maxEnergy.reduce((sum, val) => sum + val, 0)
       return {
@@ -379,13 +390,12 @@ export default {
             posX: initialPos,
             fill:
               this.hover[0] === i ? this.hover[1] : 'white' &&
-              this.step === 6 && i === 'non-bioren' ? '#a2e7c0' : 'white' &&
-              this.step === 6 && i === 'm&tbio' ? '#a2e7c0' : 'white' &&
-              this.step >= 7 && key === 'electricity' ? '#ffd89a' : 'white' &&
+              this.step === 6 && i === 'wind/solar/hydro' ? '#a2e7c0' : 'white' &&
+              this.step >= 7 && key === 'electricity' ? '#a2e7c0' : 'white' &&
               this.step >= 8 && key === 'industry' && i === 'electricity' ? '#ffd89a' : 'white' &&
               this.step >= 9 && key === 'transport' && i === 'electricity' ? '#ffd89a' : 'white' &&
               this.step >= 10 && key === 'residential' && i === 'electricity' ? '#ffd89a' : 'white' &&
-              this.step >= 11 && i === 'm&tbio' | i === 'non-bioren' ? '#a2e7c0' : 'white'
+              this.step >= 11 && i === 'biomass' | i === 'wind/solar/hydro' ? '#a2e7c0' : 'white'
           }
         })
         return {
@@ -424,6 +434,7 @@ export default {
 
 .fuel-labels {
   text-anchor: left;
+  font-size: 10.5px;
   cursor: pointer;
 }
 
@@ -434,6 +445,13 @@ export default {
   width: 245px;
   height: 700px;
   z-index: 1;
+}
+
+#reset {
+  cursor: pointer;
+  color: $color-neon;
+  display: inline;
+  margin-left: 15px;
 }
 
 #select-label {
@@ -465,6 +483,14 @@ g {
   #sector {
   transition: transform 1s;
   }
+
+.off {
+  fill-opacity: 0.4;
+}
+
+.on {
+  fill-opacity: 1;
+}
 }
 
 rect {

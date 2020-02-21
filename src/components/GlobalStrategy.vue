@@ -121,8 +121,9 @@ export default {
     strategies: function () {
       return [
         { key: 'Emi|CO2|Policy', color: '#611731', active: 20 },
-        { key: 'Abatement|CDR', color: 'url(#abatementCDR)', active: 18 },
-        { key: 'Abatement|Energy Demand Reduction', color: 'url(#demRed)', active: 17 },
+        { key: 'Abatement|CDR', color: 'url(#abatementCDR)', active: 19 },
+        { key: 'Abatement|Electrification', color: 'url(#abatementCDR)', active: 17 },
+        { key: 'Abatement|Energy Demand Reduction', color: 'url(#demRed)', active: 18 },
         { key: 'Abatement|Fuel Decarbonization', color: 'url(#fuelDec)', active: 16 },
         { key: 'Abatement|Electricity Decarbonization', color: 'url(#eleDec)', active: 15 }
       ]
@@ -135,7 +136,7 @@ export default {
           .rangeRound([0, this.innerWidth / 2 - this.margin.left]),
         y: d3
           .scaleLinear()
-          .domain([0, 55000])
+          .domain([0, 65000])
           .rangeRound([this.innerHeight / 1.5, 0])
       }
     },
