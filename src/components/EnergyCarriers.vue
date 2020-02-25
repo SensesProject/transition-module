@@ -23,6 +23,8 @@
        perc: findPerc.perc,
        abs: findPerc.absValue
        }"
+       :width="width"
+       :height="height"
      />
     </div>
     <svg
@@ -48,7 +50,7 @@
         :transform="'rotate(45,' + energy.posX + ',' + height / 1.3 + ')'"
         v-for="(energy, i) in createRect[0].rects"
         class="fuel-labels"
-        :class="[isActive === '' ? 'on' : '', isActive === energy.labels ? 'on' : 'off']"
+        :class="[isActive === '' ? 'on' : '', isActive === energy.labels ? 'on' : 'off', carrierActive]"
         v-bind:key="'labels' + i"
         :id='energy.labels'
         :x="energy.posX"
@@ -162,6 +164,11 @@ export default {
     }
   },
   computed: {
+    carrierActive () {
+      let active = this.isActive
+      if (this.step > 5) { active = 'electricity' }
+      return active
+    },
     hoverValue () {
       return this.hover
     },

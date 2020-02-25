@@ -3,12 +3,15 @@
     <div class='legend'>
       How to read:
       <svg class='lines-legend'>
-        <rect width='50' height='10' x='0' y='12' fill='#ed96ab'/>
-        <line x1='0' x2='50' y1='12' y2='12' stroke='#c8005f' stroke-width='2'/>
-        <text x='60' y='20'>% Emissions Trend</text>
-        <rect width='50' height='10' x='0' y='42' fill='#ffd89a'/>
-        <line x1='0' x2='50' y1='42' y2='42' stroke='#ba7e12' stroke-width='2'/>
-        <text x='60' y='50'>% Electrification Trend</text>
+        <rect width='50' height='10' x='0' y='2' fill='#ed96ab'/>
+        <line x1='0' x2='50' y1='2' y2='2' stroke='#c8005f' stroke-width='2'/>
+        <text x='60' y='12'>% Emissions</text>
+        <rect width='50' height='10' x='0' y='22' fill='#ffd89a'/>
+        <line x1='0' x2='50' y1='22' y2='22' stroke='#ba7e12' stroke-width='2'/>
+        <text x='60' y='30'>% Electrification</text>
+        <rect width='50' height='10' x='0' y='42' fill='#a2e7c0'/>
+        <line x1='0' x2='50' y1='42' y2='42' stroke='#5b9574' stroke-width='2'/>
+        <text x='60' y='50'>% Low Carbon Elect.</text>
       </svg>
     </div>
     <div v-if="step >= 13" class="regionselect">
@@ -39,8 +42,6 @@
    </p>
   </div>
     <svg
-      :width="innerWidth"
-      :height="innerHeight"
       :transform="'translate('+ margin.left + ',' + (margin.top - 10) + ')'"
     >
       <g
@@ -149,7 +150,7 @@ export default {
         transport: '#ffac00'
       },
       margin: {
-        left: 40,
+        left: 0,
         top: 30,
         bottom: 30,
         right: 40
@@ -281,23 +282,6 @@ export default {
         }
       })
     }
-  },
-  directives: {
-    axis (el, binding) {
-      const axis = binding.arg
-      // console.log("axis", axis);
-      const axisMethod = { x: 'axisBottom', y: 'axisLeft' }[axis]
-      const tickFormat = { x: d3.format('d'), y: d3.format('.0s') }[axis]
-      const methodArg = binding.value[axis]
-
-      d3.select(el)
-        .call(
-          d3[axisMethod](methodArg)
-            .tickSize(0)
-            .tickPadding(10)
-            .tickFormat(tickFormat)
-        )
-    }
   }
 }
 </script>
@@ -305,6 +289,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
+@import "library/src/style/global.scss";
+
 .electrification_trend {
   width: 100%;
   height: 100%;
@@ -312,6 +298,8 @@ export default {
 
 svg {
   background-color: white;
+  width: 90%;
+  height: 100%;
 }
 
 path {
@@ -372,5 +360,13 @@ path {
   stroke: grey;
   stroke-width: 0.5;
   stroke-dasharray: 2 2;
+}
+
+@include max-width(1100px) {
+  $key-height: 128px;
+  .regionselect {
+    height: $key-height;
+    width: 18%;
+  }
 }
 </style>

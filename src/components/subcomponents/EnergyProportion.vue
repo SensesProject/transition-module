@@ -7,19 +7,19 @@
     :id="continent.continent === currentContinent ? 'active_label' : ''"
     v-for="(continent, i) in continentSum"
     v-show="continent.continent != 'World'"
-    v-bind:key='i + 1'
-    :x="continent.x + 2"
+    v-bind:key='i + "continent-label"'
+    x="2"
     y="-5"
     > {{continent.continent}} </text>
     <rect
     v-for="(continent, i) in continentSum"
-    v-bind:key='i + continent.value + 10'
+    v-bind:key='i + "continent-value"'
     v-show="continent.continent != 'Antartica'"
     :class="continent.continent === 'World' ? 'world' : 'continents'"
     :id="continent.continent === currentContinent ? 'active' : ''"
     :x="continent.x + 2"
     :width="continent.value"
-    height="120"
+    :height="(width + height) / 18.5"
     />
     <text :x="2" :y="135" fill="black">{{ data.select }}</text>
     <rect
@@ -30,10 +30,10 @@
     x="2"
     y="140"
     />
-    <text text-anchor="middle" :x="220 / 2" :y="240" fill="black">
+    <text text-anchor="middle" :x="((this.width + this.height) / 12) / 2" :y="((this.width + this.height) / 12) + ((width + height) / 35)" fill="black">
       {{ data.perc }}%
     </text>
-    <text text-anchor="middle" :x="220 / 2" :y="260" fill="black">
+    <text text-anchor="middle" :x="((this.width + this.height) / 12) / 2" :y="((this.width + this.height) / 12) + ((width + height) / 46)" fill="black">
       {{ data.abs }} EJ/yr
     </text>
     <rect
@@ -49,7 +49,7 @@
     v-show="continent.continent === currentContinent"
     v-bind:key='i + continent.x'
     :x1="continent.x + 2"
-    y1="120"
+    :y1="(width + height) / 18.5"
     x2="2"
     y2="140"
     />
@@ -65,7 +65,7 @@ import Continents from '../../assets/data/energycarriers-continents.json'
 
 export default {
   name: 'Proportion',
-  props: ['data'],
+  props: ['data', 'width', 'height'],
   data () {
     return {
       Continents
@@ -77,7 +77,7 @@ export default {
         x: d3
           .scaleLinear()
           .domain([0, 558])
-          .rangeRound([0, 230])
+          .rangeRound([0, (this.width + this.height) / 12])
       }
     },
     continentTotal () {
@@ -139,14 +139,13 @@ export default {
     realNumber () {
       const selected = this.data.select
       const countries = this.continentTotal
-      console.log(countries[selected])
       return countries[selected]['sum']
     },
     energyDetails () {
       const scale = d3
         .scaleLinear()
         .domain([0, this.singleContinent])
-        .rangeRound([0, 230])
+        .rangeRound([0, (this.width + this.height) / 12])
 
       return {
         country: scale(this.singleCountry),
@@ -182,7 +181,7 @@ svg {
 }
 
 .continent_label {
-  text-anchor: middle;
+  // text-anchor: middle;
   font-size: 9px;
   opacity: 0;
 }

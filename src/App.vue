@@ -152,25 +152,37 @@
             @mouseleave="hover = 'empty'"
             >oil</span> to a large extent.
             To decarbonize the energy system, they have to be replaced by low-carbon
-            alternatives like nuclear or renewables.
+            alternatives like nuclear or renewables. In the next steps we will compare different
+            countries and their energy productions to explain how and why decarbonization
+            needs specific strategies to happen and how fast we need to implement them.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.1" align="left">
           <h2 class="title" id="china">China Energy Production</h2>
           <p>
-            text.
+          China energy production equals 129.79 EJ/yr in 2015. This is almost
+          24% of the entire asian continent energy production. Here decarbonization
+          is particularly difficult due to the high share of coal used in
+          electricity and industrial sectors. Mitigation strategies will have to be
+          drastic and quick in order to cut China's dependency on fossil fuels.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.2" align="left">
           <h2 class="title" id="china">USA Energy Production</h2>
           <p>
-            text.
+           The United States is a big developed western society, its energy production
+           makes up for 97.35 EJ/yr and again is heavily relying on fossil fuels.
+           However wind, solar and in general non bio renewables share an encouraging
+           slice of the produced energy, especially for the residential sector.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.3" align="left">
           <h2 class="title" id="china">Germany Energy Production</h2>
           <p>
-            text.
+            Germany has a relatively small energy production compared to the other
+            countries showed above. However it makes the 2.50% of the entire Europe
+            area emissions. As a further observation Germany electricity sector is still
+            mainly relying on coal and renewables potential is far from being developed.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="5" align="right" class="height__change">
@@ -191,8 +203,8 @@
             energy. In the electricity sector, this can be done by increasing
             the share of
             <span class="highlight"
-            id="renewables">renewable energy</span>,
-            in particular wind and solar. There are two main strategies to decarbonize the industry,
+            id="renewables">wind, solar, hydro</span>
+            and other renewable energy. There are two main strategies to decarbonize the industry,
             transport and residential sectors: electrification using
             <span class="highlight" id="elect">low-carbon electricity</span> or
             a switch to low-carbon alternatives like biofuels or renewable
@@ -272,12 +284,12 @@
     </LayoutScrollytelling>
     <div class="noscroll" id="end">
       <p class="title">
-        This is the conclusion of the module. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur.
+        Electrification is part of a more extensive and complex strategy to decarbonize
+        energy across sectors. Depending on how effective will be the policies implemented
+        and on which geographical region we are looking at, Electrification could play
+        a role in the future volume of emissions.
+        To explore how electrification will play a role in a global decarbonization pathway,
+        you can use the Global Pathway tool.
       </p>
       <p class="author__section">
         <span class="tiny uppercase mono">Content:</span> <span class="tiny author mono">Dr. Falko Ueckerdt, Felix Schreyer</span>
@@ -286,20 +298,22 @@
       </p>
       <h4 class="title">READ NEXT: </h4>
       <p class="title">
-        <a href='#'>Sector Transition 2: Where is our electricity coming from?</a>
+        <a href='#'>➔ Where is our electricity coming from? [Sector Transition II]</a>
         <br />
-        <a href='#'>Global Stocktake</a>
+        <a href='https://dev.climatescenarios.org/stocktake/'>➔ Global Stocktake</a>
         <br />
-        <a href='#'>Primary Energy</a>
+        <a href='https://dev.climatescenarios.org/primary-energy-scenarios/#/walkthrough/0'>➔ Primary Energy</a>
       </p>
-      <h4 class="title">EXPLORE THE DATA: </h4>
-      <SensesDownload
+      <h4 class="title">ADDITIONAL SOURCES: </h4>
+      There are no additional sources available for this module.
+      <!-- <SensesDownload
       :selected="currentDownloadID"
       :ids="currentDownloadIDs"
       :title="currentDownloadTitle"
-      :close="close" />
+      :close="close" /> -->
       <div class='back'>
-        <a class='button back' href='#'>Return to the Policy Portal</a>
+        <a class='button' href='https://sensesproject.github.io/policy-portal/'>Return to the Policy Portal</a>
+        <a class='button' id="toolkit" href='https://dev.climatescenarios.org/toolkit/'>Return to the Toolkit</a>
       </div>
    </div>
   </div>
@@ -307,7 +321,7 @@
 
 <script>
 import SensesMenu from 'library/src/components/SensesMenu.vue'
-import SensesDownload from 'library/src/components/SensesDownload.vue'
+// import SensesDownload from 'library/src/components/SensesDownload.vue'
 
 // Template Components
 import LayoutScrollytelling from 'library/src/components/LayoutScrollytelling.vue'
@@ -326,8 +340,8 @@ export default {
     EmissionsChart,
     EnergyCarriers,
     ElecTrends,
-    SensesMenu,
-    SensesDownload
+    SensesMenu
+    // SensesDownload
   },
   data () {
     return {
@@ -436,14 +450,23 @@ p {
 
 .back {
   margin: 0 auto;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  position: relative;
+  width: 405px;
 }
 
 #cover {
   font-family: $font-serif;
 }
 
+#toolkit {
+  margin-left: 5px;
+}
 #end {
-  height: 100vh;
-  padding-top: 4em;
+  height: 70%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  border-top: 1px solid black;
 }
 </style>
