@@ -22,7 +22,7 @@
     :x='width - margin.left  + 10'
     :y='scales.y(sector.y / 1000)'
     >
-    {{ sector.key }}: {{ sector.value / 1000 }}
+    {{ sector.key }}: {{ Math.round(sector.value / 1000) + ' Gt/year' }}
   </text>
   </g>
 </template>

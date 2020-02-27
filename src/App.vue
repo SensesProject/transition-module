@@ -2,9 +2,10 @@
   <div id="app" ref="vis">
     <SensesMenu />
     <div class="noscroll">
-      <h1 class="title" id="cover">Towards an Electric Future</h1>
+      <h1 class="t" id="cover">Towards an Electric Future</h1>
+      <h1 class="subtitle">A guide to clean electricity production and sectors electrification</h1>
         <h4 class="title">Relevant Concepts</h4>
-        <p class="title mono">
+        <p class="mono">
           Net Zero,
           Electrification,
           Decarbonization Pathways,
@@ -12,8 +13,8 @@
           Mitigation Strategies,
           Fossil Fuels
         </p>
-        <h4 class="title">What will you learn?</h4>
-          <p class="title">
+        <h4>What will you learn?</h4>
+          <p>
             In this module you will be able to break down historical emissions
             according to the sector that generate them. You will be introduced
             to the concept of Electrification and to the broad strategy to go
@@ -363,10 +364,24 @@ export default {
 
 .noscroll {
   padding-top: $spacing;
-  margin: 0 auto;
-  max-width: 500px;
+  margin: 20px auto;
+  max-width: 900px;
   width: 100%;
   height: 550px;
+
+  .title {
+    border-top: 1px solid black;
+    padding-top: $spacing * 2;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    margin-bottom: $spacing * 2;
+  }
+
+  h4 {
+    margin-top: 20px;
+  }
 }
 .author__section {
   margin-bottom: $spacing;
@@ -383,9 +398,10 @@ export default {
   color: $color-neon;
 }
 
-.title {
-  margin-bottom: $spacing / 2;
-}
+.t {
+    font-size: 60px;
+    margin-bottom: $spacing / 2;
+  }
 
 #app {
   width: 100vw;
@@ -397,7 +413,6 @@ export default {
 
 p {
   text-align: left;
-  font-family: $font-serif;
   font-weight: lighter;
 }
 
@@ -454,10 +469,6 @@ p {
   margin-bottom: 20%;
   position: relative;
   width: 405px;
-}
-
-#cover {
-  font-family: $font-serif;
 }
 
 #toolkit {

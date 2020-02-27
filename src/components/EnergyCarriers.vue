@@ -204,7 +204,7 @@ export default {
           _.forEach(allFuels, (fuel, i) => {
             const data = _.map(arr, sector)
             const sum = d3.sum(data)
-            fuelObj[fuel] = data[i]
+            if (sum !== 0) { fuelObj[fuel] = data[i] }
           })
           obj[sector] = fuelObj
         })
@@ -472,6 +472,10 @@ export default {
 .is-fill {
   stroke: $color-neon;
   fill: #ddd6ff;
+}
+
+#select-label {
+  font-family: $font-serif;
 }
 
 .is-inactive {

@@ -21,14 +21,14 @@
     :width="continent.value"
     :height="(width + height) / 18.5"
     />
-    <text :x="2" :y="135" fill="black">{{ data.select }}</text>
+    <text :x="2" :y="145" fill="black">{{ data.select }}</text>
     <rect
     class="continents"
     id="active"
     :width="energyDetails.country"
     :height="energyDetails.country"
     x="2"
-    y="140"
+    y="150"
     />
     <text text-anchor="middle" :x="((this.width + this.height) / 12) / 2" :y="((this.width + this.height) / 12) + ((width + height) / 35)" fill="black">
       {{ data.perc }}%
@@ -41,7 +41,7 @@
     :width="energyDetails.continent"
     :height="energyDetails.continent"
     x="2"
-    y="140"
+    y="150"
     />
     <line
     v-for="(continent,i) in continentSum"
@@ -51,7 +51,7 @@
     :x1="continent.x + 2"
     :y1="(width + height) / 18.5"
     x2="2"
-    y2="140"
+    y2="150"
     />
   </g>
   </svg>
