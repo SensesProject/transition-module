@@ -15,12 +15,10 @@
         </p>
         <h4>What will you learn?</h4>
           <p>
-            In this module you will be able to break down historical emissions
-            according to the sector that generate them. You will be introduced
-            to the concept of Electrification and to the broad strategy to go
-            Carbon Neutral by reducing emissions. In the last section you will
-            be able to explore the compatibility of different scenarios with
-            this decarbonization strategy.
+            In this module, you will learn about the sources of CO2 emissions in
+            the energy sector and how we can abate those emissions in the future
+            by a transition towards renewable energy and electrification.
+            Scroll down to start your journey!
           </p>
         </div>
     <LayoutScrollytelling>
@@ -41,27 +39,30 @@
         <IntersectionObserver :step="1">
           <h2 class="title" id="net__zero">What is Net-Zero?</h2>
           <p>
-            To stabilize global temperatures and stop global warming, net
-            greenhouse gas emissions to the atmosphere have to be reduced to
-            zero.
-            <br /><span class="highlight" id="emissions">CO2 emissions</span> from the
-              energy sector represent the lion share
-            of global greenhouse gas emissions and have steadily increased over
-            the past 30 years.
+            To stop climate change and stabilize global temperature, global
+            greenhouse gas emissions must reduce to net-zero. Net-zero means
+            that all remaining emissions to the atmosphere would need to be
+            balanced by removing CO2 from the atmosphere.<br /><br />
+            As CO2 removal difficult, the focus must be on minimizing emissions
+            in the first place. Here, we will focus on
+            <span class="highlight" id="emissions">CO2 emissions</span> from
+            the energy sector that represent the lion share of global
+            greenhouse gas emissions.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.1">
           <p>
-            However, limiting global warming to 2°C above pre-industrial levels
-            will require net-zero emissions by 2075.
+            The time schedule for the energy transition is tight.
+            Limiting global warming to 2°C above preindustrial levels will
+            require net-zero CO2 emissions by 2070.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.2">
           <p>A limit of 1.5°C will require carbon neutrality even by 2050.
           <br/>
           <br/>
-          To learn more about global and regional decarbonization plans, see the
-          <a href='https://dev.climatescenarios.org/stocktake/'>Global Stocktake module</a>.
+          (To learn more about global and regional decarbonization plans, see the
+          <a href='https://dev.climatescenarios.org/stocktake/'>Global Stocktake module</a>.)
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="2">
@@ -83,25 +84,14 @@
         <IntersectionObserver :step="3.1">
           <h2 class="p mono" id="electricity">Electricity Sector</h2>
           <p>
-            The emission from electricity generation represent about one third
-            and have been steadily increasing over the past decades. The main
-            reason is the economic growth in the developing countries,
-            especially in India and China, where the demand for electricity
-            soars and leads to the construction of more and more coal-fired
-            power plants.
+            Emissions from electricity generation represent about one third and
+            have been steadily increasing over the past decades. The main reason
+            is the economic growth in developing countries, especially in India
+            and China, where demand for electricity soars and leads to the
+            construction of more and more coal-fired power plants.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.2">
-          <h2 class="p mono" id="transport">Other Energy</h2>
-          <p>
-            There are a number of energy-related processes that also cause
-            emissions but are not part of the four main sectors. These are, for
-            example, emissions from mining c oal and natural gas or from the
-            combustion of waste. We summarized them under the category of “other
-            energy” and will not discuss them in detail here.
-          </p>
-        </IntersectionObserver>
-        <IntersectionObserver :step="3.3">
           <h2 class="p mono" id="residential">Industry Sector</h2>
           <p>
             Industry is a complex sector that causes emissions either by
@@ -112,33 +102,44 @@
             30 years.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="3.4">
+        <IntersectionObserver :step="3.3">
           <h2 class="p mono" id="industry">Transport Sector</h2>
           <p>
             Increasing road transport, aviation and shipping all contribute to
-            the globally rising transport emissions. Road transport includes
-            small passenger cars as well as trucks and buses. Most of the
-            transport activities are currently fueled by oil-based products and
-            its decarbonization will be a key future challenge.
+            global rise of transport emissions. Road transport includes small
+            passenger cars as well as trucks and buses. Most of the transport
+            activities are currently fueled by oil-based products.
+            Decarbonization of transport will be a key future challenge.
+          </p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="3.4">
+          <h2 class="p mono" id="other">Residential Sector</h2>
+          <p>
+            The building sector contributes emissions mainly from space heating
+            with coal, gas or oil-based products. Emissions have remained
+            constant over recent decades, decreasing the share of buildings
+            emissions in total emissions. This was driven by improvements in
+            energy efficiency and a gradual shift from coal to gas in space
+            heating.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.5">
-          <h2 class="p mono" id="other">Residential Sector</h2>
+          <h2 class="p mono" id="transport">Other Energy</h2>
           <p>
-            The residential sector mainly contributed emissions from space
-            heating with coal, gas or oil-based products. The emissions have
-            remained constant over recent decades, hence decreasing the share of
-            residential emissions in total emissions. It was driven by
-            increasing energy efficiency and a gradual shift from coal to gas in
-            space heating.
+            There are a number of energy-related processes that also cause
+            emissions but are not part of the four main sectors. These are,
+            for example, emissions from mining coal and natural gas or from
+            the combustion of waste. We summarized them under the category of
+            “other energy” and will not discuss them in detail here.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4" align="left">
           <h2 class="title" id="sector__closeup">What are the main energy carriers for sectors?</h2>
           <p>
-            Each sector uses a different mix of energy carriers such as coal,
-            gas, oil, nuclear or renewables.
-            All sectors currently use fossil fuels like
+            Each sector uses a different mix of energy carriers.
+            Electricity can be generated either by coal, gas, oil, renewables
+            or nuclear. The buildings, transport and industry sectors combust
+            fuels like
             <span class="highlight"
             id="coal"
             @mouseover="hover = ['coal', '#8a8a93']"
@@ -147,15 +148,15 @@
             <span class="highlight" id="gas"
             @mouseover="hover = ['gas', '#ed96ab']"
             @mouseleave="hover = 'empty'"
-            >gas</span>
-            and <span class="highlight" id="oil"
+            >gas</span>,
+            <span class="highlight" id="oil"
             @mouseover="hover = ['oil', '#fcb69f']"
             @mouseleave="hover = 'empty'"
-            >oil</span> to a large extent.
-            To decarbonize the energy system, they have to be replaced by low-carbon
-            alternatives like nuclear or renewables. In the next steps we will compare different
-            countries and their energy productions to explain how and why decarbonization
-            needs specific strategies to happen and how fast we need to implement them.
+            >oil-based</span> products or biomass but also use
+            electricity to run their applications. All four sectors currently
+            use fossil fuels like coal, gas and oil to a large extent. However,
+            there are significant differences between the energy systems of
+            different countries. Let us take a closer look at a few examples.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.1" align="left">
@@ -187,14 +188,12 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="5" align="right" class="height__change">
-          <h2 class="title" id="country__perspectives">Country Perspectives</h2>
+          <h2 class="title" id="country__perspectives">The status quo in different countries</h2>
           <p>
-            Depending on their energy resources and needs, different countries
-            face different challenges of decarbonization. In tropical and
-            subtropical countries, for example, space cooling plays a greater
-            role, while space heating is relevant for higher latitudes. Hence,
-            the global mitigation strategies need to be fine tuned on a
-            country-level.
+            Here, you can look at the energy mix across the four sectors in all
+            countries. Some countries like Norway or Iceland have already
+            transitioned to a renewable-based energy sector, while countries
+            like Australia are still relatively dependent on coal.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="6" align="left">
@@ -205,11 +204,11 @@
             the share of
             <span class="highlight"
             id="renewables">wind, solar, hydro</span>
-            and other renewable energy. There are two main strategies to decarbonize the industry,
-            transport and residential sectors: electrification using
-            <span class="highlight" id="elect">low-carbon electricity</span> or
-            a switch to low-carbon alternatives like biofuels or renewable
-            hydrogen.
+            and other renewable energy.
+            There are two main strategies to decarbonize the industry, transport
+            and buildings sector: electrification using low-carbon electricity
+            or a switch to low-carbon alternatives like biofuels or renewable
+            hydrogen. <br />Here, we will focus on electrification.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="7">
@@ -219,40 +218,43 @@
             sector by renewable sources like wind, solar and bioenergy.
             <br />
             However we also need to double the clean electricity production for this sector.
+            Second, using more low-carbon electricity in the buildings,
+            industry and transport sector instead of fossil fuels reduces
+            emissions in these sectors. This is the concept of electrification.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="8">
           <h2 class="title" id="industry__second">Industry Electrification.</h2>
           <p>
-            In the industry sectors, a lot of applications that require heat can
-            up to certain temperatures be electrified by heat pumps and electric
-            boilers. If the electricity comes from renewable sources, this could
-            save substantial emissions. However, full electrification will not
-            be possible in sectors like the cement or the chemical industry.
+            Up to certain temperatures, heating applications in industry can be
+            electrified by heat pumps and electric boilers. If the electricity
+            comes from renewable sources, this could save substantial emissions.
+            However, full electrification will not be possible in sectors
+            like the cement or the chemical industry.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="9">
           <h2 class="title" id="transport__third">Electrifying Transports.</h2>
           <p>
-            Transport can be electrified, for example, by switching to electric
-            cars and trucks or by replacing shipping or aviation by rail
-            transport. The shipping and aviation sectors both are difficult to
-            electrify such that there are also limits to full electrification.
+            Transport can be electrified by switching to electric cars and trucks
+            or by substituting aviation with electric rail transport. However,
+            the shipping and aviation sectors themselves are both difficult
+            to electrify such that there are also limits to full electrification.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="10">
           <h2 class="title" id="building__fourth">Electrifying Buildings.</h2>
           <p>
-            Finally, there is also potential to electrify the residential
-            sector, for example, by switching from gas heating to electric heat
-            pumps for space heating.
+            Finally, the buildings sector can, in principle, be fully electrified.
+            Space heating applications that run by gas or oil today could be
+            switched to electric heat pumps.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="11">
           <h2 class="title" id="electrification">Decarbonization by electrification!</h2>
           <p>
-            Switching from fossil to renewable electricity and electrifying the
-            industry, transport and residential sector is a promising strategy
+            Transitioning from fossil to renewable electricity and electrifying
+            the industry, transport and buildlings sector is a promising strategy
             for decarbonization. However, to reach net-zero by midcentury,
             renewable electricity and electrification have to be scaled up very
             rapidly and simultaneously. To explore how this transition of the
@@ -263,8 +265,15 @@
         <IntersectionObserver :step="12">
           <h2 class="title" id="electrification">Clean energy will free us from pollution.</h2>
           <p>
-            By using clean electricity we would be able to phase out all other
-            energy carriers and their emissions.
+            We cannot predict the future, but we can create different plausible
+            scenarios of how a future decarbonization pathway could look like.
+            Here, you can see renewable expansion, electrification and emissions
+            reduction across the sectors in global 1.5°C or 2°C transformation
+            pathways. In our modeling work, we typically look at many scenarios
+            and vary key uncertain parameters to examine what are the most viable
+            and cost-efficient strategies to reduce emissions. A crucial question,
+            for example, is how fast renewables can be scaled-up and how much
+            electrification can contribute to the required transformation.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="13" align="right">
@@ -284,45 +293,24 @@
       </div>
     </LayoutScrollytelling>
     <div class="noscroll" id="end">
-      <p class="title">
-        Electrification is part of a more extensive and complex strategy to decarbonize
-        energy across sectors. Depending on how effective will be the policies implemented
-        and on which geographical region we are looking at, Electrification could play
-        a role in the future volume of emissions.
-        To explore how electrification will play a role in a global decarbonization pathway,
-        you can use the Global Pathway tool.
+      <h2 id="end-title">Electrification as part of a wider Mitigation Strategy</h2>
+      <p class="final-par">
+        Renewable expansion and electrification are promising strategies for a
+        successful future decarbonization of the energy system.
+        However, other measures like energy efficiency improvements, the switch
+        to low-carbon fuels like biofuels or hydrogen and the deployment of
+        negative emissions play a role in future decarbonization scenarios as well.
+        To explore in more detail how the interplay of these strategies can bring
+        us to net-zero emissions, you can use the Global Pathway Tool.
       </p>
-      <p class="author__section">
-        <span class="tiny uppercase mono">Content:</span> <span class="tiny author mono">Dr. Falko Ueckerdt, Felix Schreyer</span>
-        <br /><span class="tiny uppercase mono">Design:</span> <span class="tiny author mono">Francesca Morini</span>
-        <br /><span class="tiny uppercase mono">Code:</span> <span class="tiny author mono">Francesca Morini, Christopher Pietsch</span>
-      </p>
-      <h4 class="title">READ NEXT: </h4>
-      <p class="title">
-        <a href='#'>➔ Where is our electricity coming from? [Sector Transition II]</a>
-        <br />
-        <a href='https://dev.climatescenarios.org/stocktake/'>➔ Global Stocktake</a>
-        <br />
-        <a href='https://dev.climatescenarios.org/primary-energy-scenarios/#/walkthrough/0'>➔ Primary Energy</a>
-      </p>
-      <h4 class="title">ADDITIONAL SOURCES: </h4>
-      There are no additional sources available for this module.
-      <!-- <SensesDownload
-      :selected="currentDownloadID"
-      :ids="currentDownloadIDs"
-      :title="currentDownloadTitle"
-      :close="close" /> -->
-      <div class='back'>
-        <a class='button' href='https://sensesproject.github.io/policy-portal/'>Return to the Policy Portal</a>
-        <a class='button' id="toolkit" href='https://dev.climatescenarios.org/toolkit/'>Return to the Toolkit</a>
-      </div>
+      <SensesMeta :id="'transition-path-1'" />
    </div>
   </div>
 </template>
 
 <script>
 import SensesMenu from 'library/src/components/SensesMenu.vue'
-// import SensesDownload from 'library/src/components/SensesDownload.vue'
+import SensesMeta from 'library/src/components/SensesMeta.vue'
 
 // Template Components
 import LayoutScrollytelling from 'library/src/components/LayoutScrollytelling.vue'
@@ -331,7 +319,7 @@ import IntersectionObserver from 'library/src/components/IntersectionObserver.vu
 // Visualization Components
 import EmissionsChart from './components/EmissionsChart.vue'
 import EnergyCarriers from './components/EnergyCarriers.vue'
-import ElecTrends from './components/ElecTrends.vue'
+import ElecTrends from './components/ElecTrendsN.vue'
 
 export default {
   name: 'app',
@@ -341,8 +329,8 @@ export default {
     EmissionsChart,
     EnergyCarriers,
     ElecTrends,
-    SensesMenu
-    // SensesDownload
+    SensesMenu,
+    SensesMeta
   },
   data () {
     return {
@@ -356,10 +344,12 @@ export default {
 @import "library/src/style/base.scss";
 @import "library/src/style/variables.scss";
 
-.default.center,
-.default.right,
-.default.left  {
-  border: 1px solid black;
+h2 {
+  hyphens: none;
+
+  &.title {
+    margin-bottom: 10px;
+  }
 }
 
 .noscroll {
@@ -474,10 +464,14 @@ p {
 #toolkit {
   margin-left: 5px;
 }
+
+.final-par, #end-title {
+    margin-bottom: $spacing;
+}
+
 #end {
-  height: 70%;
   margin-top: 20%;
-  margin-bottom: 20%;
+  margin-bottom: $spacing * 4;
   border-top: 1px solid black;
 }
 </style>
