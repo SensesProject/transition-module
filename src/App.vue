@@ -163,7 +163,7 @@
           <h2 class="title" id="china">China Energy Production</h2>
           <p>
           China energy production equals 129.79 EJ/yr in 2015. This is almost
-          24% of the entire asian continent energy production. Here decarbonization
+          24% the global energy production. Here decarbonization
           is particularly difficult due to the high share of coal used in
           electricity and industrial sectors. Mitigation strategies will have to be
           drastic and quick in order to cut China's dependency on fossil fuels.
@@ -182,8 +182,8 @@
           <h2 class="title" id="china">Germany Energy Production</h2>
           <p>
             Germany has a relatively small energy production compared to the other
-            countries showed above. However it makes the 2.50% of the entire Europe
-            area emissions. As a further observation Germany electricity sector is still
+            countries showed above. However it makes the 2.50% of the global energy production.
+            As a further observation Germany electricity sector is still
             mainly relying on coal and renewables potential is far from being developed.
           </p>
         </IntersectionObserver>
@@ -276,7 +276,7 @@
             electrification can contribute to the required transformation.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="13" align="right">
+        <IntersectionObserver :step="13" align="right" class="height__change">
           <h2
             class="title"
             id="electrification__scenarios"

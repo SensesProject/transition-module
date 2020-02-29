@@ -199,17 +199,20 @@ export default {
 
       _.forEach(groupsbyregion, (arr, key) => {
         const obj = {}
+        // console.log(key)
         _.forEach(sectors, sector => {
           const fuelObj = {}
           _.forEach(allFuels, (fuel, i) => {
             const data = _.map(arr, sector)
+            // console.log(fuel, data)
             const sum = d3.sum(data)
-            if (sum !== 0) { fuelObj[fuel] = data[i] }
+            fuelObj[fuel] = data[i]
           })
           obj[sector] = fuelObj
         })
         groupsbyregion[key] = obj
       })
+      console.log(groupsbyregion['USA'])
       return groupsbyregion
     },
     regionsArray () {

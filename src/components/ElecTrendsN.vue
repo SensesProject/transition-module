@@ -53,6 +53,11 @@
     v-bind:key="i + 'axis'"
     :transform="`translate(${(innerWidth / 4) }, ${createCharts.groupPosition[i]})`"
     >
+      <text
+      x='10'
+      y='-10'
+      >{{createCharts.sector[i]}}
+      </text>
       <YAxis
       :scale='scales.y'
       :height= 'innerHeight / 10'
@@ -294,12 +299,12 @@ path {
 
 .emissions-trend {
   stroke: getColor(red, 40);
-  fill: #c8005f;
+  fill: #ed96ab;
 }
 
 .low-carb {
   stroke: getColor(green, 40);
-  fill: #5b9574;
+  fill: #a2e7c0;
 }
 
 .electricity-sect {
