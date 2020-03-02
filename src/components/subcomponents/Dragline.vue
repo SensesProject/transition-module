@@ -12,7 +12,7 @@
     <g
       v-for="sector of sectors"
       :key="sector.key"
-      :transform="'translate(' + x + ',' + scales.y((sector.data[0] / 1000 + sector.data[1] / 1000) / 2) + ')'"
+      :transform="'translate(' + x + ',' + scales.y((sector.data[0] / 1000000 + sector.data[1] / 1000000) / 2) + ')'"
     >
       <circle class='labels' r="3"/>
     </g>
@@ -20,9 +20,9 @@
     v-for="sector of sectors"
     v-bind:key="sector.value"
     :x='width - margin.left  + 10'
-    :y='scales.y(sector.y / 1000)'
+    :y='scales.y(sector.y / 1000000)'
     >
-    {{ sector.key }}: {{ Math.round(sector.value / 1000) + ' Gt/year' }}
+    {{ sector.key }}: {{ Math.round(sector.value / 1000) + ' Mt/year' }}
   </text>
   </g>
 </template>

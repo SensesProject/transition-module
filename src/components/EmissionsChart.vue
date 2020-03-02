@@ -50,7 +50,7 @@
           v-for="(chunk, i) in applicationsData"
           v-bind:key="i + 'text'"
           :x='scales.x(1991)'
-          :y='scales.y(chunk.labels / 1000)'
+          :y='scales.y(chunk.labels / 1000000)'
           > {{ chunk.id }}
           </text>
         </g>
@@ -63,7 +63,7 @@
         <YAxis
         :scale='scales.y'
         :height= 'innerHeight - margin.bottom'
-        :thicks="[[0],[10000],[20000],[30000],[40000]]"
+        :thicks="[[0],[10],[20],[30],[40]]"
         :indicator="'Gt CO2'"
         />
         <line v-for="(year, i) in thicksShort"
@@ -73,7 +73,7 @@
         :x1="scales.x(year)"
         :x2="scales.x(year)"
         :y1="scales.y(0)"
-        :y2="scales.y(40000)"
+        :y2="scales.y(40)"
         />
       </g>
     </svg>
@@ -185,7 +185,7 @@ export default {
           return this.scales.x(d[0])
         })
         .y(d => {
-          return this.scales.y(d[1] / 1000)
+          return this.scales.y(d[1] / 1000000)
         })
         .curve(d3.curveLinear)(this.lineData)
     },
@@ -197,7 +197,7 @@ export default {
           .rangeRound([0, this.innerWidth - this.margin.left]),
         y: d3
           .scaleLinear()
-          .domain([0, 40000])
+          .domain([0, 40])
           .rangeRound([this.innerHeight - this.margin.bottom, 0])
       }
     },
@@ -205,27 +205,27 @@ export default {
       return [
         { key: 'Public', color: '#611731', active: 3.1 },
         { key: 'Autoproduced', color: '#611731', active: 3.1 },
-        { key: 'OtherEn', color: '#73283f', active: 3.2 },
-        { key: 'Combustion', color: '#dd5f84', active: 3.3 },
-        { key: 'Production', color: '#dd5f84', active: 3.3 },
-        { key: 'Solvents', color: '#dd5f84', active: 3.3 },
-        { key: 'Other Processes', color: '#dd5f84', active: 3.3 },
-        { key: 'Industrial Waste', color: '#dd5f84', active: 3.3 },
-        { key: 'Aviation', color: '#ed96ab', active: 3.4 },
-        { key: 'Road', color: '#ed96ab', active: 3.4 },
-        { key: 'Other', color: '#ed96ab', active: 3.4 },
-        { key: 'Shipping', color: '#ed96ab', active: 3.4 },
-        { key: 'Commercial / Residential', color: '#f8cbd4', active: 3.5 },
-        { key: 'Agriculture', color: '#f8cbd4', active: 3.5 }
+        { key: 'Combustion', color: '#dd5f84', active: 3.2 },
+        { key: 'Production', color: '#dd5f84', active: 3.2 },
+        { key: 'Solvents', color: '#dd5f84', active: 3.2 },
+        { key: 'Other Processes', color: '#dd5f84', active: 3.2 },
+        { key: 'Industrial Waste', color: '#dd5f84', active: 3.2 },
+        { key: 'Aviation', color: '#ed96ab', active: 3.3 },
+        { key: 'Road', color: '#ed96ab', active: 3.3 },
+        { key: 'Other', color: '#ed96ab', active: 3.3 },
+        { key: 'Shipping', color: '#ed96ab', active: 3.3 },
+        { key: 'Commercial / Residential', color: '#f8cbd4', active: 3.4 },
+        { key: 'Agriculture', color: '#f8cbd4', active: 3.4 },
+        { key: 'OtherEn', color: '#cacaca', active: 3.5 }
       ]
     },
     applications: function () {
       return [
         { key: 'Electricity', color: '#611731', active: 3.1 },
-        { key: 'OtherEnergy', color: '#73283f', active: 3.2 },
-        { key: 'Industry', color: '#dd5f84', active: 3.3 },
-        { key: 'Transports', color: '#ed96ab', active: 3.4 },
-        { key: 'Building', color: '#f8cbd4', active: 3.5 }
+        { key: 'Industry', color: '#dd5f84', active: 3.2 },
+        { key: 'Transports', color: '#ed96ab', active: 3.3 },
+        { key: 'Building', color: '#f8cbd4', active: 3.4 },
+        { key: 'OtherEnergy', color: '#73283f', active: 3.5 }
       ]
     },
 
@@ -262,8 +262,8 @@ export default {
         .area()
         .x(d => x(d.data.Year))
         .curve(d3.curveLinear)
-        .y0(d => y(d[0] / 1000))
-        .y1(d => y(d[1] / 1000))
+        .y0(d => y(d[0] / 1000000))
+        .y1(d => y(d[1] / 1000000))
     }
   }
 }

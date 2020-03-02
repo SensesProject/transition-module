@@ -262,7 +262,7 @@
             scenarios of future decarbonization pathways.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="12">
+        <!-- <IntersectionObserver :step="12">
           <h2 class="title" id="electrification">Clean energy will free us from pollution.</h2>
           <p>
             We cannot predict the future, but we can create different plausible
@@ -275,7 +275,7 @@
             for example, is how fast renewables can be scaled-up and how much
             electrification can contribute to the required transformation.
           </p>
-        </IntersectionObserver>
+        </IntersectionObserver> -->
         <IntersectionObserver :step="13" align="right" class="height__change">
           <h2
             class="title"

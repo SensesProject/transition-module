@@ -224,7 +224,7 @@ export default {
     },
     stepSelection () {
       let selected = this.selected
-      if (this.step === 4.1) { selected = 'China (mainland)' }
+      if (this.step === 4.1) { selected = 'China (PRC)' }
       if (this.step === 4.2) { selected = 'USA' }
       if (this.step === 4.3) { selected = 'Germany' }
       if (this.step === 5 || this.step === 4) { selected = this.selected }
