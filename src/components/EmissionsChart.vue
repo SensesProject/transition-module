@@ -99,7 +99,6 @@ import HistoricalEmissions from '../assets/data/emissions_historical.json'
 // merge data into one file
 // function merge (){
 //   const merged = emissionsData.map(e => {
-//     console.log(e.Year)
 
 //     return {
 //       ...emissionsData.find(d => d.Year === e.Year),
@@ -107,7 +106,6 @@ import HistoricalEmissions from '../assets/data/emissions_historical.json'
 //       ...ApplicationsShare.find(d => d.Year === e.Year)
 //     }
 //   })
-//   console.log(JSON.stringify(merged))
 // }
 // merge()
 
@@ -175,7 +173,6 @@ export default {
       // other way of doing it:
       // const data = HistoricalEmissions.filter(d => d.Year <= this.maxYear)
       // const reduced = rollups(data, v => d3.sum(v, d => d.Value), d => d.Year)
-      // console.log('lineData', data, reduced)
       return EmissionData.filter(d => d.Year <= this.maxYear).map(d => [
         d.Year,
         d.Emissions

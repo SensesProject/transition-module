@@ -62,7 +62,6 @@ export default {
   methods: {
     clickDragline: function (e) {
       this.x = e.layerX - this.margin.left - 100
-      // console.log(this.margin.left, e.layerX)
     }
   }
 }
