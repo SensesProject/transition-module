@@ -6,18 +6,17 @@
       <h1 class="subtitle">A guide to clean electricity production and sectors electrification</h1>
         <h4 class="title">Relevant Concepts</h4>
         <p class="mono">
-          Net Zero,
-          Electrification,
-          Decarbonization Pathways,
-          Policy,
-          Mitigation Strategies,
-          Fossil Fuels
+          Net-zero /
+          energy system /
+          energy sectors /
+          renewable electricity /
+          electrification
         </p>
         <h4>What will you learn?</h4>
           <p>
-            In this module, you will learn about the sources of CO2 emissions in
-            the energy sector and how we can abate those emissions in the future
-            by a transition towards renewable energy and electrification.
+            In this module, you will learn about the sources of CO2 emissions
+            in the energy sector and how we can abate those emissions in the
+            future by a transition towards renewable energy and electrification. <br />
             Scroll down to start your journey!
           </p>
         </div>
@@ -31,8 +30,8 @@
           }"
         >
           <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" />
-          <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" :hover="hover"/>
-          <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" />
+          <!-- <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" :hover="hover"/>
+          <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" /> -->
         </div>
       </template>
       <div slot="text" class="observer">
@@ -52,17 +51,14 @@
         </IntersectionObserver>
         <IntersectionObserver :step="1.1">
           <p>
-            The time schedule for the energy transition is tight.
-            Limiting global warming to 2°C above preindustrial levels will
-            require net-zero CO2 emissions by 2070.
+            The time schedule for the energy transition is tight!
+            The Paris Agreement demands stabilizing global warming at 1.5°C to
+            2°C above preindustrial levels. Limiting global warming to 2°C
+            levels will require net-zero CO2 emissions by 2070.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.2">
           <p>A limit of 1.5°C will require carbon neutrality even by 2050.
-          <br/>
-          <br/>
-          (To learn more about global and regional decarbonization plans, see the
-          <a href='https://dev.climatescenarios.org/stocktake/'>Global Stocktake module</a>.)
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="2">
@@ -84,22 +80,22 @@
         <IntersectionObserver :step="3.1">
           <h2 class="p mono" id="electricity">Electricity Sector</h2>
           <p>
-            Emissions from electricity generation represent about one third and
-            have been steadily increasing over the past decades. The main reason
-            is the economic growth in developing countries, especially in India
-            and China, where demand for electricity soars and leads to the
-            construction of more and more coal-fired power plants.
+            Emissions from electricity generation represent about one third
+            and have been steadily increasing over the past decades.
+            The main reason is the economic growth in developing countries,
+            especially in India and China, where demand for electricity soars
+            and leads to the construction of more and more coal-fired power plants.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.2">
           <h2 class="p mono" id="residential">Industry Sector</h2>
           <p>
             Industry is a complex sector that causes emissions either by
-            combusting fossil fuels for heating or using them as feedstocks for
-            industrial goods like cement or plastics. The main contributors to
-            industry emissions are the energy-intensive production of steel and
-            cement, both of which have experienced a strong growth over the past
-            30 years.
+            combusting fossil fuels for heating or using them as feedstocks
+            for industrial goods like cement or plastics. The main contributors
+            to industry emissions are the energy-intensive production of steel
+            and cement, both of which have experienced a strong growth over
+            the past 30 years.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.3">
@@ -108,19 +104,18 @@
             Increasing road transport, aviation and shipping all contribute to
             global rise of transport emissions. Road transport includes small
             passenger cars as well as trucks and buses. Most of the transport
-            activities are currently fueled by oil-based products.
-            Decarbonization of transport will be a key future challenge.
+            activities are currently fueled by oil-based products. Decarbonization
+            of transport will be a key future challenge.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.4">
-          <h2 class="p mono" id="other">Residential Sector</h2>
+          <h2 class="p mono" id="other">Building Sector</h2>
           <p>
             The building sector contributes emissions mainly from space heating
-            with coal, gas or oil-based products. Emissions have remained
-            constant over recent decades, decreasing the share of buildings
-            emissions in total emissions. This was driven by improvements in
-            energy efficiency and a gradual shift from coal to gas in space
-            heating.
+            with coal, gas or oil-based products. Emissions have remained constant
+            over recent decades, decreasing the share of buildings emissions
+            in total emissions. This was driven by improvements in energy
+            efficiency and a gradual shift from coal to gas in space heating.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.5">
@@ -129,17 +124,42 @@
             There are a number of energy-related processes that also cause
             emissions but are not part of the four main sectors. These are,
             for example, emissions from mining coal and natural gas or from
-            the combustion of waste. We summarized them under the category of
-            “other energy” and will not discuss them in detail here.
+            the combustion of waste. We summarized them under the category
+            of “other energy” and will not discuss them in detail here.
           </p>
         </IntersectionObserver>
+      </div>
+      </LayoutScrollytelling>
+      <div class="noscroll electr-share">
+        <h4>Chapter 2</h4>
+        <h2>What are the main energy carriers for sectors?</h2>
+        <p>
+          Each sector uses a different mix of energy carriers.
+          Electricity can be generated either by coal, gas, oil, renewables or
+          nuclear. The buildings, transport and industry sectors use
+          combustible fuels such as coal, gas, oil-based products
+          or biomass but also electricity.
+        </p>
+     </div>
+      <LayoutScrollytelling>
+        <template v-slot:vis="{ width, height, step }">
+          <div
+            class="vis-inner"
+            :style="{
+              width: `${width}px`,
+              height: `${height}px`
+            }"
+          >
+            <!-- <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" /> -->
+            <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" :hover="hover"/>
+            <!-- <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" /> -->
+          </div>
+        </template>
+        <div slot="text" class="observer">
         <IntersectionObserver :step="4" align="left">
-          <h2 class="title" id="sector__closeup">What are the main energy carriers for sectors?</h2>
           <p>
-            Each sector uses a different mix of energy carriers.
-            Electricity can be generated either by coal, gas, oil, renewables
-            or nuclear. The buildings, transport and industry sectors combust
-            fuels like
+            All four sectors currently
+            rely to a large extent on fossil fuels in the form of
             <span class="highlight"
             id="coal"
             @mouseover="hover = ['coal', '#8a8a93']"
@@ -148,43 +168,50 @@
             <span class="highlight" id="gas"
             @mouseover="hover = ['gas', '#ed96ab']"
             @mouseleave="hover = 'empty'"
-            >gas</span>,
+            >gas</span> and
             <span class="highlight" id="oil"
             @mouseover="hover = ['oil', '#fcb69f']"
-            @mouseleave="hover = 'empty'"
-            >oil-based</span> products or biomass but also use
-            electricity to run their applications. All four sectors currently
-            use fossil fuels like coal, gas and oil to a large extent. However,
-            there are significant differences between the energy systems of
-            different countries. Let us take a closer look at a few examples.
+            @mouseleave="hover = 'empty'">
+            oil</span>.
+            However, there are significant differences between the energy
+            systems of different countries.
+            Let us take a closer look at a few examples.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.1" align="left">
           <h2 class="title" id="china">China Energy Production</h2>
           <p>
-          China energy production equals 129.79 EJ/yr in 2015. This is almost
-          24% the global energy production. Here decarbonization
-          is particularly difficult due to the high share of coal used in
-          electricity and industrial sectors. Mitigation strategies will have to be
-          drastic and quick in order to cut China's dependency on fossil fuels.
+          China is the largest coal consumer in the world. As a rapidly growing
+          economy, coal is used to meet increasing demand of electricity
+          and industrial heat. Wind and solar power still make up a relatively
+          small share of electricity generation but grow strongly and may
+          replace coal in the future. As an economy in transition,
+          there is still some traditional biomass used for residential heating.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.2" align="left">
           <h2 class="title" id="china">USA Energy Production</h2>
           <p>
-           The United States is a big developed western society, its energy production
-           makes up for 97.35 EJ/yr and again is heavily relying on fossil fuels.
-           However wind, solar and in general non bio renewables share an encouraging
-           slice of the produced energy, especially for the residential sector.
+           In the United States, due to large reserves and low prices, natural
+           gas is more present than in other countries. It makes up a
+           significant share of the electricity generation, is used in industrial
+           applications and in gas heating systems in buildings.
+           There is a recently increasing share of wind and solar power generation
+           that are, alongside nuclear power, the key low-carbon sources of the country.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.3" align="left">
           <h2 class="title" id="china">Germany Energy Production</h2>
           <p>
-            Germany has a relatively small energy production compared to the other
-            countries showed above. However it makes the 2.50% of the global energy production.
-            As a further observation Germany electricity sector is still
-            mainly relying on coal and renewables potential is far from being developed.
+            Although Germany has fostered and experienced a strong growth in
+            renewables over the past years, its electricity generation is still
+            dependent on coal for power generation and industrial applications.
+            One of the reasons is that there are few gas power stations
+            and nuclear power is phased-out, too. The buildings sector has a
+            relatively low share of electricity since space cooling applications
+            do not play a role (unlike in the US). As for the other countries,
+            alternative fuels in the transport sector (biomass, electricity)
+            are still in their infancy.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="5" align="right" class="height__change">
@@ -254,40 +281,46 @@
           <h2 class="title" id="electrification">Decarbonization by electrification!</h2>
           <p>
             Transitioning from fossil to renewable electricity and electrifying
-            the industry, transport and buildlings sector is a promising strategy
+            the industry, transport and buildings sector is a promising strategy
             for decarbonization. However, to reach net-zero by midcentury,
-            renewable electricity and electrification have to be scaled up very
-            rapidly and simultaneously. To explore how this transition of the
-            energy system could look like, we use models to generate different
-            scenarios of future decarbonization pathways.
+            renewable electricity and electrification have to be scaled up
+            very rapidly and simultaneously. To explore how this transition
+            of the energy system could look like, we use models to generate
+            different scenarios of future decarbonization pathways.
           </p>
         </IntersectionObserver>
-        <!-- <IntersectionObserver :step="12">
-          <h2 class="title" id="electrification">Clean energy will free us from pollution.</h2>
-          <p>
-            We cannot predict the future, but we can create different plausible
-            scenarios of how a future decarbonization pathway could look like.
-            Here, you can see renewable expansion, electrification and emissions
-            reduction across the sectors in global 1.5°C or 2°C transformation
-            pathways. In our modeling work, we typically look at many scenarios
-            and vary key uncertain parameters to examine what are the most viable
-            and cost-efficient strategies to reduce emissions. A crucial question,
-            for example, is how fast renewables can be scaled-up and how much
-            electrification can contribute to the required transformation.
-          </p>
-        </IntersectionObserver> -->
+        </div>
+      </LayoutScrollytelling>
+      <div class="noscroll electr-share">
+        <h4>Chapter 3</h4>
+        <h2>How fast can electrification cut emissions?</h2>
+        <p>
+          We cannot predict the future, but we can create different plausible
+          scenarios of how a future decarbonization pathway could look like.
+          Across our scenario, we vary key uncertain parameters and analyze
+          how net-zero emissions can be reached. For example, we look at
+          different electrification shares per sector and think about how the
+          residual emissions can be erased by low-carbon alternatives.
+        </p>
+     </div>
+      <LayoutScrollytelling>
+        <template v-slot:vis="{ width, height, step }">
+          <div
+            class="vis-inner"
+            :style="{
+              width: `${width}px`,
+              height: `${height}px`
+            }"
+          >
+            <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" />
+          </div>
+        </template>
+        <div slot="text" class="observer">
         <IntersectionObserver :step="13" align="right" class="height__change">
-          <h2
-            class="title"
-            id="electrification__scenarios"
-          >How fast can electrification cut emissions?</h2>
           <p>
-            We cannot predict the future, but we can create different plausible
-            scenarios of how a future decarbonization pathway could look like.
-            Across our scenario, we vary key uncertain parameters and analyze
-            how net-zero emissions can be reached. For example, we look at
-            different electrification shares per sector and think about how the
-            residual emissions can be erased by low-carbon alternatives.
+            The selectors allows you to filter global electrification trends
+            from the REMIND model across three scenarios:
+            Business-as-usual, 2°C Stabilization, 1.5°C.
           </p>
         </IntersectionObserver>
       </div>
@@ -296,12 +329,12 @@
       <h2 id="end-title">Electrification as part of a wider Mitigation Strategy</h2>
       <p class="final-par">
         Renewable expansion and electrification are promising strategies for a
-        successful future decarbonization of the energy system.
-        However, other measures like energy efficiency improvements, the switch
-        to low-carbon fuels like biofuels or hydrogen and the deployment of
-        negative emissions play a role in future decarbonization scenarios as well.
-        To explore in more detail how the interplay of these strategies can bring
-        us to net-zero emissions, you can use the Global Pathway Tool.
+        successful future decarbonization of the energy system. However,
+        other measures like energy efficiency improvements, the switch to
+        low-carbon fuels like biofuels or hydrogen and the deployment of negative
+        emissions play a role in future decarbonization scenarios as well.
+        To explore in more detail how the interplay of these strategies can
+        bring us to net-zero emissions, you can use the Mitigation Strategies Tool.
       </p>
       <SensesMeta :id="'transition-path-1'" />
    </div>
@@ -371,6 +404,13 @@ h2 {
 
   h4 {
     margin-top: 20px;
+  }
+}
+
+.electr-share {
+  border-top: 1px solid black;
+  h2 {
+    margin-bottom: 20px;
   }
 }
 .author__section {
@@ -469,9 +509,16 @@ p {
     margin-bottom: $spacing;
 }
 
+.graph-title {
+  font-size: 20px;
+  font-weight: bold;
+  hyphens: none;
+}
+
 #end {
   margin-top: 20%;
   margin-bottom: $spacing * 4;
   border-top: 1px solid black;
+  height: 100%;
 }
 </style>

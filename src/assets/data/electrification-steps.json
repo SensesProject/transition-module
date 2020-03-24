@@ -1,1 +1,354 @@
-[{"region":"World-step1","fuel":"coal","industry":44.88892622,"residential":6.863225782,"transport":0.105884172,"electricity":0.0},{"region":"World-step1","fuel":"electricity","industry":92.01146141,"residential":107.5639999,"transport":4.509434808,"electricity":0.0},{"region":"World-step1","fuel":"gas","industry":24.48574853,"residential":27.65729049,"transport":4.085646912,"electricity":0.0},{"region":"World-step1","fuel":"biomass","industry":8.027102871,"residential":32.54113305,"transport":3.174557364,"electricity":1.607208524},{"region":"World-step1","fuel":"wind/solar/hydro","industry":0.044598456,"residential":1.483834251,"transport":0.0,"electricity":78.08827827},{"region":"World-step1","fuel":"nuclear","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step1","fuel":"oil","industry":9.686270087,"residential":12.61686637,"transport":88.30790186,"electricity":0.0},{"region":"World-step1","fuel":"other","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step1","fuel":"other gas","industry":6.250258964,"residential":0.2717885802,"transport":0.0,"electricity":0.0},{"region":"World-step1","fuel":"other liquids","industry":1.567770182,"residential":0.0220690888,"transport":0.007368768,"electricity":0.0},{"region":"World-step1","fuel":"other solids","industry":2.348170214,"residential":0.2069914544,"transport":0.0000419,"electricity":0.0},{"region":"World-step2","fuel":"coal","industry":0.0,"residential":6.863225782,"transport":0.105884172,"electricity":0.0},{"region":"World-step2","fuel":"electricity","industry":181.2386056,"residential":107.5639999,"transport":4.509434808,"electricity":0.0},{"region":"World-step2","fuel":"gas","industry":0.0,"residential":27.65729049,"transport":4.085646912,"electricity":0.0},{"region":"World-step2","fuel":"biomass","industry":8.027102871,"residential":32.54113305,"transport":3.174557364,"electricity":1.607208524},{"region":"World-step2","fuel":"wind/solar/hydro","industry":0.044598456,"residential":1.483834251,"transport":0.0,"electricity":156.1765565},{"region":"World-step2","fuel":"nuclear","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step2","fuel":"oil","industry":0.0,"residential":12.61686637,"transport":88.30790186,"electricity":0.0},{"region":"World-step2","fuel":"other","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step2","fuel":"other gas","industry":0.0,"residential":0.2717885802,"transport":0.0,"electricity":0.0},{"region":"World-step2","fuel":"other liquids","industry":0.0,"residential":0.0220690888,"transport":0.007368768,"electricity":0.0},{"region":"World-step2","fuel":"other solids","industry":0.0,"residential":0.2069914544,"transport":0.0000419,"electricity":0.0},{"region":"World-step3","fuel":"coal","industry":0.0,"residential":6.863225782,"transport":0.0,"electricity":0.0},{"region":"World-step3","fuel":"electricity","industry":181.2386056,"residential":107.5639999,"transport":97.01627839,"electricity":0.0},{"region":"World-step3","fuel":"gas","industry":0.0,"residential":27.65729049,"transport":0.0,"electricity":0.0},{"region":"World-step3","fuel":"biomass","industry":8.027102871,"residential":32.54113305,"transport":3.174557364,"electricity":1.607208524},{"region":"World-step3","fuel":"wind/solar/hydro","industry":0.044598456,"residential":1.483834251,"transport":0.0,"electricity":156.1765565},{"region":"World-step3","fuel":"nuclear","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step3","fuel":"oil","industry":0.0,"residential":12.61686637,"transport":0.0,"electricity":0.0},{"region":"World-step3","fuel":"other","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step3","fuel":"other gas","industry":0.0,"residential":0.2717885802,"transport":0.0,"electricity":0.0},{"region":"World-step3","fuel":"other liquids","industry":0.0,"residential":0.0220690888,"transport":0.0,"electricity":0.0},{"region":"World-step3","fuel":"other solids","industry":0.0,"residential":0.2069914544,"transport":0.0,"electricity":0.0},{"region":"World-step4","fuel":"coal","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step4","fuel":"electricity","industry":181.2386056,"residential":155.2022317,"transport":97.01627839,"electricity":0.0},{"region":"World-step4","fuel":"gas","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step4","fuel":"biomass","industry":8.027102871,"residential":32.54113305,"transport":3.174557364,"electricity":1.607208524},{"region":"World-step4","fuel":"wind/solar/hydro","industry":0.044598456,"residential":1.483834251,"transport":0.0,"electricity":156.1765565},{"region":"World-step4","fuel":"nuclear","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step4","fuel":"oil","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step4","fuel":"other","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step4","fuel":"other gas","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step4","fuel":"other liquids","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0},{"region":"World-step4","fuel":"other solids","industry":0.0,"residential":0.0,"transport":0.0,"electricity":0.0}]
+[
+  {
+    "region": "World-step1",
+    "fuel": "coal",
+    "Industry": 44.88892622,
+    "Building": 6.863225782,
+    "Transport": 0.105884172,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step1",
+    "fuel": "Electricity",
+    "Industry": 92.01146141,
+    "Building": 107.5639999,
+    "Transport": 4.509434808,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step1",
+    "fuel": "gas",
+    "Industry": 24.48574853,
+    "Building": 27.65729049,
+    "Transport": 4.085646912,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step1",
+    "fuel": "biomass",
+    "Industry": 48.2386056,
+    "Building": 32.54113305,
+    "Transport": 3.174557364,
+    "Electricity": 1.607208524
+  },
+  {
+    "region": "World-step1",
+    "fuel": "wind/solar/hydro",
+    "Industry": 0.044598456,
+    "Building": 1.483834251,
+    "Transport": 0,
+    "Electricity": 78.08827827
+  },
+  {
+    "region": "World-step1",
+    "fuel": "nuclear",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step1",
+    "fuel": "oil",
+    "Industry": 9.686270087,
+    "Building": 12.61686637,
+    "Transport": 88.30790186,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step1",
+    "fuel": "other",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step1",
+    "fuel": "other gas",
+    "Industry": 6.250258964,
+    "Building": 0.2717885802,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step1",
+    "fuel": "other liquids",
+    "Industry": 1.567770182,
+    "Building": 0.0220690888,
+    "Transport": 0.007368768,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step1",
+    "fuel": "other solids",
+    "Industry": 2.348170214,
+    "Building": 0.2069914544,
+    "Transport": 0.0000419,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "coal",
+    "Industry": 0,
+    "Building": 6.863225782,
+    "Transport": 0.105884172,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "Electricity",
+    "Industry": 141.2386056,
+    "Building": 107.5639999,
+    "Transport": 4.509434808,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "gas",
+    "Industry": 0,
+    "Building": 27.65729049,
+    "Transport": 4.085646912,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "biomass",
+    "Industry": 48.027102871,
+    "Building": 32.54113305,
+    "Transport": 3.174557364,
+    "Electricity": 1.607208524
+  },
+  {
+    "region": "World-step2",
+    "fuel": "wind/solar/hydro",
+    "Industry": 0.044598456,
+    "Building": 1.483834251,
+    "Transport": 0,
+    "Electricity": 156.1765565
+  },
+  {
+    "region": "World-step2",
+    "fuel": "nuclear",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "oil",
+    "Industry": 0,
+    "Building": 12.61686637,
+    "Transport": 88.30790186,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "other",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "other gas",
+    "Industry": 0,
+    "Building": 0.2717885802,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "other liquids",
+    "Industry": 0,
+    "Building": 0.0220690888,
+    "Transport": 0.007368768,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step2",
+    "fuel": "other solids",
+    "Industry": 0,
+    "Building": 0.2069914544,
+    "Transport": 0.0000419,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "coal",
+    "Industry": 0,
+    "Building": 6.863225782,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "Electricity",
+    "Industry": 141.2386056,
+    "Building": 107.5639999,
+    "Transport": 67.01627839,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "gas",
+    "Industry": 0,
+    "Building": 27.65729049,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "biomass",
+    "Industry": 48.2386056,
+    "Building": 32.54113305,
+    "Transport": 33.174557364,
+    "Electricity": 1.607208524
+  },
+  {
+    "region": "World-step3",
+    "fuel": "wind/solar/hydro",
+    "Industry": 0.044598456,
+    "Building": 1.483834251,
+    "Transport": 0,
+    "Electricity": 156.1765565
+  },
+  {
+    "region": "World-step3",
+    "fuel": "nuclear",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "oil",
+    "Industry": 0,
+    "Building": 12.61686637,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "other",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "other gas",
+    "Industry": 0,
+    "Building": 0.2717885802,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "other liquids",
+    "Industry": 0,
+    "Building": 0.0220690888,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step3",
+    "fuel": "other solids",
+    "Industry": 0,
+    "Building": 0.2069914544,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "coal",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "Electricity",
+    "Industry": 141.2386056,
+    "Building": 189.227199001,
+    "Transport": 67.01627839,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "gas",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "biomass",
+    "Industry": 48.2386056,
+    "Building": 0,
+    "Transport": 33.174557364,
+    "Electricity": 1.607208524
+  },
+  {
+    "region": "World-step4",
+    "fuel": "wind/solar/hydro",
+    "Industry": 0.044598456,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 156.1765565
+  },
+  {
+    "region": "World-step4",
+    "fuel": "nuclear",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "oil",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "other",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "other gas",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "other liquids",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  },
+  {
+    "region": "World-step4",
+    "fuel": "other solids",
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "Electricity": 0
+  }
+]

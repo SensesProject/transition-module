@@ -1,1 +1,810 @@
-[{"Region":"Afghanistan","Continent":"Asia"},{"Region":"Aland Islands","Continent":"Europe"},{"Region":"Albania","Continent":"Europe"},{"Region":"Algeria","Continent":"Africa"},{"Region":"American Samoa","Continent":"Oceania"},{"Region":"Andorra","Continent":"Europe"},{"Region":"Angola","Continent":"Africa"},{"Region":"Anguilla","Continent":"North America"},{"Region":"Antarctica","Continent":"Antartica"},{"Region":"Antigua & Barbuda","Continent":"North America"},{"Region":"Argentina","Continent":"South America"},{"Region":"Armenia","Continent":"Asia"},{"Region":"Aruba","Continent":"North America"},{"Region":"Australia","Continent":"Oceania"},{"Region":"Austria","Continent":"Europe"},{"Region":"Azerbaijan","Continent":"Asia"},{"Region":"Bahamas","Continent":"North America"},{"Region":"Bahrain","Continent":"Asia"},{"Region":"Bangladesh","Continent":"Asia"},{"Region":"Barbados","Continent":"North America"},{"Region":"Belarus","Continent":"Europe"},{"Region":"Belgium","Continent":"Europe"},{"Region":"Belize","Continent":"North America"},{"Region":"Benin","Continent":"Africa"},{"Region":"Bermuda","Continent":"North America"},{"Region":"Bhutan","Continent":"Asia"},{"Region":"Bolivia, Plurinational State of","Continent":"South America"},{"Region":"Bonaire, Sint Eustatius and Saba","Continent":"North America"},{"Region":"Bosnia & Herzegovina","Continent":"Europe"},{"Region":"Botswana","Continent":"Africa"},{"Region":"Bouvet Island","Continent":"Antartica"},{"Region":"Brazil","Continent":"South America"},{"Region":"British Indian Ocean Territory","Continent":"Asia"},{"Region":"British Virgin Islands","Continent":"North America"},{"Region":"Brunei (darussalam)","Continent":"Asia"},{"Region":"Bulgaria","Continent":"Europe"},{"Region":"Burkina Faso","Continent":"Africa"},{"Region":"Myanmar","Continent":"Asia"},{"Region":"Burundi","Continent":"Africa"},{"Region":"Cambodia","Continent":"Asia"},{"Region":"Cameroon","Continent":"Africa"},{"Region":"Canada","Continent":"North America"},{"Region":"Cape Verde","Continent":"Africa"},{"Region":"Cayman Islands","Continent":"North America"},{"Region":"Central African Rep","Continent":"Africa"},{"Region":"Chad","Continent":"Africa"},{"Region":"Chile","Continent":"South America"},{"Region":"China (mainland)","Continent":"Asia"},{"Region":"China Hong Kong SAR","Continent":"Asia"},{"Region":"China Macao SAR","Continent":"Asia"},{"Region":"ChinaTaipe","Continent":"Asia"},{"Region":"Christmas Island","Continent":"Oceania"},{"Region":"Cocos (Keeling) Islands","Continent":"Oceania"},{"Region":"Colombia","Continent":"South America"},{"Region":"Comoros","Continent":"Africa"},{"Region":"Congo","Continent":"Africa"},{"Region":"Congo DR","Continent":"Africa"},{"Region":"Cook Islands","Continent":"Oceania"},{"Region":"Costa Rica","Continent":"North America"},{"Region":"C\u00f4te d'Ivoire","Continent":"Africa"},{"Region":"Croatia","Continent":"Europe"},{"Region":"Cuba","Continent":"North America"},{"Region":"Curacao","Continent":"North America"},{"Region":"Cyprus","Continent":"Asia"},{"Region":"Czech Rep","Continent":"Europe"},{"Region":"Denmark","Continent":"Europe"},{"Region":"Germany","Continent":"Europe"},{"Region":"Djibouti","Continent":"Africa"},{"Region":"Dominica","Continent":"North America"},{"Region":"Dominican Rep","Continent":"North America"},{"Region":"East Timor","Continent":"Asia"},{"Region":"Ecuador","Continent":"South America"},{"Region":"Egypt","Continent":"Africa"},{"Region":"El Salvador","Continent":"North America"},{"Region":"Equatorial Guinea","Continent":"Africa"},{"Region":"Eritrea","Continent":"Africa"},{"Region":"Estonia","Continent":"Europe"},{"Region":"Ethiopia","Continent":"Africa"},{"Region":"Falkland Islands (Malvinas)","Continent":"South America"},{"Region":"Faroe Islands","Continent":"Europe"},{"Region":"Federated States of Micronesia","Continent":"Oceania"},{"Region":"Fiji Islands","Continent":"Oceania"},{"Region":"Finland","Continent":"Europe"},{"Region":"France","Continent":"Europe"},{"Region":"French Guiana","Continent":"South America"},{"Region":"French Polynesia","Continent":"Oceania"},{"Region":"French Southern Territories","Continent":"Africa"},{"Region":"FYR of Macedonia","Continent":"Europe"},{"Region":"Gabon","Continent":"Africa"},{"Region":"Gambia","Continent":"Africa"},{"Region":"Georgia","Continent":"Asia"},{"Region":"Ghana","Continent":"Africa"},{"Region":"Gibraltar","Continent":"Europe"},{"Region":"Greece","Continent":"Europe"},{"Region":"Greenland","Continent":"North America"},{"Region":"Grenada","Continent":"North America"},{"Region":"Guadeloupe","Continent":"North America"},{"Region":"Guam","Continent":"Oceania"},{"Region":"Guatemala","Continent":"North America"},{"Region":"Guernsey","Continent":"Europe"},{"Region":"Guinea","Continent":"Africa"},{"Region":"Guinea-Bissau","Continent":"Africa"},{"Region":"Guyana","Continent":"South America"},{"Region":"Haiti","Continent":"North America"},{"Region":"Heard Island and McDonald Islands","Continent":"Antartica"},{"Region":"Holy See (Vatican City State)","Continent":"Europe"},{"Region":"Honduras","Continent":"North America"},{"Region":"Hungary","Continent":"Europe"},{"Region":"Iceland","Continent":"Europe"},{"Region":"India","Continent":"Asia"},{"Region":"Indonesia","Continent":"Asia"},{"Region":"Irak","Continent":"Asia"},{"Region":"Iran (Islamic Republic of)","Continent":"Asia"},{"Region":"Ireland","Continent":"Europe"},{"Region":"Isle of Man","Continent":"Europe"},{"Region":"Israel","Continent":"Asia"},{"Region":"Italy","Continent":"Europe"},{"Region":"Jamaica","Continent":"North America"},{"Region":"Japan","Continent":"Asia"},{"Region":"Jersey","Continent":"Europe"},{"Region":"Jordan","Continent":"Asia"},{"Region":"Kazakhstan","Continent":"Asia"},{"Region":"Kenya","Continent":"Africa"},{"Region":"Kyrgyzstan","Continent":"Asia"},{"Region":"Kiribati","Continent":"Oceania"},{"Region":"Korea (North)","Continent":"Asia"},{"Region":"Korea Republic","Continent":"Asia"},{"Region":"Kuwait","Continent":"Asia"},{"Region":"Lao People's Democratic Republic","Continent":"Africa"},{"Region":"Latvia","Continent":"Europe"},{"Region":"Lebanon","Continent":"Asia"},{"Region":"Lesotho","Continent":"Africa"},{"Region":"Liberia","Continent":"Africa"},{"Region":"Libya","Continent":"Africa"},{"Region":"Liechtenstein","Continent":"Europe"},{"Region":"Lithuania","Continent":"Europe"},{"Region":"Luxembourg","Continent":"Europe"},{"Region":"Madagascar","Continent":"Africa"},{"Region":"Malawi","Continent":"Africa"},{"Region":"Malaysia","Continent":"Asia"},{"Region":"Maldives","Continent":"Asia"},{"Region":"Mali","Continent":"Africa"},{"Region":"Malta","Continent":"Europe"},{"Region":"Marshall Islands","Continent":"Oceania"},{"Region":"Martinique","Continent":"South America"},{"Region":"Mauritania","Continent":"Africa"},{"Region":"Mauritius","Continent":"Africa"},{"Region":"Mayotte","Continent":"Africa"},{"Region":"Mexico","Continent":"North America"},{"Region":"Moldova Republic of","Continent":"Europe"},{"Region":"Monaco","Continent":"Europe"},{"Region":"Mongolei","Continent":"Asia"},{"Region":"Montenegro","Continent":"Europe"},{"Region":"Montserrat","Continent":"North America"},{"Region":"Morocco","Continent":"Africa"},{"Region":"Mosambik","Continent":"Africa"},{"Region":"Namibia","Continent":"Africa"},{"Region":"Nauru","Continent":"Oceania"},{"Region":"Nepal","Continent":"Asia"},{"Region":"Netherlands","Continent":"Europe"},{"Region":"New Zealand","Continent":"Oceania"},{"Region":"New Caledonia","Continent":"Oceania"},{"Region":"Nicaragua","Continent":"North America"},{"Region":"Niger","Continent":"Africa"},{"Region":"Nigeria","Continent":"Africa"},{"Region":"Niue","Continent":"Oceania"},{"Region":"Norfolk Island","Continent":"Oceania"},{"Region":"Northern Mariana Islands","Continent":"Oceania"},{"Region":"Norway","Continent":"Europe"},{"Region":"Occupied Palestinian Territory","Continent":"Asia"},{"Region":"Oman","Continent":"Asia"},{"Region":"Pakistan","Continent":"Asia"},{"Region":"Palau","Continent":"Oceania"},{"Region":"Panama","Continent":"North America"},{"Region":"Papua New Guinea","Continent":"Oceania"},{"Region":"Paraguay","Continent":"South America"},{"Region":"Peru","Continent":"South America"},{"Region":"Philippines","Continent":"Asia"},{"Region":"Pitcairn","Continent":"Oceania"},{"Region":"Poland","Continent":"Europe"},{"Region":"Portugal","Continent":"Europe"},{"Region":"Puerto Rico","Continent":"North America"},{"Region":"Qatar","Continent":"Asia"},{"Region":"Reunion","Continent":"Africa"},{"Region":"Romania","Continent":"Europe"},{"Region":"Russia","Continent":"Asia"},{"Region":"Rwanda","Continent":"Africa"},{"Region":"Saint Barthelemy","Continent":"North America"},{"Region":"Saint Helena, Ascension and Tristan da Cunha","Continent":"Africa"},{"Region":"Saint Kitts and Nevis","Continent":"North America"},{"Region":"Saint Lucia","Continent":"North America"},{"Region":"Saint Martin (French part)","Continent":"North America"},{"Region":"Saint Pierre and Miquelon","Continent":"North America"},{"Region":"Saint Vincent and the Grenadines","Continent":"North America"},{"Region":"Zambia","Continent":"Africa"},{"Region":"Samoa (Western)","Continent":"Oceania"},{"Region":"San Marino","Continent":"Europe"},{"Region":"Sao Tome and Principe","Continent":"Africa"},{"Region":"Saudi Arabia","Continent":"Asia"},{"Region":"Schweden","Continent":"Europe"},{"Region":"Schweiz","Continent":"Europe"},{"Region":"Senegal","Continent":"Africa"},{"Region":"Serbia","Continent":"Europe"},{"Region":"Seychelles","Continent":"Africa"},{"Region":"Sierra Leone","Continent":"Africa"},{"Region":"Singapore","Continent":"Asia"},{"Region":"Sint Maarten (Dutch part)","Continent":"North America"},{"Region":"Slovak Rep","Continent":"Europe"},{"Region":"Slovenia","Continent":"Europe"},{"Region":"Solomon Islands","Continent":"Oceania"},{"Region":"Somalia","Continent":"Africa"},{"Region":"South Africa","Continent":"Africa"},{"Region":"South Georgia and the South Sandwich Islands","Continent":"South America"},{"Region":"South Sudan","Continent":"Africa"},{"Region":"Spain","Continent":"Europe"},{"Region":"Sri Lanka","Continent":"Asia"},{"Region":"Sudan","Continent":"Africa"},{"Region":"Suriname","Continent":"South America"},{"Region":"Swaziland","Continent":"Africa"},{"Region":"Syria","Continent":"Asia"},{"Region":"Tadschikistan","Continent":"Asia"},{"Region":"Tanzania, United Republic of","Continent":"Africa"},{"Region":"Thailand","Continent":"Asia"},{"Region":"Togo","Continent":"Africa"},{"Region":"Tokelau","Continent":"Oceania"},{"Region":"Tonga","Continent":"Oceania"},{"Region":"Trinidad & Tobago","Continent":"North America"},{"Region":"Tunisia","Continent":"Africa"},{"Region":"Turkey","Continent":"Asia"},{"Region":"Turkmenistan","Continent":"Asia"},{"Region":"Turks and Caicos Islands","Continent":"North America"},{"Region":"Tuvalu","Continent":"Oceania"},{"Region":"Uganda","Continent":"Africa"},{"Region":"Ukraine","Continent":"Europe"},{"Region":"United Arab Emirates","Continent":"Asia"},{"Region":"United Kingdom","Continent":"Europe"},{"Region":"United States Minor Outlying Islands","Continent":"Oceania"},{"Region":"Uruguay","Continent":"South America"},{"Region":"USA","Continent":"North America"},{"Region":"Usbekistan","Continent":"Asia"},{"Region":"Vanuatu","Continent":"Oceania"},{"Region":"Venezuela, Bolivarian Republic of","Continent":"South America"},{"Region":"Viet Nam","Continent":"Asia"},{"Region":"Virgin Islands, U","Continent":"North America"},{"Region":"Wallis and Futuna","Continent":"Oceania"},{"Region":"Western Sahara","Continent":"Africa"},{"Region":"Yemen","Continent":"Asia"},{"Region":"Zimbabwe","Continent":"Africa"},{"Region":"World","Continent":"World"}]
+[
+  {
+    "Region": "Afghanistan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Albania",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Algeria",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Angola",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Antigua & Barbuda",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Argentina",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Armenia",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Aruba",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Australia",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Austria",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Azerbaijan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Bahamas",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Bahrain",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Bangladesh",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Barbados",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Belarus",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Belgium",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Belize",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Benin",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Bermuda",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Bhutan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Bosnia & Herzegovina",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Bolivia",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Botswana",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Brazil",
+    "Continent": "South America"
+  },
+  {
+    "Region": "British Virgin Islands",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Brunei (darussalam)",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Bulgaria",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Burkina Faso",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Myanmar",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Burundi",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Cambodia",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Cameroon",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Canada",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Cape Verde",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Cayman Islands",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Central African Rep",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Chad",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Chile",
+    "Continent": "South America"
+  },
+  {
+    "Region": "China (PRC)",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "China Hong Kong SAR",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "China Macao SAR",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "China Taipe",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Colombia",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Comoros",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Congo",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Congo DR",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Costa Rica",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Ivory Coast",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Croatia",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Cuba",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Curacao",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Cyprus",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Czech Rep",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Denmark",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Germany",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Djibouti",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Dominica",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Dominican Rep",
+    "Continent": "North America"
+  },
+  {
+    "Region": "East Timor",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Ecuador",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Egypt",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "El Salvador",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Equatorial Guinea",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Eritrea",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Estonia",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Ethiopia",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Fiji Islands",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Finland",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "France",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "French Polynesia",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "FYR of Macedonia",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Gabon",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Gambia",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Georgia",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Ghana",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Gibraltar",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Greece",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Grenada",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Guatemala",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Guinea",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Guinea-Bissau",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Guyana",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Haiti",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Honduras",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Hungary",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Iceland",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "India",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Indonesia",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Iraq",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Iran (Islamic Republic of)",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Ireland",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Israel",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Italy",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Jamaica",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Japan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Jordan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Kazakhstan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Kenya",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Kyrgyzstan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Kiribati",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Korea (North)",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Korea Republic",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Kuwait",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Lao People's Democratic Republic",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Latvia",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Lebanon",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Lesotho",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Liberia",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Libya",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Lithuania",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Luxembourg",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Madagascar",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Malawi",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Malaysia",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Maldives",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Mali",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Malta",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Mauritania",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Mauritius",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Mexico",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Moldova Republic of",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Mongolia",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Montenegro",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Morocco",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Mozambique",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Namibia",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Nepal",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Netherlands",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "New Zealand",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "New Caledonia",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Nicaragua",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Niger",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Nigeria",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Norway",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Oman",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Pakistan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Palau",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Panama",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Papua New Guinea",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Paraguay",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Peru",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Philippines",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Poland",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Portugal",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Puerto Rico",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Qatar",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Romania",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Russia",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Rwanda",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Saint Kitts and Nevis",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Saint Lucia",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Saint Vincent and the Grenadines",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Zambia",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Samoa (Western)",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Sao Tome and Principe",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Saudi Arabia",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Sweden",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Switzerland",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Senegal",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Serbia",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Seychelles",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Sierra Leone",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Singapore",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Sint Maarten (Dutch part)",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Slovak Rep",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Slovenia",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Solomon Islands",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Somalia",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "South Africa",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "South Georgia and the South Sandwich Islands",
+    "Continent": "South America"
+  },
+  {
+    "Region": "South Sudan",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Spain",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Sri Lanka",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Sudan",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Suriname",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Swaziland",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Syria",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Tanzania",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Tajikistan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Thailand",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Togo",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Tonga",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Trinidad & Tobago",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Tunisia",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Turkey",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Turkmenistan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Turks and Caicos Islands",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Uganda",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Ukraine",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "United Arab Emirates",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "United Kingdom",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Uruguay",
+    "Continent": "South America"
+  },
+  {
+    "Region": "USA",
+    "Continent": "North America"
+  },
+  {
+    "Region": "Uzbekistan",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Vanuatu",
+    "Continent": "Oceania"
+  },
+  {
+    "Region": "Venezuela",
+    "Continent": "South America"
+  },
+  {
+    "Region": "Vietnam",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Western Sahara",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "Yemen",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Zimbabwe",
+    "Continent": "Africa"
+  },
+  {
+    "Region": "World",
+    "Continent": "World"
+  }
+]

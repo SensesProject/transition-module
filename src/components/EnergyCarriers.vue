@@ -1,6 +1,8 @@
 <template>
   <div class="visualization" id="carriers">
-      <div v-if="step === 5" class="regionselect">
+      <div class="regionselect">
+      <p class="graph-title sans">Energy production (Ej/y) per energy carrier across sectors in 2015</p>
+      <div v-if="step === 5">
      <SensesSelect
        class="selector"
        :options="regionsArray"
@@ -14,6 +16,7 @@
      <p id="select-label">
        Use the selector above to see energy carriers distribution across regions.
      </p>
+   </div>
      <EnergyProportion
      v-if="selected != 'World'"
      :data="{
@@ -166,7 +169,7 @@ export default {
   computed: {
     carrierActive () {
       let active = this.isActive
-      if (this.step > 5) { active = 'electricity' }
+      if (this.step > 5) { active = 'Electricity' }
       return active
     },
     hoverValue () {
@@ -186,7 +189,7 @@ export default {
         carriers,
         groupsbyregion: _.groupBy(carriers, 'region'),
         allFuels: _.uniq(_.map(carriers, 'fuel')),
-        sectors: ['industry', 'transport', 'residential', 'electricity']
+        sectors: ['Industry', 'Transport', 'Building', 'Electricity']
       }
     },
     dataNest () {
@@ -264,32 +267,32 @@ export default {
       const selectedRegion = this.dataFilter
       const { width, height } = this
       const barWidth = (this.innerWidth + this.margin.left) / 2
-      const ele = d3.values(selectedRegion.electricity)
-      const ind = d3.values(selectedRegion.industry)
-      const tran = d3.values(selectedRegion.transport)
-      const res = d3.values(selectedRegion.residential)
+      const ele = d3.values(selectedRegion.Electricity)
+      const ind = d3.values(selectedRegion.Industry)
+      const tran = d3.values(selectedRegion.Transport)
+      const res = d3.values(selectedRegion.Building)
       // defining scales for different sectors
-      const electricity = d3.scaleLinear()
+      const Electricity = d3.scaleLinear()
         .domain([0, ele.reduce((sum, val) => sum + val, 0)])
         .range([0, barWidth])
 
-      const industry = d3.scaleLinear()
+      const Industry = d3.scaleLinear()
         .domain([0, ind.reduce((sum, val) => sum + val, 0)])
         .range([0, barWidth])
 
-      const transport = d3.scaleLinear()
+      const Transport = d3.scaleLinear()
         .domain([0, tran.reduce((sum, val) => sum + val, 0)])
         .range([0, barWidth])
 
-      const residential = d3.scaleLinear()
+      const Building = d3.scaleLinear()
         .domain([0, res.reduce((sum, val) => sum + val, 0)])
         .range([0, barWidth])
 
       return {
-        electricity,
-        industry,
-        residential,
-        transport
+        Electricity,
+        Industry,
+        Building,
+        Transport
       }
     },
     findPerc (){
@@ -398,10 +401,10 @@ export default {
             fill:
               this.hover[0] === i ? this.hover[1] : 'white' &&
               this.step === 6 && i === 'wind/solar/hydro' ? '#a2e7c0' : 'white' &&
-              this.step >= 7 && key === 'electricity' ? '#a2e7c0' : 'white' &&
-              this.step >= 8 && key === 'industry' && i === 'electricity' ? '#ffd89a' : 'white' &&
-              this.step >= 9 && key === 'transport' && i === 'electricity' ? '#ffd89a' : 'white' &&
-              this.step >= 10 && key === 'residential' && i === 'electricity' ? '#ffd89a' : 'white' &&
+              this.step >= 7 && key === 'Electricity' ? '#a2e7c0' : 'white' &&
+              this.step >= 8 && key === 'Industry' && i === 'Electricity' ? '#ffd89a' : 'white' &&
+              this.step >= 9 && key === 'Transport' && i === 'Electricity' ? '#ffd89a' : 'white' &&
+              this.step >= 10 && key === 'Building' && i === 'Electricity' ? '#ffd89a' : 'white' &&
               this.step >= 11 && i === 'biomass' | i === 'wind/solar/hydro' ? '#a2e7c0' : 'white'
           }
         })
@@ -429,6 +432,10 @@ export default {
 
 .fuel_rect {
   stroke: $color-gray;
+}
+
+.graph-title {
+  margin-bottom: 20px;
 }
 
 .selectedRectsPath {

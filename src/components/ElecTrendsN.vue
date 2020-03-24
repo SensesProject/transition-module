@@ -5,29 +5,29 @@
       <svg class='lines-legend'>
         <rect width='50' height='10' x='0' y='2' fill='#ed96ab'/>
         <line x1='0' x2='50' y1='2' y2='2' stroke='#c8005f' stroke-width='2'/>
-        <text x='60' y='12'>% Emissions</text>
+        <text x='60' y='12'>%Emissions (rel. to 2010)</text>
         <rect width='50' height='10' x='0' y='22' fill='#ffd89a'/>
         <line x1='0' x2='50' y1='22' y2='22' stroke='#ba7e12' stroke-width='2'/>
-        <text x='60' y='30'>% Electrification</text>
+        <text x='60' y='30'>%Electrification</text>
         <rect width='50' height='10' x='0' y='42' fill='#a2e7c0'/>
         <line x1='0' x2='50' y1='42' y2='42' stroke='#5b9574' stroke-width='2'/>
-        <text x='60' y='50'>% Low Carbon Elect.</text>
+        <text x='60' y='50'>%Low Carbon Elect.</text>
       </svg>
     </div>
-    <div v-if="step >= 13" class="scenarioselect">
-   <SensesSelect
-     class="scenario selector"
-     :options="scenariosArray"
-     v-model="scenarioSelected"
-   />
-   <p id="select-label">
-     The selectors above allows you to filter global electrification trends
-     from the REMIND model across three scenarios:
-     Business-as-usual, 2°C Stabilization, 1.5°C.
-   </p>
+    <div  class="scenarioselect">
+      <p class="graph-title sans">Uncertainty trends on fossil fuels volumes</p>
+        <p class="highlight sans">REMIND</p><br/>
+        <div class="scenario-selector">
+        <p id="select-label">Select a scenario:</p>
+         <SensesSelect
+           class="scenario selector"
+           :options="scenariosArray"
+           v-model="scenarioSelected"
+         />
+     </div>
   </div>
     <svg class="ele-charts">
-      <g>
+      <g :transform="`translate(0, ${margin.bottom * 2})`">
       <path v-for="(chart, i) in createCharts.emissionsPaths"
       :transform="`translate(${(innerWidth / 4) }, ${createCharts.groupPosition[i]})`"
       class="emissions-trend"
@@ -47,7 +47,6 @@
       class="low-carb"
       :d="chart"
       />
-    </g>
     <g
     v-for="(chart, i) in createCharts.electrification"
     v-bind:key="i + 'axis'"
@@ -72,6 +71,7 @@
       class='top__line'
       />
     </g>
+  </g>
     <XAxis
     :scale='scales.x'
     :width='(this.innerWidth + this.margin.left) / 2'
@@ -88,7 +88,7 @@
       [2090],
       [2100]
     ]"
-    :transform="'translate('+ (innerWidth / 4) + ',' + (this.innerHeight - 110) + ')'" />
+    :transform="'translate('+ (innerWidth / 4) + ',' + (this.innerHeight - 50) + ')'" />
     />
     </svg>
   </div>
@@ -133,7 +133,7 @@ export default {
       scenarioSelected: '2°C Stabilization',
       margin: {
         left: 0,
-        top: -30,
+        top: -50,
         bottom: 30,
         right: 40
       }
@@ -275,6 +275,9 @@ export default {
   width: 80%;
   height: 100%;
 }
+#perc {
+    font-size: 10px;
+}
 
 svg {
   background-color: white;
@@ -325,11 +328,15 @@ path {
 }
 
 .scenarioselect {
-  top: $spacing  + 1;
+  top: 15px;
   left: 3.5em;
   position: absolute;
   width: 245px;
   z-index: 1;
+}
+
+.scenario-selector {
+  margin-top: 20px;
 }
 
 .scenario {
@@ -342,8 +349,9 @@ path {
 }
 
 #select-label {
-  margin-top: 15px;
-}
+  margin-bottom: 10px;
+  margin-left: 3px;
+  }
 
 .scenarioselect, .left-text {
   margin-top: 15px;

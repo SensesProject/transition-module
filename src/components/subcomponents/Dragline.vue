@@ -19,8 +19,8 @@
     <text
     v-for="sector of sectors"
     v-bind:key="sector.value"
-    :x='width - margin.left  + 10'
-    :y='scales.y(sector.y / 1000000)'
+    :x='x'
+    :y='scales.y((sector.data[0] / 1000000 + sector.data[1] / 1000000) / 2) '
     >
     {{ sector.key }}: {{ Math.round(sector.value / 1000) + ' Mt/year' }}
   </text>
@@ -81,7 +81,7 @@ export default {
 }
 
 text {
-  fill: #c8005f;
+  fill: black;
 }
 
 rect {

@@ -225,7 +225,7 @@ export default {
         { key: 'Industry', color: '#dd5f84', active: 3.2 },
         { key: 'Transports', color: '#ed96ab', active: 3.3 },
         { key: 'Building', color: '#f8cbd4', active: 3.4 },
-        { key: 'OtherEnergy', color: '#73283f', active: 3.5 }
+        { key: 'OtherEnergy', color: '#cacaca', active: 3.5 }
       ]
     },
 
@@ -279,6 +279,13 @@ export default {
   margin: 0 auto;
 }
 
+.scenarioselect {
+  top: $spacing + 2;
+  left: 3.5em;
+  position: absolute;
+  width: 200px;
+}
+
 svg {
   margin-top: 50px;
 }
@@ -305,16 +312,16 @@ svg {
   }
 
 .sectorlabels {
-  color: white !important;
-
-  .inactive {
-    color: black !important;
-  }
+  fill: black !important;
 }
+
+.inactive {
+  fill: black;
 }
 
 .yearsep {
   stroke-dasharray: 2 2;
   stroke: gray;
+}
 }
 </style>
