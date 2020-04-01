@@ -73,7 +73,7 @@
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
-        {{ Math.round(sumCarriers[i] * 100) / 100 }} EJ/yr
+        {{ Math.round(sumCarriers[i] * 100) }} EJ/yr
         </tspan>
       </text>
       </g>

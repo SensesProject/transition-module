@@ -334,7 +334,8 @@
         low-carbon fuels like biofuels or hydrogen and the deployment of negative
         emissions play a role in future decarbonization scenarios as well.
         To explore in more detail how the interplay of these strategies can
-        bring us to net-zero emissions, you can use the Mitigation Strategies Tool.
+        bring us to net-zero emissions, you can use the
+        <a href="https://dev.climatescenarios.org/global-pathway/">Mitigation Strategies Tool</a>.
       </p>
       <SensesMeta :id="'transition-path-1'" />
    </div>
@@ -449,7 +450,6 @@ p {
 .vis-inner {
   margin-top: -$spacing * 2;
   color: getColor(gray, 10) !important;
-  font-family: $font-mono !important;
 }
 
 .senses-tooltip-select {
