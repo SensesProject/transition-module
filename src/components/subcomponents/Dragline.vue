@@ -100,15 +100,6 @@ export default {
             }
           }
         })
-<<<<<<< HEAD
-        // since we moved things around, it can be that labels which did not overlap before
-        // do now. so we have to recalculate the diffs, and stay in this while-loop until everything
-        // is fine
-        diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
-      }
-      // then, we can apply the y positions back to the array from before
-      // (if we still need the old y value, we can use y2 or so…)
-=======
         //   // since we moved things around, it can be that labels which did not overlap before
         //   // do now. so we have to recalculate the diffs, and stay in this while-loop until everything
         //   // is fine
@@ -116,7 +107,6 @@ export default {
       }
       // // then, we can apply the y positions back to the array from before
       // // (if we still need the old y value, we can use y2 or so…)
->>>>>>> 1d82c01bed2fcbd1e53a630805eacea75473a952
       labels.forEach((l, i) => {
         l.y2 = positions[i]
       })
