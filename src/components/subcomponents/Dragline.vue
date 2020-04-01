@@ -1,5 +1,5 @@
 <template>
-  <g class="dragline" :data="labels">
+  <g class="dragline">
     <line :x1="x" y1="0" :x2="x" :y2="height - margin.bottom" stroke="#c8005f" />
     <rect
       x="0"
@@ -53,7 +53,7 @@ export default {
           key,
           data,
           value: Math.round(value),
-          year: this.x > 0 ? 1990 : this.year,
+          year: this.year,
           y: this.scales.y((data[1] / 1000000 + data[0] / 1000000) / 2)
         }
       })
@@ -93,20 +93,20 @@ export default {
             positions[i] = positions[i] - Math.max((minDist - d) / 2, 2)
             // console.log(positions[i] - Math.max((minDist - d) / 2, 2))
             positions[i + 1] = positions[i + 1] + Math.max((minDist - d) / 2, 2)
-            //       // Now we can set some boundaries, if we for example don't want a label to be
-            //       // lower/higher than a specific value…
+            // Now we can set some boundaries, if we for example don't want a label to be
+            // lower/higher than a specific value…
             if (positions[i + 1] >= this.height) {
               positions[i + 1] = this.height - this.margin.top
             }
           }
         })
-      //   // since we moved things around, it can be that labels which did not overlap before
-      //   // do now. so we have to recalculate the diffs, and stay in this while-loop until everything
-      //   // is fine
-      //   diffs = positions.filter((y, i) => i > 0).map((y, i) => positions[i] - y)
-      // }
-      // // then, we can apply the y positions back to the array from before
-      // // (if we still need the old y value, we can use y2 or so…)
+        // since we moved things around, it can be that labels which did not overlap before
+        // do now. so we have to recalculate the diffs, and stay in this while-loop until everything
+        // is fine
+        diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
+      }
+      // then, we can apply the y positions back to the array from before
+      // (if we still need the old y value, we can use y2 or so…)
       labels.forEach((l, i) => {
         l.y2 = positions[i]
       })
