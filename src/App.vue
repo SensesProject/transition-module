@@ -312,15 +312,29 @@
               height: `${height}px`
             }"
           >
-            <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" />
+            <ElecTrends v-if="step >= 12 && step <= 15" :step="step" :width="width" :height="height" />
           </div>
         </template>
         <div slot="text" class="observer">
-        <IntersectionObserver :step="13" align="right" class="height__change">
+        <IntersectionObserver :step="13" align="right">
           <p>
             The selectors allows you to filter global electrification trends
             from the REMIND model across three scenarios:
             Business-as-usual, 2°C Stabilization, 1.5°C.
+          </p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="14" align="right">
+          <p>
+            In a Business-as-usual scenario, no mitigation strategies will be
+            implemented in the short term, therefore emissions will skyrocket across
+            all sectors - almost doubling.
+          </p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="15" align="right" class="height__change">
+          <p>
+            However even a 2.0ºC mitigation strategy, electrification will be easier
+            and faster, concurring, together with other mitigation strategies, in limiting
+            emissions.
           </p>
         </IntersectionObserver>
       </div>
@@ -335,7 +349,7 @@
         emissions play a role in future decarbonization scenarios as well.
         To explore in more detail how the interplay of these strategies can
         bring us to net-zero emissions, you can use the
-        <a href="https://dev.climatescenarios.org/global-pathway/">Mitigation Strategies Tool</a>.
+        <a href="https://dev.climatescenarios.org/" class="coming-soon">Mitigation Strategies Tool</a>.
       </p>
       <SensesMeta :id="'transition-path-1'" />
    </div>
@@ -520,5 +534,10 @@ p {
   margin-bottom: $spacing * 4;
   border-top: 1px solid black;
   height: 100%;
+}
+
+.coming-soon:hover {
+  color: gray;
+  text-underline: none;
 }
 </style>

@@ -22,7 +22,7 @@
          <SensesSelect
            class="scenario selector"
            :options="scenariosArray"
-           v-model="scenarioSelected"
+           v-model="newScenario"
          />
      </div>
   </div>
@@ -53,7 +53,8 @@
     :transform="`translate(${(innerWidth / 4) }, ${createCharts.groupPosition[i]})`"
     >
       <text
-      x='10'
+      :x='(innerWidth - margin.left) / 2'
+      text-anchor="end"
       y='-10'
       >{{createCharts.sector[i]}}
       </text>
@@ -146,6 +147,12 @@ export default {
     innerHeight () {
       return this.height - this.margin.top - this.margin.bottom
     },
+    newScenario () {
+      let scenario = this.scenarioSelected
+      if (this.step === 14) { scenario = 'Business-as-usual' }
+
+      return scenario
+    },
     scales () {
       const graphWidth = (this.innerWidth + this.margin.left) / 2
       return {
@@ -165,7 +172,7 @@ export default {
     },
     dataStructure () {
       let trends = this.ElectrificationTrends
-      const selected = this.scenarioSelected
+      const selected = this.newScenario
       const allScenarios = _.groupBy(trends, 'scenario')
       return allScenarios[selected]
     },

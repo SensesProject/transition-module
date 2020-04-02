@@ -31,8 +31,20 @@
             :fill="chunk.color"
             :id="chunk.id"
             class="emission__chunks"
-            :class="{ inactive: chunk.active != step }"
+            :class="[{ inactive: chunk.active != step }, step < 4 ? 'lowFill' : '']"
           />
+        </g>
+        <g  v-if="step >= 3">
+          <text
+          class="sectorlabels"
+          :class="[{ inactive: chunk.active != step }, step > 3 && chunk.active != step ? 'lowText' : '']"
+          :id="chunk.id"
+          v-for="(chunk, i) in applicationsData"
+          v-bind:key="i + 'text'"
+          :x='scales.x(2015.2)'
+          :y='scales.y(chunk.labels / 1000000)'
+          > {{ chunk.id }}
+          </text>
         </g>
         <dragline
           v-if="step > 3"
@@ -42,26 +54,16 @@
           :scales="scales"
           :data="subsectorsDataActive"
         />
-        <g  v-if="step >= 3">
-          <text
-          class="sectorlabels"
-          :class="{ inactive: chunk.active != step }"
-          :id="chunk.id"
-          v-for="(chunk, i) in applicationsData"
-          v-bind:key="i + 'text'"
-          :x='scales.x(1991)'
-          :y='scales.y(chunk.labels / 1000000)'
-          > {{ chunk.id }}
-          </text>
-        </g>
         <XAxis
         :scale='scales.x'
         :width='this.innerWidth - margin.left'
         :height= 'innerHeight'
+        :margin='margin'
         :thicks="step >= 2 ? thicksShort : thicksLong"
         :transform="'translate('+ innerWidth - (innerWidth / 2)  + ',0)'" />
         <YAxis
         :scale='scales.y'
+        :width='this.innerWidth - margin.left'
         :height= 'innerHeight - margin.bottom'
         :thicks="[[0],[10],[20],[30],[40]]"
         :indicator="'Gt CO2'"
@@ -236,7 +238,7 @@ export default {
       return stacked.map((d, i) => ({
         d: this.areaGenerator(d),
         color: this.applications[i].color,
-        labels: d[0][1] - 1500000,
+        labels: d[25][1] - 1500000,
         id: this.applications[i].key,
         active: this.applications[i].active
       }))
@@ -300,6 +302,15 @@ svg {
   stroke-width: 1;
 }
 
+.lowFill {
+  fill-opacity: 0.5;
+  stroke: $color-red;
+}
+
+.lowText {
+  fill-opacity: 0;
+}
+
 .subsectorsData {
   .inactive {
     display: none;
@@ -316,7 +327,7 @@ svg {
 }
 
 .inactive {
-  fill: black;
+  fill: none;
 }
 
 .yearsep {

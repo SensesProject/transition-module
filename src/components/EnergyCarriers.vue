@@ -18,7 +18,7 @@
      </p>
    </div>
      <EnergyProportion
-     v-if="selected != 'World'"
+     v-if="selected != 'World' && step < 6"
      :data="{
        allData: dataNest,
        selection: dataFilter,
@@ -231,6 +231,7 @@ export default {
       if (this.step === 4.2) { selected = 'USA' }
       if (this.step === 4.3) { selected = 'Germany' }
       if (this.step === 5 || this.step === 4) { selected = this.selected }
+      if (this.step === 6) { selected = 'World' }
       if (this.step === 7) { selected = 'World-step1' }
       if (this.step === 8) { selected = 'World-step2' }
       if (this.step === 9) { selected = 'World-step3' }

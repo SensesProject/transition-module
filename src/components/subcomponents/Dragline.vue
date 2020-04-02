@@ -9,21 +9,18 @@
       class="draglineRect"
       @mousemove="clickDragline"
     />
-    <g
-      v-for="sector of sectors"
-      :key="sector.key"
-      :transform="'translate(' + x + ',' + sector.y + ')'"
-    >
+    <g v-for="(label, l) of labels" v-bind:key="l + 'label'" :transform="`translate(${x}, 0)`">
+      <polyline class="label_line" :points="`0 ${label.y} 4 ${label.y} 8 ${label.y2} 25 ${label.y2}`"/>
+      <text :transform="`translate(0, ${label.y2})`" x='30' class="shadow">
+        <tspan font-weight="bold">{{ Math.round(label.value / 1000) + ' Mt/year' }}</tspan> - {{ label.label }}
+      </text>
+      <text :transform="`translate(0, ${label.y2})`" x='30'>
+        <tspan font-weight="bold">{{ Math.round(label.value / 1000) + ' Mt/year' }}</tspan> - {{ label.label }}
+      </text>
+    </g>
+    <g v-for="sector of sectors" :key="sector.key" :transform="'translate(' + x + ',' + sector.y + ')'">
       <circle class='labels' r="3"/>
     </g>
-    <text
-    v-for="(label, l) of labels"
-    v-bind:key="l + 'label'"
-    :x='x'
-    :y='label.y'
-    >
-    {{ label.label }}: {{ Math.round(label.value / 1000) + ' Mt/year' }}
-  </text>
   </g>
 </template>
 
@@ -69,44 +66,21 @@ export default {
           year: d.year
         }
       }).sort((a, b) => a.y - b.y) // it's important to sort our data by their y position!!!
-      // get an even simpler array of just the y positions
       const positions = labels.map(p => p.y)
-      // set the minimum distance you want to have
       const minDist = 15
-      // calculate the differences, by using filter() to get an array which is
-      // the same as positions, but without the first item (i > 0). Then those values are
-      // subtracted by the value that comes before them (y - positions[y])
       let diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
-      // // now move those things for as long as any of those differences is smaller than minDist
       while (diffs.find(d => d < minDist) != null) {
-        //   // if there is a difference to small, iterate over them
         diffs.forEach((d, i) => {
-          // if this is difference is to small…
           if (d < minDist) {
-            // console.log('true')
-            // move the first position up and the one after that down
-            // we move them by whatever is bigger. the minimum value to reach the
-            // required distance or 2 pixels
-            // (you could just move them by one or two pixels, but depending on the amount of
-            // labels, this can take a while and slow things down. Also steps should not be to
-            // small as it helps to have some extra space to wiggle)
-            positions[i] = positions[i] - Math.max((minDist - d) / 2, 2)
-            // console.log(positions[i] - Math.max((minDist - d) / 2, 2))
-            positions[i + 1] = positions[i + 1] + Math.max((minDist - d) / 2, 2)
-            // Now we can set some boundaries, if we for example don't want a label to be
-            // lower/higher than a specific value…
+            positions[i] = positions[i] - Math.max((minDist - d), 2)
+            positions[i + 1] = positions[i + 1] + Math.max((minDist - d), 2)
             if (positions[i + 1] >= this.height) {
               positions[i + 1] = this.height - this.margin.top
             }
           }
         })
-        //   // since we moved things around, it can be that labels which did not overlap before
-        //   // do now. so we have to recalculate the diffs, and stay in this while-loop until everything
-        //   // is fine
         diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
       }
-      // // then, we can apply the y positions back to the array from before
-      // // (if we still need the old y value, we can use y2 or so…)
       labels.forEach((l, i) => {
         l.y2 = positions[i]
       })
@@ -132,11 +106,23 @@ export default {
 
 .labels {
   fill: white;
-  stroke: white;
+  stroke: #c8005f;
+  stroke-width: 2px;
+}
+
+.label_line {
+  fill: none;
+  stroke: #C57098;
 }
 
 text {
   fill: black;
+
+  &.shadow {
+    stroke-width: 3.5;
+    stroke: #FFFFFF;
+    stroke-opacity: 0.8;
+  }
 }
 
 rect {

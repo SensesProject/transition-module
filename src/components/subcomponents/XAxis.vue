@@ -1,5 +1,5 @@
 <template>
-  <g class="xaxis">
+  <g class="xaxis" :transform="`translate(0, ${height - margin.bottom})`">
     <line
     class='axis'
     x1='0'
@@ -14,7 +14,7 @@
       text-anchor="middle"
       :class="label"
       :x='label.x'
-      y='-10'
+      y='20'
       >
       {{ label.year }}
     </text>
@@ -27,7 +27,7 @@ import map from 'lodash/map'
 
 export default {
   name: 'YAxis',
-  props: ['width', 'height', 'scale', 'thicks'],
+  props: ['width', 'height', 'scale', 'thicks', 'margin'],
   computed: {
     labels: function () {
       const labels = this.thicks
@@ -48,7 +48,6 @@ export default {
 @import "library/src/style/variables.scss";
 
 .axis {
-  stroke: black;
+  stroke: grey;
 }
-
 </style>
