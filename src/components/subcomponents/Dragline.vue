@@ -84,7 +84,6 @@ export default {
       labels.forEach((l, i) => {
         l.y2 = positions[i]
       })
-      // console.log(labels)
       return labels
     }
   },

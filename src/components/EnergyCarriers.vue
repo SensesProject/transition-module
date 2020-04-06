@@ -1,7 +1,10 @@
 <template>
   <div class="visualization" id="carriers">
       <div class="regionselect">
-      <p class="graph-title sans">Energy production (Ej/y) per energy carrier across sectors in 2015</p>
+      <p class="graph-title sans" v-if="step >= 6">
+        Possible electrification pathway based on current World energy production.
+      </p>
+      <p class="graph-title sans" v-if="step < 6">Energy production (Ej/y) per energy carrier across sectors in 2015</p>
       <div v-if="step === 5">
      <SensesSelect
        class="selector"
