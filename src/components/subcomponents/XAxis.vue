@@ -26,7 +26,7 @@
 import map from 'lodash/map'
 
 export default {
-  name: 'YAxis',
+  name: 'XAxis',
   props: ['width', 'height', 'scale', 'thicks', 'margin'],
   computed: {
     labels: function () {

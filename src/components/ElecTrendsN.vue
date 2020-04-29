@@ -5,24 +5,24 @@
       <svg class='lines-legend'>
         <rect width='50' height='10' x='0' y='2' fill='#ed96ab'/>
         <line x1='0' x2='50' y1='2' y2='2' stroke='#c8005f' stroke-width='2'/>
-        <text x='60' y='12'>%Emissions (rel. to 2010)</text>
+        <text x='60' y='12'>% Emissions (rel. to 2010)</text>
         <rect width='50' height='10' x='0' y='22' fill='#ffd89a'/>
         <line x1='0' x2='50' y1='22' y2='22' stroke='#ba7e12' stroke-width='2'/>
-        <text x='60' y='30'>%Electrification</text>
+        <text x='60' y='30'>% Electrification</text>
         <rect width='50' height='10' x='0' y='42' fill='#a2e7c0'/>
         <line x1='0' x2='50' y1='42' y2='42' stroke='#5b9574' stroke-width='2'/>
-        <text x='60' y='50'>%Low Carbon Elect.</text>
+        <text x='60' y='50'>% Renewable Elect.</text>
       </svg>
     </div>
     <div  class="scenarioselect">
-      <p class="graph-title sans">Uncertainty trends on fossil fuels volumes</p>
-        <p class="highlight sans">REMIND</p><br/>
+      <p class="graph-title sans">Electrification trends across sectors</p>
+        <span>Model:</span> <span class="dotted sans">REMIND</span><br/>
         <div class="scenario-selector">
         <p id="select-label">Select a scenario:</p>
          <SensesSelect
            class="scenario selector"
            :options="scenariosArray"
-           v-model="newScenario"
+           v-model="scenarioSelected"
          />
      </div>
   </div>
@@ -53,8 +53,8 @@
     :transform="`translate(${(innerWidth / 4) }, ${createCharts.groupPosition[i]})`"
     >
       <text
-      :x='(innerWidth - margin.left) / 2'
-      text-anchor="end"
+      :x='0'
+      text-anchor="start"
       y='-10'
       >{{createCharts.sector[i]}}
       </text>
@@ -76,6 +76,7 @@
     <XAxis
     :scale='scales.x'
     :width='(this.innerWidth + this.margin.left) / 2'
+    :margin='margin'
     :height= 'innerHeight'
     :thicks="[
       [2010],
@@ -89,7 +90,7 @@
       [2090],
       [2100]
     ]"
-    :transform="'translate('+ (innerWidth / 4) + ',' + (this.innerHeight - 50) + ')'" />
+    :transform="'translate('+ (innerWidth / 4) + ',' + (this.innerHeight - 100) + ')'" />
     />
     </svg>
   </div>
@@ -131,7 +132,7 @@ export default {
   data () {
     return {
       ElectrificationTrends,
-      scenarioSelected: '2°C Stabilization',
+      scenarioSelected: 'Business-as-usual',
       margin: {
         left: 0,
         top: -50,
@@ -148,10 +149,8 @@ export default {
       return this.height - this.margin.top - this.margin.bottom
     },
     newScenario () {
-      let scenario = this.scenarioSelected
-      if (this.step === 14) { scenario = 'Business-as-usual' }
-
-      return scenario
+      let currentScenario = this.scenarioSelected
+      return currentScenario
     },
     scales () {
       const graphWidth = (this.innerWidth + this.margin.left) / 2
@@ -173,6 +172,7 @@ export default {
     dataStructure () {
       let trends = this.ElectrificationTrends
       const selected = this.newScenario
+      console.log(selected)
       const allScenarios = _.groupBy(trends, 'scenario')
       return allScenarios[selected]
     },
@@ -183,6 +183,7 @@ export default {
       _.forEach(allScenarios, (scenario, key) => {
         scenariosarray.push(key)
       })
+      console.log(scenariosarray)
       return scenariosarray
     },
     years () {
@@ -266,7 +267,7 @@ export default {
         groupPosition: initialPos,
         emissionsPaths: _.map(allemissions, (emi, e) => { return Empaths(emi) }),
         electrification: _.map(electrification, (ele, e) => { return paths(ele['electrification']) }),
-        re: _.map(electrification, (ele, e) => { if (ele['sector'] === 'Electricity') { return paths(ele['electrification']) } else { return '' } })
+        re: _.map(electrification, (ele, e) => { if (ele['sector'] === 'Electricity') { return paths(ele['ReEle']) } else { return '' } })
       }
     }
   }
@@ -318,7 +319,7 @@ path {
 }
 
 .electricity-sect {
-  fill: #5b9574;
+  display:none;
 }
 
 .legend {

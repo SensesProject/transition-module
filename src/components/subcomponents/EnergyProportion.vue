@@ -1,16 +1,7 @@
 <template>
   <svg class="proportion">
-    <g transform="translate(0,20)" v-show="currentContinent != 'Antartica'">
-    <text
-    class="continent_label"
-    :class="continent.continent.trim()"
-    :id="continent.continent === currentContinent ? 'active_label' : ''"
-    v-for="(continent, i) in continentSum"
-    v-show="continent.continent != 'World'"
-    v-bind:key='i + "continent-label"'
-    x="2"
-    y="-5"
-    > {{continent.continent}} </text>
+    <g transform="translate(0,15)" v-show="currentContinent != 'Antartica'">
+    <text x="2" y="-5"> World </text>
     <rect
     v-for="(continent, i) in continentSum"
     v-bind:key='i + "continent-value"'
@@ -19,29 +10,33 @@
     :id="continent.continent === currentContinent ? 'active' : ''"
     :x="continent.x + 2"
     :width="continent.value"
-    :height="(width + height) / 18.5"
+    :height="height / 6"
     />
-    <text :x="2" :y="145" fill="black">{{ data.select }}</text>
     <rect
     class="continents"
     id="active"
     :width="energyDetails.country"
     :height="energyDetails.country"
     x="2"
-    y="150"
+    y="60"
     />
-    <text text-anchor="middle" :x="((this.width + this.height) / 12) / 2" :y="((this.width + this.height) / 12) + ((width + height) / 35)" fill="black">
-      {{ data.perc }}%
+    <g :transform="`translate(${this.width / 2}, ${this.width - (this.width / 4)})`">
+    <text text-anchor="middle" x="0" :y="0" fill="black">
+      {{ data.select }} energy use
     </text>
-    <text text-anchor="middle" :x="((this.width + this.height) / 12) / 2" :y="((this.width + this.height) / 12) + ((width + height) / 46)" fill="black">
-      {{ data.abs }} EJ/yr
+    <text text-anchor="middle" x="0" :y="15" fill="black">
+      is the {{ percLabel }}% of entire
     </text>
+    <text text-anchor="middle" x="0" :y="30" fill="black">
+       {{currentContinent}} ({{ Math.round(energyDetails.value) }} EJ/Yr)
+    </text>
+    </g>
     <rect
     class="world"
-    :width="energyDetails.continent"
-    :height="energyDetails.continent"
+    :width="this.width"
+    :height="this.width"
     x="2"
-    y="150"
+    y="60"
     />
     <line
     v-for="(continent,i) in continentSum"
@@ -49,9 +44,9 @@
     v-show="continent.continent === currentContinent"
     v-bind:key='i + continent.x'
     :x1="continent.x + 2"
-    :y1="(width + height) / 18.5"
+    :y1="height / 6"
     x2="2"
-    y2="150"
+    y2="60"
     />
   </g>
   </svg>
@@ -72,12 +67,15 @@ export default {
     }
   },
   computed: {
+    percLabel () {
+      return this.energyDetails.perc > 1 ? Math.round(this.energyDetails.perc) : '< 1'
+    },
     scales () {
       return {
         x: d3
           .scaleLinear()
           .domain([0, 558])
-          .rangeRound([0, (this.width + this.height) / 12])
+          .rangeRound([0, this.width])
       }
     },
     continentTotal () {
@@ -107,6 +105,7 @@ export default {
       return _.map(totalCont, (continent, co) => {
         let continentSum = []
         _.map(continent, (region, r) => { continentSum.push(region['sum']) })
+
         const scaledValue = this.scales.x(_.sum(continentSum))
         let initialyPos = yDistance
         yDistance = yDistance + scaledValue
@@ -124,12 +123,12 @@ export default {
       const continentTot = this.continentSum
       const currentContinent = countryTot[selected]['continent']
       const currentTot = _.filter(continentTot, (single, s) => { return single['continent'] === currentContinent })
-      return currentTot[0]['value']
+      return currentTot[0]['realnumber']
     },
     singleCountry () {
       const selected = this.data.select
       const countries = this.continentTotal
-      return this.scales.x(countries[selected]['sum'])
+      return countries[selected]['sum']
     },
     currentContinent () {
       const selected = this.data.select
@@ -145,12 +144,12 @@ export default {
       const scale = d3
         .scaleLinear()
         .domain([0, this.singleContinent])
-        .rangeRound([0, (this.width + this.height) / 12])
-
+        .rangeRound([0, this.width])
       return {
+        perc: (this.singleCountry / this.singleContinent) * 100,
         country: scale(this.singleCountry),
         continent: scale(this.singleContinent),
-        value: this.realNumber
+        value: this.singleContinent
       }
     }
 
@@ -161,7 +160,7 @@ export default {
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
 svg {
-  height: 58%;
+  height: 100%;
   width: 100%;
   margin: 0 auto;
 }

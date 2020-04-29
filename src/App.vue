@@ -35,21 +35,17 @@
         </div>
       </template>
       <div slot="text" class="observer">
-        <IntersectionObserver :step="1">
+        <IntersectionObserver :step="1" align="right">
           <h2 class="title" id="net__zero">What is Net-Zero?</h2>
           <p>
-            To stop climate change and stabilize global temperature, global
-            greenhouse gas emissions must reduce to net-zero. Net-zero means
-            that all remaining emissions to the atmosphere would need to be
-            balanced by removing CO2 from the atmosphere.<br /><br />
-            As CO2 removal difficult, the focus must be on minimizing emissions
-            in the first place. Here, we will focus on
-            <span class="highlight" id="emissions">CO2 emissions</span> from
-            the energy sector that represent the lion share of global
-            greenhouse gas emissions.
+            To stop climate change and stabilize global temperature,
+            global CO2 emissions must be reduced to net-zero.<br /><br />
+            Net-zero <span class="highlight" id="emissions">CO2 emissions</span>
+            mean that all remaining CO2 emissions to the
+            atmosphere would need to be balanced by removing CO2 from the atmosphere.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="1.1">
+        <IntersectionObserver :step="1.1" align="right">
           <p>
             The time schedule for the energy transition is tight!
             The Paris Agreement demands stabilizing global warming at 1.5°C to
@@ -57,18 +53,18 @@
             levels will require net-zero CO2 emissions by 2070.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="1.2">
+        <IntersectionObserver :step="1.2" align="right">
           <p>A limit of 1.5°C will require carbon neutrality even by 2050.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="2">
+        <IntersectionObserver :step="2" align="right">
           <h2 class="title" id="increasing__emissions">Emission have been steadily increasing</h2>
           <p>
             Let us take a closer look at the past 30 years where emissions have
             been steadily increasing.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="3">
+        <IntersectionObserver :step="3" align="right">
           <h2 class="title" id="sector__emissions">
             Where do the current emissions come from?</h2>
           <p>
@@ -77,7 +73,7 @@
             energy uses.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="3.1">
+        <IntersectionObserver :step="3.1" align="right">
           <h2 class="p mono" id="electricity">Electricity Sector</h2>
           <p>
             Emissions from electricity generation represent about one third
@@ -87,7 +83,7 @@
             and leads to the construction of more and more coal-fired power plants.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="3.2">
+        <IntersectionObserver :step="3.2" align="right">
           <h2 class="p mono" id="residential">Industry Sector</h2>
           <p>
             Industry is a complex sector that causes emissions either by
@@ -98,7 +94,7 @@
             the past 30 years.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="3.3">
+        <IntersectionObserver :step="3.3" align="right">
           <h2 class="p mono" id="industry">Transport Sector</h2>
           <p>
             Increasing road transport, aviation and shipping all contribute to
@@ -108,7 +104,7 @@
             of transport will be a key future challenge.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="3.4">
+        <IntersectionObserver :step="3.4" align="right">
           <h2 class="p mono" id="other">Building Sector</h2>
           <p>
             The building sector contributes emissions mainly from space heating
@@ -118,7 +114,7 @@
             efficiency and a gradual shift from coal to gas in space heating.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="3.5">
+        <IntersectionObserver :step="3.5" align="right">
           <h2 class="p mono" id="transport">Other Energy</h2>
           <p>
             There are a number of energy-related processes that also cause
@@ -151,8 +147,10 @@
             }"
           >
             <!-- <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" /> -->
-            <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" :hover="hover"/>
+            <transition name="component-fade" mode="out-in">
+              <EnergyCarriers v-if="step >= 4 && step <= 12" :step="step" :width="width" :height="height" :hover="hover"/>
             <!-- <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" /> -->
+            </transition>
           </div>
         </template>
         <div slot="text" class="observer">
@@ -204,8 +202,8 @@
           <h2 class="title" id="china">Germany Energy Production</h2>
           <p>
             Although Germany has fostered and experienced a strong growth in
-            renewables over the past years, its electricity generation is still
-            dependent on coal for power generation and industrial applications.
+            renewables over the past years, it still depends on coal for power
+            generation and industrial applications.
             One of the reasons is that there are few gas power stations
             and nuclear power is phased-out, too. The buildings sector has a
             relatively low share of electricity since space cooling applications
@@ -214,10 +212,11 @@
             are still in their infancy.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="5" align="right" class="height__change">
+        <IntersectionObserver :step="5" class="height__change">
           <h2 class="title" id="country__perspectives">The status quo in different countries</h2>
           <p>
-            Here, you can look at the energy mix across the four sectors in all
+            By using the selector on the left, you can look at the energy mix
+            across the four sectors in all
             countries. Some countries like Norway or Iceland have already
             transitioned to a renewable-based energy sector, while countries
             like Australia are still relatively dependent on coal.
@@ -238,7 +237,7 @@
             hydrogen. <br />Here, we will focus on electrification.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="7">
+        <IntersectionObserver :step="7" align="left">
           <h2 class="title" id="electricity__first">The electricity sector has to go clean first.</h2>
           <p>
             The first step is thus to replace coal and gas in the electricity
@@ -250,7 +249,7 @@
             emissions in these sectors. This is the concept of electrification.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="8">
+        <IntersectionObserver :step="8" align="left">
           <h2 class="title" id="industry__second">Industry Electrification.</h2>
           <p>
             Up to certain temperatures, heating applications in industry can be
@@ -260,7 +259,7 @@
             like the cement or the chemical industry.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="9">
+        <IntersectionObserver :step="9" align="left">
           <h2 class="title" id="transport__third">Electrifying Transports.</h2>
           <p>
             Transport can be electrified by switching to electric cars and trucks
@@ -269,7 +268,7 @@
             to electrify such that there are also limits to full electrification.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="10">
+        <IntersectionObserver :step="10" align="left">
           <h2 class="title" id="building__fourth">Electrifying Buildings.</h2>
           <p>
             Finally, the buildings sector can, in principle, be fully electrified.
@@ -277,7 +276,13 @@
             switched to electric heat pumps.
           </p>
         </IntersectionObserver>
-        <IntersectionObserver :step="11">
+        <IntersectionObserver :step="11" align="left">
+          <h2 class="title" id="electrification">Renewables to remove other carriers</h2>
+          <p>
+            Some text explaining why Industry and Transport have green shares.
+          </p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="12" align="left">
           <h2 class="title" id="electrification">Decarbonization by electrification!</h2>
           <p>
             Transitioning from fossil to renewable electricity and electrifying
@@ -332,9 +337,12 @@
         </IntersectionObserver>
         <IntersectionObserver :step="15" align="right" class="height__change">
           <p>
-            However even a 2.0ºC mitigation strategy, electrification will be easier
-            and faster, concurring, together with other mitigation strategies, in limiting
-            emissions.
+            In a 2°C scenario, the electricity sector rapidly transforms to low-carbon energy.
+            In the buildings, industry and transport sector this low-carbon electricity increasingly
+            replaces fossil fuels. In addition to electrification, energy efficiency gains as well
+            as the use of biofuels and hydrogen contribute to decarbonization.
+            Some CO2 emissions remain in each of the sectors as this scenario assumes that negative
+            emission technologies can be used to reach net-zero CO2 around 2070.
           </p>
         </IntersectionObserver>
       </div>
@@ -539,5 +547,13 @@ p {
 .coming-soon:hover {
   color: gray;
   text-underline: none;
+}
+
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

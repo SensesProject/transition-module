@@ -226,7 +226,7 @@ export default {
         { key: 'Electricity', color: '#611731', active: 3.1 },
         { key: 'Industry', color: '#dd5f84', active: 3.2 },
         { key: 'Transports', color: '#ed96ab', active: 3.3 },
-        { key: 'Building', color: '#f8cbd4', active: 3.4 },
+        { key: 'Building and Land', color: '#f8cbd4', active: 3.4 },
         { key: 'OtherEnergy', color: '#cacaca', active: 3.5 }
       ]
     },
@@ -235,6 +235,7 @@ export default {
       const stacked = d3.stack().keys(this.applications.map(d => d.key))(
         EmissionData
       )
+      console.log(stacked)
       return stacked.map((d, i) => ({
         d: this.areaGenerator(d),
         color: this.applications[i].color,
