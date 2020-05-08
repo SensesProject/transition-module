@@ -19,22 +19,17 @@
       :height="innerHeight"
       :step="step"
       :transform="'translate('+ (graphWidth / 5.5) + ',' + (innerHeight / 12) + ')'"
-      v-if="step >= 8"
+      v-if="step >= 4.3"
       />
       <g :transform="'translate('+ (graphWidth / 4) + ',0)'">
       <g>
-        <text
-        fill="#4e40b2"
-        x="0"
-        :y="graphHeight + 10"
-        >← Select a carrier!</text>
         <text
         :transform="'rotate(45,' + energy.posX + ',' + (graphHeight - margin.bottom) + ')'"
         v-for="(energy, i) in createRect[0].rects"
         class="fuel-labels"
         :class="[
         clicked === false ? 'on' : '',
-        isActive === energy.labels ? 'on' : 'off',
+        isActive === energy.labels ? ['on', energy.klass] : ['off', energy.klass],
         energy.activeCarriers
         ]"
         v-bind:key="'labels' + i"
@@ -60,13 +55,12 @@
         </tspan>
       </text>
       </g>
-        <g v-for="(sector, i) in createRect" v-bind:key="`${sector}${i}-group`" :id="sector.sector">
+        <g v-for="(sector, i) in createRect" v-bind:key="`${sector}${i}-group`" :id="sector.sector" :class="visible[i]">
           <rect
             class="fuel_rect"
-            :class='
-            isActive === rect.labels ?
-            [sector.sector, rect.labels, "is-fill"] :
-            [sector.sector, rect.labels, "is-empty"]'
+            :class='isActive !== rect.labels && clicked ?
+            [sector.sector, rect.klass, "is-empty", visibleCarrier[i]] :
+            [sector.sector, rect.klass, "is-fill", visibleCarrier[i]]'
             v-for="(rect, i) in sector.rects"
             v-bind:key="`${i}-${rect.labels}`"
             :id="rect.labels"
@@ -74,12 +68,12 @@
             :y="sector.sectorHeight"
             :width="rect.rectWidth"
             :height="sector.rectHeight"
-            :fill='rect.fill'
           />
         </g>
         <text
+        :class="visible[i]"
         class="sector-labels"
-        v-for="(sector) in createRect"
+        v-for="(sector, i) in createRect"
         v-bind:key="sector.sector"
         x='0'
         :y='sector.sectorHeight - 5'
@@ -97,7 +91,7 @@ import * as d3 from 'd3'
 import _ from 'lodash'
 
 // data
-import CarriersReport from '../assets/data/world_regional_report.json'
+import CarriersReport from '../assets/data/World-region-report.json'
 import ElectrificationSteps from '../assets/data/electrification-steps.json'
 
 // Components
@@ -169,6 +163,32 @@ export default {
         sectors: ['Industry', 'Transport', 'Building', 'Electricity']
       }
     },
+    visible () {
+      let visible = []
+      if (this.step >= 3) { visible = ['visible', 'visible', 'visible', 'none'] }
+      if (this.step >= 4.3) { visible = ['visible', 'visible', 'visible', 'visible'] }
+      return visible
+    },
+    visibleCarrier () {
+      let carriers = []
+      if (this.step >= 3) { carriers = ['zero', 'zero', 'zero', 'zero', 'zero', 'zero', 'zero', 'zero'] }
+      if (this.step >= 4) { carriers = ['zero', 'zero', 'zero', 'zero', 'done', 'done', 'done', 'done'] }
+      if (this.step >= 4.1) { carriers = ['zero', 'zero', 'done', 'done', 'done', 'off', 'off', 'off'] }
+      if (this.step >= 4.2) { carriers = ['done', 'off', 'off', 'off', 'off', 'off', 'off', 'off'] }
+      if (this.step >= 4.3) { carriers = ['done', 'done', 'done', 'done', 'done', 'done', 'done', 'done'] }
+      if (this.step >= 5) { carriers = [] }
+      return carriers
+    },
+    stepSelection () {
+      let selected = this.selected
+      if (this.step === 5 || this.step === 4) { selected = this.selected }
+      if (this.step === 6) { selected = 'World' }
+      if (this.step === 7) { selected = 'World-step1' }
+      if (this.step === 8) { selected = 'World-step2' }
+      if (this.step === 9) { selected = 'World-step3' }
+      if (this.step >= 10) { selected = 'World-step4' }
+      return selected
+    },
     dataNest () {
       const {
         carriers,
@@ -201,19 +221,6 @@ export default {
         return _.orderBy(allRegions, [key], ['desc'])
       })
       return allRegions
-    },
-    stepSelection () {
-      let selected = this.selected
-      if (this.step === 4.1) { selected = 'China (PRC)' }
-      if (this.step === 4.2) { selected = 'USA' }
-      if (this.step === 4.3) { selected = 'Germany' }
-      if (this.step === 5 || this.step === 4) { selected = this.selected }
-      if (this.step === 6) { selected = 'World' }
-      if (this.step === 7) { selected = 'World-step1' }
-      if (this.step === 8) { selected = 'World-step2' }
-      if (this.step === 9) { selected = 'World-step3' }
-      if (this.step >= 10) { selected = 'World-step4' }
-      return selected
     },
     dataFilter () {
       const groupsbyregion = this.dataNest
@@ -302,46 +309,6 @@ export default {
       })
       return dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
     },
-    selectedRects () {
-      if(this.isActive === 'initial') return false
-
-      const selectedRects = this.createRect.map(sector => {
-        const selectedRect = sector.rects.find(s => s.labels === this.isActive)
-
-        return {
-          y1: sector.sectorHeight,
-          y2: sector.sectorHeight + sector.rectHeight,
-          x1: selectedRect.carrierValue ? selectedRect.dist : 0,
-          x2: selectedRect.carrierValue ? selectedRect.dist + selectedRect.rectWidth : 0
-        }
-      })
-      return selectedRects
-    },
-    // selectedRectsPath () {
-    //   if(!this.selectedRects) return ''
-    //   const data = this.selectedRects
-    //
-    //   var path = d3.path()
-    //   path.moveTo(data[0].x2, data[0].y1)
-    //   path.lineTo(data[0].x2, data[0].y2)
-    //   path.lineTo(data[1].x2, data[1].y1)
-    //   path.lineTo(data[1].x2, data[1].y2)
-    //   path.lineTo(data[2].x2, data[2].y1)
-    //   path.lineTo(data[2].x2, data[2].y2)
-    //   path.lineTo(data[3].x2, data[3].y1)
-    //   path.lineTo(data[3].x2, data[3].y2)
-    //   path.lineTo(data[3].x1, data[3].y2)
-    //   path.lineTo(data[3].x1, data[3].y1)
-    //   path.lineTo(data[2].x1, data[2].y2)
-    //   path.lineTo(data[2].x1, data[2].y1)
-    //   path.lineTo(data[1].x1, data[1].y2)
-    //   path.lineTo(data[1].x1, data[1].y1)
-    //   path.lineTo(data[0].x1, data[0].y2)
-    //   path.lineTo(data[0].x1, data[0].y1)
-    //   // path.closePath();
-    //   const pathString = path.toString()
-    //   return pathString
-    // },
     createRect () {
       const selectedRegion = this.dataFilter
       const scale = this.scaleX
@@ -367,26 +334,19 @@ export default {
           totalDist = totalDist + scale[key](item)
           // for labels horizontal position
           let initialPos = distance
-          distance = distance + (barWidth / 10.5)
+          distance = distance + (barWidth / 7.5)
           return {
+            klass: i === 'Wind/Hydro/Solar' | i === 'Wind/Solar/Hydro' ? 'WindSolHy' : i,
             labels: i,
             dist: initialDist,
             rectWidth: scale[key](item),
             carrierValue: item,
-            posX: initialPos,
-            fill:
-              this.hover[0] === i ? this.hover[1] : 'white' &&
-              this.step === 6 && i === 'Wind/Solar/Hydro' ? '#a2e7c0' : 'white' &&
-              this.step >= 7 && key === 'Electricity' ? '#a2e7c0' : 'white' &&
-              this.step >= 8 && key === 'Industry' && i === 'Electricity' ? '#ffd89a' : 'white' &&
-              this.step >= 9 && key === 'Transport' && i === 'Electricity' ? '#ffd89a' : 'white' &&
-              this.step >= 10 && key === 'Building' && i === 'Electricity' ? '#ffd89a' : 'white' &&
-              this.step >= 11 && i === 'Biomass' | i === 'Wind/Solar/Hydro' ? '#a2e7c0' : 'white'
+            posX: initialPos
           }
         })
         return {
           rects,
-          sector: key,
+          sector: key === 'Electricity' ? ' Electricity Supply' : key,
           sectorHeight: initialHeight,
           rectHeight: yValue
         }
@@ -427,20 +387,72 @@ export default {
   height: 90%;
 }
 
+g {
+  #sector {
+  transition: transform 1s;
+  }
+
+  .zero {
+    fill-opacity: 0;
+    transition: fill-opacity 0.5s;
+  }
+
+  .off {
+    fill-opacity: 0.4;
+    transition: fill-opacity 0.5s;
+  }
+
+  .done, .on {
+    fill-opacity: 1;
+    transition: fill-opacity 0.5s;
+  }
+
+}
+
 .fuel_rect {
-  stroke: $color-gray;
+  stroke: black;
+  stroke-width: 0.5;
+}
+
+.is-empty {
+  fill-opacity: 0.4;
+  transition: fill-opacity 0.5s;
+}
+
+.Electricity {
+  fill: getColor(yellow, 80);
+}
+
+.Other {
+  fill: white;
+}
+
+.WindSolHy {
+  fill: #acc3ac;
+}
+
+.Biomass {
+  fill: #618879;
+}
+
+.Nuclear {
+  fill: #0c514a;
+}
+
+.Gas {
+  fill: $color-light-gray;
+}
+
+.Oil {
+  fill: #75757a;
+}
+
+.Coal {
+  fill: #4a4a4a;
 }
 
 .graph-title {
   margin-bottom: 20px;
-}
-
-.selectedRectsPath {
-  fill: none;
-  stroke: $color-neon;
-  stroke-width: 1px;
-  stroke-dasharray: 3 2;
-  z-index: 1000;
 }
 
 .fuel-labels {
@@ -471,19 +483,11 @@ export default {
 
 #select-label {
   margin-top: 15px;
+  font-family: $font-serif;
 }
 
 #emissions-label {
   margin-top: 15px;
-}
-
-.is-fill {
-  stroke: $color-neon;
-  fill: #ddd6ff;
-}
-
-#select-label {
-  font-family: $font-serif;
 }
 
 .is-inactive {
@@ -498,21 +502,6 @@ export default {
   text-anchor: start;
 }
 
-g {
-  #sector {
-  transition: transform 1s;
-  }
-
-.off {
-  fill-opacity: 0.4;
-}
-
-.on {
-  fill-opacity: 1;
-}
-
-}
-
 .invisible_carriers {
   visibility: hidden;
   transition: visibility 0.5s;
@@ -523,7 +512,24 @@ rect {
 }
 
 text {
+
+  &.Other {
+    fill: black;
+  }
+  &.Electricity {
+    fill: darken($color-yellow, 10);
+  }
   transition: y 0.5s;
+}
+
+.none {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 </style>

@@ -145,7 +145,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 460378,
     "Year": 1990
   },
@@ -420,7 +420,7 @@
     "Year": 1991
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 453316,
     "Year": 1991
@@ -697,7 +697,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 442377,
     "Year": 1992
   },
@@ -972,7 +972,7 @@
     "Year": 1993
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 419455,
     "Year": 1993
@@ -1249,7 +1249,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 417803,
     "Year": 1994
   },
@@ -1524,7 +1524,7 @@
     "Year": 1995
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 424955,
     "Year": 1995
@@ -1801,7 +1801,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 396854,
     "Year": 1996
   },
@@ -2076,7 +2076,7 @@
     "Year": 1997
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 417042,
     "Year": 1997
@@ -2353,7 +2353,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 400711,
     "Year": 1998
   },
@@ -2628,7 +2628,7 @@
     "Year": 1999
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 388016,
     "Year": 1999
@@ -2905,7 +2905,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 365859,
     "Year": 2000
   },
@@ -3180,7 +3180,7 @@
     "Year": 2001
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 362501,
     "Year": 2001
@@ -3457,7 +3457,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 362068,
     "Year": 2002
   },
@@ -3732,7 +3732,7 @@
     "Year": 2003
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 367487,
     "Year": 2003
@@ -4009,7 +4009,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 402536,
     "Year": 2004
   },
@@ -4284,7 +4284,7 @@
     "Year": 2005
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 420947,
     "Year": 2005
@@ -4561,7 +4561,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 420480,
     "Year": 2006
   },
@@ -4836,7 +4836,7 @@
     "Year": 2007
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 417377,
     "Year": 2007
@@ -5113,7 +5113,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 416095,
     "Year": 2008
   },
@@ -5388,7 +5388,7 @@
     "Year": 2009
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 410385,
     "Year": 2009
@@ -5665,7 +5665,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 424592,
     "Year": 2010
   },
@@ -5940,7 +5940,7 @@
     "Year": 2011
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 430988,
     "Year": 2011
@@ -6217,7 +6217,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 430746,
     "Year": 2012
   },
@@ -6492,7 +6492,7 @@
     "Year": 2013
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 445549,
     "Year": 2013
@@ -6769,7 +6769,7 @@
   },
   {
     "Application": "Agriculture",
-    "Sector": "Building and Land and Land (Residential and Commercial)",
+    "Sector": "Industry",
     "Value": 447330,
     "Year": 2014
   },
@@ -7044,7 +7044,7 @@
     "Year": 2015
   },
   {
-    "Application": "Agriculture",
+    "Application": "Building",
     "Sector": "Building and Land and Land (Residential and Commercial)",
     "Value": 454170,
     "Year": 2015

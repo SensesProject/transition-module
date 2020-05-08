@@ -16,11 +16,11 @@
     class="continents"
     id="active"
     :width="energyDetails.country"
-    :height="energyDetails.country"
+    :height="height / 6"
     x="2"
     y="60"
     />
-    <g :transform="`translate(${this.width / 2}, ${this.width - (this.width / 4)})`">
+    <g :transform="`translate(${this.width / 2}, ${this.width - (this.width / 3)})`">
     <text text-anchor="middle" x="0" :y="0" fill="black">
       {{ data.select }} energy use
     </text>
@@ -34,7 +34,7 @@
     <rect
     class="world"
     :width="this.width"
-    :height="this.width"
+    :height="height / 6"
     x="2"
     y="60"
     />
