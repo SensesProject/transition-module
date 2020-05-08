@@ -212,12 +212,12 @@ export default {
         { key: 'Solvents', color: '#dd5f84', active: 3.2 },
         { key: 'Other Processes', color: '#dd5f84', active: 3.2 },
         { key: 'Industrial Waste', color: '#dd5f84', active: 3.2 },
+        { key: 'Agriculture', color: '#dd5f84', active: 3.2 },
         { key: 'Aviation', color: '#ed96ab', active: 3.3 },
         { key: 'Road', color: '#ed96ab', active: 3.3 },
         { key: 'Other', color: '#ed96ab', active: 3.3 },
         { key: 'Shipping', color: '#ed96ab', active: 3.3 },
         { key: 'Commercial / Residential', color: '#f8cbd4', active: 3.4 },
-        { key: 'Agriculture', color: '#f8cbd4', active: 3.4 },
         { key: 'OtherEn', color: '#cacaca', active: 3.5 }
       ]
     },
@@ -226,7 +226,7 @@ export default {
         { key: 'Electricity', color: '#611731', active: 3.1 },
         { key: 'Industry', color: '#dd5f84', active: 3.2 },
         { key: 'Transports', color: '#ed96ab', active: 3.3 },
-        { key: 'Building and Land', color: '#f8cbd4', active: 3.4 },
+        { key: 'Building', color: '#f8cbd4', active: 3.4 },
         { key: 'OtherEnergy', color: '#cacaca', active: 3.5 }
       ]
     },

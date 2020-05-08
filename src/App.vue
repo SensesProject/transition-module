@@ -30,8 +30,6 @@
           }"
         >
           <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" />
-          <!-- <EnergyCarriers v-if="step >= 4 && step <= 11" :step="step" :width="width" :height="height" :hover="hover"/>
-          <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" /> -->
         </div>
       </template>
       <div slot="text" class="observer">
@@ -50,7 +48,7 @@
             The time schedule for the energy transition is tight!
             The Paris Agreement demands stabilizing global warming at 1.5°C to
             2°C above preindustrial levels. Limiting global warming to 2°C
-            levels will require net-zero CO2 emissions by 2070.
+            levels will require net-zero CO2 emissions by 2075.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.2" align="right">
@@ -146,45 +144,44 @@
               height: `${height}px`
             }"
           >
-            <!-- <EmissionsChart v-if="step <= 3.5" :step="step" :width="width" :height="height" /> -->
             <transition name="component-fade" mode="out-in">
-              <EnergyCarriers v-if="step >= 4 && step <= 12" :step="step" :width="width" :height="height" :hover="hover"/>
-            <!-- <ElecTrends v-if="step >= 12 && step <= 13" :step="step" :width="width" :height="height" /> -->
+              <EnergyCarriers v-if="step >= 3 && step <= 12" :step="step" :width="width" :height="height"/>
             </transition>
           </div>
         </template>
         <div slot="text" class="observer">
+          <IntersectionObserver :step="3" align="left">
+            <h2 class="title" id="china">Previous</h2>
+            <p>some text
+            </p>
+          </IntersectionObserver>
         <IntersectionObserver :step="4" align="left">
           <p>
             All four sectors currently
             rely to a large extent on fossil fuels in the form of
             <span class="highlight"
-            id="coal"
-            @mouseover="hover = ['coal', '#8a8a93']"
-            @mouseleave="hover = 'empty'"
-            >coal</span>,
-            <span class="highlight" id="gas"
-            @mouseover="hover = ['gas', '#ed96ab']"
-            @mouseleave="hover = 'empty'"
-            >gas</span> and
-            <span class="highlight" id="oil"
-            @mouseover="hover = ['oil', '#fcb69f']"
-            @mouseleave="hover = 'empty'">
-            oil</span>.
+            id="coal">coal</span>,
+            <span class="highlight" id="gas">gas</span> and
+            <span class="highlight" id="oil">oil</span>.
             However, there are significant differences between the energy
             systems of different countries.
             Let us take a closer look at a few examples.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.1" align="left">
-          <h2 class="title" id="china">China Energy Production</h2>
+          <h2 class="title" id="others">Introducing others</h2>
           <p>
-          China is the largest coal consumer in the world. As a rapidly growing
-          economy, coal is used to meet increasing demand of electricity
-          and industrial heat. Wind and solar power still make up a relatively
-          small share of electricity generation but grow strongly and may
-          replace coal in the future. As an economy in transition,
-          there is still some traditional biomass used for residential heating.
+            Something on:
+            <span class="highlight"
+            id="nuclear"
+            >nuclear</span>,
+            <span class="highlight" id="biomass"
+            >biomass</span> and
+            <span class="highlight" id="WindSolHy">
+            other renewables</span>.
+            However, there are significant differences between the energy
+            systems of different countries.
+            Let us take a closer look at a few examples.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.2" align="left">
@@ -387,11 +384,6 @@ export default {
     ElecTrends,
     SensesMenu,
     SensesMeta
-  },
-  data () {
-    return {
-      hover: 'empty'
-    }
   }
 }
 </script>
@@ -464,11 +456,6 @@ h2 {
   pointer-events: none;
 }
 
-p {
-  text-align: left;
-  font-weight: lighter;
-}
-
 .vis-inner {
   margin-top: -$spacing * 2;
   color: getColor(gray, 10) !important;
@@ -480,39 +467,50 @@ p {
   max-width: 300px;
 }
 
-#emissions {
-  background: getColor(red, 100);
-  color: $color-red;
-}
+p {
+  text-align: left;
+  font-weight: lighter;
 
-#oil {
-  background: getColor(orange, 100);
-  color: $color-orange;
-}
+  #emissions {
+    background: getColor(red, 100);
+    color: $color-red;
+  }
 
-#coal {
-  background: $color-light-gray;
-  color: $color-black;
-}
+  #oil {
+    background: #673e48;
+    color: lighten(#673e48, 50);
+  }
 
-#gas {
-  background: getColor(red, 80);
-  color: getColor(red, 40);
-}
+  #coal {
+    background: $color-light-gray;
+    color: $color-black;
+  }
 
-#renewables {
-  background: getColor(green, 80);
-  color: getColor(green, 40);
-}
+  #gas {
+    background: #7a636c;
+    color: lighten(#673e48, 50);
+  }
 
-#elect {
-  background: getColor(yellow, 80);
-  color: getColor(yellow, 40);
-}
+  #elect {
+    background: getColor(yellow, 80);
+    color: getColor(yellow, 40);
+  }
 
-#ff {
-  background: lighten(#1A1100, 35);
-  color: #1A1100;
+  #biomass {
+    background: #6197a8;
+    color: lighten(#6197a8, 40);
+  }
+
+  #nuclear {
+    background: #3553a7;
+    color: lighten(#3553a7, 40);
+  }
+
+  #WindSolHy {
+    background: #76dea5;
+    color: lighten(#76dea5, 40);
+  }
+
 }
 
 .back {
