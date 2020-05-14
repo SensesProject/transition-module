@@ -92,6 +92,10 @@
     "Continent": "South America"
   },
   {
+    "Region": "Bonaire",
+    "Continent": "South America"
+  },
+  {
     "Region": "Botswana",
     "Continent": "Africa"
   },
@@ -100,7 +104,7 @@
     "Continent": "South America"
   },
   {
-    "Region": "British Virgin Islands",
+    "Region": "Virgin Islands, British",
     "Continent": "North America"
   },
   {
@@ -156,15 +160,15 @@
     "Continent": "South America"
   },
   {
-    "Region": "China (PRC)",
+    "Region": "China",
     "Continent": "Asia"
   },
   {
-    "Region": "China Hong Kong SAR",
+    "Region": "Hong Kong",
     "Continent": "Asia"
   },
   {
-    "Region": "China Macao SAR",
+    "Region": "Macao",
     "Continent": "Asia"
   },
   {
@@ -184,6 +188,10 @@
     "Continent": "Africa"
   },
   {
+    "Region": "Cook Islands",
+    "Continent": "Oceania"
+  },
+  {
     "Region": "Congo DR",
     "Continent": "Africa"
   },
@@ -192,7 +200,7 @@
     "Continent": "North America"
   },
   {
-    "Region": "Ivory Coast",
+    "Region": "Cote d Ivoire",
     "Continent": "Africa"
   },
   {
@@ -272,6 +280,10 @@
     "Continent": "Oceania"
   },
   {
+    "Region": "Falkland Islands (Malvinas)",
+    "Continent": "South America"
+  },
+  {
     "Region": "Finland",
     "Continent": "Europe"
   },
@@ -280,11 +292,15 @@
     "Continent": "Europe"
   },
   {
+    "Region": "French Guiana",
+    "Continent": "South America"
+  },
+  {
     "Region": "French Polynesia",
     "Continent": "Oceania"
   },
   {
-    "Region": "FYR of Macedonia",
+    "Region": "Macedonia (FYR)",
     "Continent": "Europe"
   },
   {
@@ -314,6 +330,10 @@
   {
     "Region": "Grenada",
     "Continent": "North America"
+  },
+  {
+    "Region": "Guadeloupe",
+    "Continent": "South America"
   },
   {
     "Region": "Guatemala",
@@ -472,6 +492,14 @@
     "Continent": "Europe"
   },
   {
+    "Region": "Malta",
+    "Continent": "Europe"
+  },
+  {
+    "Region": "Martinique",
+    "Continent": "South America"
+  },
+  {
     "Region": "Mauritania",
     "Continent": "Africa"
   },
@@ -494,6 +522,10 @@
   {
     "Region": "Montenegro",
     "Continent": "Europe"
+  },
+  {
+    "Region": "Montserrat",
+    "Continent": "South America"
   },
   {
     "Region": "Morocco",
@@ -588,11 +620,15 @@
     "Continent": "Asia"
   },
   {
+    "Region": "Reunion",
+    "Continent": "Africa"
+  },
+  {
     "Region": "Romania",
     "Continent": "Europe"
   },
   {
-    "Region": "Russia",
+    "Region": "Russian Federation",
     "Continent": "Asia"
   },
   {
@@ -618,6 +654,10 @@
   {
     "Region": "Samoa (Western)",
     "Continent": "Oceania"
+  },
+  {
+    "Region": "Saint Pierre and Miquelon",
+    "Continent": "North America"
   },
   {
     "Region": "Sao Tome and Principe",
@@ -660,7 +700,7 @@
     "Continent": "North America"
   },
   {
-    "Region": "Slovak Rep",
+    "Region": "Slovakia",
     "Continent": "Europe"
   },
   {
@@ -712,6 +752,10 @@
     "Continent": "Asia"
   },
   {
+    "Region": "Taiwan",
+    "Continent": "Asia"
+  },
+  {
     "Region": "Tanzania",
     "Continent": "Africa"
   },
@@ -721,6 +765,10 @@
   },
   {
     "Region": "Thailand",
+    "Continent": "Asia"
+  },
+  {
+    "Region": "Timor-Leste",
     "Continent": "Asia"
   },
   {

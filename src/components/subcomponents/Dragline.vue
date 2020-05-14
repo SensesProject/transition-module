@@ -12,10 +12,10 @@
     <g v-for="(label, l) of labels" v-bind:key="l + 'label'" :transform="`translate(${x}, 0)`">
       <polyline class="label_line" :points="`0 ${label.y} 4 ${label.y} 8 ${label.y2} 25 ${label.y2}`"/>
       <text :transform="`translate(0, ${label.y2})`" x='30' class="shadow">
-        <tspan font-weight="bold">{{ Math.round(label.value / 1000) + ' Mt/year' }}</tspan> - {{ label.label }}
+        <tspan font-weight="bold">{{ Math.round(label.value) + ' Mt/year' }}</tspan> - {{ label.label }}
       </text>
       <text :transform="`translate(0, ${label.y2})`" x='30'>
-        <tspan font-weight="bold">{{ Math.round(label.value / 1000) + ' Mt/year' }}</tspan> - {{ label.label }}
+        <tspan font-weight="bold">{{ Math.round(label.value) + ' Mt/year' }}</tspan> - {{ label.label }}
       </text>
     </g>
     <g v-for="sector of sectors" :key="sector.key" :transform="'translate(' + x + ',' + sector.y + ')'">
@@ -51,7 +51,7 @@ export default {
           data,
           value: Math.round(value),
           year: this.year,
-          y: this.scales.y((data[1] / 1000000 + data[0] / 1000000) / 2)
+          y: this.scales.y((data[1] / 1000 + data[0] / 1000) / 2)
         }
       })
     },

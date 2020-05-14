@@ -1,0 +1,1622 @@
+[
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 5175.08,
+    "Year": 1990
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3660.793,
+    "Year": 1990
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4649.158,
+    "Year": 1990
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1250.221,
+    "Year": 1990
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 48.9935,
+    "Year": 1990
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 29.0188,
+    "Year": 1990
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3121.214,
+    "Year": 1990
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 3668.786,
+    "Year": 1990
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 512.4116,
+    "Year": 1990
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 555.5639,
+    "Year": 1990
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 5250.247,
+    "Year": 1991
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3670.111,
+    "Year": 1991
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4496.696,
+    "Year": 1991
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1235.878,
+    "Year": 1991
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 47.7914,
+    "Year": 1991
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 32.2612,
+    "Year": 1991
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3163.393,
+    "Year": 1991
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 3698.651,
+    "Year": 1991
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 495.9844,
+    "Year": 1991
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 592.3914,
+    "Year": 1991
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 5403.652,
+    "Year": 1992
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3570.326,
+    "Year": 1992
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4233.484,
+    "Year": 1992
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1271.624,
+    "Year": 1992
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 53.3535,
+    "Year": 1992
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 36.9746,
+    "Year": 1992
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3062.689,
+    "Year": 1992
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 3772.426,
+    "Year": 1992
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 501.9965,
+    "Year": 1992
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 614.8431,
+    "Year": 1992
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 5566.615,
+    "Year": 1993
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3608.088,
+    "Year": 1993
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4136.178,
+    "Year": 1993
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1286.898,
+    "Year": 1993
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 51.3817,
+    "Year": 1993
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 40.8765,
+    "Year": 1993
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3039.312,
+    "Year": 1993
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 3819.179,
+    "Year": 1993
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 507.3848,
+    "Year": 1993
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 639.4492,
+    "Year": 1993
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 5703.511,
+    "Year": 1994
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3647.866,
+    "Year": 1994
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4077.998,
+    "Year": 1994
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1335.255,
+    "Year": 1994
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 50.6977,
+    "Year": 1994
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 45.8772,
+    "Year": 1994
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 2926.371,
+    "Year": 1994
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 3880.622,
+    "Year": 1994
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 531.0682,
+    "Year": 1994
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 667.1272,
+    "Year": 1994
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 5885.602,
+    "Year": 1995
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3666.491,
+    "Year": 1995
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4085.191,
+    "Year": 1995
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1445.516,
+    "Year": 1995
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 43.0513,
+    "Year": 1995
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 50.7058,
+    "Year": 1995
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 2982.564,
+    "Year": 1995
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 3979.544,
+    "Year": 1995
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 544.6661,
+    "Year": 1995
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 686.2588,
+    "Year": 1995
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 6150.502,
+    "Year": 1996
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3795.091,
+    "Year": 1996
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 3985.649,
+    "Year": 1996
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1392.855,
+    "Year": 1996
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 43.6634,
+    "Year": 1996
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 55.8502,
+    "Year": 1996
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3012.958,
+    "Year": 1996
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4179.808,
+    "Year": 1996
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 570.0828,
+    "Year": 1996
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 674.1409,
+    "Year": 1996
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 6318.132,
+    "Year": 1997
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3742.408,
+    "Year": 1997
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 3963.553,
+    "Year": 1997
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1427.83,
+    "Year": 1997
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 42.7061,
+    "Year": 1997
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 60.485,
+    "Year": 1997
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3000.402,
+    "Year": 1997
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4207.945,
+    "Year": 1997
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 592.4433,
+    "Year": 1997
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 736.2688,
+    "Year": 1997
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 6553.811,
+    "Year": 1998
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3654.725,
+    "Year": 1998
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 3925.04,
+    "Year": 1998
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1422.31,
+    "Year": 1998
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 42.03,
+    "Year": 1998
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 64.4092,
+    "Year": 1998
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 2851.179,
+    "Year": 1998
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4297.797,
+    "Year": 1998
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 606.0003,
+    "Year": 1998
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 733.0845,
+    "Year": 1998
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 6583.018,
+    "Year": 1999
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3760.655,
+    "Year": 1999
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 3797.024,
+    "Year": 1999
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1465.371,
+    "Year": 1999
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 42.2059,
+    "Year": 1999
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 69.6507,
+    "Year": 1999
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 2895.555,
+    "Year": 1999
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4426.776,
+    "Year": 1999
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 628.1907,
+    "Year": 1999
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 741.6366,
+    "Year": 1999
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 6948.382,
+    "Year": 2000
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3754.412,
+    "Year": 2000
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4000.352,
+    "Year": 2000
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1515.062,
+    "Year": 2000
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 42.8038,
+    "Year": 2000
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 75.2353,
+    "Year": 2000
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 2912.932,
+    "Year": 2000
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4541.83,
+    "Year": 2000
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 655.699,
+    "Year": 2000
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 812.9321,
+    "Year": 2000
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 7084.783,
+    "Year": 2001
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3725.035,
+    "Year": 2001
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 3970.003,
+    "Year": 2001
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1543.919,
+    "Year": 2001
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 43.5117,
+    "Year": 2001
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 78.3285,
+    "Year": 2001
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 2958.539,
+    "Year": 2001
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4619.393,
+    "Year": 2001
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 640.5488,
+    "Year": 2001
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 829.811,
+    "Year": 2001
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 7370.231,
+    "Year": 2002
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 3765.324,
+    "Year": 2002
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 3968.59,
+    "Year": 2002
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1621.29,
+    "Year": 2002
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 43.392,
+    "Year": 2002
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 81.7712,
+    "Year": 2002
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 2951.48,
+    "Year": 2002
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4725.127,
+    "Year": 2002
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 646.1824,
+    "Year": 2002
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 836.6588,
+    "Year": 2002
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 7759.044,
+    "Year": 2003
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4024.497,
+    "Year": 2003
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4152.693,
+    "Year": 2003
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1742.95,
+    "Year": 2003
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 44.1376,
+    "Year": 2003
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 85.3673,
+    "Year": 2003
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3037.506,
+    "Year": 2003
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4844.985,
+    "Year": 2003
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 643.9734,
+    "Year": 2003
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 872.2183,
+    "Year": 2003
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 8175.423,
+    "Year": 2004
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4122.744,
+    "Year": 2004
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4529.56,
+    "Year": 2004
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1875.351,
+    "Year": 2004
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 44.9589,
+    "Year": 2004
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 88.9789,
+    "Year": 2004
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3117.049,
+    "Year": 2004
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5047.959,
+    "Year": 2004
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 684.2001,
+    "Year": 2004
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 942.7917,
+    "Year": 2004
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 7759.044,
+    "Year": 2003
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4024.497,
+    "Year": 2003
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4152.693,
+    "Year": 2003
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1742.95,
+    "Year": 2003
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 44.1376,
+    "Year": 2003
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 85.3673,
+    "Year": 2003
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3037.506,
+    "Year": 2003
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 4844.985,
+    "Year": 2003
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 643.9734,
+    "Year": 2003
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 872.2183,
+    "Year": 2003
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 8546.772,
+    "Year": 2005
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4225.819,
+    "Year": 2005
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4706.109,
+    "Year": 2005
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 1980.453,
+    "Year": 2005
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 45.5841,
+    "Year": 2005
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 92.8197,
+    "Year": 2005
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3144.221,
+    "Year": 2005
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5198.541,
+    "Year": 2005
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 708.8516,
+    "Year": 2005
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1008.994,
+    "Year": 2005
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 8904.125,
+    "Year": 2006
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4261.357,
+    "Year": 2006
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 4937.342,
+    "Year": 2006
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 2142.423,
+    "Year": 2006
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 46.2228,
+    "Year": 2006
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 96.5406,
+    "Year": 2006
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3120.192,
+    "Year": 2006
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5307.999,
+    "Year": 2006
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 714.7757,
+    "Year": 2006
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1096.957,
+    "Year": 2006
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 9431.971,
+    "Year": 2007
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4351.367,
+    "Year": 2007
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 5100.722,
+    "Year": 2007
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 2286.431,
+    "Year": 2007
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 46.7847,
+    "Year": 2007
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 100.5512,
+    "Year": 2007
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3119.753,
+    "Year": 2007
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5478.351,
+    "Year": 2007
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 731.2315,
+    "Year": 2007
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1164.439,
+    "Year": 2007
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 9414.516,
+    "Year": 2008
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4332.882,
+    "Year": 2008
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 5170.223,
+    "Year": 2008
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 2316.656,
+    "Year": 2008
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 47.6003,
+    "Year": 2008
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 103.8347,
+    "Year": 2008
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3172.837,
+    "Year": 2008
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5488.849,
+    "Year": 2008
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 719.655,
+    "Year": 2008
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1235.07,
+    "Year": 2008
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 9377.18,
+    "Year": 2009
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4192.98,
+    "Year": 2009
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 5045.907,
+    "Year": 2009
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 2379.948,
+    "Year": 2009
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 48.0229,
+    "Year": 2009
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 107.5684,
+    "Year": 2009
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3143.502,
+    "Year": 2009
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5446.12,
+    "Year": 2009
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 678.079,
+    "Year": 2009
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 3143.502,
+    "Year": 2009
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 9846.924,
+    "Year": 2010
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4423.476,
+    "Year": 2010
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 5359.286,
+    "Year": 2010
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 2534.54,
+    "Year": 2010
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 48.5547,
+    "Year": 2010
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 111.7325,
+    "Year": 2010
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3222.179,
+    "Year": 2010
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5646.186,
+    "Year": 2010
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 708.888,
+    "Year": 2010
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 988.633,
+    "Year": 2010
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 10270.43,
+    "Year": 2011
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4508.096,
+    "Year": 2011
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 5520.029,
+    "Year": 2011
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 2711.073,
+    "Year": 2011
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 48.9875,
+    "Year": 2011
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 115.7578,
+    "Year": 2011
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3185.978,
+    "Year": 2011
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5736.022,
+    "Year": 2011
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 729.1174,
+    "Year": 2011
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 1092.503,
+    "Year": 2011
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 10421.28,
+    "Year": 2012
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4630.496,
+    "Year": 2012
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 5615.198,
+    "Year": 2012
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 2823.892,
+    "Year": 2012
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 49.3531,
+    "Year": 2012
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 120.2185,
+    "Year": 2012
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3171.769,
+    "Year": 2012
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5856.595,
+    "Year": 2012
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 737.4892,
+    "Year": 2012
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 970.5793,
+    "Year": 2012
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 10713.18,
+    "Year": 2013
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4788.245,
+    "Year": 2013
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 5848.835,
+    "Year": 2013
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 2955.103,
+    "Year": 2013
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 49.7643,
+    "Year": 2013
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 124.0037,
+    "Year": 2013
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3259.394,
+    "Year": 2013
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5940.291,
+    "Year": 2013
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 745.8865,
+    "Year": 2013
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 971.6417,
+    "Year": 2013
+  },
+  {
+    "Application": "Electricity",
+    "Sector": "Electricity",
+    "Value": 10808.43,
+    "Year": 2014
+  },
+  {
+    "Application": "Other",
+    "Sector": "other energy",
+    "Value": 4745.556,
+    "Year": 2014
+  },
+  {
+    "Application": "Combustion",
+    "Sector": "Industry",
+    "Value": 5910.451,
+    "Year": 2014
+  },
+  {
+    "Application": "Industrial Processes",
+    "Sector": "Industry",
+    "Value": 3012.467,
+    "Year": 2014
+  },
+  {
+    "Application": "Solvents",
+    "Sector": "Industry",
+    "Value": 50.169,
+    "Year": 2014
+  },
+  {
+    "Application": "Waste",
+    "Sector": "Industry",
+    "Value": 128.8688,
+    "Year": 2014
+  },
+  {
+    "Application": "Buildings",
+    "Sector": "Buildings",
+    "Value": 3244.395,
+    "Year": 2014
+  },
+  {
+    "Application": "Ground Transportation",
+    "Sector": "Transport",
+    "Value": 5985.14,
+    "Year": 2014
+  },
+  {
+    "Application": "Aviation",
+    "Sector": "Transport",
+    "Value": 749.4474,
+    "Year": 2014
+  },
+  {
+    "Application": "International Shipping",
+    "Sector": "Transport",
+    "Value": 980.6501,
+    "Year": 2014
+ },
+ {
+   "Application": "Electricity",
+   "Sector": "Electricity",
+   "Value": 10658.59,
+   "Year": 2015
+ },
+ {
+   "Application": "Other",
+   "Sector": "other energy",
+   "Value": 4712.606,
+   "Year": 2015
+ },
+ {
+   "Application": "Combustion",
+   "Sector": "Industry",
+   "Value": 5952.337,
+   "Year": 2015
+ },
+ {
+   "Application": "Industrial Processes",
+   "Sector": "Industry",
+   "Value": 2977.383,
+   "Year": 2015
+ },
+ {
+   "Application": "Solvents",
+   "Sector": "Industry",
+   "Value": 50.5692,
+   "Year": 2015
+ },
+ {
+   "Application": "Waste",
+   "Sector": "Industry",
+   "Value": 130.428,
+   "Year": 2015
+ },
+ {
+   "Application": "Buildings",
+   "Sector": "Buildings",
+   "Value": 3289.916,
+   "Year": 2015
+ },
+ {
+   "Application": "Ground Transportation",
+   "Sector": "Transport",
+   "Value": 6092.068,
+   "Year": 2015
+ },
+ {
+   "Application": "Aviation",
+   "Sector": "Transport",
+   "Value": 764.5422,
+   "Year": 2015
+ },
+ {
+   "Application": "International Shipping",
+   "Sector": "Transport",
+   "Value": 1006.846,
+   "Year": 2015
+ }
+]

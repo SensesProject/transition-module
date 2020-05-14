@@ -42,7 +42,7 @@
           v-for="(chunk, i) in applicationsData"
           v-bind:key="i + 'text'"
           :x='scales.x(2015.2)'
-          :y='scales.y(chunk.labels / 1000000)'
+          :y='scales.y(chunk.labels)'
           > {{ chunk.id }}
           </text>
         </g>
@@ -95,13 +95,13 @@ import YAxis from './subcomponents/YAxis.vue'
 import XAxis from './subcomponents/XAxis.vue'
 
 // Data
-import EmissionData from '../assets/data/emissions-merged.json'
-import HistoricalEmissions from '../assets/data/emissions_historical.json'
+import EmissionData from '../assets/data/emissions-merged-new.json'
+// import emissionsData from '../assets/data/emissions-merged-new.json'
+import HistoricalEmissions from '../assets/data/emissions_historical-new.json'
 
-// merge data into one file
+// // merge data into one file
 // function merge (){
 //   const merged = emissionsData.map(e => {
-
 //     return {
 //       ...emissionsData.find(d => d.Year === e.Year),
 //       ...subEmissionsData.find(d => d.Year === e.Year),
@@ -135,6 +135,7 @@ export default {
   },
   data () {
     return {
+      EmissionData,
       margin: {
         left: 190,
         top: 30,
@@ -181,13 +182,14 @@ export default {
       ])
     },
     linePath () {
+      // console.log(this.lineData)
       return d3
         .line()
         .x(d => {
           return this.scales.x(d[0])
         })
         .y(d => {
-          return this.scales.y(d[1] / 1000000)
+          return this.scales.y(d[1] / 1000)
         })
         .curve(d3.curveLinear)(this.lineData)
     },
@@ -205,20 +207,16 @@ export default {
     },
     subsectors: function () {
       return [
-        { key: 'Public', color: '#611731', active: 3.1 },
-        { key: 'Autoproduced', color: '#611731', active: 3.1 },
+        { key: 'Electricity', color: '#611731', active: 3.1 },
         { key: 'Combustion', color: '#dd5f84', active: 3.2 },
-        { key: 'Production', color: '#dd5f84', active: 3.2 },
         { key: 'Solvents', color: '#dd5f84', active: 3.2 },
-        { key: 'Other Processes', color: '#dd5f84', active: 3.2 },
-        { key: 'Industrial Waste', color: '#dd5f84', active: 3.2 },
-        { key: 'Agriculture', color: '#dd5f84', active: 3.2 },
+        { key: 'Industrial Processes', color: '#dd5f84', active: 3.2 },
+        { key: 'Waste', color: '#dd5f84', active: 3.2 },
         { key: 'Aviation', color: '#ed96ab', active: 3.3 },
-        { key: 'Road', color: '#ed96ab', active: 3.3 },
-        { key: 'Other', color: '#ed96ab', active: 3.3 },
-        { key: 'Shipping', color: '#ed96ab', active: 3.3 },
-        { key: 'Commercial / Residential', color: '#f8cbd4', active: 3.4 },
-        { key: 'OtherEn', color: '#cacaca', active: 3.5 }
+        { key: 'Ground Transportation', color: '#ed96ab', active: 3.3 },
+        { key: 'International Shipping', color: '#ed96ab', active: 3.3 },
+        { key: 'Buildings', color: '#f8cbd4', active: 3.4 },
+        { key: 'Other', color: '#cacaca', active: 3.5 }
       ]
     },
     applications: function () {
@@ -226,8 +224,8 @@ export default {
         { key: 'Electricity', color: '#611731', active: 3.1 },
         { key: 'Industry', color: '#dd5f84', active: 3.2 },
         { key: 'Transports', color: '#ed96ab', active: 3.3 },
-        { key: 'Building', color: '#f8cbd4', active: 3.4 },
-        { key: 'OtherEnergy', color: '#cacaca', active: 3.5 }
+        { key: 'Buildings', color: '#f8cbd4', active: 3.4 },
+        { key: 'Other', color: '#cacaca', active: 3.5 }
       ]
     },
 
@@ -235,6 +233,7 @@ export default {
       const stacked = d3.stack().keys(this.applications.map(d => d.key))(
         EmissionData
       )
+      console.log(EmissionData)
       console.log(stacked)
       return stacked.map((d, i) => ({
         d: this.areaGenerator(d),
@@ -265,8 +264,8 @@ export default {
         .area()
         .x(d => x(d.data.Year))
         .curve(d3.curveLinear)
-        .y0(d => y(d[0] / 1000000))
-        .y1(d => y(d[1] / 1000000))
+        .y0(d => y(d[0] / 1000))
+        .y1(d => y(d[1] / 1000))
     }
   }
 }
