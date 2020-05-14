@@ -48,7 +48,7 @@
             The time schedule for the energy transition is tight!
             The Paris Agreement demands stabilizing global warming at 1.5°C to
             2°C above preindustrial levels. Limiting global warming to 2°C
-            levels will require net-zero CO2 emissions by 2075.
+            levels will require net-zero CO2 emissions by 2070.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.2" align="right">
@@ -124,16 +124,9 @@
         </IntersectionObserver>
       </div>
       </LayoutScrollytelling>
-      <div class="noscroll electr-share">
+      <div class="noscroll electr-share second-chart">
         <h4>Chapter 2</h4>
-        <h2>What are the main energy carriers for sectors?</h2>
-        <p>
-          Each sector uses a different mix of energy carriers.
-          Electricity can be generated either by coal, gas, oil, renewables or
-          nuclear. The buildings, transport and industry sectors use
-          combustible fuels such as coal, gas, oil-based products
-          or biomass but also electricity.
-        </p>
+        <h2>What are the main energy carriers across sectors and what is the role of electricity?</h2>
      </div>
       <LayoutScrollytelling>
         <template v-slot:vis="{ width, height, step }">
@@ -151,62 +144,53 @@
         </template>
         <div slot="text" class="observer">
           <IntersectionObserver :step="3" align="left">
-            <h2 class="title" id="china">Previous</h2>
-            <p>some text
+            <p>
+              Understanding the pathways to net zero, requires looking closer
+              into the types of energy (energy carriers) consumed across sectors.
+              This includes fossil fuels (coal, gas, oil) and potentially net-zero
+              sources such as biomass. Electricity is a special energy carrier as
+              it can be efficiently used across sectors, and generated at low
+              costs without CO2 emissions (e.g. wind and solar power).
             </p>
           </IntersectionObserver>
         <IntersectionObserver :step="4" align="left">
-          <p>
-            All four sectors currently
-            rely to a large extent on fossil fuels in the form of
-            <span class="highlight"
-            id="coal">coal</span>,
-            <span class="highlight" id="gas">gas</span> and
-            <span class="highlight" id="oil">oil</span>.
-            However, there are significant differences between the energy
-            systems of different countries.
-            Let us take a closer look at a few examples.
+          <p>Today, the final energy demand in industry, buildings and transport
+            heavily relies on the direct use of fossil fuels, e.g.
+            <span class="highlight" id="coal">coal</span>
+            and <span class="highlight" id="gas">gas</span>
+            for heat in buildings, process heat and feedstocks in industrial sectors,
+            and <span class="highlight" id="oil">oil</span> for transport
+            (road, maritime, and aviation).
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.1" align="left">
-          <h2 class="title" id="others">Introducing others</h2>
           <p>
-            Something on:
-            <span class="highlight"
-            id="nuclear"
-            >nuclear</span>,
-            <span class="highlight" id="biomass"
-            >biomass</span> and
-            <span class="highlight" id="WindSolHy">
-            other renewables</span>.
-            However, there are significant differences between the energy
-            systems of different countries.
-            Let us take a closer look at a few examples.
+            The most prominent way of directly replacing fossil fuels in end-use
+            sectors is making use of <span class="highlight" id="biomass"
+            >biomass</span>. While the traditional use of biomass
+            leads to negative impacts on human health and the environment;
+            yet, more sustainable modern biomass technologies are increasingly
+            deployed in many countries.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.2" align="left">
-          <h2 class="title" id="china">USA Energy Production</h2>
           <p>
-           In the United States, due to large reserves and low prices, natural
-           gas is more present than in other countries. It makes up a
-           significant share of the electricity generation, is used in industrial
-           applications and in gas heating systems in buildings.
-           There is a recently increasing share of wind and solar power generation
-           that are, alongside nuclear power, the key low-carbon sources of the country.
+           <span class="highlight" id="elect">Electricity</span>
+           is another important energy carrier used across sectors.
+           Most electricity is generated and transported in centralized
+           power grids.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="4.3" align="left">
-          <h2 class="title" id="china">Germany Energy Production</h2>
           <p>
-            Although Germany has fostered and experienced a strong growth in
-            renewables over the past years, it still depends on coal for power
-            generation and industrial applications.
-            One of the reasons is that there are few gas power stations
-            and nuclear power is phased-out, too. The buildings sector has a
-            relatively low share of electricity since space cooling applications
-            do not play a role (unlike in the US). As for the other countries,
-            alternative fuels in the transport sector (biomass, electricity)
-            are still in their infancy.
+            Generating electricity relies on combusting fossil fuels
+            (e.g. in coal power plants), which leads to additional emissions.
+            However, the energy transition is most advanced in the electricity
+            supply sector. <br/>Wind and solar PV are the cheapest new source of
+            electricity in many countries: <span class="highlight" id="WindSolHy"
+            >Wind/Hydro/Solar</span>.<br/><br/>Other low-carbon
+            electricity sources are <span class="highlight" id="nuclear">
+              nuclear</span> and biomass electricity.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="5" class="height__change">
@@ -222,61 +206,64 @@
         <IntersectionObserver :step="6" align="left">
           <h2 class="title" id="decarbonize__sectors">How do we decarbonize the sectors?</h2>
           <p>
-            Across all sectors, fossil fuels need to be replaced by low-carbon
-            energy. In the electricity sector, this can be done by increasing
-            the share of
-            <span class="highlight"
-            id="renewables">wind, solar, hydro</span>
-            and other renewable energy.
-            There are two main strategies to decarbonize the industry, transport
-            and buildings sector: electrification using low-carbon electricity
-            or a switch to low-carbon alternatives like biofuels or renewable
-            hydrogen. <br />Here, we will focus on electrification.
+            Across all sectors, fossil fuels need to be replaced by low-carbon energy sources.
+            In the electricity supply sector, this is mainly done by increasing the share of
+            wind and solar PV electricity generation. For the other sectors industry,
+            transport and buildings, two main strategies are 1) electrification,
+            i.e. directly using low-carbon electricity in e.g. battery electric
+            cars or heat pumps or 2) switching to low-carbon alternatives like
+            biofuels or renewable hydrogen. Here, we will focus on
+            <span class="highlight" id="elect">electrification</span>.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="7" align="left">
-          <h2 class="title" id="electricity__first">The electricity sector has to go clean first.</h2>
+          <h2 class="title" id="electricity__first">The electricity sector leads the way.</h2>
           <p>
-            The first step is thus to replace coal and gas in the electricity
-            sector by renewable sources like wind, solar and bioenergy.
-            <br />
-            However we also need to double the clean electricity production for this sector.
-            Second, using more low-carbon electricity in the buildings,
-            industry and transport sector instead of fossil fuels reduces
-            emissions in these sectors. This is the concept of electrification.
+            In many countries, the electricity sector is in the middle of a
+            transition towards very high shares of wind and solar PV generation,
+            which increasingly replace coal and gas.
+            With wind and solar PV having become cheap energy sources,
+            reducing CO2 emissions in electricity can be achieved at low costs.
+            The bigger challenge is replacing fossil fuels in industry, transport
+            and buildings.
+          </p>
+        </IntersectionObserver>
+        <IntersectionObserver :step="7.1" align="left">
+          <p>
+            In each energy demand sector there are several technologies that can
+            utilize cheap and low-carbon electricity. The electricity sector is
+            becoming the backbone of the energy transition across sectors
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="8" align="left">
-          <h2 class="title" id="industry__second">Industry Electrification.</h2>
+          <h2 class="title" id="industry__second">Electrifying Industry.</h2>
           <p>
-            Up to certain temperatures, heating applications in industry can be
-            electrified by heat pumps and electric boilers. If the electricity
-            comes from renewable sources, this could save substantial emissions.
-            However, full electrification will not be possible in sectors
-            like the cement or the chemical industry.
+            Industrial heat demands can be almost fully electrified with available
+            technologies such as heat pumps, electric boilers and electric furnaces
+            (Cite Silvia’s paper in the footnote). Other options are needed to
+            replace fossil feedstock demands in the chemical industry
+            (e.g. hydrogen-based synthetic fuels) and process emissions in cement
+            manufacturing (e.g. carbon capture and storage, CCS).
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="9" align="left">
           <h2 class="title" id="transport__third">Electrifying Transports.</h2>
           <p>
-            Transport can be electrified by switching to electric cars and trucks
-            or by substituting aviation with electric rail transport. However,
-            the shipping and aviation sectors themselves are both difficult
-            to electrify such that there are also limits to full electrification.
+            The energy demand for transportation can be electrified by switching
+            to electric cars, more rail transport and electric trucks
+            (overhead cables). However, the shipping and aviation sectors are
+            difficult to electrify such that there are limits to electrification
+            and need for alternatives (e.g. biofuels and hydrogen-based synthetic fuels).
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="10" align="left">
           <h2 class="title" id="building__fourth">Electrifying Buildings.</h2>
           <p>
-            Finally, the buildings sector can, in principle, be fully electrified.
-            Space heating applications that run by gas or oil today could be
-            switched to electric heat pumps.
-          </p>
-        </IntersectionObserver>
-        <IntersectionObserver :step="11" align="left">
-          <h2 class="title" id="electrification">Renewables to remove other carriers</h2>
-          <p>
-            Some text explaining why Industry and Transport have green shares.
+            Energy demand for space heating, cooking and hot water in buildings
+            can be fully electrified at low costs and based on today’s technologies
+            (electric boilers, electric cookers, electric heating systems and
+            heat pumps). Complementing options are biofuels and (high-cost)
+            synthetic fuels.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="12" align="left">
@@ -443,6 +430,10 @@ h2 {
   color: $color-neon;
 }
 
+.second-chart {
+  height: 250px;
+}
+
 .t {
     font-size: 60px;
     margin-bottom: $spacing / 2;
@@ -477,18 +468,18 @@ p {
   }
 
   #oil {
-    background: #673e48;
-    color: lighten(#673e48, 50);
+    background: #75757a;
+    color: lighten(#75757a, 50);
   }
 
   #coal {
-    background: $color-light-gray;
-    color: $color-black;
+    background: #4a4a4a;
+    color: lighten(#4a4a4a, 50);
   }
 
   #gas {
-    background: #7a636c;
-    color: lighten(#673e48, 50);
+    background: #9898a1;
+    color: lighten(#9898a1, 50);
   }
 
   #elect {
@@ -497,18 +488,18 @@ p {
   }
 
   #biomass {
-    background: #6197a8;
-    color: lighten(#6197a8, 40);
+    background: #618879;
+    color: lighten(#618879, 40);
   }
 
   #nuclear {
-    background: #3553a7;
-    color: lighten(#3553a7, 40);
+    background: #0c514a;
+    color: lighten(#0c514a, 30);
   }
 
   #WindSolHy {
-    background: #76dea5;
-    color: lighten(#76dea5, 40);
+    background: #acc3ac;
+    color: darken(#acc3ac, 40);
   }
 
 }

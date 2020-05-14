@@ -5,13 +5,13 @@
       <svg class='lines-legend'>
         <rect width='50' height='10' x='0' y='2' fill='#ed96ab'/>
         <line x1='0' x2='50' y1='2' y2='2' stroke='#c8005f' stroke-width='2'/>
-        <text x='60' y='12'>% Emissions (rel. to 2010)</text>
+        <text x='60' y='12'>Emissions (Gt CO2/yr)</text>
         <rect width='50' height='10' x='0' y='22' fill='#ffd89a'/>
         <line x1='0' x2='50' y1='22' y2='22' stroke='#ba7e12' stroke-width='2'/>
-        <text x='60' y='30'>% Electrification</text>
+        <text x='60' y='30'>Electrification (%)</text>
         <rect width='50' height='10' x='0' y='42' fill='#a2e7c0'/>
         <line x1='0' x2='50' y1='42' y2='42' stroke='#5b9574' stroke-width='2'/>
-        <text x='60' y='50'>% Renewable Elect.</text>
+        <text x='60' y='50'>Renewable Elect. (%)</text>
       </svg>
     </div>
     <div  class="scenarioselect">
@@ -60,7 +60,9 @@
       </text>
       <YAxis
       :scale='scales.y'
+      :scaleEm="scales.yEm"
       :height= 'innerHeight / 10'
+      :width="innerWidth"
       :thicks='[[0],[50],[100]]'
       :indicator="'%'"
       />
@@ -101,11 +103,11 @@ import * as d3 from 'd3'
 import _ from 'lodash'
 
 // Data
-import ElectrificationTrends from '../assets/data/ElectrificationEmissions.json'
+import ElectrificationTrends from '../assets/data/electrification-trends.json'
 
 // Components
 import SensesSelect from 'library/src/components/SensesSelect.vue'
-import YAxis from './subcomponents/YAxis.vue'
+import YAxis from './subcomponents/YAxisGl.vue'
 import XAxis from './subcomponents/XAxis.vue'
 
 export default {
@@ -132,7 +134,7 @@ export default {
   data () {
     return {
       ElectrificationTrends,
-      scenarioSelected: 'Business-as-usual',
+      scenarioSelected: 'BAU',
       margin: {
         left: 0,
         top: -50,
@@ -165,14 +167,13 @@ export default {
           .rangeRound([this.innerHeight / 10, 0]),
         yEm: d3
           .scaleLinear()
-          .domain([100, 0])
+          .domain([15000, 0])
           .rangeRound([0, this.innerHeight / 10])
       }
     },
     dataStructure () {
       let trends = this.ElectrificationTrends
       const selected = this.newScenario
-      console.log(selected)
       const allScenarios = _.groupBy(trends, 'scenario')
       return allScenarios[selected]
     },
@@ -183,7 +184,6 @@ export default {
       _.forEach(allScenarios, (scenario, key) => {
         scenariosarray.push(key)
       })
-      console.log(scenariosarray)
       return scenariosarray
     },
     years () {
@@ -212,7 +212,7 @@ export default {
         let ele = {}
         let re = {}
         if (s !== 'Electricity') {
-          let filter = _.filter(sector, { variable: 'Electrification' })
+          let filter = _.filter(sector, { variable: 'ElShare' })
           const valueEle = _.map(filter, (datum, d) => { return { value: datum['value'], year: this.years[d] } })
           ele = valueEle
         } else {

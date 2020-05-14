@@ -20,14 +20,11 @@
     x="2"
     y="60"
     />
-    <g :transform="`translate(${this.width / 2}, ${this.width - (this.width / 3)})`">
-    <text text-anchor="middle" x="0" :y="0" fill="black">
-      {{ data.select }} energy use
+    <g :transform="`translate(0, 0)`">
+    <text text-anchor="middle" :x="width / 2" :y="82" fill="black">
+      {{ data.select }}: {{ percLabel }}%
     </text>
-    <text text-anchor="middle" x="0" :y="15" fill="black">
-      is the {{ percLabel }}% of entire
-    </text>
-    <text text-anchor="middle" x="0" :y="30" fill="black">
+    <text text-anchor="start" x="0" :y="56" fill="black">
        {{currentContinent}} ({{ Math.round(energyDetails.value) }} EJ/Yr)
     </text>
     </g>
@@ -42,10 +39,20 @@
     v-for="(continent,i) in continentSum"
     class="connector"
     v-show="continent.continent === currentContinent"
-    v-bind:key='i + continent.x'
+    v-bind:key='`${i}start`'
     :x1="continent.x + 2"
     :y1="height / 6"
     x2="2"
+    y2="60"
+    />
+    <line
+    v-for="(continent,i) in continentSum"
+    class="connector"
+    v-show="continent.continent === currentContinent"
+    v-bind:key='`${i}end`'
+    :x1="(continent.x + continent.value) + 2"
+    :y1="height / 6"
+    :x2="width"
     y2="60"
     />
   </g>
@@ -74,8 +81,8 @@ export default {
       return {
         x: d3
           .scaleLinear()
-          .domain([0, 558])
-          .rangeRound([0, this.width])
+          .domain([0, 502.182284])
+          .rangeRound([0, 105])
       }
     },
     continentTotal () {
@@ -105,7 +112,6 @@ export default {
       return _.map(totalCont, (continent, co) => {
         let continentSum = []
         _.map(continent, (region, r) => { continentSum.push(region['sum']) })
-
         const scaledValue = this.scales.x(_.sum(continentSum))
         let initialyPos = yDistance
         yDistance = yDistance + scaledValue
@@ -179,32 +185,10 @@ svg {
   stroke: $color-neon;
 }
 
-.continent_label {
-  // text-anchor: middle;
-  font-size: 9px;
-  opacity: 0;
-}
-
-#active_label {
-  font-size: 12px;
-  opacity: 1;
-}
-
-.south_america {
-  text-anchor: right;
-}
-
-.Asia {
-  text-anchor: start;
-}
-
-.South {
-  text-anchor: end;
-}
-
 .connector {
   stroke: gray;
-  stroke-dasharray: 4 2;
+  fill: $color-neon;
+  stroke-width: 0.5;
 }
 
 #active {

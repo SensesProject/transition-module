@@ -51,7 +51,7 @@
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
-        {{ Math.round(sumCarriers[i] * 100) / 100 }} EJ/yr
+        {{ sumLabels[i] }} EJ/yr
         </tspan>
       </text>
       </g>
@@ -91,7 +91,7 @@ import * as d3 from 'd3'
 import _ from 'lodash'
 
 // data
-import CarriersReport from '../assets/data/World-region-report.json'
+import CarriersReport from '../assets/data/region-energy-carriers.json'
 import ElectrificationSteps from '../assets/data/electrification-steps.json'
 
 // Components
@@ -309,6 +309,13 @@ export default {
       })
       return dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
     },
+    sumLabels () {
+      console.log(this.sumCarriers)
+      return _.map(this.sumCarriers, sum => {
+        const value = sum < 0.005 ? '<0.01' : Math.round(sum * 100) / 100
+        return value
+      })
+    },
     createRect () {
       const selectedRegion = this.dataFilter
       const scale = this.scaleX
@@ -415,7 +422,7 @@ g {
 }
 
 .is-empty {
-  fill-opacity: 0.4;
+  fill-opacity: 0.2;
   transition: fill-opacity 0.5s;
 }
 
@@ -440,7 +447,7 @@ g {
 }
 
 .Gas {
-  fill: $color-light-gray;
+  fill: #9898a1;
 }
 
 .Oil {
@@ -518,6 +525,9 @@ text {
   }
   &.Electricity {
     fill: darken($color-yellow, 10);
+  }
+  &.WindSolHy {
+    fill: darken(#acc3ac, 10);
   }
   transition: y 0.5s;
 }

@@ -1,5 +1,77 @@
 [
   {
+    "region": "World",
+    "fuel": "Electricity",
+    "Electricity": 0,
+    "Industry": 92.01146,
+    "Building": 107.564,
+    "Transport": 4.509435,
+    "SUM": 204.0849
+  },
+  {
+    "region": "World",
+    "fuel": "Other",
+    "Electricity": 1.193795,
+    "Industry": 10.166199,
+    "Building": 0.500849,
+    "Transport": 0.007411,
+    "SUM": 11.86825
+  },
+  {
+    "region": "World",
+    "fuel": "Wind/Hydro/Solar",
+    "Electricity": 10.4148,
+    "Industry": 0.044598,
+    "Building": 1.483834,
+    "Transport": 0,
+    "SUM": 11.94324
+  },
+  {
+    "region": "World",
+    "fuel": "Biomass",
+    "Electricity": 1.607209,
+    "Industry": 8.027103,
+    "Building": 32.54113,
+    "Transport": 3.174557,
+    "SUM": 45.35
+  },
+  {
+    "region": "World",
+    "fuel": "Nuclear",
+    "Electricity": 11.84269,
+    "Industry": 0,
+    "Building": 0,
+    "Transport": 0,
+    "SUM": 11.84269
+  },
+  {
+    "region": "World",
+    "fuel": "Gas",
+    "Electricity": 14.87073,
+    "Industry": 24.48575,
+    "Building": 27.65729,
+    "Transport": 4.085647,
+    "SUM": 71.09942
+  },
+  {
+    "region": "World",
+    "fuel": "Oil",
+    "Electricity": 3.80196,
+    "Industry": 9.68627,
+    "Building": 12.61687,
+    "Transport": 88.3079,
+    "SUM": 114.413
+  },
+  {
+    "region": "World",
+    "fuel": "Coal",
+    "Electricity": 35.9643,
+    "Industry": 44.88893,
+    "Building": 6.863226,
+    "Transport": 0.105884,
+    "SUM": 87.82234
+  },
+  {
     "region": "Afghanistan",
     "fuel": "Electricity",
     "Electricity": 0,
@@ -13885,78 +13957,6 @@
     "Building": 0.06209,
     "Transport": 0,
     "SUM": 0.769611
-  },
-  {
-    "region": "World",
-    "fuel": "Electricity",
-    "Electricity": 0,
-    "Industry": 92.01146,
-    "Building": 107.564,
-    "Transport": 4.509435,
-    "SUM": 204.0849
-  },
-  {
-    "region": "World",
-    "fuel": "Other",
-    "Electricity": 1.193795,
-    "Industry": 10.166199,
-    "Building": 0.500849,
-    "Transport": 0.007411,
-    "SUM": 11.86825
-  },
-  {
-    "region": "World",
-    "fuel": "Wind/Hydro/Solar",
-    "Electricity": 10.4148,
-    "Industry": 0.044598,
-    "Building": 1.483834,
-    "Transport": 0,
-    "SUM": 11.94324
-  },
-  {
-    "region": "World",
-    "fuel": "Biomass",
-    "Electricity": 1.607209,
-    "Industry": 8.027103,
-    "Building": 32.54113,
-    "Transport": 3.174557,
-    "SUM": 45.35
-  },
-  {
-    "region": "World",
-    "fuel": "Nuclear",
-    "Electricity": 11.84269,
-    "Industry": 0,
-    "Building": 0,
-    "Transport": 0,
-    "SUM": 11.84269
-  },
-  {
-    "region": "World",
-    "fuel": "Gas",
-    "Electricity": 14.87073,
-    "Industry": 24.48575,
-    "Building": 27.65729,
-    "Transport": 4.085647,
-    "SUM": 71.09942
-  },
-  {
-    "region": "World",
-    "fuel": "Oil",
-    "Electricity": 3.80196,
-    "Industry": 9.68627,
-    "Building": 12.61687,
-    "Transport": 88.3079,
-    "SUM": 114.413
-  },
-  {
-    "region": "World",
-    "fuel": "Coal",
-    "Electricity": 35.9643,
-    "Industry": 44.88893,
-    "Building": 6.863226,
-    "Transport": 0.105884,
-    "SUM": 87.82234
   },
   {
     "region": "Yemen",

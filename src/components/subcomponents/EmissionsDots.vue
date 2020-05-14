@@ -50,11 +50,11 @@
         />
     </circle>
   </g>
-  <g v-if="step === 1.1">
+  <g v-if="step >= 1.1 && step < 2">
     <line :x1="scales.x(2015)" :y1="scales.y(35600000 / 1000000)" :x2="scales.x(2020)" :y2="scales.y(35600000 / 1000000)"/>
-    <line :x1="scales.x(2020)" :y1="scales.y(35600000 / 1000000)" :x2="scales.x(2075)" :y2="scales.y(0)"/>
-    <circle class="net_two" :cx="scales.x(2075)" :cy="scales.y(0)" r="5" />
-    <circle class="net_two" :cx="scales.x(2075)" :cy="scales.y(0)" r="5">
+    <line :x1="scales.x(2020)" :y1="scales.y(35600000 / 1000000)" :x2="scales.x(2070)" :y2="scales.y(0)"/>
+    <circle class="net_two" :cx="scales.x(2070)" :cy="scales.y(0)" r="5" />
+    <circle class="net_two" :cx="scales.x(2070)" :cy="scales.y(0)" r="5">
         <animate
           attributeName="r"
           from="1"
