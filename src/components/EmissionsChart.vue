@@ -233,12 +233,10 @@ export default {
       const stacked = d3.stack().keys(this.applications.map(d => d.key))(
         EmissionData
       )
-      console.log(EmissionData)
-      console.log(stacked)
       return stacked.map((d, i) => ({
         d: this.areaGenerator(d),
         color: this.applications[i].color,
-        labels: d[25][1] - 1500000,
+        labels: d[25][1] - 1000,
         id: this.applications[i].key,
         active: this.applications[i].active
       }))
