@@ -21,7 +21,7 @@
     y="60"
     />
     <g :transform="`translate(0, 0)`">
-    <text text-anchor="middle" :x="width / 2" :y="82" fill="black">
+    <text text-anchor="middle" :x="width" :y="82" fill="black">
       {{ data.select }}: {{ percLabel }}%
     </text>
     <text text-anchor="start" x="0" :y="56" fill="black">
@@ -30,7 +30,7 @@
     </g>
     <rect
     class="world"
-    :width="this.width"
+    :width="width * 2"
     :height="height / 6"
     x="2"
     y="60"
@@ -52,7 +52,7 @@
     v-bind:key='`${i}end`'
     :x1="(continent.x + continent.value) + 2"
     :y1="height / 6"
-    :x2="width"
+    :x2="width * 2"
     y2="60"
     />
   </g>
@@ -82,7 +82,7 @@ export default {
         x: d3
           .scaleLinear()
           .domain([0, 502.182284])
-          .rangeRound([0, 105])
+          .rangeRound([0, this.width])
       }
     },
     continentTotal () {

@@ -339,9 +339,6 @@
         other measures like energy efficiency improvements, the switch to
         low-carbon fuels like biofuels or hydrogen and the deployment of negative
         emissions play a role in future decarbonization scenarios as well.
-        To explore in more detail how the interplay of these strategies can
-        bring us to net-zero emissions, you can use the
-        <a href="https://dev.climatescenarios.org/" class="coming-soon">Mitigation Strategies Tool</a>.
       </p>
       <SensesMeta :id="'transition-path-1'" />
    </div>
@@ -493,8 +490,8 @@ p {
   }
 
   #nuclear {
-    background: #0c514a;
-    color: lighten(#0c514a, 30);
+    background: #347474;
+    color: lighten(#347474, 40);
   }
 
   #WindSolHy {

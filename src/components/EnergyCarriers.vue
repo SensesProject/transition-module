@@ -1,27 +1,28 @@
 <template>
-  <div class="visualization" id="carriers" ref="inWrapper">
-      <div class="regionselect" ref="proportionDiv">
-          <p class="graph-title sans" v-if="step >= 6">Possible electrification pathway based on current World energy production.</p>
-          <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors (2015)</p>
-      <div v-if="step < 5" class="energy-proportion">
-        <div class="highlight">{{ stepSelection }}</div>
-      </div>
-      <div v-if="step === 5" class="energy-proportion">
-         <SensesSelect class="selector" :options="regionsArray" v-model="selected"/>
-         <div id="reset" v-on:click="selected = selected != 'World' ? 'World' : selected">Reset</div>
-         <p id="select-label">Use the selector above to see energy carriers distribution across regions.</p>
-         <EnergyProportion v-show="selected != 'World'"
-         :data="{ allData: dataNest, selection: dataFilter, select: selected, perc: findPerc.perc, abs: findPerc.absValue }" :width="divHeight" :height="235"/>
-      </div>
+  <div class="outer-container">
+    <div class="regionselect" ref="proportionDiv">
+        <p class="graph-title sans" v-if="step >= 6">Possible electrification pathway based on current World energy production.</p>
+        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors (2015)</p>
+    <div v-if="step < 5" class="energy-proportion">
+      <div class="highlight">{{ stepSelection }}</div>
     </div>
+    <div v-if="step === 5" class="energy-proportion">
+       <SensesSelect class="selector" :options="regionsArray" v-model="selected"/>
+       <div id="reset" v-on:click="selected = selected != 'World' ? 'World' : selected">Reset</div>
+       <p id="select-label">Use the selector above to see energy carriers distribution across regions.</p>
+       <EnergyProportion v-show="selected != 'World'"
+       :data="{ allData: dataNest, selection: dataFilter, select: selected, perc: findPerc.perc, abs: findPerc.absValue }" :width="divWidth" :height="235"/>
+    </div>
+  </div>
+  <div class="visualization" id="carriers" ref="inWrapper">
     <svg :width="graphWidth" :height="graphHeight" :transform="`translate(${margin.left}, ${margin.top})`">
       <Arrows
       :height="innerHeight"
       :step="step"
-      :transform="'translate('+ (graphWidth / 5.5) + ',' + (innerHeight / 12) + ')'"
+      :transform="'translate('+ margin.left + ',' + (innerHeight / 20) + ')'"
       v-if="step >= 4.3"
       />
-      <g :transform="'translate('+ (graphWidth / 4) + ',0)'">
+      <g :transform="`translate(${margin.left * 4},0)`">
       <g>
         <text
         :transform="'rotate(45,' + energy.posX + ',' + (graphHeight - margin.bottom) + ')'"
@@ -35,7 +36,7 @@
         v-bind:key="'labels' + i"
         :id='energy.labels'
         :x="energy.posX"
-        :y= 'graphHeight - margin.bottom'
+        :y= 'graphHeight - (margin.bottom)'
         v-on:click=";[
         isActive = isActive === energy.labels ? 'initial' : energy.labels,
         clicked = isActive !== 'initial'
@@ -47,7 +48,7 @@
         :data="sumCarriers"
         :id='energy.labels'
         :x="energy.posX"
-        :y= 'height / 1.3  + 20'
+        :y= 'height / 1.3  + 40'
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
@@ -84,6 +85,7 @@
       </g>
     </svg>
   </div>
+</div>
 </template>
 
 <script>
@@ -132,14 +134,14 @@ export default {
       isActive: '',
       clicked: false,
       margin: {
-        left: 245,
+        left: 40,
         top: 30,
-        bottom: 60,
+        bottom: 100,
         right: 40
       },
       innerWidth: 0,
       innerHeight: 0,
-      divHeight: 0
+      divWidth: 0
     }
   },
   computed: {
@@ -147,10 +149,10 @@ export default {
       return this.hover
     },
     graphWidth () {
-      return this.innerWidth - 245
+      return this.innerWidth
     },
     graphHeight () {
-      return this.innerHeight - this.margin.top
+      return this.innerHeight - (this.margin.bottom / 2)
     },
     // data new structure and selection
     nestVariables () {
@@ -249,7 +251,7 @@ export default {
     },
     scaleX () {
       const selectedRegion = this.dataFilter
-      const barWidth = this.graphWidth - (this.graphWidth / 2.5)
+      const barWidth = this.graphWidth - (this.margin.left * 8)
       const ele = d3.values(selectedRegion.Electricity)
       const ind = d3.values(selectedRegion.Industry)
       const tran = d3.values(selectedRegion.Transport)
@@ -310,7 +312,6 @@ export default {
       return dataArray.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
     },
     sumLabels () {
-      console.log(this.sumCarriers)
       return _.map(this.sumCarriers, sum => {
         const value = sum < 0.005 ? '<0.01' : Math.round(sum * 100) / 100
         return value
@@ -320,11 +321,11 @@ export default {
       const selectedRegion = this.dataFilter
       const scale = this.scaleX
       const { y } = this.scaleY
-      const barWidth = this.graphWidth - (this.graphWidth / 2.5)
+      const barWidth = this.graphWidth - (this.margin.left * 4)
       let sectorHeight = this.margin.top
       const { currentElement } = this
       const sectors = _.map(selectedRegion, (sector, key) => {
-        let distance = 10
+        let distance = 0
         // for bars height
         let ValueSum = d3.sum(d3.values(selectedRegion[key]))
         let yValue = y(ValueSum)
@@ -333,9 +334,9 @@ export default {
           yValue = 0
         }
         let initialHeight = sectorHeight
-        sectorHeight = (this.innerHeight / 12) + (sectorHeight + yValue)
+        sectorHeight = (this.innerHeight / 14) + (sectorHeight + yValue)
         let totalDist = 0
-        const rects = _.map(selectedRegion[key], (item, i) => {
+        const rects = _.map(selectedRegion[key], (item, i, len) => {
           // for rects
           let initialDist = totalDist
           totalDist = totalDist + scale[key](item)
@@ -366,10 +367,10 @@ export default {
       const { inWrapper: el, proportionDiv: div } = this.$refs
       const innerHeight = el.clientHeight || el.parentNode.clientHeight
       const innerWidth = el.clientWidth || el.parentNode.clientWidth
-      const divHeight = div.clientHeight || div.parentNode.clientHeight
+      const divWidth = div.clientWidth || div.parentNode.clientWidth
       this.innerHeight = Math.max(innerHeight, 500)
       this.innerWidth = Math.max(innerWidth, 500)
-      this.divHeight = Math.max(divHeight / 3.5)
+      this.divWidth = divWidth / 2.5
     }
   },
   mounted () {
@@ -389,9 +390,33 @@ export default {
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
 
-.visualization {
-  width: 100%;
-  height: 90%;
+.outer-container {
+  margin: 0 auto;
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  display: inline-flex;
+
+  .visualization {
+    width: 80vw;
+    height: calc(100vh - 4rem);
+  }
+
+  .regionselect {
+    margin: 20px 40px;
+    width: 20vw;
+    height: calc(100vh - 4rem);
+    z-index: 1;
+
+    .energy-proportion {
+      height: calc(80vh - 4rem);
+    }
+  }
+}
+
+svg {
+  background-color: white;
+  width: 90%;
+  display: block;
 }
 
 g {
@@ -443,7 +468,7 @@ g {
 }
 
 .Nuclear {
-  fill: #0c514a;
+  fill: #347474;
 }
 
 .Gas {
@@ -466,19 +491,6 @@ g {
   text-anchor: left;
   font-size: 10.5px;
   cursor: pointer;
-}
-
-.regionselect {
-  top: $spacing;
-  left: 3.5em;
-  position: absolute;
-  width: 245px;
-  height: 100%;
-  z-index: 1;
-}
-
-.energy-proportion {
-  height: 100%;
 }
 
 #reset {
