@@ -1,6 +1,6 @@
 <template>
   <div id="app" ref="vis">
-    <SensesMenu :id="'transition-path-1'"/>
+    <SensesMenu :id="'transition-path-1'" :min-width="1024"/>
     <div class="noscroll">
       <h1 class="t" id="cover">Towards an Electric Future</h1>
       <h1 class="subtitle">A guide to clean electricity production and sectors electrification</h1>
