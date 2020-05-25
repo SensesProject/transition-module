@@ -2,7 +2,7 @@
   <div class="electrification_trend">
     <div  class="scenarioselect">
       <div class="scenario-selector">
-      <p class="graph-title sans">Electrification trends across sectors</p>
+      <p class="graph-title sans">Electrification rates across sectors</p>
         <span>Model:</span> <span class="model">REMIND</span>
         <div>
         <p id="select-label">Select a scenario:</p>
