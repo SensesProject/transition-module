@@ -1,31 +1,32 @@
 <template>
   <div class="outer-container">
     <div class="regionselect" ref="proportionDiv">
-        <p class="graph-title sans" v-if="step >= 6">Possible electrification pathway based on current World energy production.</p>
-        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors (2015)</p>
-    <div v-if="step < 5" class="energy-proportion">
-      <div class="highlight">{{ stepSelection }}</div>
+      <p class="graph-title sans" v-if="step >= 6">Possible electrification pathway based on current World energy production.</p>
+      <div class="text-container">
+        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors</p>
+        <p id="select-label" v-if="step === 5">Use the selector to see energy carriers distribution across regions.</p>
+        <div class="commands-container" v-if="step === 5">
+           <SensesSelect class="selector" :options="regionsArray" v-model="selected"/>
+           <div id="reset" v-on:click="selected = selected != 'World' ? 'World' : selected">Reset</div>
+        </div>
+      </div>
+      <div v-if="step === 5" class="energy-proportion">
+         <EnergyProportion v-show="selected != 'World'" :data="{ allData: dataNest, selection: dataFilter, select: selected, perc: findPerc.perc, abs: findPerc.absValue }"/>
+      </div>
     </div>
-    <div v-if="step === 5" class="energy-proportion">
-       <SensesSelect class="selector" :options="regionsArray" v-model="selected"/>
-       <div id="reset" v-on:click="selected = selected != 'World' ? 'World' : selected">Reset</div>
-       <p id="select-label">Use the selector above to see energy carriers distribution across regions.</p>
-       <EnergyProportion v-show="selected != 'World'"
-       :data="{ allData: dataNest, selection: dataFilter, select: selected, perc: findPerc.perc, abs: findPerc.absValue }" :width="divWidth" :height="235"/>
-    </div>
-  </div>
   <div class="visualization" id="carriers" ref="inWrapper">
     <svg :width="graphWidth" :height="graphHeight" :transform="`translate(${margin.left}, ${margin.top})`">
       <Arrows
       :height="innerHeight"
+      :coordinates="createRect"
       :step="step"
-      :transform="'translate('+ margin.left + ',' + (innerHeight / 20) + ')'"
+      :transform="`translate(${margin.left},${innerHeight / 20})`"
       v-if="step >= 4.3"
       />
-      <g :transform="`translate(${margin.left * 4},0)`">
-      <g>
+      <g :transform="`translate(${margin.left * 2},0)`">
+      <g :transform="`translate(${-margin.left},0)`">
         <text
-        :transform="'rotate(45,' + energy.posX + ',' + (graphHeight - margin.bottom) + ')'"
+        :transform="`rotate(45,${energy.posX},${graphHeight})`"
         v-for="(energy, i) in createRect[0].rects"
         class="fuel-labels"
         :class="[
@@ -35,8 +36,8 @@
         ]"
         v-bind:key="'labels' + i"
         :id='energy.labels'
-        :x="energy.posX"
-        :y= 'graphHeight - (margin.bottom)'
+        :x="energy.posX - margin.left"
+        :y= 'graphHeight - margin.bottom'
         v-on:click=";[
         isActive = isActive === energy.labels ? 'initial' : energy.labels,
         clicked = isActive !== 'initial'
@@ -47,8 +48,8 @@
         font-size="10px"
         :data="sumCarriers"
         :id='energy.labels'
-        :x="energy.posX"
-        :y= 'height / 1.3  + 40'
+        :x="energy.posX - margin.left"
+        :y= 'height / 1.3 + 40'
         class="energy_sum"
         :class='isActive === energy.labels ? "is-active" : "is-inactive"'
         >
@@ -141,7 +142,8 @@ export default {
       },
       innerWidth: 0,
       innerHeight: 0,
-      divWidth: 0
+      divWidth: 0,
+      divHeight: 0
     }
   },
   computed: {
@@ -251,7 +253,7 @@ export default {
     },
     scaleX () {
       const selectedRegion = this.dataFilter
-      const barWidth = this.graphWidth - (this.margin.left * 8)
+      const barWidth = this.graphWidth - (this.margin.left * 6)
       const ele = d3.values(selectedRegion.Electricity)
       const ind = d3.values(selectedRegion.Industry)
       const tran = d3.values(selectedRegion.Transport)
@@ -321,7 +323,7 @@ export default {
       const selectedRegion = this.dataFilter
       const scale = this.scaleX
       const { y } = this.scaleY
-      const barWidth = this.graphWidth - (this.margin.left * 4)
+      const barWidth = this.graphWidth
       let sectorHeight = this.margin.top
       const { currentElement } = this
       const sectors = _.map(selectedRegion, (sector, key) => {
@@ -342,7 +344,7 @@ export default {
           totalDist = totalDist + scale[key](item)
           // for labels horizontal position
           let initialPos = distance
-          distance = distance + (barWidth / 7.5)
+          distance = distance + (barWidth / 9)
           return {
             klass: i === 'Wind/Hydro/Solar' | i === 'Wind/Solar/Hydro' ? 'WindSolHy' : i,
             labels: i,
@@ -364,13 +366,14 @@ export default {
   },
   methods: {
     calcSizes () {
-      const { inWrapper: el, proportionDiv: div } = this.$refs
+      const { inWrapper: el } = this.$refs
       const innerHeight = el.clientHeight || el.parentNode.clientHeight
       const innerWidth = el.clientWidth || el.parentNode.clientWidth
-      const divWidth = div.clientWidth || div.parentNode.clientWidth
       this.innerHeight = Math.max(innerHeight, 500)
       this.innerWidth = Math.max(innerWidth, 500)
-      this.divWidth = divWidth / 2.5
+      console.log(innerWidth)
+      this.margin.left = innerWidth < 1024 ? 30 : 40
+      this.margin.top = innerWidth < 1024 ? 15 : 30
     }
   },
   mounted () {
@@ -391,167 +394,204 @@ export default {
 @import "library/src/style/variables.scss";
 
 .outer-container {
+  width: 100%;
   margin: 0 auto;
-  width: 100vw;
   height: calc(100vh - 4rem);
   display: inline-flex;
 
   .visualization {
-    width: 80vw;
-    height: calc(100vh - 4rem);
+    width: 80%;
+    // height: calc(100vh - 4rem);
   }
 
   .regionselect {
     margin: 20px 40px;
-    width: 20vw;
-    height: calc(100vh - 4rem);
+    width: 20%;
+    // height: calc(100vh - 4rem);
     z-index: 1;
 
+    .commands-container {
+      margin-top: $spacing;
+    }
+
     .energy-proportion {
-      height: calc(80vh - 4rem);
+      height: 60%;
+    }
+
+  }
+
+  #reset {
+    cursor: pointer;
+    color: $color-neon;
+    display: inline;
+    margin-left: 15px;
+  }
+}
+
+.visualization {
+
+  svg {
+    background-color: white;
+    width: 90%;
+    display: block;
+
+    g {
+      #sector {
+      transition: transform 1s;
+      }
+
+      .zero {
+        fill-opacity: 0;
+        transition: fill-opacity 0.5s;
+      }
+
+      .off {
+        fill-opacity: 0.4;
+        transition: fill-opacity 0.5s;
+      }
+
+      .done, .on {
+        fill-opacity: 1;
+        transition: fill-opacity 0.5s;
+      }
+
+    }
+
+    .Electricity {
+      fill: getColor(yellow, 80);
+    }
+
+    .Other {
+      fill: white;
+    }
+
+    .WindSolHy {
+      fill: #acc3ac;
+    }
+
+    .Biomass {
+      fill: #618879;
+    }
+
+    .Nuclear {
+      fill: #347474;
+    }
+
+    .Gas {
+      fill: #9898a1;
+    }
+
+    .Oil {
+      fill: #75757a;
+    }
+
+    .Coal {
+      fill: #4a4a4a;
+    }
+
+    text {
+
+      &.Other {
+        fill: black;
+      }
+      &.Electricity {
+        fill: darken($color-yellow, 10);
+      }
+      &.WindSolHy {
+        fill: darken(#acc3ac, 10);
+      }
+      transition: y 0.5s;
+    }
+
+    .fuel_rect {
+      stroke: black;
+      stroke-width: 0.5;
+    }
+
+    .is-empty {
+      fill-opacity: 0.2;
+      transition: fill-opacity 0.5s;
+    }
+
+    .fuel-labels {
+      text-anchor: left;
+      font-size: 10.5px;
+      cursor: pointer;
+    }
+
+    .is-inactive {
+      visibility: hidden;
+    }
+
+    .energy_sum {
+      fill: $color-neon;
+    }
+
+    .sector-labels {
+      text-anchor: start;
+    }
+
+    .invisible_carriers {
+      visibility: hidden;
+      transition: visibility 0.5s;
+    }
+
+    rect {
+      transition: width 0.5s, x 0.5s, y 0.5s, height 0.5s, fill 0.5s;
+    }
+
+    .none {
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .visible {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+
+  }
+}
+
+// #emissions-label {
+//   margin-top: 15px;
+// }
+
+@media screen and (max-width: 1024px) {
+
+  .outer-container {
+    margin: 0 auto;
+    display: block;
+
+  .text-container {
+    width: 60%;
+
+    .commands-container {
+      margin-top: $spacing / 2;
     }
   }
-}
+  .regionselect {
+    width: 90%;
+    height: 20%;
+    display: inline-flex;
+    // height: calc(100vh - 4rem);
+    z-index: 1;
+    margin-bottom: 0px;
 
-svg {
-  background-color: white;
-  width: 90%;
-  display: block;
-}
-
-g {
-  #sector {
-  transition: transform 1s;
+    .energy-proportion {
+      display: flex;
+      margin-left: 10%;
+      width: 50%;
+      height: 100%;
+    }
   }
 
-  .zero {
-    fill-opacity: 0;
-    transition: fill-opacity 0.5s;
+  .visualization {
+    width: 100%;
+    height: 80%;
+    // height: calc(100vh - 4rem);
   }
-
-  .off {
-    fill-opacity: 0.4;
-    transition: fill-opacity 0.5s;
-  }
-
-  .done, .on {
-    fill-opacity: 1;
-    transition: fill-opacity 0.5s;
-  }
-
 }
 
-.fuel_rect {
-  stroke: black;
-  stroke-width: 0.5;
 }
-
-.is-empty {
-  fill-opacity: 0.2;
-  transition: fill-opacity 0.5s;
-}
-
-.Electricity {
-  fill: getColor(yellow, 80);
-}
-
-.Other {
-  fill: white;
-}
-
-.WindSolHy {
-  fill: #acc3ac;
-}
-
-.Biomass {
-  fill: #618879;
-}
-
-.Nuclear {
-  fill: #347474;
-}
-
-.Gas {
-  fill: #9898a1;
-}
-
-.Oil {
-  fill: #75757a;
-}
-
-.Coal {
-  fill: #4a4a4a;
-}
-
-.graph-title {
-  margin-bottom: 20px;
-}
-
-.fuel-labels {
-  text-anchor: left;
-  font-size: 10.5px;
-  cursor: pointer;
-}
-
-#reset {
-  cursor: pointer;
-  color: $color-neon;
-  display: inline;
-  margin-left: 15px;
-}
-
-#select-label {
-  margin-top: 15px;
-  font-family: $font-serif;
-}
-
-#emissions-label {
-  margin-top: 15px;
-}
-
-.is-inactive {
-  visibility: hidden;
-}
-
-.energy_sum {
-  fill: $color-neon;
-}
-
-.sector-labels {
-  text-anchor: start;
-}
-
-.invisible_carriers {
-  visibility: hidden;
-  transition: visibility 0.5s;
-}
-
-rect {
-  transition: width 0.5s, x 0.5s, y 0.5s, height 0.5s, fill 0.5s;
-}
-
-text {
-
-  &.Other {
-    fill: black;
-  }
-  &.Electricity {
-    fill: darken($color-yellow, 10);
-  }
-  &.WindSolHy {
-    fill: darken(#acc3ac, 10);
-  }
-  transition: y 0.5s;
-}
-
-.none {
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.visible {
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
 </style>

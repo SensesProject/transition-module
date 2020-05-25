@@ -1,61 +1,60 @@
 <template>
-  <svg class="proportion">
-    <g transform="translate(0,15)" v-show="currentContinent != 'Antartica'">
-    <text x="2" y="-5"> World </text>
-    <rect
-    v-for="(continent, i) in continentSum"
-    v-bind:key='i + "continent-value"'
-    v-show="continent.continent != 'Antartica'"
-    :class="continent.continent === 'World' ? 'world' : 'continents'"
-    :id="continent.continent === currentContinent ? 'active' : ''"
-    :x="continent.x + 2"
-    :width="continent.value"
-    :height="height / 6"
-    />
-    <rect
-    class="continents"
-    id="active"
-    :width="energyDetails.country"
-    :height="height / 6"
-    x="2"
-    y="60"
-    />
-    <g :transform="`translate(0, 0)`">
-    <text text-anchor="middle" :x="width" :y="82" fill="black">
-      {{ data.select }}: {{ percLabel }}%
-    </text>
-    <text text-anchor="start" x="0" :y="56" fill="black">
-       {{currentContinent}} ({{ Math.round(energyDetails.value) }} EJ/Yr)
-    </text>
+  <svg class="proportion" ref="proportionDiv">
+    <g :transform="`translate(${margin.left / 2}, ${margin.top})`">
+      <g class="general">
+        <text x="2" y="-5"> World </text>
+        <rect
+        v-for="(continent, i) in continentSum"
+        v-bind:key='i + "continent-value"'
+        v-show="continent.continent != 'Antartica'"
+        :class="continent.continent === 'World' ? 'world' : 'continents'"
+        class="world"
+        :id="continent.continent === currentContinent ? 'active' : ''"
+        :width="continent.value"
+        :height="y / 2"
+        :x="continent.x + 2"
+        />
+      </g>
+      <g class="detail" :transform="`translate(0, ${y - (y / 4)})`">
+        <text text-anchor="start" y="-5" fill="black">
+           {{currentContinent}} ({{ Math.round(energyDetails.value) }} EJ/Yr)
+        </text>
+        <g class="continent">
+          <rect :width="chartWidth * 2" :height="y / 2" />
+          <rect
+          class="continents"
+          id="active"
+          :width="energyDetails.country"
+          :height="y / 2"
+          />
+        </g>
+        <text text-anchor="middle" :x="width" :y="y / 3.2" fill="black">
+          {{ data.select }}: {{ percLabel }}%
+        </text>
+      </g>
+      <g :transform="`translate(0, 0)`">
+        <line
+        v-for="(continent,i) in continentSum"
+        class="connector"
+        v-show="continent.continent === currentContinent"
+        v-bind:key='`${i}start`'
+        :x1="continent.x + 2"
+        :y1="y / 2"
+        x2="2"
+        :y2="y - (y / 4)"
+        />
+        <line
+        v-for="(continent,i) in continentSum"
+        class="connector"
+        v-show="continent.continent === currentContinent"
+        v-bind:key='`${i}end`'
+        :x1="(continent.x + continent.value) + 2"
+        :y1="y / 2"
+        :x2="chartWidth * 2"
+        :y2="y - (y / 4)"
+        />
+      </g>
     </g>
-    <rect
-    class="world"
-    :width="width * 2"
-    :height="height / 6"
-    x="2"
-    y="60"
-    />
-    <line
-    v-for="(continent,i) in continentSum"
-    class="connector"
-    v-show="continent.continent === currentContinent"
-    v-bind:key='`${i}start`'
-    :x1="continent.x + 2"
-    :y1="height / 6"
-    x2="2"
-    y2="60"
-    />
-    <line
-    v-for="(continent,i) in continentSum"
-    class="connector"
-    v-show="continent.continent === currentContinent"
-    v-bind:key='`${i}end`'
-    :x1="(continent.x + continent.value) + 2"
-    :y1="height / 6"
-    :x2="width * 2"
-    y2="60"
-    />
-  </g>
   </svg>
 </template>
 
@@ -67,22 +66,37 @@ import Continents from '../../assets/data/energycarriers-continents.json'
 
 export default {
   name: 'Proportion',
-  props: ['data', 'width', 'height'],
+  props: ['data'],
   data () {
     return {
-      Continents
+      Continents,
+      width: 0,
+      halfWidth: 0,
+      height: 0,
+      margin: {
+        top: 15,
+        left: 10,
+        right: 10
+      }
     }
   },
   computed: {
     percLabel () {
       return this.energyDetails.perc > 1 ? Math.round(this.energyDetails.perc) : '< 1'
     },
+    chartWidth () {
+      const { divWidth } = this.calcSizes
+      return divWidth < 100 ? this.halfWidth : this.width - this.margin.left
+    },
+    y () {
+      return this.height > 155 ? this.height / 4 : this.height / 2
+    },
     scales () {
       return {
         x: d3
           .scaleLinear()
           .domain([0, 502.182284])
-          .rangeRound([0, this.width])
+          .rangeRound([0, this.chartWidth])
       }
     },
     continentTotal () {
@@ -158,7 +172,26 @@ export default {
         value: this.singleContinent
       }
     }
-
+  },
+  methods: {
+    calcSizes () {
+      const { proportionDiv: div } = this.$refs
+      const divWidth = div.clientWidth || div.parentNode.clientWidth
+      const divHeight = div.clientHeight || div.parentNode.clientHeight
+      this.width = divWidth / 2
+      this.halfWidth = divWidth / 2.5
+      this.height = divHeight
+    }
+  },
+  mounted () {
+    this.calcSizes()
+    window.addEventListener('resize', this.calcSizes, false)
+  },
+  updated () {
+    this.calcSizes()
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.calcSizes, false)
   }
 }
 </script>
@@ -166,21 +199,20 @@ export default {
 <style scoped lang="scss">
 @import "library/src/style/variables.scss";
 svg {
+  display: inline;
   height: 100%;
   width: 100%;
   margin: 0 auto;
 }
+
 .proportion {
+  width: 100%;
   margin-top: $spacing;
   padding: 2px;
 }
 
-.world {
-  fill-opacity: 0;
-  stroke: $color-neon;
-}
-
-.continents {
+.world,
+.continent  {
   fill-opacity: 0;
   stroke: $color-neon;
 }
@@ -194,5 +226,16 @@ svg {
 #active {
   fill-opacity: 1;
   fill: getColor(neon, 100);
+}
+
+@media screen and (max-width: 1024px) {
+  svg {
+    width: 40%;
+  }
+
+  .proportion {
+    margin-top: 0;
+    padding: 2px;
+  }
 }
 </style>
