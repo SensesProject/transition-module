@@ -341,7 +341,9 @@
         emissions play a role in future decarbonization scenarios as well.
       </p>
    </div>
+   <div class="meta">
    <SensesMeta :id="'transition-path-1'" />
+  </div>
   </div>
 </template>
 
@@ -434,6 +436,11 @@ export default {
     }
   }
 
+}
+
+.meta {
+  max-width: 1200px;
+  margin: 20px auto;
 }
 
   p {
