@@ -1,5 +1,8 @@
 <template>
   <div class="visualization" id="emissions__chart">
+    <div class="chart-description" ref="inWrapper">
+      <p class="graph-title sans">Energy-related CO2 emissions (fossil fuel use and industrial processes)</p>
+    </div>
     <svg class="emissions" width="100%" height="100%">
       <g :transform="'translate(' + margin.left + ',' + margin.top + ')'">
         <EmissionsDots
@@ -48,6 +51,8 @@
         </g>
         <dragline
           v-if="step > 3"
+          :divWidth="divWidth"
+          :totalWidth="this.width"
           :width="this.innerWidth"
           :margin="margin"
           :height="this.innerHeight"
@@ -56,7 +61,7 @@
         />
         <XAxis
         :scale='scales.x'
-        :width='this.innerWidth - margin.left'
+        :width='this.innerWidth - this.margin.left'
         :height= 'innerHeight'
         :margin='margin'
         :thicks="step >= 2 ? thicksShort : thicksLong"
@@ -137,11 +142,13 @@ export default {
     return {
       EmissionData,
       margin: {
-        left: 190,
+        left: 100,
         top: 30,
         bottom: 30,
         right: 30
       },
+      divHeight: 0,
+      divWidth: 0,
       thicksLong: [
         [2000],
         [2010],
@@ -164,7 +171,7 @@ export default {
   },
   computed: {
     innerWidth () {
-      return (this.width - this.margin.left - this.margin.right) / 1.2
+      return this.width < 1024 ? this.width - this.margin.left : this.width - (this.margin.left * 5)
     },
     innerHeight () {
       return (this.height - this.margin.top - this.margin.bottom) / 1.2
@@ -265,6 +272,25 @@ export default {
         .y0(d => y(d[0] / 1000))
         .y1(d => y(d[1] / 1000))
     }
+  },
+  methods: {
+    calcSizes () {
+      const { inWrapper: el } = this.$refs
+      const innerHeight = el.clientHeight || el.parentNode.clientHeight
+      const innerWidth = el.clientWidth || el.parentNode.clientWidth
+      this.divHeight = Math.max(innerHeight, 500)
+      this.divWidth = Math.max(innerWidth, 500)
+    }
+  },
+  mounted () {
+    this.calcSizes()
+    window.addEventListener('resize', this.calcSizes, false)
+  },
+  updated () {
+    this.calcSizes()
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.calcSizes, false)
   }
 }
 </script>
@@ -276,61 +302,78 @@ export default {
   height: inherit;
   width: 90%;
   height: 100%;
-  margin: 0 auto;
-}
+  // margin: 0 auto;
+  display: inline-flex;
 
-.scenarioselect {
-  top: $spacing + 2;
-  left: 3.5em;
-  position: absolute;
-  width: 200px;
+  .chart-description {
+    padding: 40px 40px;
+    width: 25%;
+  }
 }
 
 svg {
   margin-top: 50px;
-}
+  width: 75%;
 
-#emissions {
-  stroke: $color-red;
-  fill: none;
-}
+    #emissions {
+      stroke: $color-red;
+      fill: none;
+    }
 
-.emission__chunks {
-  stroke: grey;
-  stroke-width: 1;
-}
+    .emission__chunks {
+      stroke: grey;
+      stroke-width: 1;
+    }
 
-.lowFill {
-  fill-opacity: 0.5;
-  stroke: $color-red;
-}
+    .lowFill {
+      fill-opacity: 0.5;
+      stroke: $color-red;
+    }
 
-.lowText {
-  fill-opacity: 0;
-}
+    .lowText {
+      fill-opacity: 0;
+    }
 
-.subsectorsData {
-  .inactive {
-    display: none;
+    .subsectorsData {
+      .inactive {
+        display: none;
+      }
+    }
+
+    .applicationsData {
+      .inactive {
+        fill-opacity: 0.1;
+      }
+
+    .sectorlabels {
+      fill: black !important;
+    }
+
+    .inactive {
+      fill: none;
+    }
+
+    .yearsep {
+      stroke-dasharray: 2 2;
+      stroke: gray;
+    }
   }
 }
 
-.applicationsData {
-  .inactive {
-    fill-opacity: 0.1;
+@media screen and (max-width: 1024px) {
+
+  .visualization {
+    display: block;
+
+    .chart-description {
+      width: 100%;
+    }
+
   }
 
-.sectorlabels {
-  fill: black !important;
-}
-
-.inactive {
-  fill: none;
-}
-
-.yearsep {
-  stroke-dasharray: 2 2;
-  stroke: gray;
-}
+  svg {
+    width: 100%;
+    margin-top: 25px;
+  }
 }
 </style>
