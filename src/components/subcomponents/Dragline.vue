@@ -1,26 +1,38 @@
 <template>
   <g class="dragline">
-    <line :x1="x" y1="0" :x2="x" :y2="height - margin.bottom" stroke="#c8005f" />
     <rect
       x="0"
       y="0"
-      :width="width - margin.left"
+      :width="width > 1024 ? width : this.width - this.margin.left"
       :height="height - margin.bottom"
       class="draglineRect"
       @mousemove="clickDragline"
     />
-    <g v-for="(label, l) of labels" v-bind:key="l + 'label'" :transform="`translate(${x}, 0)`">
-      <polyline class="label_line" :points="`0 ${label.y} 4 ${label.y} 8 ${label.y2} 25 ${label.y2}`"/>
-      <text :transform="`translate(0, ${label.y2})`" x='30' class="shadow">
+    <g :transform="`translate(${valueX}, 0)`">
+      <line x1="0" y1="0" x2="0" :y2="height - margin.bottom" stroke="#c8005f" />
+    <g v-for="(label, l) of labels" v-bind:key="l + 'label'" >
+      <polyline class="label_line"
+      :points="year < 2005 ? `0 ${label.y} 4 ${label.y} 8 ${label.y2} 25 ${label.y2}` : `0 ${label.y} -4 ${label.y} -8 ${label.y2} -25 ${label.y2}`"
+      />
+      <text
+      :transform="`translate(0, ${label.y2})`"
+      :x='year < 2005 ? 30 : -30'
+      class="shadow"
+      :text-anchor="year < 2005 ? 'start' : 'end'">
         <tspan font-weight="bold">{{ Math.round(label.value) + ' Mt/year' }}</tspan> - {{ label.label }}
       </text>
-      <text :transform="`translate(0, ${label.y2})`" x='30'>
+      <text
+      :transform="`translate(0, ${label.y2})`"
+      :x="year < 2005 ? 30 : -30"
+      :text-anchor="year < 2005 ? 'start' : 'end'"
+      >
         <tspan font-weight="bold">{{ Math.round(label.value) + ' Mt/year' }}</tspan> - {{ label.label }}
       </text>
     </g>
-    <g v-for="sector of sectors" :key="sector.key" :transform="'translate(' + x + ',' + sector.y + ')'">
+    <g v-for="sector of sectors" :key="sector.key" :transform="'translate(0,' + sector.y + ')'">
       <circle class='labels' r="3"/>
     </g>
+  </g>
   </g>
 </template>
 
@@ -28,15 +40,15 @@
 import * as d3 from 'd3'
 export default {
   name: 'Dragline',
-  props: ['width', 'height', 'scales', 'data', 'margin'],
+  props: ['width', 'height', 'scales', 'data', 'margin', 'divWidth', 'totalWidth'],
   data () {
     return {
-      x: 0
+      valueX: 0
     }
   },
   computed: {
     year: function () {
-      let year = parseInt(this.scales.x.invert(this.x))
+      let year = parseInt(this.scales.x.invert(this.valueX))
       if (year < 1990) { year = 1990 }
       if (year > 2015) { year = 2015 }
       return year
@@ -89,7 +101,16 @@ export default {
   },
   methods: {
     clickDragline: function (e) {
-      this.x = e.layerX - this.margin.left - 60
+      const value = this.valueX = e.layerX - this.margin.left
+      console.log(this.totalWidth)
+      if (this.totalWidth < 1024) {
+        console.log('i am small')
+        this.valueX = value
+      } else {
+        console.log('i am big')
+        console.log(e.offsetX)
+        this.valueX = e.offsetX - this.margin.left
+      }
     }
   }
 }
@@ -101,6 +122,7 @@ export default {
 .draglineRect {
   fill: none;
   pointer-events: all;
+  z-index: 1;
 }
 
 .labels {

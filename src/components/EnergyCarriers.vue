@@ -371,7 +371,6 @@ export default {
       const innerWidth = el.clientWidth || el.parentNode.clientWidth
       this.innerHeight = Math.max(innerHeight, 500)
       this.innerWidth = Math.max(innerWidth, 500)
-      console.log(innerWidth)
       this.margin.left = innerWidth < 1024 ? 30 : 40
       this.margin.top = innerWidth < 1024 ? 15 : 30
     }

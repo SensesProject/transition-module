@@ -28,7 +28,7 @@
        </svg>
      </div>
   </div>
-    <svg class="ele-charts">
+    <svg class="ele-charts" width="100%" height="100%">
       <g :transform="`translate(${ shiftLeft }, ${margin.bottom * 2})`">
       <path v-for="(chart, i) in createCharts.emissionsPaths"
       :transform="`translate(${margin.left}, ${createCharts.groupPosition[i]})`"
@@ -285,6 +285,7 @@ export default {
 @import "library/src/style/global.scss";
 
 .electrification_trend {
+  width: 100%;
   height: 100%;
   display: inline-flex;
 

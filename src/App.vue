@@ -1,6 +1,6 @@
 <template>
   <div id="app" ref="vis">
-    <SensesMenu :id="'transition-path-1'" :min-width="1024"/>
+    <SensesMenu :id="'transition-path-1'" :min-width="800"/>
     <div class="noscroll introduction">
       <h1 class="t" id="cover">Towards an Electric Future</h1>
       <h1 class="subtitle">A guide to clean electricity production and sectors electrification</h1>
@@ -15,10 +15,11 @@
         <h4>What will you learn?</h4>
           <p>
             In this module, you will learn about the sources of CO2 emissions
-            in the energy sector and how we can abate those emissions in the
-            future by a transition towards renewable energy and electrification. <br />
-            Scroll down to start your journey!
+            across sectors of the energy system and how we can abate those
+            emissions in the future by a transition towards renewable energy
+            and electrification.
           </p>
+          <div class="scroll-invitation"><h4>Scroll down to start your reading</h4></div>
         </div>
     <LayoutScrollytelling>
       <template v-slot:vis="{ width, height, step }">
@@ -385,6 +386,18 @@ export default {
   width: 100%;
   height: 550px;
 
+  &.introduction {
+    padding-top: $spacing * 2;
+    height: 1000px;
+
+    .scroll-invitation {
+      width: 30%;
+      margin: 5em auto;
+      text-align: center;
+      border-top: 1px solid black;
+    }
+  }
+
   .t {
       font-size: 60px;
       margin-bottom: $spacing / 2;
@@ -400,8 +413,6 @@ export default {
 
   .title {
     margin-bottom: 10px;
-    border-top: 1px solid black;
-    padding-top: $spacing * 2;
   }
 
   .subtitle {
@@ -523,7 +534,13 @@ export default {
   .noscroll {
     max-width: 600px;
     &.introduction {
-      height: 700px;
+      height: 100vh;
+
+      .scroll-invitation {
+        width: 50%;
+        padding: 10% auto;
+        text-align: center;
+      }
     }
 
     &.electr-share {
