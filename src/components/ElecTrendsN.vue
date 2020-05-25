@@ -1,23 +1,10 @@
 <template>
   <div class="electrification_trend">
-    <div class='legend'>
-      How to read:
-      <svg class='lines-legend'>
-        <rect width='50' height='10' x='0' y='2' fill='#ed96ab'/>
-        <line x1='0' x2='50' y1='2' y2='2' stroke='#c8005f' stroke-width='2'/>
-        <text x='60' y='12'>Emissions (Gt CO2/yr)</text>
-        <rect width='50' height='10' x='0' y='22' fill='#ffd89a'/>
-        <line x1='0' x2='50' y1='22' y2='22' stroke='#ba7e12' stroke-width='2'/>
-        <text x='60' y='30'>Electrification (%)</text>
-        <rect width='50' height='10' x='0' y='42' fill='#a2e7c0'/>
-        <line x1='0' x2='50' y1='42' y2='42' stroke='#5b9574' stroke-width='2'/>
-        <text x='60' y='50'>Renewable Elect. (%)</text>
-      </svg>
-    </div>
     <div  class="scenarioselect">
+      <div class="scenario-selector">
       <p class="graph-title sans">Electrification trends across sectors</p>
-        <span>Model:</span> <span class="dotted sans">REMIND</span><br/>
-        <div class="scenario-selector">
+        <span>Model:</span> <span class="model">REMIND</span>
+        <div>
         <p id="select-label">Select a scenario:</p>
          <SensesSelect
            class="scenario selector"
@@ -25,24 +12,39 @@
            v-model="scenarioSelected"
          />
      </div>
+   </div>
+     <div class='legend'>
+       <p>How to read:</p>
+       <svg class='lines-legend'>
+         <rect width='50' height='10' x='0' y='2' fill='#ed96ab'/>
+         <line x1='0' x2='50' y1='2' y2='2' stroke='#c8005f' stroke-width='2'/>
+         <text x='60' y='12'>Emissions (Gt CO2/yr)</text>
+         <rect width='50' height='10' x='0' y='22' fill='#ffd89a'/>
+         <line x1='0' x2='50' y1='22' y2='22' stroke='#ba7e12' stroke-width='2'/>
+         <text x='60' y='30'>Electrification (%)</text>
+         <rect width='50' height='10' x='0' y='42' fill='#a2e7c0'/>
+         <line x1='0' x2='50' y1='42' y2='42' stroke='#5b9574' stroke-width='2'/>
+         <text x='60' y='50'>Renewable Elect. (%)</text>
+       </svg>
+     </div>
   </div>
     <svg class="ele-charts">
-      <g :transform="`translate(0, ${margin.bottom * 2})`">
+      <g :transform="`translate(${ shiftLeft }, ${margin.bottom * 2})`">
       <path v-for="(chart, i) in createCharts.emissionsPaths"
-      :transform="`translate(${(innerWidth / 4) }, ${createCharts.groupPosition[i]})`"
+      :transform="`translate(${margin.left}, ${createCharts.groupPosition[i]})`"
       class="emissions-trend"
       v-bind:key="i"
       :d="chart"
       />
       <path v-for="(chart, i) in createCharts.electrification"
-      :transform="`translate(${(innerWidth / 4) }, ${createCharts.groupPosition[i]})`"
+      :transform="`translate(${margin.left}, ${createCharts.groupPosition[i]})`"
       :class="createCharts.sector[i] === 'Electricity' ? 'electricity-sect' : ''"
       class="elect-trend"
       v-bind:key="i + 'electr'"
       :d="chart"
       />
       <path v-for="(chart, i) in createCharts.re"
-      :transform="`translate(${(innerWidth / 4) }, ${createCharts.groupPosition[i]})`"
+      :transform="`translate(${margin.left}, ${createCharts.groupPosition[i]})`"
       v-bind:key="i + 're'"
       class="low-carb"
       :d="chart"
@@ -50,7 +52,7 @@
     <g
     v-for="(chart, i) in createCharts.electrification"
     v-bind:key="i + 'axis'"
-    :transform="`translate(${(innerWidth / 4) }, ${createCharts.groupPosition[i]})`"
+    :transform="`translate(${margin.left}, ${createCharts.groupPosition[i]})`"
     >
       <text
       :x='0'
@@ -92,7 +94,7 @@
       [2090],
       [2100]
     ]"
-    :transform="'translate('+ (innerWidth / 4) + ',' + (this.innerHeight - 100) + ')'" />
+    :transform="`translate(${shiftLeft + margin.left},${this.innerHeight - 100})`" />
     />
     </svg>
   </div>
@@ -136,19 +138,22 @@ export default {
       ElectrificationTrends,
       scenarioSelected: 'BAU',
       margin: {
-        left: 0,
-        top: -50,
+        left: 40,
+        top: 50,
         bottom: 30,
         right: 40
       }
     }
   },
   computed: {
+    shiftLeft () {
+      return this.width < 1024 ? this.innerWidth / 4.5 : this.margin.left
+    },
     innerWidth () {
       return this.width - this.margin.left - this.margin.right
     },
     innerHeight () {
-      return this.height - this.margin.top - this.margin.bottom
+      return this.width < 1024 ? this.height - this.margin.top - this.margin.bottom : this.height - this.margin.bottom
     },
     newScenario () {
       let currentScenario = this.scenarioSelected
@@ -280,67 +285,65 @@ export default {
 @import "library/src/style/global.scss";
 
 .electrification_trend {
-  width: 80%;
   height: 100%;
-}
-#perc {
-    font-size: 10px;
-}
+  display: inline-flex;
 
-svg {
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: block;
+  .model {
+    color: $color-neon;
+  }
+
+  #select-label {
+    display: inline;
+  }
 }
 
 .ele-charts {
-  margin-left: 100px;
-}
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
 
-path {
-  fill-opacity: 0.4;
-}
+  path {
+    fill-opacity: 0.4;
 
-.elect-trend {
-  stroke: getColor(yellow, 40);
-  fill: #ffac00;
-}
+    &.elect-trend {
+      stroke: getColor(yellow, 40);
+      fill: #ffac00;
+    }
 
-.emissions-trend {
-  stroke: getColor(red, 40);
-  fill: #ed96ab;
-}
+    &.emissions-trend {
+      stroke: getColor(red, 40);
+      fill: #ed96ab;
+    }
 
-.low-carb {
-  stroke: getColor(green, 40);
-  fill: #a2e7c0;
-}
+    &.low-carb {
+      stroke: getColor(green, 40);
+      fill: #a2e7c0;
+    }
 
-.electricity-sect {
-  display:none;
+    &.electricity-sect {
+      display:none;
+    }
+  }
+
+  .top__line {
+    stroke: grey;
+    stroke-width: 0.5;
+    stroke-dasharray: 2 2;
+  }
 }
 
 .legend {
-  bottom: 0;
-  left: 3.5em;
-  position: absolute;
-  width: 150px;
-  z-index: 1;
+  margin-top: 20px;
 }
 
 .lines-legend {
   background-color: transparent;
-  width: 250px;
 }
 
 .scenarioselect {
-  top: 15px;
-  left: 3.5em;
-  position: absolute;
-  width: 245px;
+  width: 40%;
   z-index: 1;
+  padding: 40px 40px;
 }
 
 .scenario-selector {
@@ -351,36 +354,28 @@ path {
   margin-left: 5px;
 }
 
-#scenario {
-  background: getColor(green, 100);
-  color: getColor(green, 40);
-}
+@media screen and (max-width: 1024px) {
 
-#select-label {
-  margin-bottom: 10px;
-  margin-left: 3px;
+  .electrification_trend {
+    display: block;
   }
 
-.scenarioselect, .left-text {
-  margin-top: 15px;
-  font-family: $font-serif;
-}
+  .scenarioselect {
+    width: 100%;
+    height: 18%;
+    display: inline-flex;
 
-.sector-labels {
-  text-anchor: end;
-}
+    .legend {
+      margin-left: 20px;
+    }
 
-.top__line {
-  stroke: grey;
-  stroke-width: 0.5;
-  stroke-dasharray: 2 2;
-}
+    .scenario-selector {
+      width: 90%;
+    }
+  }
 
-@include max-width(1100px) {
-  $key-height: 128px;
-  .regionselect {
-    height: $key-height;
-    width: 18%;
+  .ele-charts {
+    width: 100%;
   }
 }
 </style>

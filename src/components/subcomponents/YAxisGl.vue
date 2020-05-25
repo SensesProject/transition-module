@@ -13,7 +13,7 @@
     <text
     text-anchor="start"
     :class="label"
-    :x='(width / 2) + 8'
+    :x='(width / 2) + 30'
     :y='label.y'
     >
     {{ emissionsLabels[i] / 1000}} Gt CO2/yr

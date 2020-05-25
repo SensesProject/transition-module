@@ -405,7 +405,7 @@ export default {
   }
 
   .regionselect {
-    margin: 20px 40px;
+    margin: 40px 40px;
     width: 20%;
     // height: calc(100vh - 4rem);
     z-index: 1;
