@@ -19,7 +19,25 @@
             emissions in the future by a transition towards renewable energy
             and electrification.
           </p>
-          <div class="scroll-invitation"><h4>Scroll down to start your reading</h4></div>
+          <div class="scroll-invitation">
+            <div class="icon-menus">
+              <span class="glyph-emissions"/>
+              <span class="glyph-power"/>
+              <span class="glyph-world"/>
+            </div>
+            <h4>Scroll down to start your reading</h4>
+          </div>
+        </div>
+        <div class="noscroll current-emissions">
+          <div class="gridder">
+            <div class="row">
+              <span class="glyph-emissions"/>
+            </div>
+            <div class="row">
+              <h4>Chapter 1</h4>
+              <h2>Current and future energy-related CO2 emissions</h2>
+            </div>
+          </div>
         </div>
     <LayoutScrollytelling>
       <template v-slot:vis="{ width, height, step }">
@@ -35,21 +53,23 @@
       </template>
       <div slot="text" class="observer">
         <IntersectionObserver :step="1" align="right">
-          <h2 class="title" id="net__zero">What is Net-Zero?</h2>
+          <h2 class="title" id="net__zero">What is Net Zero?</h2>
           <p>
-            To stop climate change and stabilize global temperature,
-            global CO2 emissions must be reduced to net-zero.<br /><br />
-            Net-zero <span class="highlight" id="emissions">CO2 emissions</span>
-            mean that all remaining CO2 emissions to the
-            atmosphere would need to be balanced by removing CO2 from the atmosphere.
+            To stop climate change and stabilize global mean temperature,
+            CO2 emissions must be reduced to net-zero.<br /><br />
+            Net-zero CO2 emissions means reducing fossil <span class="highlight" id="emissions">CO2 emissions</span> towards
+            zero (and potentially compensating remaining fossil CO2 emissions
+            by removing CO2 from the atmosphere). Net-zero is also called
+            <strong>carbon neutrality.</strong>
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.1" align="right">
           <p>
             The time schedule for the energy transition is tight!
-            The Paris Agreement demands stabilizing global warming at 1.5°C to
-            2°C above preindustrial levels. Limiting global warming to 2°C
-            levels will require net-zero CO2 emissions by 2070.
+            The Paris Agreement demands limiting global warming to 1.5°C to 2°C
+            above pre-industrial levels.
+            <strong>Limiting global warming to 2°C levels will require net-zero
+            CO2 emissions by 2070.</strong>
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.2" align="right">
@@ -57,7 +77,6 @@
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="2" align="right">
-          <h2 class="title" id="increasing__emissions">Emission have been steadily increasing</h2>
           <p>
             Let us take a closer look at the past 30 years where emissions have
             been steadily increasing.
@@ -69,65 +88,80 @@
           <p>
             The current energy-related CO2 emissions come from four different
             sectors: electricity, transport, industry and buildings and other
-            energy uses.
+            energy uses. Please note that the electricity sector <strong>supplies</strong>
+            electricity to the demand sectors (transport, industry and buildings).
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.1" align="right">
-          <h2 class="p mono" id="electricity">Electricity Sector</h2>
+          <h2 class="title">Electricity Sector (Supply)</h2>
           <p>
-            Emissions from electricity generation represent about one third
-            and have been steadily increasing over the past decades.
-            The main reason is the economic growth in developing countries,
-            especially in India and China, where demand for electricity soars
-            and leads to the construction of more and more coal-fired power plants.
+            Emissions from electricity generation represent about one third and
+            have been steadily increasing over the past decades. The main
+            contribution of current growth are new coal-power plants in developing
+            countries and emerging economies.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.2" align="right">
-          <h2 class="p mono" id="residential">Industry Sector</h2>
+          <h2 class="title">Industry Sector</h2>
           <p>
-            Industry is a complex sector that causes emissions either by
-            combusting fossil fuels for heating or using them as feedstocks
-            for industrial goods like cement or plastics. The main contributors
-            to industry emissions are the energy-intensive production of steel
-            and cement, both of which have experienced a strong growth over
-            the past 30 years.
+            The industry sector comprises a range of sub-sectors such as the
+            energy-intensive production of steel, cement or chemicals.
+            CO2 emissions are mainly caused by combusting fossil fuels for
+            industrial heat (combustion) or by chemical reactions in industrial
+            processes (process emissions).
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.3" align="right">
-          <h2 class="p mono" id="industry">Transport Sector</h2>
+          <h2 class="title">Transport Sector</h2>
           <p>
             Increasing road transport, aviation and shipping all contribute to
-            global rise of transport emissions. Road transport includes small
-            passenger cars as well as trucks and buses. Most of the transport
-            activities are currently fueled by oil-based products. Decarbonization
-            of transport will be a key future challenge.
+            a global rise of transport emissions. Ground transportation includes
+            passenger cars, trucks and buses as well as trains (freight and passenger).
+            Most of the transport activities are currently based on oil-based fuels.
+            Decarbonization of transport is a key challenge.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.4" align="right">
-          <h2 class="p mono" id="other">Building Sector</h2>
+          <h2 class="title">Building Sector</h2>
           <p>
             The building sector contributes emissions mainly from space heating
-            with coal, gas or oil-based products. Emissions have remained constant
-            over recent decades, decreasing the share of buildings emissions
-            in total emissions. This was driven by improvements in energy
-            efficiency and a gradual shift from coal to gas in space heating.
+            with coal, gas or oil-based fuels as well as from cooking and heating
+            water. Emissions have remained constant over recent decades,
+            such that the share of buildings emissions in total emissions decreases.
+            This was driven by improvements in energy efficiency and a gradual
+            shift from coal to gas in space heating.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="3.5" align="right">
-          <h2 class="p mono" id="transport">Other Energy</h2>
+          <h2 class="title">Other Energy</h2>
           <p>
             There are a number of energy-related processes that also cause
             emissions but are not part of the four main sectors. These are,
-            for example, emissions from mining coal and natural gas or from
-            the combustion of waste. We summarized them under the category
-            of “other energy” and will not discuss them in detail here.
+            for example, emissions from mining coal and natural gas, refineries
+            or from district heating. We summarized them into “other energy”
+            and will not discuss them in detail here.
           </p>
         </IntersectionObserver>
       </div>
       </LayoutScrollytelling>
       <div class="noscroll electr-share">
-        <h4>Chapter 2</h4>
-        <h2>What are the main energy carriers across sectors and what is the role of electricity?</h2>
+        <div class="gridder">
+          <div class="row">
+            <span class="glyph-power"/>
+          </div>
+          <div class="row">
+            <h4>Chapter 2</h4>
+            <h2>Main energy carriers and the role of electricity</h2>
+          </div>
+        </div>
+        <p>
+          Understanding the pathways to net zero requires looking closer into
+          the types of energy (energy carriers) consumed across sectors.
+          This includes fossil fuels (coal, gas, oil) and potentially net-zero
+          sources such as biomass. Electricity is a special energy carrier as
+          it can be efficiently used across sectors, and generated at low costs
+          without CO2 emissions (e.g. wind and solar power).
+        </p>
      </div>
       <LayoutScrollytelling>
         <template v-slot:vis="{ width, height, step }">
@@ -146,12 +180,9 @@
         <div slot="text" class="observer">
           <IntersectionObserver :step="3" align="left">
             <p>
-              Understanding the pathways to net zero, requires looking closer
-              into the types of energy (energy carriers) consumed across sectors.
-              This includes fossil fuels (coal, gas, oil) and potentially net-zero
-              sources such as biomass. Electricity is a special energy carrier as
-              it can be efficiently used across sectors, and generated at low
-              costs without CO2 emissions (e.g. wind and solar power).
+              The height of the bars indicate the relative share of energy
+              consumption across sectors, while types of energy are shown along
+              the horizontal axis.
             </p>
           </IntersectionObserver>
         <IntersectionObserver :step="4" align="left">
@@ -168,9 +199,9 @@
           <p>
             The most prominent way of directly replacing fossil fuels in end-use
             sectors is making use of <span class="highlight" id="biomass"
-            >biomass</span>. While the traditional use of biomass
-            leads to negative impacts on human health and the environment;
-            yet, more sustainable modern biomass technologies are increasingly
+            >biomass</span>. While the traditional use of biomass leads to
+            negative impacts on human health and the environment,
+            more sustainable modern biomass technologies are increasingly
             deployed in many countries.
           </p>
         </IntersectionObserver>
@@ -184,7 +215,7 @@
         </IntersectionObserver>
         <IntersectionObserver :step="4.3" align="left">
           <p>
-            Generating electricity relies on combusting fossil fuels
+            Generating electricity currently relies on combusting fossil fuels
             (e.g. in coal power plants), which leads to additional emissions.
             However, the energy transition is most advanced in the electricity
             supply sector. <br/>Wind and solar PV are the cheapest new source of
@@ -197,7 +228,7 @@
         <IntersectionObserver :step="5" class="height__change">
           <h2 class="title" id="country__perspectives">The status quo in different countries</h2>
           <p>
-            By using the selector on the left, you can look at the energy mix
+            By using the country selector, you can look at the energy mix
             across the four sectors in all
             countries. Some countries like Norway or Iceland have already
             transitioned to a renewable-based energy sector, while countries
@@ -282,15 +313,20 @@
         </div>
       </LayoutScrollytelling>
       <div class="noscroll trends-chart">
-        <h4>Chapter 3</h4>
-        <h2>How fast can electrification cut emissions?</h2>
+        <div class="gridder">
+          <div class="row">
+            <span class="glyph-world"/>
+          </div>
+          <div class="row">
+            <h4>Chapter 3</h4>
+            <h2>How fast can electrification cut emissions?</h2>
+          </div>
+        </div>
         <p>
-          We cannot predict the future, but we can create different plausible
-          scenarios of how a future decarbonization pathway could look like.
-          Across our scenario, we vary key uncertain parameters and analyze
-          how net-zero emissions can be reached. For example, we look at
-          different electrification shares per sector and think about how the
-          residual emissions can be erased by low-carbon alternatives.
+          We cannot predict the future, but we can calculate a range of plausible
+          scenarios of limiting warming to 1.5°C or 2°C and compare them with
+          scenarios with less climate protection ambition (e.g. a business-as-usual scenario, BAU).
+          Here we focus on sectoral CO2 emissions and electrification rates.
         </p>
      </div>
       <LayoutScrollytelling>
@@ -308,8 +344,8 @@
         <div slot="text" class="observer">
         <IntersectionObserver :step="13" align="right">
           <p>
-            The selectors allows you to filter global electrification trends
-            from the REMIND model across three scenarios:
+            The selectors allows you to filter global electrification scenarios
+            from the REMIND model:
             Business-as-usual, 2°C Stabilization, 1.5°C.
           </p>
         </IntersectionObserver>
@@ -333,7 +369,15 @@
       </div>
     </LayoutScrollytelling>
     <div class="noscroll end">
-      <h2 id="end-title">Electrification as part of a wider Mitigation Strategy</h2>
+      <div class="gridder">
+        <div class="row">
+          <span class="glyph-policies"/>
+        </div>
+        <div class="row">
+          <h4>Conclusion</h4>
+          <h2>Electrification as part of a wider Mitigation Strategy</h2>
+        </div>
+      </div>
       <p class="final-par">
         Renewable expansion and electrification are promising strategies for a
         successful future decarbonization of the energy system. However,
@@ -387,14 +431,28 @@ export default {
   height: 550px;
 
   &.introduction {
-    padding-top: $spacing * 2;
-    height: 1000px;
+    padding-top: $spacing / 2;
+    height: 650px;
 
     .scroll-invitation {
       width: 30%;
       margin: 5em auto;
       text-align: center;
-      border-top: 1px solid black;
+
+      .icon-menus {
+        span {
+          font-size: 3em;
+          &.glyph-emissions {
+            color: $color-red;
+          }
+          &.glyph-power {
+            color: $color-yellow;
+          }
+          &.glyph-world {
+            color: $color-neon;
+          }
+        }
+      }
     }
   }
 
@@ -420,11 +478,35 @@ export default {
     margin-bottom: $spacing * 2;
   }
 
-  &.electr-share {
+  &.current-emissions {
+    border-top: 1px solid black;
     height: 250px;
+
+    .gridder {
+      display: inline-flex;
+
+      .glyph-emissions {
+        font-size: 4em;
+        color: $color-red;
+      }
+
+    }
+  }
+
+  &.electr-share {
+    height: 350px;
     border-top: 1px solid black;
     h2 {
       margin-bottom: 20px;
+    }
+    .gridder {
+      display: inline-flex;
+
+      .glyph-power {
+        font-size: 4em;
+        color: $color-yellow;
+      }
+
     }
   }
 
@@ -433,6 +515,15 @@ export default {
     border-top: 1px solid black;
     h2 {
       margin-bottom: 20px;
+    }
+    .gridder {
+      display: inline-flex;
+
+      .glyph-world {
+        font-size: 4em;
+        color: $color-neon;
+      }
+
     }
   }
 
@@ -444,6 +535,15 @@ export default {
 
     .final-par, #end-title {
         margin-bottom: $spacing;
+    }
+    .gridder {
+      display: inline-flex;
+
+      .glyph-policies {
+        font-size: 4em;
+        color: $color-green;
+      }
+
     }
   }
 

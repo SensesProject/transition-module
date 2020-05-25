@@ -1,7 +1,7 @@
 <template>
   <div class="visualization" id="emissions__chart">
     <div class="chart-description" ref="inWrapper">
-      <p class="graph-title sans">Energy-related CO2 emissions (fossil fuel use and industrial processes)</p>
+      <p class="graph-title sans">Energy-related CO2 emissions (fossil fuel use and Process Emissions)</p>
     </div>
     <svg class="emissions" width="100%" height="100%">
       <g :transform="'translate(' + margin.left + ',' + margin.top + ')'">
@@ -217,7 +217,7 @@ export default {
         { key: 'Electricity', color: '#611731', active: 3.1 },
         { key: 'Combustion', color: '#dd5f84', active: 3.2 },
         { key: 'Solvents', color: '#dd5f84', active: 3.2 },
-        { key: 'Industrial Processes', color: '#dd5f84', active: 3.2 },
+        { key: 'Process Emissions', color: '#dd5f84', active: 3.2 },
         { key: 'Waste', color: '#dd5f84', active: 3.2 },
         { key: 'Aviation', color: '#ed96ab', active: 3.3 },
         { key: 'Ground Transportation', color: '#ed96ab', active: 3.3 },
