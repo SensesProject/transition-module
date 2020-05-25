@@ -1,7 +1,7 @@
 <template>
   <div id="app" ref="vis">
     <SensesMenu :id="'transition-path-1'" :min-width="1024"/>
-    <div class="noscroll">
+    <div class="noscroll introduction">
       <h1 class="t" id="cover">Towards an Electric Future</h1>
       <h1 class="subtitle">A guide to clean electricity production and sectors electrification</h1>
         <h4 class="title">Relevant Concepts</h4>
@@ -124,7 +124,7 @@
         </IntersectionObserver>
       </div>
       </LayoutScrollytelling>
-      <div class="noscroll electr-share second-chart">
+      <div class="noscroll electr-share">
         <h4>Chapter 2</h4>
         <h2>What are the main energy carriers across sectors and what is the role of electricity?</h2>
      </div>
@@ -280,7 +280,7 @@
         </IntersectionObserver>
         </div>
       </LayoutScrollytelling>
-      <div class="noscroll electr-share">
+      <div class="noscroll trends-chart">
         <h4>Chapter 3</h4>
         <h2>How fast can electrification cut emissions?</h2>
         <p>
@@ -331,7 +331,7 @@
         </IntersectionObserver>
       </div>
     </LayoutScrollytelling>
-    <div class="noscroll" id="end">
+    <div class="noscroll end">
       <h2 id="end-title">Electrification as part of a wider Mitigation Strategy</h2>
       <p class="final-par">
         Renewable expansion and electrification are promising strategies for a
@@ -340,8 +340,8 @@
         low-carbon fuels like biofuels or hydrogen and the deployment of negative
         emissions play a role in future decarbonization scenarios as well.
       </p>
-      <SensesMeta :id="'transition-path-1'" />
    </div>
+   <SensesMeta :id="'transition-path-1'" />
   </div>
 </template>
 
@@ -376,14 +376,6 @@ export default {
 @import "library/src/style/base.scss";
 @import "library/src/style/variables.scss";
 
-h2 {
-  hyphens: none;
-
-  &.title {
-    margin-bottom: 10px;
-  }
-}
-
 .noscroll {
   padding-top: $spacing;
   margin: 20px auto;
@@ -391,7 +383,21 @@ h2 {
   width: 100%;
   height: 550px;
 
+  .t {
+      font-size: 60px;
+      margin-bottom: $spacing / 2;
+    }
+
+  h2 {
+    hyphens: none;
+  }
+
+  h4 {
+    margin-top: 20px;
+  }
+
   .title {
+    margin-bottom: 10px;
     border-top: 1px solid black;
     padding-top: $spacing * 2;
   }
@@ -401,145 +407,125 @@ h2 {
     margin-bottom: $spacing * 2;
   }
 
-  h4 {
-    margin-top: 20px;
-  }
-}
-
-.electr-share {
-  border-top: 1px solid black;
-  h2 {
-    margin-bottom: 20px;
-  }
-}
-.author__section {
-  margin-bottom: $spacing;
-}
-
-.height__change {
-  padding: 30vh 0 2000px !important;
-}
-
-.author {
-  font-style: 12px;
-  font-weight: bold;
-  margin-right: 1em;
-  color: $color-neon;
-}
-
-.second-chart {
-  height: 250px;
-}
-
-.t {
-    font-size: 60px;
-    margin-bottom: $spacing / 2;
+  &.electr-share {
+    height: 250px;
+    border-top: 1px solid black;
+    h2 {
+      margin-bottom: 20px;
+    }
   }
 
-#app {
-  width: 100vw;
+  &.trends-chart {
+    height: 350px;
+    border-top: 1px solid black;
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &.end {
+    height: 150px;
+    margin-top: 20%;
+    margin-bottom: $spacing * 4;
+    border-top: 1px solid black;
+
+    .final-par, #end-title {
+        margin-bottom: $spacing;
+    }
+  }
+
 }
 
-.observer {
-  pointer-events: none;
-}
+  p {
+    text-align: left;
+    font-weight: lighter;
 
-.vis-inner {
-  margin-top: -$spacing * 2;
-  color: getColor(gray, 10) !important;
+    #emissions {
+      background: getColor(red, 100);
+      color: $color-red;
+    }
+
+    #oil {
+      background: #75757a;
+      color: lighten(#75757a, 50);
+    }
+
+    #coal {
+      background: #4a4a4a;
+      color: lighten(#4a4a4a, 50);
+    }
+
+    #gas {
+      background: #9898a1;
+      color: lighten(#9898a1, 50);
+    }
+
+    #elect {
+      background: getColor(yellow, 80);
+      color: getColor(yellow, 40);
+    }
+
+    #biomass {
+      background: #618879;
+      color: lighten(#618879, 40);
+    }
+
+    #nuclear {
+      background: #347474;
+      color: lighten(#347474, 40);
+    }
+
+    #WindSolHy {
+      background: #acc3ac;
+      color: darken(#acc3ac, 40);
+    }
+
+  }
+
+.layout-scrollytelling {
+
+  .graph-title {
+    font-size: 20px;
+    font-weight: bold;
+    hyphens: none;
+  }
+
+  .vis-inner {
+    margin-top: -$spacing * 2;
+  }
+
+  .height__change {
+    padding: 30vh 0 200vh !important;
+  }
 }
 
 .senses-tooltip-select {
-  overflow-x: hidden;
+  overflow-y: auto;
   max-height: 400px;
   max-width: 300px;
-}
-
-p {
-  text-align: left;
-  font-weight: lighter;
-
-  #emissions {
-    background: getColor(red, 100);
-    color: $color-red;
-  }
-
-  #oil {
-    background: #75757a;
-    color: lighten(#75757a, 50);
-  }
-
-  #coal {
-    background: #4a4a4a;
-    color: lighten(#4a4a4a, 50);
-  }
-
-  #gas {
-    background: #9898a1;
-    color: lighten(#9898a1, 50);
-  }
-
-  #elect {
-    background: getColor(yellow, 80);
-    color: getColor(yellow, 40);
-  }
-
-  #biomass {
-    background: #618879;
-    color: lighten(#618879, 40);
-  }
-
-  #nuclear {
-    background: #347474;
-    color: lighten(#347474, 40);
-  }
-
-  #WindSolHy {
-    background: #acc3ac;
-    color: darken(#acc3ac, 40);
-  }
-
-}
-
-.back {
-  margin: 0 auto;
-  margin-top: 20%;
-  margin-bottom: 20%;
-  position: relative;
-  width: 405px;
-}
-
-#toolkit {
-  margin-left: 5px;
-}
-
-.final-par, #end-title {
-    margin-bottom: $spacing;
-}
-
-.graph-title {
-  font-size: 20px;
-  font-weight: bold;
-  hyphens: none;
-}
-
-#end {
-  margin-top: 20%;
-  margin-bottom: $spacing * 4;
-  border-top: 1px solid black;
-  height: 100%;
-}
-
-.coming-soon:hover {
-  color: gray;
-  text-underline: none;
 }
 
 .component-fade-enter-active, .component-fade-leave-active {
   transition: opacity .3s ease;
 }
-.component-fade-enter, .component-fade-leave-to
-/* .component-fade-leave-active below version 2.1.8 */ {
+.component-fade-enter, .component-fade-leave-to {
   opacity: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .noscroll {
+    max-width: 600px;
+    &.introduction {
+      height: 700px;
+    }
+
+    &.electr-share {
+      height: 500px;
+    }
+  }
+
+  .layout-scrollytelling {
+    width: 90%;
+  }
 }
 </style>
