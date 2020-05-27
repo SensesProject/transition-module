@@ -169,11 +169,11 @@ export default {
         y: d3
           .scaleLinear()
           .domain([0, 100])
-          .rangeRound([this.innerHeight / 10, 0]),
+          .rangeRound([this.innerHeight / 9, 0]),
         yEm: d3
           .scaleLinear()
           .domain([15000, 0])
-          .rangeRound([0, this.innerHeight / 10])
+          .rangeRound([0, this.innerHeight / 9])
       }
     },
     dataStructure () {
@@ -367,7 +367,7 @@ export default {
     display: inline-flex;
 
     .legend {
-      margin-left: 20px;
+      margin-left: 10px;
     }
 
     .scenario-selector {

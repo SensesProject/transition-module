@@ -3,7 +3,8 @@
     <SensesMenu :id="'transition-path-1'" :min-width="800"/>
     <div class="noscroll introduction">
       <h1 class="t" id="cover">Towards an Electric Future</h1>
-      <h1 class="subtitle">A guide to clean electricity production and sectors electrification</h1>
+      <h1 class="subtitle">CO<span class="subscript">2</span>
+        emissions and energy carriers across sectors and countries</h1>
         <h4 class="title">Relevant Concepts</h4>
         <p class="mono">
           Net-zero /
@@ -14,8 +15,8 @@
         </p>
         <h4>What will you learn?</h4>
           <p>
-            In this module, you will learn about the sources of CO2 emissions
-            across sectors of the energy system and how we can abate those
+            In this module, you will learn about the sources of CO<span class="subscript">2</span>
+            emissions across sectors of the energy system and how we can abate those
             emissions in the future by a transition towards renewable energy
             and electrification.
           </p>
@@ -35,9 +36,16 @@
             </div>
             <div class="row">
               <h4>Chapter 1</h4>
-              <h2>Current and future energy-related CO2 emissions</h2>
+              <h2>Current and future energy-related CO<span class="subscript">2</span>
+                emissions</h2>
             </div>
           </div>
+          <p>
+            CO<span class="subscript">2</span> emissions from the energy system have been steadily increasing
+            in the past decades. We dive into CO<span class="subscript">2</span>
+            emissions from the different energy sectors and show what is
+            needed for stabilizing the climate: Net Zero.
+          </p>
         </div>
     <LayoutScrollytelling>
       <template v-slot:vis="{ width, height, step }">
@@ -56,10 +64,10 @@
           <h2 class="title" id="net__zero">What is Net Zero?</h2>
           <p>
             To stop climate change and stabilize global mean temperature,
-            CO2 emissions must be reduced to net-zero.<br /><br />
-            Net-zero CO2 emissions means reducing fossil <span class="highlight" id="emissions">CO2 emissions</span> towards
-            zero (and potentially compensating remaining fossil CO2 emissions
-            by removing CO2 from the atmosphere). Net-zero is also called
+            CO<span class="subscript">2</span> emissions must be reduced to net-zero.<br /><br />
+            Net-zero CO<span class="subscript">2</span> emissions means reducing fossil <span class="highlight" id="emissions">CO<span class="subscript">2</span> emissions</span> towards
+            zero (and potentially compensating remaining fossil CO<span class="subscript">2</span> emissions
+            by removing CO<span class="subscript">2</span> from the atmosphere). Net-zero is also called
             <strong>carbon neutrality.</strong>
           </p>
         </IntersectionObserver>
@@ -69,7 +77,7 @@
             The Paris Agreement demands limiting global warming to 1.5°C to 2°C
             above pre-industrial levels.
             <strong>Limiting global warming to 2°C levels will require net-zero
-            CO2 emissions by 2070.</strong>
+            CO<span class="subscript">2</span> emissions by 2070.</strong>
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="1.2" align="right">
@@ -86,7 +94,7 @@
           <h2 class="title" id="sector__emissions">
             Where do the current emissions come from?</h2>
           <p>
-            The current energy-related CO2 emissions come from four different
+            The current energy-related CO<span class="subscript">2</span> emissions come from four different
             sectors: electricity, transport, industry and buildings and other
             energy uses. Please note that the electricity sector <strong>supplies</strong>
             electricity to the demand sectors (transport, industry and buildings).
@@ -106,7 +114,7 @@
           <p>
             The industry sector comprises a range of sub-sectors such as the
             energy-intensive production of steel, cement or chemicals.
-            CO2 emissions are mainly caused by combusting fossil fuels for
+            CO<span class="subscript">2</span> emissions are mainly caused by combusting fossil fuels for
             industrial heat (combustion) or by chemical reactions in industrial
             processes (process emissions).
           </p>
@@ -160,7 +168,7 @@
           This includes fossil fuels (coal, gas, oil) and potentially net-zero
           sources such as biomass. Electricity is a special energy carrier as
           it can be efficiently used across sectors, and generated at low costs
-          without CO2 emissions (e.g. wind and solar power).
+          without CO<span class="subscript">2</span> emissions (e.g. wind and solar power).
         </p>
      </div>
       <LayoutScrollytelling>
@@ -255,7 +263,7 @@
             transition towards very high shares of wind and solar PV generation,
             which increasingly replace coal and gas.
             With wind and solar PV having become cheap energy sources,
-            reducing CO2 emissions in electricity can be achieved at low costs.
+            reducing CO<span class="subscript">2</span> emissions in electricity can be achieved at low costs.
             The bigger challenge is replacing fossil fuels in industry, transport
             and buildings.
           </p>
@@ -326,7 +334,7 @@
           We cannot predict the future, but we can calculate a range of plausible
           scenarios of limiting warming to 1.5°C or 2°C and compare them with
           scenarios with less climate protection ambition (e.g. a business-as-usual scenario, BAU).
-          Here we focus on sectoral CO2 emissions and electrification rates.
+          Here we focus on sectoral CO<span class="subscript">2</span> emissions and electrification rates.
         </p>
      </div>
       <LayoutScrollytelling>
@@ -362,8 +370,8 @@
             In the buildings, industry and transport sector this low-carbon electricity increasingly
             replaces fossil fuels. In addition to electrification, energy efficiency gains as well
             as the use of biofuels and hydrogen contribute to decarbonization.
-            Some CO2 emissions remain in each of the sectors as this scenario assumes that negative
-            emission technologies can be used to reach net-zero CO2 around 2070.
+            Some CO<span class="subscript">2</span> emissions remain in each of the sectors as this scenario assumes that negative
+            emission technologies can be used to reach net-zero CO<span class="subscript">2</span> around 2070.
           </p>
         </IntersectionObserver>
       </div>
@@ -422,6 +430,11 @@ export default {
 <style lang="scss">
 @import "library/src/style/base.scss";
 @import "library/src/style/variables.scss";
+
+.subscript {
+  vertical-align: bottom;
+  font-size: 10px;
+}
 
 .noscroll {
   padding-top: $spacing;
@@ -632,7 +645,9 @@ export default {
 
 @media screen and (max-width: 1024px) {
   .noscroll {
-    max-width: 600px;
+    max-width: 800px;
+    padding: 0 20px;
+    margin-top: 50px;
     &.introduction {
       height: 100vh;
 
