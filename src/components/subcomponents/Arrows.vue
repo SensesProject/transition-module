@@ -27,7 +27,7 @@ export default {
       const industry = this.coordinates[0]
       const electricity = this.coordinates[3]
       return {
-        path: `M10,${industry.sectorHeight * 2} Q10,${industry.sectorHeight * 2}-10,${industry.sectorHeight * 2} L-10,${industry.sectorHeight * 2} L-10,${electricity.sectorHeight} L10,${electricity.sectorHeight}`,
+        path: `M10,${industry.sectorHeight * 2} L-10,${industry.sectorHeight * 2} L-10,${electricity.sectorHeight} L10,${electricity.sectorHeight}`,
         arrow: `0,${industry.sectorHeight * 2 - 10} 10,${industry.sectorHeight * 2} 0,${industry.sectorHeight * 2 + 10}`
       }
     },

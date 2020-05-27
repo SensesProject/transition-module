@@ -1,7 +1,7 @@
 <template>
   <div class="visualization" id="emissions__chart">
     <div class="chart-description" ref="inWrapper">
-      <p class="graph-title sans">Energy-related CO2 emissions (fossil fuel use and Process Emissions)</p>
+      <p class="graph-title sans">Energy-related CO<span class="subscript">2</span> emissions (fossil fuel use and Process Emissions)</p>
     </div>
     <svg class="emissions" width="100%" height="100%">
       <g :transform="'translate(' + margin.left + ',' + margin.top + ')'">
@@ -71,7 +71,7 @@
         :width='this.innerWidth - margin.left'
         :height= 'innerHeight - margin.bottom'
         :thicks="[[0],[10],[20],[30],[40]]"
-        :indicator="'Gt CO2'"
+        :indicator="'Gt CO2/yr'"
         />
         <line v-for="(year, i) in thicksShort"
         v-show="step >= 2"
@@ -171,6 +171,7 @@ export default {
   },
   computed: {
     innerWidth () {
+      console.log(this.indicator)
       return this.width < 1024 ? this.width - this.margin.left : this.width - (this.margin.left * 5)
     },
     innerHeight () {
