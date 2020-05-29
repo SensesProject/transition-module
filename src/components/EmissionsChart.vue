@@ -2,7 +2,7 @@
   <div class="visualization" id="emissions__chart">
     <div class="chart-description" ref="inWrapper">
       <p class="graph-title sans">Energy-related CO<span class="subscript">2</span>
-        emissions (fossil fuel use and industrial process) <SensesTooltip class="superscript" :tooltip="reference">[1]</SensesTooltip></p>
+        emissions (fossil fuel use and industrial process)</p>
     </div>
     <svg class="emissions" width="100%" height="100%">
       <g :transform="'translate(' + margin.left + ',' + margin.top + ')'">
@@ -95,7 +95,6 @@ import * as d3 from 'd3'
 import { group, groups, rollup, rollups } from 'd3-array'
 
 // components
-import SensesTooltip from 'library/src/components/SensesTooltip.vue'
 import EmissionsDots from './subcomponents/EmissionsDots.vue'
 import Dragline from './subcomponents/Dragline.vue'
 import YAxis from './subcomponents/YAxis.vue'
@@ -124,8 +123,7 @@ export default {
     EmissionsDots,
     Dragline,
     YAxis,
-    XAxis,
-    SensesTooltip
+    XAxis
   },
   props: {
     width: {
@@ -144,7 +142,6 @@ export default {
   data () {
     return {
       EmissionData,
-      reference: 'Based on CEDS data',
       margin: {
         left: 100,
         top: 30,

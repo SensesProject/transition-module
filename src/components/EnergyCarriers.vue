@@ -3,7 +3,11 @@
     <div class="regionselect" ref="proportionDiv">
       <p class="graph-title sans" v-if="step >= 6">Possible electrification pathway based on current World energy production.</p>
       <div class="text-container">
-        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors <SensesTooltip class="superscript" :tooltip="reference">[2]</SensesTooltip></p>
+        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors
+          <span class="superscript">
+            Based on IEA data (Extended World energy balances, 2017)
+          </span>
+        </p>
         <p id="select-label" v-if="step === 5">Use the selector to see energy carriers distribution across regions.</p>
         <div class="commands-container" v-if="step === 5">
            <SensesSelect class="selector" :options="regionsArray" v-model="selected"/>
@@ -99,7 +103,6 @@ import ElectrificationSteps from '../assets/data/electrification-steps.json'
 
 // Components
 import SensesSelect from 'library/src/components/SensesSelect.vue'
-import SensesTooltip from 'library/src/components/SensesTooltip.vue'
 import Arrows from './subcomponents/Arrows.vue'
 // import EnergyProportion from './subcomponents/EnergyProportion.vue'
 
@@ -125,7 +128,6 @@ export default {
   },
   components: {
     SensesSelect,
-    SensesTooltip,
     Arrows
     // EnergyProportion
   },
@@ -135,7 +137,6 @@ export default {
       ElectrificationSteps,
       selected: 'World',
       isActive: '',
-      reference: 'Based on IEA data (Extended World energy balances, 2017)',
       clicked: false,
       margin: {
         left: 40,
@@ -418,10 +419,16 @@ export default {
     // height: calc(100vh - 4rem);
     z-index: 1;
 
+    .graph-title{
+      line-height: 100%;
+    }
+
+    #select-label {
+      margin-top: 10%;
+    }
+
     .superscript {
-    display: inline;
-    vertical-align: super;
-    font-size: 10px;
+    font-size: 9px;
     }
 
     .commands-container {
