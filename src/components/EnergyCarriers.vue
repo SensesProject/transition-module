@@ -3,7 +3,7 @@
     <div class="regionselect" ref="proportionDiv">
       <p class="graph-title sans" v-if="step >= 6">Possible electrification pathway based on current World energy production.</p>
       <div class="text-container">
-        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors</p>
+        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors <SensesTooltip class="superscript" :tooltip="reference">[2]</SensesTooltip></p>
         <p id="select-label" v-if="step === 5">Use the selector to see energy carriers distribution across regions.</p>
         <div class="commands-container" v-if="step === 5">
            <SensesSelect class="selector" :options="regionsArray" v-model="selected"/>
@@ -11,7 +11,7 @@
         </div>
       </div>
       <div v-if="step === 5" class="energy-proportion">
-         <EnergyProportion v-show="selected != 'World'" :data="{ allData: dataNest, selection: dataFilter, select: selected, perc: findPerc.perc, abs: findPerc.absValue }"/>
+        {{ selected }} → {{ Math.round(findPerc.absValue * 100) / 100 }} EJ/yr
       </div>
     </div>
   <div class="visualization" id="carriers" ref="inWrapper">
@@ -99,8 +99,9 @@ import ElectrificationSteps from '../assets/data/electrification-steps.json'
 
 // Components
 import SensesSelect from 'library/src/components/SensesSelect.vue'
+import SensesTooltip from 'library/src/components/SensesTooltip.vue'
 import Arrows from './subcomponents/Arrows.vue'
-import EnergyProportion from './subcomponents/EnergyProportion.vue'
+// import EnergyProportion from './subcomponents/EnergyProportion.vue'
 
 export default {
   name: 'EnergyCarriers',
@@ -124,8 +125,9 @@ export default {
   },
   components: {
     SensesSelect,
-    Arrows,
-    EnergyProportion
+    SensesTooltip,
+    Arrows
+    // EnergyProportion
   },
   data () {
     return {
@@ -133,6 +135,7 @@ export default {
       ElectrificationSteps,
       selected: 'World',
       isActive: '',
+      reference: 'Based on IEA data (Extended World energy balances, 2017)',
       clicked: false,
       margin: {
         left: 40,
@@ -246,9 +249,11 @@ export default {
         .range([0, this.graphHeight / 2])
 
       let maxRegValue = maxEnergy.reduce((sum, val) => sum + val, 0)
+      let noSupply = maxRegValue
       return {
         y,
-        maxRegValue
+        maxRegValue,
+        noSupply
       }
     },
     scaleX () {
@@ -283,10 +288,13 @@ export default {
       }
     },
     findPerc (){
-      const carriers = this.carrierSum
       const { maxRegValue } = this.scaleY
       const groupsbyregion = this.dataNest
       const world = groupsbyregion['World']
+      const supplyworld = groupsbyregion['World']['Electricity']
+      const supplycountry = groupsbyregion[this.selected]['Electricity']
+      const countrysupply = d3.sum(d3.values(supplycountry))
+      const supplysectorSum = d3.sum(d3.values(supplyworld))
       const maxEnergy = []
       const totalEnergy = _.map(world, (value, fuel) => {
         let fuels = d3.values(world[fuel])
@@ -294,10 +302,11 @@ export default {
         maxEnergy.push(maxValue)
       })
       const total = maxEnergy.reduce((sum, val) => sum + val, 0)
-      const perc = (maxRegValue / total) * 100
+      const perc = (maxRegValue / (total - supplyworld))
       return {
+        supply: supplysectorSum,
         perc: Math.round(perc * 100) / 100,
-        absValue: maxRegValue
+        absValue: maxRegValue - countrysupply
       }
     },
     sumCarriers () {
@@ -409,11 +418,18 @@ export default {
     // height: calc(100vh - 4rem);
     z-index: 1;
 
+    .superscript {
+    display: inline;
+    vertical-align: super;
+    font-size: 10px;
+    }
+
     .commands-container {
       margin-top: $spacing;
     }
 
     .energy-proportion {
+      margin-top: 10%;
       height: 60%;
     }
 
