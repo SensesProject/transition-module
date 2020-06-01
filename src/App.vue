@@ -279,11 +279,10 @@
           <h2 class="title" id="industry__second">Electrifying Industry.</h2>
           <p>
             Industrial heat demands can be almost fully electrified with available
-            technologies such as heat pumps, electric boilers and electric furnaces
-            (Cite Silvia’s paper in the footnote). Other options are needed to
-            replace fossil feedstock demands in the chemical industry
-            (e.g. hydrogen-based synthetic fuels) and process emissions in cement
-            manufacturing (e.g. carbon capture and storage, CCS).
+            technologies such as heat pumps, electric boilers and electric furnaces.
+            Other options are needed to replace fossil feedstock demands in the
+            chemical industry (e.g. hydrogen-based synthetic fuels) and process
+            emissions in cement manufacturing (e.g. carbon capture and storage, CCS).
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="9" align="left">

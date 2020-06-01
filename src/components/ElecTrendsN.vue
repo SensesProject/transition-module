@@ -18,7 +18,7 @@
        <svg class='lines-legend'>
          <rect width='50' height='10' x='0' y='2' fill='#ed96ab'/>
          <line x1='0' x2='50' y1='2' y2='2' stroke='#c8005f' stroke-width='2'/>
-         <text x='60' y='12'>Emissions (Gt CO2/yr)</text>
+         <text x='60' y='12'>Emissions (Gt CO<tspan class="subscript">2</tspan>/yr)</text>
          <rect width='50' height='10' x='0' y='22' fill='#ffd89a'/>
          <line x1='0' x2='50' y1='22' y2='22' stroke='#ba7e12' stroke-width='2'/>
          <text x='60' y='30'>Electrification (%)</text>

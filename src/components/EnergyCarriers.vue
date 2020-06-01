@@ -3,10 +3,9 @@
     <div class="regionselect" ref="proportionDiv">
       <p class="graph-title sans" v-if="step >= 6">Possible electrification pathway based on current World energy production.</p>
       <div class="text-container">
-        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors
-          <span class="superscript">
-            Based on IEA data (Extended World energy balances, 2017)
-          </span>
+        <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors </p>
+        <p class="superscript">
+          Based on IEA data (Extended World energy balances, 2017)
         </p>
         <p id="select-label" v-if="step === 5">Use the selector to see energy carriers distribution across regions.</p>
         <div class="commands-container" v-if="step === 5">
@@ -421,6 +420,7 @@ export default {
 
     .graph-title{
       line-height: 100%;
+      margin-bottom: 5px;
     }
 
     #select-label {
@@ -428,7 +428,7 @@ export default {
     }
 
     .superscript {
-    font-size: 9px;
+    font-size: 0.8em;
     }
 
     .commands-container {

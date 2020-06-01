@@ -190,7 +190,6 @@ export default {
       ])
     },
     linePath () {
-      // console.log(this.lineData)
       return d3
         .line()
         .x(d => {

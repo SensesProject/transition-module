@@ -102,13 +102,9 @@ export default {
   methods: {
     clickDragline: function (e) {
       const value = this.valueX = e.layerX - this.margin.left
-      console.log(this.totalWidth)
       if (this.totalWidth < 1024) {
-        console.log('i am small')
         this.valueX = value
       } else {
-        console.log('i am big')
-        console.log(e.offsetX)
         this.valueX = e.offsetX - this.margin.left
       }
     }
