@@ -84,6 +84,15 @@
         :y2="scales.y(40)"
         />
       </g>
+      <g :transform="`translate(${innerWidth / 2}, ${referencePos})`">
+        <a xlink:href="https://doi.org/10.5194/gmd-11-369-2018"
+        target="_blank"
+        >
+        <text class="svg-link">
+          *Based on data from Community Emissions Data System (CEDS), 2018
+        </text>
+      </a>
+      </g>
     </svg>
   </div>
 </template>
@@ -176,6 +185,9 @@ export default {
     },
     innerHeight () {
       return (this.height - this.margin.top - this.margin.bottom) / 1.2
+    },
+    referencePos () {
+      return this.width > 1024 ? this.divHeight - this.margin.bottom * 3 : 10
     },
     maxYear: function () {
       return this.step >= 2 ? 2015 : 2080
@@ -308,18 +320,19 @@ export default {
   .chart-description {
     padding: 40px 40px;
     width: 25%;
-
-    .superscript {
-    display: inline;
-    vertical-align: super;
-    font-size: 10px;
-    }
   }
 }
 
 svg {
   margin-top: 50px;
   width: 75%;
+
+  .svg-link {
+    fill: $color-neon;
+    text-decoration: underline;
+    text-anchor: middle;
+    font-size: 10px;
+  }
 
     #emissions {
       stroke: $color-red;

@@ -207,8 +207,8 @@
           <p>
             The most prominent way of directly replacing fossil fuels in end-use
             sectors is making use of <span class="highlight" id="biomass"
-            >biomass</span>. While the traditional use of biomass leads to
-            negative impacts on human health and the environment,
+            >biomass</span>. While the traditional use of biomass can lead to negative
+            impacts on human health,
             more sustainable modern biomass technologies are increasingly
             deployed in many countries.
           </p>
@@ -236,11 +236,10 @@
         <IntersectionObserver :step="5" class="height__change">
           <h2 class="title" id="country__perspectives">The status quo in different countries</h2>
           <p>
-            By using the country selector, you can look at the energy mix
-            across the four sectors in all
-            countries. Some countries like Norway or Iceland have already
-            transitioned to a renewable-based energy sector, while countries
-            like Australia are still relatively dependent on coal.
+            By using the selector, you can look at the energy mix across the four
+            sectors in all countries. Some countries have transitioned to a
+            renewable-based energy system, while other countries are still
+            dependent on coal.
           </p>
         </IntersectionObserver>
         <IntersectionObserver :step="6" align="left">

@@ -4,9 +4,6 @@
       <p class="graph-title sans" v-if="step >= 6">Possible electrification pathway based on current World energy production.</p>
       <div class="text-container">
         <p class="graph-title sans" v-if="step < 6">Energy Use across Sectors </p>
-        <p class="superscript">
-          Based on IEA data (Extended World energy balances, 2017)
-        </p>
         <p id="select-label" v-if="step === 5">Use the selector to see energy carriers distribution across regions.</p>
         <div class="commands-container" v-if="step === 5">
            <SensesSelect class="selector" :options="regionsArray" v-model="selected"/>
@@ -87,6 +84,13 @@
       </text>
       <!-- <path :d="selectedRectsPath" v-if="isActive" class="selectedRectsPath" /> -->
       </g>
+      <g data-v-6268fafa="" :transform="`translate(${graphWidth / 2 }, ${graphHeight - (margin.bottom / 5)})`">
+        <a data-v-6268fafa="" xlink:href="https://www.iea.org/data-and-statistics" target="_blank" v-if="step <= 5">
+          <text data-v-6268fafa="" class="svg-link">
+            *Based on data from the IEA (Extended World energy balances, 2017)
+          </text>
+        </a>
+      </g>
     </svg>
   </div>
 </div>
@@ -154,7 +158,7 @@ export default {
       return this.hover
     },
     graphWidth () {
-      return this.innerWidth
+      return this.width > 2000 ? this.innerWidth - (this.innerWidth / 4) : this.innerWidth
     },
     graphHeight () {
       return this.innerHeight - (this.margin.bottom / 2)
@@ -419,16 +423,11 @@ export default {
     z-index: 1;
 
     .graph-title{
-      line-height: 100%;
       margin-bottom: 5px;
     }
 
     #select-label {
       margin-top: 10%;
-    }
-
-    .superscript {
-    font-size: 0.8em;
     }
 
     .commands-container {
@@ -451,6 +450,13 @@ export default {
 }
 
 .visualization {
+
+  .svg-link {
+    fill: $color-neon;
+    text-decoration: underline;
+    text-anchor: middle;
+    font-size: 10px;
+  }
 
   svg {
     background-color: white;
