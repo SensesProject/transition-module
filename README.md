@@ -1,9 +1,22 @@
-# transition-module
-This is the Transition Module part I dedicated to Electrification and Energy Shift.
-Assigned portal: policy
+# Towards an Electric Future
+This repository contains the code for [*Towards an Electric Future*](https://dev.climatescenarios.org/sector-transition/), where sectorial transition and electrification is unpacked. It is part of the [SENSES Toolkit](https://climatescenarios.org/).
+
+![screenshot of the module](./module.png)
+
+## License
+
+The source code is licensed under the [ISC license](LICENSE.md). Text and graphics are licensed under [Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). For licensing information on datasets please refer to the data sources section. Exceptions are listed below on a per-file basis.
+
+## Data Sources
+
+Data sources and if applicable licenses are listed below on a per-file basis.
+
+- `src/assets/data/electrification-steps.json`, `src/assets/data/enerfycarriers-continents.json` and `World-region-report.json` are custom made dataset, calculations based on `src/assets/data/region-energy-carriers.json`, licensed and provided by [IEA](https://www.iea.org/) 
+- `src/assets/data/emissions_historical-new.json` and `src/assets/data/emissions_merged-new.json` are both [CEDS](https://gmd.copernicus.org/articles/11/369/2018/) data, with a CC BY 3.0 license - no changes were applied from the original source.
+- `electrificaiton-trends. json`: [CD-LINKS Scenario and Data hosted by IIASA]( https://data.ene.iiasa.ac.at/cd-links/); [Licence for the CD-LINKS scenario ensemble data](https://data.ene.iiasa.ac.at/cd-links/#/license)
 
 ##Last update on:
-April 6th, 2020
+October 20th, 2020
 
 ## Project setup
 ```

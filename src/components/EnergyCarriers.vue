@@ -84,12 +84,15 @@
       </text>
       <!-- <path :d="selectedRectsPath" v-if="isActive" class="selectedRectsPath" /> -->
       </g>
-      <g data-v-6268fafa="" :transform="`translate(${graphWidth / 2 }, ${graphHeight - (margin.bottom / 5)})`">
-        <a data-v-6268fafa="" xlink:href="https://www.iea.org/data-and-statistics" target="_blank" v-if="step <= 5">
-          <text data-v-6268fafa="" class="svg-link">
+      <g :transform="`translate(${graphWidth / 2 }, ${graphHeight - (margin.bottom / 5)})`">
+        <a  xlink:href="https://www.iea.org/data-and-statistics" target="_blank" v-if="step <= 5">
+          <text class="svg-link">
             *Based on data from the IEA (Extended World energy balances, 2017)
           </text>
         </a>
+        <text class="svg-reference" v-if="step > 5">
+          *Presumed decarbonization pathway.
+        </text>
       </g>
     </svg>
   </div>
@@ -454,6 +457,12 @@ export default {
   .svg-link {
     fill: $color-neon;
     text-decoration: underline;
+    text-anchor: middle;
+    font-size: 10px;
+  }
+
+  .svg-reference {
+    fill: $color-neon;
     text-anchor: middle;
     font-size: 10px;
   }
