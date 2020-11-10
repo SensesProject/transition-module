@@ -12,7 +12,7 @@ The source code is licensed under the [ISC license](LICENSE.md). Text and graphi
 Data sources and if applicable licenses are listed below on a per-file basis.
 
 - `src/assets/data/emissions_historical-new.json` and `src/assets/data/emissions_merged-new.json` are both [CEDS](https://gmd.copernicus.org/articles/11/369/2018/) data, with a CC BY 3.0 license - no changes were applied from the original source.
-- `electrificaiton-trends.json`: No applicable license.
+- `electrification-trends.json`: No applicable license
 
 ## Last update on:
 October 20th, 2020
